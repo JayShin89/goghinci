@@ -1,0 +1,494 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+
+
+
+:root{
+    --red:#950000;
+    --blue:#479ed8;
+    --black:#000;
+}
+
+*{
+  font-family: 'Lato', Arial;
+  margin:0; padding:0;
+  box-sizing: border-box;
+  outline: none; border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: all .2s linear;
+}
+
+*::selection{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+body, html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+    min-height: 100%;
+}
+
+
+section{
+    padding: 2rem 9%;
+}
+
+.btn{
+    display: inline-block;
+    margin-top: 1rem;
+    background: var(--black);
+    color: #fff;
+    padding: .8rem 3rem;
+    font-size: 1.7rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background: var(--red);
+}
+
+.heading{
+    text-align: center;
+    color: var(--black);
+    text-transform: uppercase;
+    padding: 1rem;
+    font-size: 3.5rem;
+    padding-bottom: 1rem;
+}
+
+.heading span{
+    color:var(--red);
+    text-transform: uppercase;
+}
+
+/* header */
+
+.header.active{
+    position:fixed;
+    top:0; left:0; right:0;
+    z-index: 10000;    
+}
+
+.header-1{
+    background: var(--red);
+    height: .5rem;
+}
+
+.header-2{
+    background: #fff;
+    display: flex;
+    align-items:center; /*vertical align*/
+    justify-content: center;
+    padding: 2rem 2%;
+    box-shadow: 0 .5rem .5rem rgba(0,0,0,.1);
+    position: relative;
+    text-align: center;
+    height: 70px;    
+}
+
+.header-2 .menu{
+    /*flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 0;
+    justify-content: flex-start;*/
+    display: none;
+}
+
+.header-2 .menu img{
+    cursor: pointer;
+    margin-top: 1.7rem;
+    width: 6rem;
+}
+
+.header-2 .navbar{    
+    align-items: center;
+    display:flex;
+    /*flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 0;    */
+    padding-left:3%;
+    white-space: nowrap; 
+    justify-content: flex-start;
+    width:33%;      
+}
+
+.header-2 .navbar a{
+    padding: .5rem 1.5rem;
+    font-size: 1.4rem;
+    border-radius: .5rem;
+    color: var(--black);
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+.header-2 .logo{
+    display:flex;
+    justify-content: center;    
+    width:33%;
+}
+
+.header-2 .wallet{
+    display:flex;
+    justify-content: flex-end;
+    align-items:center;
+    width: 33%;    
+}
+
+/*
+.header-2 .wallet .button {
+    width: fit-content;
+    height: 30px;
+    background-color: #479ed8;
+}
+
+
+.header-2 .logo{
+    display:flex;
+    justify-content: center;
+    margin:0 auto;
+    position:relative;
+}
+
+.header-2 .logo img{
+    width: 3.5rem;
+    height: 3.5rem;
+}
+*/
+
+
+/*
+.header-2 .bag{
+    display: flex;
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 0;
+    justify-content: flex-end;
+    margin-top: 1rem;
+}
+
+.header-2 .bag a{
+    font-size: 2.3rem;
+    text-transform: uppercase;
+    color: #000;
+}
+*/
+/* home */
+
+.home{
+    background-image: url("images/webimg2.png");
+    background-size:100%;
+    padding: 11rem;
+    padding-bottom:150px;
+    padding-top: 150px;
+    display:flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-attachment: fixed;  
+    min-height: 100%;  
+    height: 100vh;
+    
+}
+
+.home .image img{
+    /*width: 72rem;*/
+    padding:0;
+    display: block;
+    margin: 0 auto;
+    max-width: 70vw;
+    max-height: 70vh;
+    height: auto;    
+}
+
+/* Product Home */
+
+.producthome{
+    background-color: black;
+    
+    padding: 11rem;
+    padding-top: 150px;
+    padding-bottom: 150px;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-size: 100%;
+    height: 100vh;
+}
+
+/* Mission home */
+
+.missionhome{
+    background-image: url("images/webimg2.png");
+    background-size:100%;
+    padding-top:150px;
+    padding-bottom:150px;
+    background-attachment: fixed;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    height:100vh;
+}
+
+
+.totalmenu {
+    align-content: center;
+    width: 50%;    
+}
+
+/*NFT Home*/
+.nfthome{
+    background-color: white;
+    background-size:100%;
+    padding-top:100px;
+    padding-bottom:100px;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100vh;
+}
+
+.totalmenu2 {
+    align-content: center;
+    width: 50%;    
+}
+
+/*Bags Home*/
+
+.baghome{
+    background-color: white;
+    background-size:auto;
+    padding: 11rem;    
+    padding-top: 150px;
+    padding-bottom: 150px;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100vh;
+}
+
+/*Terms & Conditions Home*/
+.tnchome{
+    background-image: url("images/Artboard_1.png");
+    
+    padding: 11rem;
+    padding-bottom:150px;
+    padding-top: 150px;
+    display:flex;
+    align-content: left;
+    justify-content: left;
+    flex-wrap: wrap;
+    background-attachment: fixed;    
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100vh;
+}
+
+
+/* footer */
+
+.footer {
+    padding-top: 20rem;
+    background: #000;
+    text-align: center;
+    width: 100%;
+    
+}
+
+.footer img{
+    width: 20rem;
+    padding-bottom: 20rem;
+}
+
+.footer .box-container .box p{
+    font-size: 1.3rem;
+    color: #fff;
+    padding: .7rem 0;
+}
+
+.footer .box-container .box .links a:hover{
+    text-decoration: underline;
+    color:var(--red);
+}
+
+.footer .credit{
+    padding: 2.5rem 1rem;
+    border-top: .1rem solid rgba(0,0,0,.1);
+    margin-top: 1rem;
+    width:100%;
+    font-size: 1.5rem;
+    font-weight: lighter;
+    color: #b3b3b3;
+    display:inline-flex;
+    
+}
+
+.footer .credit .copyright{
+    color: #b3b3b3;
+    justify-content: flex-start;
+    text-align: left;
+    font-size: 1.5rem;
+    width: 33%;
+    display: flex;
+    padding-left: 6%;
+    align-items: center;
+    font-weight: bolder;
+    
+}
+
+.footer .credit .copyright a{
+    
+    color: #b3b3b3;
+    align-content: left;
+    font-size: 1.5rem;
+    margin-left: 5%;
+    font-weight: bolder;
+}
+
+.footer .rsv{
+    color: #b3b3b3;
+    align-content: left;
+    font-size: 1.5rem;
+    display: flex;
+    width: 33%;
+    justify-content: center;
+}
+.footer .share{
+    justify-content: flex-end;
+    display: flex;
+    font-size: 1.5rem;
+    margin-left: 1%;
+    width: 33%;
+    align-items: center;
+    padding-right: 6%;
+    font-weight: bolder;
+}
+
+.footer .share a {
+    color: #b3b3b3;
+    align-content: right;
+    font-size: 1.5rem;
+    margin-left: 5%;
+}
+
+/* Tag Blinking Func. */
+
+.blinking{ 
+    -webkit-animation:blink 1.5s ease-in-out infinite alternate;
+    -moz-animation:blink 1.5s ease-in-out infinite alternate; 
+    animation:blink 1.5s ease-in-out infinite alternate;
+ } 
+
+ @-webkit-keyframes blink{
+      0% {opacity:0;}
+      100% {opacity:1;}
+} 
+
+@-moz-keyframes blink{
+    0% {opacity:0;} 
+    100% {opacity:1;} 
+} 
+
+@keyframes blink{
+    0% {opacity:0;}
+    100% {opacity:1;} 
+}
+
+
+/* media queries */
+
+@media(max-width:1500px){
+
+    .header-2 .menu{
+        display: initial;
+    }
+
+    .header-2 .navbar{
+        padding-top: 8rem;
+        padding-left: 2rem;
+        position: fixed;
+        display: initial;
+        width: 200px;
+        height: 100vh;
+        left: -100%;
+        transition: 850ms;
+    }
+
+    .header-2 .navbar.active{
+        left: 0;
+        transition: 350ms;
+        display: initial;
+    }
+
+    .header-2 .navbar a{
+        font-size: 2rem;
+        text-transform: uppercase;
+        color: #fff;
+        display: block;
+        border-radius: 0;
+        text-align: left;
+        background: #000;
+        margin: 2rem 0;
+        font-weight: lighter;
+    }
+
+}
+
+@media(max-width:1200px){
+
+    html{
+        font-size: 55%;
+    }
+
+}
+
+@media(max-width:991px){
+
+    .header-2{
+        padding: 2rem;
+    }
+
+    section{
+        padding: 2rem;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .home .content {
+        text-align: center;
+    }
+
+    .home .content h3{
+        font-size: 4rem;
+    }
+
+    .newsletter h3{
+        font-size: 2.2rem;
+    }
+    
+}
+
+@media(max-width:450px){
+
+    html{
+        font-size: 50%;
+    }
+
+    .heading{
+        font-size: 3rem;
+    }
+
+}

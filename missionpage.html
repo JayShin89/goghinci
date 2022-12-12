@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>goghinci</title>
+
+    <!-- font awesome cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- custom css file link -->
+    <link rel="stylesheet" href="style.css">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jqquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.0-rc.0/web3.min.js"
+        integrity="sha512-/PTXSvaFzmO4So7Ghyq+DEZOz0sNLU4v1DP4gMOfY3kFu9L/IKoqSHZ6lNl3ZoZ7wT20io3vu/U4IchGcGIhfw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+    <script src="https://unpkg.com/@metamask/detect-provider/dist/detect-provider.min.js"></script>
+
+    <script>
+        window.onload = function () {
+            checkWallet();
+        }
+        async function checkWallet() {
+            window.ethereum.sendAsync({
+                method: "eth_accounts",
+                params: [],
+                jsonrpc: "2.0",
+                id: new Date().getTime()
+            }, function (error, result) {
+                console.log(result);
+                if (result["result"] != "") {  //addresses found. result["result"] contains wallet address      
+                    document.getElementById('connect').innerHTML = "Connected";
+                    document.getElementById('connect').style.backgroundColor = "Gray";
+
+                }
+                else {
+
+                }
+            });
+
+        }
+        async function connect() {
+            if (window.ethereum) {
+                await window.ethereum.send('eth_requestAccounts');
+                window.web3 = new Web3(window.ethereum);
+                /*if(accounts.length !=0) {
+                document.getElementById('connect').innerHTML = "Connected";
+                document.getElementById('connect').style.backgroundColor = "Gray";
+                }
+                else{
+                    document.getElementById('connect').innerHTML = "Try Again";
+                    document.getElementById('connect').style.backgroundColor = "Red";
+                }*/
+            }
+        }
+
+
+        //wait till page loads up, and than call startApp function
+        window.addEventListener('load', function () {
+            startApp();
+        })
+
+        async function initiate() {
+
+            const provider = await detectEthereumProvider()//uses function from "detect-provider.min.js" 
+
+            if (provider) {
+                console.log('Metamask successfully detected!');
+
+                //RPC call that check if there are address in this wallet
+                window.ethereum.sendAsync({
+                    method: "eth_accounts",
+                    params: [],
+                    jsonrpc: "2.0",
+                    id: new Date().getTime()
+                }, function (error, result) {
+                    console.log(result);
+                    if (result["result"] != "") {
+                        document.getElementById('connect').innerHTML = "Connected";
+                        document.getElementById('connect').style.backgroundColor = "Gray";
+
+                        //addresses found. result["result"] contains wallet address
+                    }
+                    else {
+                        connect();//found not address, which mean this wallet is not logged in
+                        initiate();
+                    }
+                });
+
+            }
+            else {// Metamask is not installed
+                alert("Please install Metamask");
+            }
+        }
+
+
+    </script>
+</head>
+
+<body>
+
+    <!--header section stars -->
+    <header>
+        <div class="header">
+            <div class="header-1"></div>
+            <div class="header-2">
+
+                <div class="menu">
+                    <img src="images/menu.png" alt="">
+                </div>
+                <nav class="navbar">
+                    <a href="index.html">home</a>
+                    <a href="productpage.html">product</a>
+                    <a href="missionpage.html">mission</a>
+                    <a href="nftpage.html">nft</a>
+                    <a href="bagpage.html">bags</a>
+                </nav>
+
+                <div class="logo"><img src="images/black_logo.png" onclick="window.location.href='index.html'" alt=""
+                        width="30" height="30"></div>
+
+                <div class="wallet" style="padding-right:3%"><button id="connect" onclick="initiate();"
+                        style="padding-left: 10px; padding-right: 10px; height:30px; background-color: aqua; font-weight: bolder;">Connect
+                        Wallet</button></div>
+                <!--<div class="wallet"><button id="connect" style="padding-left: 10px; padding-right: 10px; height:30px; background-color: aqua; font-weight: bolder;">Connect</button></div>-->
+    </header>
+
+    <!--header section ends -->
+
+    <!--home section starts -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        .accordion {
+            background-color: black;
+            color: white;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            text-align: left;
+            font-size: 21px;
+            font-weight: 900;
+            transition: 0.4s;
+            border: 3px solid white;
+        }
+
+
+        .panel {
+            width: 100%;
+            background-color: white;
+            color: black;
+            text-align: center;
+            font-size: 15px;
+            font-weight: 800;
+            max-height: 0;
+            overflow: hidden;
+            letter-spacing: 3px;
+
+
+        }
+
+        /*
+.accordion:after {
+  content: '\02795'; 
+  font-size: 13px;
+  color: #777;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2796"; 
+}
+*/
+    </style>
+
+
+    <section class="missionhome" id="mHome">
+
+
+        <div class="totalmenu">
+            <!--Accordion Menu List-->
+            <div class="accordion">CRAFTMANSHIP</div>
+            <div class="panel">
+                <p style="padding:30px">TO DELIVER THE BEST CRAFTMANSHIP THAT GOGHINCI CAN OFFER TO YOUR DAILY UNIFORM
+                </p>
+            </div>
+
+            <div class="accordion">SIMPLICITY</div>
+            <div class="panel">
+                <p style="padding:30px">TO SIMPLIFY YOUR WARDROBES AND YOUR LIFE</p>
+            </div>
+
+            <div class="accordion">SUSTAINABILITY</div>
+            <div class="panel">
+                <p style="padding:30px">TO BE ANTI-FAST FASHION</p>
+            </div>
+
+            <div class="accordion">VALUE</div>
+            <div class="panel">
+                <p style="padding:30px">TO DELIVER THE CONTINUOUS GARMENT AT THE PERFECT PRICE</p>
+            </div>
+
+            <div class="accordion">INNOVATION</div>
+            <div class="panel">
+                <p style="padding:30px">TO ALWAYS BE INNOVATING IN WHATEVER THE INDUSTRY THAT GOGHINCI WILL BE DEALING
+                    WITH</p>
+            </div>
+
+            <div class="accordion">PRAGMATISM</div>
+            <div class="panel">
+                <p style="padding:30px">TO BE PRAGMATIC, WHILE REMAINING IDEALISTIC</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!--home section ends -->
+
+    <!--footer section starts -->
+
+    <div class="footer">
+
+        <div class="box-container">
+            <div class="box">
+                <div class="image">
+                    <img src="images/white_full.png" alt="">
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="credit">
+            <div class="copyright">&copy; 2022 GOGHINCI &nbsp;&nbsp;&nbsp;<a href="tnchome.html">Terms & Conditions</a>
+            </div>
+
+            <div class="rsv"></div>
+            <div class="share">
+                <a href="https://twitter.com/goghinci" target='_blank'> TWITTER </a> &nbsp;&nbsp;&nbsp;
+                <a href="https://www.instagram.com/goghinci.official/" target='_blank'> INSTAGRAM </a>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!--footer section ends -->
+
+
+    <!--custom js file link -->
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
