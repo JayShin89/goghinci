@@ -36,10 +36,13 @@
                 id: new Date().getTime()
             }, function (error, result) {
                 console.log(result);
-                if (result["result"] != "") {  //addresses found. result["result"] contains wallet address      
-                    document.getElementById('connect').innerHTML = "Connected";
+                if (result["result"] != "") {  //addresses found. result["result"] contains wallet address
+                    var addr = String(result["result"]);
+                    var length = addr.length;
+                    //(result["result"]).slice(result["result"].length-6, result["result"].length-1);      
+                    document.getElementById('connect').innerHTML = "0x.." + addr.slice(addr.length-5, addr.length);
                     document.getElementById('connect').style.backgroundColor = rgb(140, 199, 150);
-
+                    
                 }
                 else {
 
