@@ -9,6 +9,7 @@
 
     <!-- font awesome cdn link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
 
     <!-- custom css file link -->
     <link rel="stylesheet" href="style.css">
@@ -20,9 +21,10 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
     <script src="https://unpkg.com/@metamask/detect-provider/dist/detect-provider.min.js"></script>
-    <script src="config.js"></script>
-	<script src="mintScript.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/bignumber.js/8.0.2/bignumber.js" integrity="sha512-XQDG6H87RgMf+aNFwDPCUcFwUf3t9liyqN/2BkJ8KGixupbjPwQHNhypNA972mLIkg4KPo4lkGmqAf3yfDz8hw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="node_modules/web3.js-browser/build/web3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bignumber.js/8.0.2/bignumber.js"
+        integrity="sha512-XQDG6H87RgMf+aNFwDPCUcFwUf3t9liyqN/2BkJ8KGixupbjPwQHNhypNA972mLIkg4KPo4lkGmqAf3yfDz8hw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script>
         window.onload = function () {
@@ -40,9 +42,9 @@
                     var addr = String(result["result"]);
                     var length = addr.length;
                     //(result["result"]).slice(result["result"].length-6, result["result"].length-1);      
-                    document.getElementById('connect').innerHTML = "0x.." + addr.slice(addr.length-5, addr.length);
-                    document.getElementById('connect').style.backgroundColor = rgb(140, 199, 150);
-                    
+                    document.getElementById('connect').innerHTML = "0x.." + addr.slice(addr.length - 5, addr.length);
+                    document.getElementById('connect').style.backgroundColor = "Gray";
+
                 }
                 else {
 
@@ -110,13 +112,13 @@
             <div class="header-1"></div>
             <div class="header-2">
                 <div class="logo"><img src="images/black_logo.png" onclick="window.location.href='index.html'" alt=""
-                    width="30" height="30"></div>
+                        width="30" height="30"></div>
 
                 <div class="menu">
                     <img src="images/menu.png" alt="">
                 </div>
                 <div class="navbar">
-                    <a href="index.html">home</a>       
+                    <a href="index.html">home</a>
                     <div class="dropdown">
                         <button class="dropbtn">Collection
                             <i class="fa fa-caret-down"></i>
@@ -126,10 +128,12 @@
                             <a href="nftpage.html">TBD..</a>
                             <a href="nftpage.html">TBD..</a>
                         </div>
-                    </div>  
-                </div>
-
-                
+                    </div>
+                    <div class="SNS" style="margin-top:1.5rem; float:right;" >
+                        <a href="http://www.naver.com">Instagram</a>
+                        <a href="http://www.google.com">Twitter</a>    
+                    </div>                                 
+                </div>                
 
                 <div class="wallet" style="padding-right:2%">
                     <button id="connect" onclick="connect();"
@@ -137,7 +141,7 @@
                         Wallet</button>
                 </div>
                 <!--<div class="wallet"><button id="connect" style="padding-left: 10px; padding-right: 10px; height:30px; background-color: aqua; font-weight: bolder;">Connect</button></div>-->
-        </header>
+    </header>
 
     <!--header section ends -->
 
@@ -177,129 +181,129 @@
         .span {
             display: block;
         }
+
+        .text button {
+            background: red;
+            border-radius: 20px;
+            border: none;
+            color: #fff;
+            padding: 10px;
+            width: 100%;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
     </STYLE>
 
     <section class="nfthome" id="nHome">
 
         <div class="totalmenu2-2" style="align-content:center; width: 800px">
-            <h2>MINTING INFO</h2>
-            <p id="blockNubmer">현재 블록: #00000000</p>
-            <p id="mintStartBlockNumber">민팅 시작 블록: #00000000</p>
-            <p id="mintPrice">민팅 가격: 0 KLAY</p>
-            <p id="mintLimitPerBlock">트랜잭션당 최대 수량: 0개</p>
-            <a href="https://scope.klaytn.com/">현재 블록넘버 확인하기1(Klaytnscope)</a><br>
-            <a href="https://klayswap.com/">현재 블록넘버 확인하기2(Klayswap)</a><br>
-            <hr/>
-            <h2>MY WALLET</h2>
-            <button onclick="connect()">카이카스 지갑연결</button>
-            <p id="myWallet">지갑주소: 연결되지 않음</p>
-            <p id="myKlay">잔액: 연결되지 않음</p>
-            <hr/>
-            <h2>MINT</h2>
-            <p id="mintCnt">0 / 0</p>
-            <label for="amount">민팅 수량</label>
-            <input type="number" id="amount" name="amount" min="1" max="3" value="1">
-            <button onclick="publicMint()">민팅</button>
-            <hr/>
-            <footer style="text-align: center;">Copyright &copy; 2022 <a href="https://www.youtube.com/channel/UCQNE2JmbasNYbjGAcuBiRRg">JoCoding</a> All rights reserved</footer>
-            <script>
-                document.addEventListener("DOMContentLoaded", async function (event) {
-                    const accounts = await klaytn.enable();
-                    if (!accounts) {
-                        alert("KaiKas 확장 프로그램을 활성화 해주세요!");
-                    }
-                    check_status();
-                });
-            </script>
-        </div>
-
-        <div class="totalmenu2" style="align-content:center; width: 800px">
-            <!--Accordion Menu List-->
-            <div class="accordion"><img border="30px" align="left" style="vertical-align:-webkit-baseline-middle" ;
-                    width="13px" height="13px" src="images/red_logo.svg"><span>&nbsp;&nbsp;&nbsp;What is an NFT?</span>
-            </div>
-            <div class="panel">
-                <p style="padding:15px">NFT stands for “non-fungible token” – one of a kind digital item that users can
-                    buy, own, and trade. GOGHINCI treats NFT as a digital art and a membership.</p>
+            <div class="conatiner">
+                <main class="grid">
+                    <article>
+                        <div class="text">
+                            <button id="mint">Mint</button>
+                        </div>
+                    </article>
+                </main>
             </div>
 
-            <div class="accordion"><img border="30px" align="left" width="13px" height="13px"
-                    src="images/red_logo.svg">&nbsp;&nbsp;&nbsp;What is Ethereum?</div>
-            <div class="panel">
-                <p style="padding:15px">Ethereum is the technology that powers the cryptocurrency called Ether(ETH).
-                    Learn all details here.</p>
-            </div>
+            <div class="totalmenu2" style="align-content:center; width: 800px">
+                <!--Accordion Menu List-->
+                <div class="accordion"><img border="30px" align="left" style="vertical-align:-webkit-baseline-middle" ;
+                        width="13px" height="13px" src="images/red_logo.svg"><span>&nbsp;&nbsp;&nbsp;What is an
+                        NFT?</span>
+                </div>
+                <div class="panel">
+                    <p style="padding:15px">NFT stands for “non-fungible token” – one of a kind digital item that users
+                        can
+                        buy, own, and trade. GOGHINCI treats NFT as a digital art and a membership.</p>
+                </div>
 
-            <div class="accordion"> <img border="30px" align="left" width="13px" height="13px"
-                    src="images/red_logo.svg">&nbsp;&nbsp;&nbsp;What is Metamask?</div>
-            <div class="panel">
-                <p style="padding:15px">Metamask is a crypto wallet that stores your Ethereum. It’s needed to purchase
-                    and mint one of the collections of Goghinci. Having a wallet gives you an Ethereum address (i.e.
-                    0xABCD….1234), which is also where your NFT is stored. Learn more about Metamask and how easy it is
-                    to use here.</p>
-            </div>
+                <div class="accordion"><img border="30px" align="left" width="13px" height="13px"
+                        src="images/red_logo.svg">&nbsp;&nbsp;&nbsp;What is Ethereum?</div>
+                <div class="panel">
+                    <p style="padding:15px">Ethereum is the technology that powers the cryptocurrency called Ether(ETH).
+                        Learn all details here.</p>
+                </div>
 
-            <div class="accordion"><img border="30px" align="left" width="13px" height="13px"
-                    src="images/red_logo.svg">&nbsp;&nbsp;&nbsp;What does a GOGHINCI NFT do?</div>
-            <div class="panel">
-                <p style="padding:15px">Each GOGHINCI NFT will allow voting rights, access member exclusive BOUTIQUE,
-                    and more</p>
-            </div>
+                <div class="accordion"> <img border="30px" align="left" width="13px" height="13px"
+                        src="images/red_logo.svg">&nbsp;&nbsp;&nbsp;What is Metamask?</div>
+                <div class="panel">
+                    <p style="padding:15px">Metamask is a crypto wallet that stores your Ethereum. It’s needed to
+                        purchase
+                        and mint one of the collections of Goghinci. Having a wallet gives you an Ethereum address (i.e.
+                        0xABCD….1234), which is also where your NFT is stored. Learn more about Metamask and how easy it
+                        is
+                        to use here.</p>
+                </div>
 
-            <div class="accordion"><img border="30px" align="left" width="13px" height="13px"
-                    src="images/red_logo.svg">&nbsp;&nbsp;&nbsp;How many NFTs will be there for each collection of
-                GOGHINCI?</div>
-            <div class="panel">
-                <p style="padding:15px">There will be a total supply of 11,392 NFTs for each collection.</p>
-            </div>
+                <div class="accordion"><img border="30px" align="left" width="13px" height="13px"
+                        src="images/red_logo.svg">&nbsp;&nbsp;&nbsp;What does a GOGHINCI NFT do?</div>
+                <div class="panel">
+                    <p style="padding:15px">Each GOGHINCI NFT will allow voting rights, access member exclusive
+                        BOUTIQUE,
+                        and more</p>
+                </div>
 
-            <div class="accordion"><img border="30px" align="left" width="13px" height="13px"
-                    src="images/red_logo.svg">&nbsp;&nbsp;&nbsp;When is the minting date?</div>
-            <div class="panel">
-                <p style="padding:15px">It will be in August. Exact date will be announced via Twitter.</p>
-            </div>
+                <div class="accordion"><img border="30px" align="left" width="13px" height="13px"
+                        src="images/red_logo.svg">&nbsp;&nbsp;&nbsp;How many NFTs will be there for each collection of
+                    GOGHINCI?</div>
+                <div class="panel">
+                    <p style="padding:15px">There will be a total supply of 11,392 NFTs for each collection.</p>
+                </div>
 
-            <div class="accordion"><img border="30px" align="left" width="13px" height="13px"
-                    src="images/red_logo.svg">&nbsp;&nbsp;&nbsp;What are the maximum mints per wallet?</div>
-            <div class="panel">
-                <p style="padding:15px">One mint per wallet is allowed.</p>
-            </div>
+                <div class="accordion"><img border="30px" align="left" width="13px" height="13px"
+                        src="images/red_logo.svg">&nbsp;&nbsp;&nbsp;When is the minting date?</div>
+                <div class="panel">
+                    <p style="padding:15px">It will be in August. Exact date will be announced via Twitter.</p>
+                </div>
 
-            <div class="accordion"><img border="30px" align="left" width="13px" height="13px"
-                    src="images/red_logo.svg">&nbsp;&nbsp;&nbsp;How much is it?</div>
-            <div class="panel">
-                <p style="padding:15px">Every mint from each collection of GOGHINCI will cost 0.33 ETH.</p>
-            </div>
+                <div class="accordion"><img border="30px" align="left" width="13px" height="13px"
+                        src="images/red_logo.svg">&nbsp;&nbsp;&nbsp;What are the maximum mints per wallet?</div>
+                <div class="panel">
+                    <p style="padding:15px">One mint per wallet is allowed.</p>
+                </div>
 
-            <div class="accordion"><img border="30px" align="left" width="13px" height="13px"
-                    src="images/red_logo.svg">&nbsp;&nbsp;&nbsp;Will GOGHINCI be revealed right away?</div>
-            <div class="panel">
-                <p style="padding:15px">Yes.</p>
-            </div>
+                <div class="accordion"><img border="30px" align="left" width="13px" height="13px"
+                        src="images/red_logo.svg">&nbsp;&nbsp;&nbsp;How much is it?</div>
+                <div class="panel">
+                    <p style="padding:15px">Every mint from each collection of GOGHINCI will cost 0.33 ETH.</p>
+                </div>
 
-            <div class="accordion"><img border="30px" align="left" width="13px" height="13px"
-                    src="images/red_logo.svg">&nbsp;&nbsp;&nbsp;What are the secondary royalties and how will they be
-                used?</div>
-            <div class="panel">
-                <p style="padding:15px">GOGHINCI will receive 7.5% of all secondary sales. These proceeds will be used
-                    to continue to hire more talented full-time employees and fund operations.</p>
-            </div>
+                <div class="accordion"><img border="30px" align="left" width="13px" height="13px"
+                        src="images/red_logo.svg">&nbsp;&nbsp;&nbsp;Will GOGHINCI be revealed right away?</div>
+                <div class="panel">
+                    <p style="padding:15px">Yes.</p>
+                </div>
 
-            <div class="accordion"><img border="30px" align="left" width="13px" height="13px"
-                    src="images/red_logo.svg">&nbsp;&nbsp;&nbsp;What are the funds being used for?</div>
-            <div class="panel">
-                <p style="padding:15px">100% of proceeds go directly to GOGHINCI Inc. This funding will be used solely
-                    to deliver the best possible product that GOGHINCI can offer to our valued members at the “perfect”
-                    price.</p>
-            </div>
+                <div class="accordion"><img border="30px" align="left" width="13px" height="13px"
+                        src="images/red_logo.svg">&nbsp;&nbsp;&nbsp;What are the secondary royalties and how will they
+                    be
+                    used?</div>
+                <div class="panel">
+                    <p style="padding:15px">GOGHINCI will receive 7.5% of all secondary sales. These proceeds will be
+                        used
+                        to continue to hire more talented full-time employees and fund operations.</p>
+                </div>
 
-            <div class="accordion"><img border="30px" align="left" width="13px" height="13px"
-                    src="images/red_logo.svg">&nbsp;&nbsp;&nbsp;Does GOGHINCI have a plan to release more collections?
+                <div class="accordion"><img border="30px" align="left" width="13px" height="13px"
+                        src="images/red_logo.svg">&nbsp;&nbsp;&nbsp;What are the funds being used for?</div>
+                <div class="panel">
+                    <p style="padding:15px">100% of proceeds go directly to GOGHINCI Inc. This funding will be used
+                        solely
+                        to deliver the best possible product that GOGHINCI can offer to our valued members at the
+                        “perfect”
+                        price.</p>
+                </div>
+
+                <div class="accordion"><img border="30px" align="left" width="13px" height="13px"
+                        src="images/red_logo.svg">&nbsp;&nbsp;&nbsp;Does GOGHINCI have a plan to release more
+                    collections?
+                </div>
+                <div class="panel">
+                    <p style="padding:15px">Yes, as long as the collections get along with the brand, GOGHINCI.</p>
+                </div>
             </div>
-            <div class="panel">
-                <p style="padding:15px">Yes, as long as the collections get along with the brand, GOGHINCI.</p>
-            </div>
-        </div>
 
 
 
@@ -339,6 +343,717 @@
 
 
     <!--custom js file link -->
+    <script type="text/javascript">
+
+        var account = null;
+        var contract = null;
+        const ABI = [
+            {
+                "inputs": [
+                    {
+                        "internalType": "string",
+                        "name": "_name",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "_symbol",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "_initBaseURI",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "_initNotRevealedUri",
+                        "type": "string"
+                    }
+                ],
+                "stateMutability": "nonpayable",
+                "type": "constructor"
+            },
+            {
+                "anonymous": false,
+                "inputs": [
+                    {
+                        "indexed": true,
+                        "internalType": "address",
+                        "name": "owner",
+                        "type": "address"
+                    },
+                    {
+                        "indexed": true,
+                        "internalType": "address",
+                        "name": "approved",
+                        "type": "address"
+                    },
+                    {
+                        "indexed": true,
+                        "internalType": "uint256",
+                        "name": "tokenId",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "Approval",
+                "type": "event"
+            },
+            {
+                "anonymous": false,
+                "inputs": [
+                    {
+                        "indexed": true,
+                        "internalType": "address",
+                        "name": "owner",
+                        "type": "address"
+                    },
+                    {
+                        "indexed": true,
+                        "internalType": "address",
+                        "name": "operator",
+                        "type": "address"
+                    },
+                    {
+                        "indexed": false,
+                        "internalType": "bool",
+                        "name": "approved",
+                        "type": "bool"
+                    }
+                ],
+                "name": "ApprovalForAll",
+                "type": "event"
+            },
+            {
+                "anonymous": false,
+                "inputs": [
+                    {
+                        "indexed": true,
+                        "internalType": "address",
+                        "name": "previousOwner",
+                        "type": "address"
+                    },
+                    {
+                        "indexed": true,
+                        "internalType": "address",
+                        "name": "newOwner",
+                        "type": "address"
+                    }
+                ],
+                "name": "OwnershipTransferred",
+                "type": "event"
+            },
+            {
+                "anonymous": false,
+                "inputs": [
+                    {
+                        "indexed": true,
+                        "internalType": "address",
+                        "name": "from",
+                        "type": "address"
+                    },
+                    {
+                        "indexed": true,
+                        "internalType": "address",
+                        "name": "to",
+                        "type": "address"
+                    },
+                    {
+                        "indexed": true,
+                        "internalType": "uint256",
+                        "name": "tokenId",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "Transfer",
+                "type": "event"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "to",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "tokenId",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "approve",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "owner",
+                        "type": "address"
+                    }
+                ],
+                "name": "balanceOf",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [],
+                "name": "baseExtension",
+                "outputs": [
+                    {
+                        "internalType": "string",
+                        "name": "",
+                        "type": "string"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [],
+                "name": "cost",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "tokenId",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "getApproved",
+                "outputs": [
+                    {
+                        "internalType": "address",
+                        "name": "",
+                        "type": "address"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "owner",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "operator",
+                        "type": "address"
+                    }
+                ],
+                "name": "isApprovedForAll",
+                "outputs": [
+                    {
+                        "internalType": "bool",
+                        "name": "",
+                        "type": "bool"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [],
+                "name": "maxMintAmount",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [],
+                "name": "maxSupply",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "_mintAmount",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "mint",
+                "outputs": [],
+                "stateMutability": "payable",
+                "type": "function"
+            },
+            {
+                "inputs": [],
+                "name": "name",
+                "outputs": [
+                    {
+                        "internalType": "string",
+                        "name": "",
+                        "type": "string"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [],
+                "name": "notRevealedUri",
+                "outputs": [
+                    {
+                        "internalType": "string",
+                        "name": "",
+                        "type": "string"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [],
+                "name": "owner",
+                "outputs": [
+                    {
+                        "internalType": "address",
+                        "name": "",
+                        "type": "address"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "tokenId",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "ownerOf",
+                "outputs": [
+                    {
+                        "internalType": "address",
+                        "name": "",
+                        "type": "address"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "bool",
+                        "name": "_state",
+                        "type": "bool"
+                    }
+                ],
+                "name": "pause",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [],
+                "name": "paused",
+                "outputs": [
+                    {
+                        "internalType": "bool",
+                        "name": "",
+                        "type": "bool"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [],
+                "name": "renounceOwnership",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [],
+                "name": "reveal",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [],
+                "name": "revealed",
+                "outputs": [
+                    {
+                        "internalType": "bool",
+                        "name": "",
+                        "type": "bool"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "from",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "to",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "tokenId",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "safeTransferFrom",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "from",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "to",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "tokenId",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "bytes",
+                        "name": "data",
+                        "type": "bytes"
+                    }
+                ],
+                "name": "safeTransferFrom",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "operator",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "bool",
+                        "name": "approved",
+                        "type": "bool"
+                    }
+                ],
+                "name": "setApprovalForAll",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "string",
+                        "name": "_newBaseExtension",
+                        "type": "string"
+                    }
+                ],
+                "name": "setBaseExtension",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "string",
+                        "name": "_newBaseURI",
+                        "type": "string"
+                    }
+                ],
+                "name": "setBaseURI",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "_newCost",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "setCost",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "string",
+                        "name": "_notRevealedURI",
+                        "type": "string"
+                    }
+                ],
+                "name": "setNotRevealedURI",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "_newmaxMintAmount",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "setmaxMintAmount",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "bytes4",
+                        "name": "interfaceId",
+                        "type": "bytes4"
+                    }
+                ],
+                "name": "supportsInterface",
+                "outputs": [
+                    {
+                        "internalType": "bool",
+                        "name": "",
+                        "type": "bool"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [],
+                "name": "symbol",
+                "outputs": [
+                    {
+                        "internalType": "string",
+                        "name": "",
+                        "type": "string"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "index",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "tokenByIndex",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "owner",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "index",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "tokenOfOwnerByIndex",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "tokenId",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "tokenURI",
+                "outputs": [
+                    {
+                        "internalType": "string",
+                        "name": "",
+                        "type": "string"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [],
+                "name": "totalSupply",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "from",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "to",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "tokenId",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "transferFrom",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "newOwner",
+                        "type": "address"
+                    }
+                ],
+                "name": "transferOwnership",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "_owner",
+                        "type": "address"
+                    }
+                ],
+                "name": "walletOfOwner",
+                "outputs": [
+                    {
+                        "internalType": "uint256[]",
+                        "name": "",
+                        "type": "uint256[]"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [],
+                "name": "withdraw",
+                "outputs": [],
+                "stateMutability": "payable",
+                "type": "function"
+            }
+        ];
+
+        const ADDRESS = "0x0a2a880EEA0b9763fdf5AeDE199F656624E82153";
+        (async () => {
+            if (window.ethereum) {
+                await window.ethereum.send('eth_requestAccounts');
+                window.web3 = new Web3(window.ethereum);
+
+                //  var totalSupply = await web3.eth.totalSupply();
+                //	document.getElementById('kuch').textContent = totalSupply;
+
+                var accounts = await web3.eth.getAccounts();
+                account = accounts[0];
+                //document.getElementById('wallet_address').textContent = account;
+
+
+                contract = new web3.eth.Contract(ABI, ADDRESS);
+
+                document.getElementById('mint').onclick = () => {
+                    contract.methods.mint(account).send({ from: account, value: "333000000000000000" });
+                }
+
+                var totalsupply = await contract.methods.totalSupply().call();
+                //document.getElementById('ttt').textContent = totalsupply;
+            }
+        })();
+    </script>
     <script src="script.js"></script>
 
 
