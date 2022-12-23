@@ -5,12 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>goghinci</title>
+    <title>Vanici</title>
 
     <!-- font awesome cdn link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
-
     <!-- custom css file link -->
     <link rel="stylesheet" href="style.css">
 
@@ -43,8 +42,6 @@
                     var length = addr.length;
                     //(result["result"]).slice(result["result"].length-6, result["result"].length-1);      
                     document.getElementById('connect').innerHTML = "0x.." + addr.slice(addr.length - 5, addr.length);
-                    
-
                 }
                 else {
 
@@ -65,40 +62,6 @@
         window.addEventListener('load', function () {
             startApp();
         })
-
-        /* async function initiate() {
-
-            const provider = await detectEthereumProvider()//uses function from "detect-provider.min.js" 
-
-            if (provider) {
-                console.log('Metamask successfully detected!');
-
-                //RPC call that check if there are address in this wallet
-                window.ethereum.sendAsync({
-                    method: "eth_accounts",
-                    params: [],
-                    jsonrpc: "2.0",
-                    id: new Date().getTime()
-                }, function (error, result) {
-                    console.log(result);
-                    if (result["result"] != "") {
-                        document.getElementById('connect').innerHTML = "Connected";
-                        document.getElementById('connect').style.backgroundColor = "Gray";
-
-                        //addresses found. result["result"] contains wallet address
-                    }
-                    else {
-                        connect();//found not address, which mean this wallet is not logged in
-                        initiate();
-                    }
-                });
-
-            }
-            else {// Metamask is not installed
-                alert("Please install Metamask");
-            }
-        }*/
-
 
     </script>
 </head>
@@ -326,17 +289,13 @@
 
 
         <div class="credit">
-            <div class="copyright">&copy; 2022 GOGHINCI &nbsp;&nbsp;&nbsp;<a href="tnchome.html">Terms & Conditions</a>
-            </div>
-
-            <div class="rsv"></div>
-            <div class="share">
-                <a href="https://twitter.com/goghinci" target='_blank'>TWITTER </a> &nbsp;&nbsp;&nbsp;
-                <a href="https://www.instagram.com/goghinci.official/" target='_blank'> INSTAGRAM </a>
-
-            </div>
+            <div class="copyright">&copy; 2023 VANICI 
+            </div>           
+        
+        <div class="tnc">
+            <div class="terms"><a href="tnchome.html">Terms & Conditions</a></div>
         </div>
-
+    </div>
     </div>
 
     <!--footer section ends -->

@@ -407,18 +407,17 @@ section {
     font-weight: lighter;
     color: #b3b3b3;
     display: inline-flex;
+    align-content:left;
 
 }
 
 .footer .credit .copyright {
-    color: #b3b3b3;
-    justify-content: flex-start;
+    color: #b3b3b3;    
     text-align: left;
     font-size: 1.5rem;
-    width: 33%;
-    display: flex;
+    width: 50%;    
     padding-left: 6%;
-    align-items: center;
+    align-items: left;
     font-weight: bolder;
 
 }
@@ -431,32 +430,23 @@ section {
     margin-left: 5%;
     font-weight: bolder;
 }
+.footer .credit .tnc {
 
-.footer .rsv {
-    color: #b3b3b3;
-    align-content: left;
+    text-align: right;
     font-size: 1.5rem;
-    display: flex;
-    width: 33%;
-    justify-content: center;
-}
-
-.footer .share {
-    justify-content: flex-end;
-    display: flex;
-    font-size: 1.5rem;
-    margin-left: 1%;
-    width: 33%;
-    align-items: center;
+    width: 50%;    
     padding-right: 6%;
+    align-items: right;
     font-weight: bolder;
 }
 
-.footer .share a {
-    color: #b3b3b3;
-    align-content: right;
+.footer .tnc .terms a {
+    color: #b3b3b3;    
+    text-align: center;
     font-size: 1.5rem;
-    margin-left: 5%;
+    width: 100%;        
+    align-items: left;
+    font-weight: bolder;
 }
 
 /* Tag Blinking Func. */
