@@ -209,10 +209,11 @@ section {
 .header-2 .wallet {
     display: flex;
     justify-content: flex-end;
-    align-items: center;
+    align-content:right;
+    align-items: right;
     padding-left: 3%;
-    width: 8%;
-    padding: 14px 16px;
+    width: 12%;
+    
 }
 
 
