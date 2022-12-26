@@ -294,13 +294,31 @@ section {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    height: 100vh;
+    height: auto;
 }
-
+.totalmenu2-2 {
+    height:auto;
+    min-height:50px;
+    overflow-y:hidden;
+}
 .totalmenu2 {
-    margin-top: 100px;
+    padding-top: 100px;
     align-content: center;
     width: 50%;
+    height:auto;
+    clear:both;
+    overflow-y:hidden;
+}
+
+.totalmenu2-0 {
+    background-image: url("images/76.png");
+    background-size: contain;
+    background-position-x: center;
+    width: 100vw;
+    height: 40.4vh;
+    margin: 0;
+    background-repeat: no-repeat;
+
 }
 
 .accordion {
@@ -337,17 +355,6 @@ background-color: blue;
     display: block;
 }
 
-.totalmenu2-0 {
-    background-image: url("images/76.png");
-    background-size: contain;
-    background-position-x: center;
-    width: 100vw;
-    height: 41.4vh;
-    margin: 0;
-    background-repeat: no-repeat;
-
-}
-
 .text {
     text-align: center;
 }
@@ -363,7 +370,7 @@ background-color: blue;
     height: 60px;
     font-weight: 600;
     text-transform: uppercase;
-    margin-top: 30px;
+    margin-top: 3vh;
     vertical-align: center;
     font-size: 20pt;
 
@@ -394,6 +401,7 @@ background-color: blue;
     background: #000;
     text-align: center;
     width: 100%;
+    clear:both;
 
 }
 
