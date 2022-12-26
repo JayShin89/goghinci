@@ -92,7 +92,7 @@ section {
     display: flex;
     align-items: center;
     /*vertical align*/
-    justify-content: center;
+    justify-content:center;
     padding: 2rem 2%;
     box-shadow: 0 .5rem .5rem rgba(0, 0, 0, .1);
     position: relative;
@@ -108,10 +108,14 @@ section {
     display: none;
 }
 
-.header-2 .menu img {
+.header-2 .menu i {
     cursor: pointer;
     margin-top: 1.7rem;
     width: 6rem;
+    font-size:27px;
+    position:absolute;
+    top: 8px;
+    right: 150px;
 }
 
 /* Navbar container */
@@ -126,7 +130,7 @@ section {
     justify-content: right;
     width: 35%;
     overflow: hidden;
-
+    margin-left:700px;
 }
 
 /* Links inside the navbar */
@@ -204,6 +208,9 @@ section {
     justify-content: left;
     padding-left: 2.5%;
     width: 50%;
+    position:absolute;
+    left: 30px;
+    
 }
 
 .header-2 .wallet {
@@ -213,7 +220,8 @@ section {
     align-items: right;
     padding-left: 3%;
     width: 12%;
-    position: relative;
+    position: absolute;
+    right: 30px;
 
 }
 
@@ -527,7 +535,7 @@ background-color: blue;
         display: initial;
         width: 200px;
         height: 100vh;
-        left: -100%;
+        left: 50%;
         transition: 850ms;
     }
 
