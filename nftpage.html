@@ -966,8 +966,8 @@
         const ADDRESS = "0x0a2a880EEA0b9763fdf5AeDE199F656624E82153";
         (async () => {
             if (window.ethereum) {
-                // await window.ethereum.send('eth_requestAccounts');
-                // window.web3 = new Web3(window.ethereum);
+                 await window.ethereum.send('eth_requestAccounts');
+                 window.web3 = new Web3(window.ethereum);
 
                 //  var totalSupply = await web3.eth.totalSupply();
                 //	document.getElementById('kuch').textContent = totalSupply;
@@ -979,8 +979,9 @@
 
                 contract = new web3.eth.Contract(ABI, ADDRESS);
 
-                document.getElementById('mint').onclick = () => {
+                document.getElementById('mint').onclick = () => {                    
                     contract.methods.mint(account).send({ from: account, value: "333000000000000000" });
+                    
                 }
 
                 var totalsupply = await contract.methods.totalSupply().call();
