@@ -38,9 +38,9 @@
                     var length = addr.length;
                     //(result["result"]).slice(result["result"].length-6, result["result"].length-1);      
                     document.getElementById('connect').innerHTML = "0x.." + addr.slice(addr.length - 5, addr.length);
-                    document.getElementById('connect').addEventListener("mouseover", function(event) {
+                    document.getElementById('connect').addEventListener("mouseover", function (event) {
                         dp_menu();
-                    } );
+                    });
                 }
                 else {
 
@@ -50,11 +50,11 @@
         }
         function dp_menu() {
             let hover_button = document.getElementById("drop-content");
-            if(hover_button.style.display === "none") {
-                hover_button.style.display="block";
+            if (hover_button.style.display === "none") {
+                hover_button.style.display = "block";
             }
             else {
-                hover_button.style.display="none";
+                hover_button.style.display = "none";
             }
         }
         async function connect() {

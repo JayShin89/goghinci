@@ -26,9 +26,9 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script>
-        window.onload = function () {
-            checkWallet();
-        }
+        // window.onload = function () {
+        //          checkWallet();
+        //      }
         async function checkWallet() {
             window.ethereum.sendAsync({
                 method: "eth_accounts",
@@ -69,10 +69,21 @@
         }
 
         //wait till page loads up, and than call startApp function
-        window.addEventListener('load', function () {
-            startApp();
-        })
+        // window.addEventListener('load', function () {
+        //     startApp();
+        // })
 
+        var page = 1;
+        window.onscroll = function (ev) {
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+                ifrm = document.createElement("IFRAME");
+                ifrm.setAttribute("src", page + ".html");
+                ifrm.style.width = 100 + "%";
+                ifrm.style.height = 800 + "px";
+                document.body.appendChild(ifrm);
+                page++
+            }
+        };
     </script>
 </head>
 
@@ -125,10 +136,6 @@
     <!--header section ends -->
 
     <!--home section starts -->
-
-    <STYLE>     
-    
-    </STYLE>
 
     <section class="nfthome" id="nHome">
         <div class="totalmenu2-0"></div>
@@ -237,8 +244,6 @@
                     <p style="padding:15px">Yes, as long as the collections get along with the brand, GOGHINCI.</p>
                 </div>
             </div>
-
-
 
     </section>
 
@@ -961,8 +966,8 @@
         const ADDRESS = "0x0a2a880EEA0b9763fdf5AeDE199F656624E82153";
         (async () => {
             if (window.ethereum) {
-                await window.ethereum.send('eth_requestAccounts');
-                window.web3 = new Web3(window.ethereum);
+                // await window.ethereum.send('eth_requestAccounts');
+                // window.web3 = new Web3(window.ethereum);
 
                 //  var totalSupply = await web3.eth.totalSupply();
                 //	document.getElementById('kuch').textContent = totalSupply;
