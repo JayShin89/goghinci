@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>goghinci</title>
+    <title>Vanici</title>
 
     <!-- font awesome cdn link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -20,12 +20,15 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
     <script src="https://unpkg.com/@metamask/detect-provider/dist/detect-provider.min.js"></script>
+    <script src="node_modules/web3.js-browser/build/web3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bignumber.js/8.0.2/bignumber.js"
+        integrity="sha512-XQDG6H87RgMf+aNFwDPCUcFwUf3t9liyqN/2BkJ8KGixupbjPwQHNhypNA972mLIkg4KPo4lkGmqAf3yfDz8hw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script>
-        $(document).ready(function () {
+        window.onload = function () {
             checkWallet();
-        });
-
+        }
         async function checkWallet() {
             window.ethereum.sendAsync({
                 method: "eth_accounts",
@@ -34,115 +37,86 @@
                 id: new Date().getTime()
             }, function (error, result) {
                 console.log(result);
-                if (result["result"] != "") {  //addresses found. result["result"] contains wallet address      
-                    document.getElementById('connect').innerHTML = "Connected";
-                    document.getElementById('connect').style.backgroundColor = "Gray";
-
+                if (result["result"] != "") {  //addresses found. result["result"] contains wallet address
+                    var addr = String(result["result"]);
+                    var length = addr.length;
+                    document.getElementById('connect').innerHTML = "0x.." + addr.slice(addr.length - 5, addr.length);
+                    document.getElementById('connect').addEventListener("mouseover", function(event) {
+                        dp_menu();
+                    } );
                 }
                 else {
 
                 }
             });
-
         }
+        function dp_menu() {
+            let hover_button = document.getElementById("drop-content");
+            if(hover_button.style.display === "none") {
+                hover_button.style.display="block";
+            }
+            else {
+                hover_button.style.display="none";
+            }
+        }
+
         async function connect() {
             if (window.ethereum) {
                 await window.ethereum.send('eth_requestAccounts');
                 window.web3 = new Web3(window.ethereum);
-                /*if(accounts.length !=0) {
-                document.getElementById('connect').innerHTML = "Connected";
-                document.getElementById('connect').style.backgroundColor = "Gray";
-                }
-                else{
-                    document.getElementById('connect').innerHTML = "Try Again";
-                    document.getElementById('connect').style.backgroundColor = "Red";
-                }*/
+                checkWallet();
             }
         }
-
 
         //wait till page loads up, and than call startApp function
         window.addEventListener('load', function () {
             startApp();
         })
 
-        async function initiate() {
-
-            const provider = await detectEthereumProvider()//uses function from "detect-provider.min.js" 
-
-            if (provider) {
-                console.log('Metamask successfully detected!');
-
-                //RPC call that check if there are address in this wallet
-                window.ethereum.sendAsync({
-                    method: "eth_accounts",
-                    params: [],
-                    jsonrpc: "2.0",
-                    id: new Date().getTime()
-                }, function (error, result) {
-                    console.log(result);
-                    if (result["result"] != "") {
-                        document.getElementById('connect').innerHTML = "Connected";
-                        document.getElementById('connect').style.backgroundColor = "Gray";
-
-                        //addresses found. result["result"] contains wallet address
-                    }
-                    else {
-                        connect();//found not address, which mean this wallet is not logged in
-                        initiate();
-                    }
-                });
-
-            }
-            else {// Metamask is not installed
-                alert("Please install Metamask");
-            }
-        }
-
-
     </script>
 </head>
 
-<body>
+<header>
+    <div class="header">
+        <div class="header-1"></div>
+        <div class="header-2">
+            <div class="logo"><img src="images/black_logo.png" onclick="window.location.href='index.html'" alt=""
+                    width="30" height="30"></div>
 
-
-    <!--header section stars -->
-
-    <header>
-        <div class="header">
-            <div class="header-1"></div>
-            <div class="header-2">
-                <div class="logo"><img src="images/black_logo.png" onclick="window.location.href='index.html'" alt=""
-                        width="30" height="30"></div>
-
-                <div class="menu">
-                    <img src="images/menu.png" alt="">
-                </div>
-                <div class="navbar">
-                    <a href="index.html">home</a>
-                    <div class="dropdown">
-                        <button class="dropbtn">Collection
-                            <i class="fa fa-caret-down"></i>
-                        </button>
-                        <div class="dropdown-content">
-                            <a href="nftpage.html">Norm</a>
-                            <a href="nftpage.html">TBD..</a>
-                            <a href="nftpage.html">TBD..</a>
-                        </div>
-                    </div>
-                    <div class="SNS" style="margin-top:1.5rem; float:right;">
-                        <a href="https://www.instagram.com/marcovanici/" target="_blank">Instagram</a>
-                        <a href="https://twitter.com/marcovanici" target="_blank">Twitter</a>
+            <div class="menu">
+                <img src="images/menu.png" alt="">
+            </div>
+            <div class="navbar">
+                <a href="index.html">home</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Collection
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="nftpage.html">Norm</a>
+                        <a href="nftpage.html">TBD..</a>
+                        <a href="nftpage.html">TBD..</a>
                     </div>
                 </div>
-
-                <div class="wallet">
-                    <button id="connect" onclick="connect();"
-                        style="height:40px; font-size: 16px; background-color: inherit; font-weight: bolder; font-family: inherit;">Connect
-                        Wallet</button>
+                <div class="SNS" style="margin-top:1.5rem; float:right;">
+                    <a href="https://www.instagram.com/marcovanici/" target="_blank">Instagram</a>
+                    <a href="https://twitter.com/marcovanici" target="_blank">Twitter</a>
                 </div>
-                <!--<div class="wallet"><button id="connect" style="padding-left: 10px; padding-right: 10px; height:30px; background-color: aqua; font-weight: bolder;">Connect</button></div>-->
-    </header>
+            </div>
+
+            <div class="wallet">
+                <button id="connect" onclick="connect();"
+                    style="height:40px; font-size: 16px; background-color: inherit; font-weight: bolder; font-family: inherit;">Connect
+                    Wallet</button>                        
+                <div style="display:none;" id="drop-content">
+                    <a href="tnchome.html">My Collection</a>
+                    <a href="index.html">My Collection2</a>
+                </div>
+            </div>
+            <!--<div class="wallet"><button id="connect" style="padding-left: 10px; padding-right: 10px; height:30px; background-color: aqua; font-weight: bolder;">Connect</button></div>-->
+
+            
+</header>
 
     <!--header section ends -->
 

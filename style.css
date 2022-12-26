@@ -88,7 +88,7 @@ section {
 }
 
 .header-2 {
-    background: #ffffff00 ;
+    background: #ffffff00;
     display: flex;
     align-items: center;
     /*vertical align*/
@@ -207,13 +207,48 @@ section {
 }
 
 .header-2 .wallet {
-    display: flex;
+    display: inline-block;
     justify-content: flex-end;
-    align-content:right;
+    align-content: right;
     align-items: right;
     padding-left: 3%;
     width: 12%;
-    
+    position: relative;
+
+}
+
+.wallet:hover button {
+    background-color: rgb(140, 199, 150);;
+}
+
+.wallet div {    
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    visibility: hidden;
+    position: absolute;
+    min-width: 100%;
+    opacity: 0;
+    transition: .3s;
+}
+
+.wallet:hover div {
+    visibility: visible;
+    opacity: 1;
+}
+
+.wallet div a {
+    display: block;
+    text-decoration: none;
+    padding: 8px;
+    color: #000;
+    transition: .1s;
+    white-space: nowrap;
+}
+
+.wallet div a:hover {
+    background-color: rgb(140, 199, 150);;
+    color: #fff;
 }
 
 /* home */
@@ -253,7 +288,7 @@ section {
 .nfthome {
     background-color: white;
     background-size: 100%;
-    margin-top:30px;
+    margin-top: 30px;
     padding-bottom: 100px;
     display: flex;
     align-items: center;
@@ -306,12 +341,13 @@ background-color: blue;
     background-image: url("images/76.png");
     background-size: contain;
     background-position-x: center;
-    width:100vw;
-    height:41.4vh;
+    width: 100vw;
+    height: 41.4vh;
     margin: 0;
-    background-repeat:no-repeat;
-    
+    background-repeat: no-repeat;
+
 }
+
 .text {
     text-align: center;
 }
@@ -327,10 +363,10 @@ background-color: blue;
     height: 60px;
     font-weight: 600;
     text-transform: uppercase;
-    margin-top:30px;
+    margin-top: 30px;
     vertical-align: center;
-    font-size:20pt;
-    
+    font-size: 20pt;
+
 }
 
 /*Terms & Conditions Home*/
@@ -386,15 +422,15 @@ background-color: blue;
     font-weight: lighter;
     color: #b3b3b3;
     display: inline-flex;
-    align-content:left;
+    align-content: left;
 
 }
 
 .footer .credit .copyright {
-    color: #b3b3b3;    
+    color: #b3b3b3;
     text-align: left;
     font-size: 1.5rem;
-    width: 50%;    
+    width: 50%;
     padding-left: 6%;
     align-items: left;
     font-weight: bolder;
@@ -409,21 +445,22 @@ background-color: blue;
     margin-left: 5%;
     font-weight: bolder;
 }
+
 .footer .credit .tnc {
 
     text-align: right;
     font-size: 1.5rem;
-    width: 50%;    
+    width: 50%;
     padding-right: 6%;
     align-items: right;
     font-weight: bolder;
 }
 
 .footer .tnc .terms a {
-    color: #b3b3b3;    
+    color: #b3b3b3;
     text-align: center;
     font-size: 1.5rem;
-    width: 100%;        
+    width: 100%;
     align-items: left;
     font-weight: bolder;
 }
@@ -502,17 +539,17 @@ background-color: blue;
         background: #000;
         margin: 2rem 0;
         font-weight: lighter;
-        
-    }    
+
+    }
 
 
 
 }
 
 
-.box-container .box .links a:hover{
+.box-container .box .links a:hover {
     text-decoration: underline;
-    color:var(--red);
+    color: var(--red);
 }
 
 @media(max-width:1200px) {
