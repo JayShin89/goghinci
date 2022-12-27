@@ -1,10 +1,12 @@
-let menu = document.querySelector('.menu');
-let navbar = document.querySelector('.navbar');
+const menuBtn = document.querySelector('.header-2 .menu');
+const navibar = document.querySelector('.header-2 .navbar');
+
 let header = document.querySelector('.header');
 
-menu.addEventListener('click', () =>{
-    navbar.classList.toggle('active');
-})
+menuBtn.addEventListener('click', () =>{
+  navibar.classList.toggle('active');
+    
+});
 
 window.onscroll = () =>{
     navbar.classList.remove('active');
@@ -15,6 +17,7 @@ window.onscroll = () =>{
         header.classList.remove('active');
     }
 }
+
 
 /*Accordion Menu*/
 var acc = document.getElementsByClassName("accordion");
