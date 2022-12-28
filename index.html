@@ -9,7 +9,6 @@
     <!-- Bootstrap css-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
     <!--Bootstrap js-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -54,14 +53,10 @@
                     document.getElementById('connect').innerHTML = "0x.." + addr.slice(addr.length - 5, addr.length);
                     document.getElementById('connect').addEventListener("click", function (event) {
                         dp_menu();
-                    });
-                    
+                    });                    
                 }
-                else {
-
-                }
+                else {}
             });
-
         }
         function dp_menu() {
             let hover_button = document.getElementById("drop-content");
@@ -87,19 +82,7 @@
         })        
     </script>
 
-    <script>
-        var page = 1;
-        window.onscroll = function (ev) {
-            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-                ifrm = document.createElement("IFRAME");
-                ifrm.setAttribute("src", page + ".html");
-                ifrm.style.width = 100 + "%";
-                ifrm.style.height = 800 + "px";
-                document.body.appendChild(ifrm);
-                page++
-            }
-        };
-    </script>
+
 
 
 </head>
@@ -178,20 +161,20 @@
                 <ul class="navbar-nav justify-content-end ">
                     <li class="nav-item active">
                         <a class="nav-link" href="/index.html"
-                            style="font-size:20px; color:black; margin-right:20px">Home <span
+                            style="font-size:16px; font-weight: bolder; color:black; margin-right:20px; font-family: inherit; margin-top:5px;">Home <span
                                 class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item dropdown text-center">
                         <a class="nav-link dropdown-toggle" href="" id="dropdown04" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false"
-                            style="font-size:20px; color:black; align-content: center;  margin-right:20px">Collection</a>
+                            style="font-size:16px; font-weight: bolder; color:black; align-content: center;  margin-right:20px;  margin-top:5px; font-family: inherit;">Collection</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown04">
                             <a class="dropdown-item" href="/nftpage.html"
-                                style="font-size:17px;color:black; text-align:center;">NORM</a>
+                                style="font-size:14px; font-weight: bolder; color:black; text-align:center;">NORM</a>
                             <a class="dropdown-item disabled" href="/nftpage.html"
-                                style="font-size:17px; text-align:center;">TBD</a>
+                                style="font-size:14px; font-weight: bolder; text-align:center;">TBD</a>
                             <a class="dropdown-item disabled" href="/nftpage.html"
-                                style="font-size:17px; text-align:center;">TBD</a>
+                                style="font-size:14px; font-weight: bolder; text-align:center;">TBD</a>
                         </div>
                     </li>
 
