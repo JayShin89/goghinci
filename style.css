@@ -213,7 +213,7 @@ section {
 
 }
 
-.accordion {
+.totalmenu2 .accordion {
     background-color: white;
     color: black;
     cursor: pointer;
@@ -224,6 +224,7 @@ section {
     font-weight: 600;
     transition: 0.4s;
     position: relative;
+    
 }
 
 /*
@@ -508,12 +509,12 @@ background-color: blue;
 }
 
 @media screen and (max-width:768px) {
-
+/* 
     #navbar-content {
         height: 100vh;
         width:100vw;
-        background-color: rgba(0,0,0,0.5);   /* for latest browsers */
-     }
+        background-color: rgba(0,0,0,0.5);   
+     } */
     .header-2 {
         flex-direction: column;
         align-items: flex-start;
@@ -555,6 +556,9 @@ background-color: blue;
 
     }
 
+    html {
+        font-size: 50%;
+    }
 }
 
 @media(max-width:450px) {
