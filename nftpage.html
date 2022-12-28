@@ -6,20 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vanici</title>
-<!-- Bootstrap css-->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Bootstrap css-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-<!--Bootstrap js-->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-crossorigin="anonymous"></script>
+    <!--Bootstrap js-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
     <!-- font awesome cdn link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -39,7 +39,7 @@ crossorigin="anonymous"></script>
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script>
-        
+
 
         window.onload = function () {
             checkWallet();
@@ -61,7 +61,7 @@ crossorigin="anonymous"></script>
                     });
                 }
                 else {
-
+                    document.getElementById('connect').innerHTML = "Connect Wallet";
                 }
             });
 
@@ -75,13 +75,26 @@ crossorigin="anonymous"></script>
                 hover_button.style.display = "none";
             }
         }
+        window.ethereum.on('chainChanged', function (accounts) {
+            window.location.reload(); //or your own code
+        });
+
+        window.ethereum.on('accountsChanged', (accounts) => {
+            // If user has locked/logout from MetaMask, this resets the accounts array to empty
+            if (!accounts.length) {
+                document.getElementById('connect').innerHTML = "Connect Wallet";
+            }
+            else {
+                checkWallet();
+            }
+        });
 
         async function connect() {
             if (window.ethereum) {
                 await window.ethereum.send('eth_requestAccounts');
                 window.web3 = new Web3(window.ethereum);
                 checkWallet();
-                window.location.reload();
+
             }
         }
 
@@ -90,7 +103,7 @@ crossorigin="anonymous"></script>
         //     startApp();
         // })
 
-       
+
     </script>
 </head>
 
@@ -99,16 +112,17 @@ crossorigin="anonymous"></script>
     <!--header section stars -->
 
     <style>
-        .dropdown:hover>.dropdown-menu{
-            display: block;            
+        .dropdown:hover>.dropdown-menu {
+            display: block;
         }
-        .dropdown-menu a:hover{
-            background-color: rgb(140, 199, 150);            
+
+        .dropdown-menu a:hover {
+            background-color: rgb(140, 199, 150);
         }
-        .navbar a:hover{
-            background-color: rgb(140, 199, 150); 
+
+        .navbar a:hover {
+            background-color: rgb(140, 199, 150);
         }
-        
     </style>
 
     <!--header section stars -->
@@ -154,59 +168,63 @@ crossorigin="anonymous"></script>
             </nav> -->
         </div>
 
-        <nav class="navbar navbar-expand-md navbar-dark bg-light">
-            <a class="navbar-brand" href="/index.html" style="margin-left:30px;"><img src="images/black_logo.png" width="30" height="30"
-                    ></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04"
-                aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+        <nav class="navbar navbar-expand-md navbar-dark bg-light fixed-top">
+
+            <a class="navbar-brand" href="/index.html" style="margin-left:30px;"><img src="images/black_logo.png"
+                    width="30" height="30"></a>
+            <button class="navbar-toggler" type="button" style="margin-right:20px;" data-toggle="collapse"
+                data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon">
-                    <i class="fas fa-bars" style="color:black; font-size:24px;"></i>
+                    <i class="fas fa-bars" style="color:black; font-size:24px; "></i>
                 </span>
             </button>
 
             <div class="collapse navbar-collapse justify-content-end" id="navbarsExample04" style="text-align:center;">
-                <ul class="navbar-nav justify-content-end ">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/index.html"
-                            style="font-size:16px; font-weight: bolder; color:black; margin-right:20px; font-family: inherit; margin-top:5px;">Home <span
-                                class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item dropdown text-center">
-                        <a class="nav-link dropdown-toggle" href="" id="dropdown04" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false"
-                            style="font-size:16px; font-weight: bolder; color:black; align-content: center;  margin-right:20px;  margin-top:5px; font-family: inherit;">Collection</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdown04">
-                            <a class="dropdown-item" href="/nftpage.html"
-                                style="font-size:14px; font-weight: bolder; color:black; text-align:center;">NORM</a>
-                            <a class="dropdown-item disabled" href="/nftpage.html"
-                                style="font-size:14px; font-weight: bolder; text-align:center;">TBD</a>
-                            <a class="dropdown-item disabled" href="/nftpage.html"
-                                style="font-size:14px; font-weight: bolder; text-align:center;">TBD</a>
-                        </div>
-                    </li>
+                <div class="navbar-nav" id="navbar-content">
+                    <ul class="navbar-nav ms-auto ">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/index.html"
+                                style="font-size:16px; font-weight: bolder; color:black; margin-right:20px; font-family: inherit; margin-top:5px;">Home
+                                <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item dropdown text-center">
+                            <a class="nav-link dropdown-toggle" href="" id="dropdown04" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false"
+                                style="font-size:16px; font-weight: bolder; color:black; align-content: center;  margin-right:20px;  margin-top:5px; font-family: inherit;">Collection</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown04">
+                                <a class="dropdown-item" href="/nftpage.html"
+                                    style="font-size:14px; font-weight: bolder; color:black; text-align:center;">NORM</a>
+                                <a class="dropdown-item disabled" href="/nftpage.html"
+                                    style="font-size:14px; font-weight: bolder; text-align:center;">TBD</a>
+                                <a class="dropdown-item disabled" href="/nftpage.html"
+                                    style="font-size:14px; font-weight: bolder; text-align:center;">TBD</a>
+                            </div>
+                        </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://www.instagram.com/marcovanici/" target="_blank"
-                            style="font-size:18px; color:black; margin-right:20px"><i class="fa fa-instagram"
-                                style="font-size:30px;color:red"></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://twitter.com/marcovanici" target="_blank"
-                            style="font-size:18px; color:black; margin-right:20px"><i class="fa fa-twitter"
-                                style="font-size:30px;color:blue;"></i></a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.instagram.com/marcovanici/" target="_blank"
+                                style="font-size:18px; color:black; margin-right:20px"><i class="fa fa-instagram"
+                                    style="font-size:30px;color:red"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://twitter.com/marcovanici" target="_blank"
+                                style="font-size:18px; color:black; margin-right:20px"><i class="fa fa-twitter"
+                                    style="font-size:30px;color:blue;"></i></a>
+                        </li>
 
-                    <div class="wallet">
-                        <button id="connect" onclick="connect();"
-                            style="height:40px;  margin-right:20px;font-size: 16px; background-color: inherit; font-weight: bolder; font-family: inherit;">Connect
-                            Wallet</button>
-                        <div style="display:none;" id="drop-content" style="width:100%;">
-                            <a href="/tnchome.html">My Collection</a>
-                            <a href="/index.html">My Collection2</a>
+                        <div class="wallet">
+                            <button id="connect" onclick="connect();"
+                                style="height:40px;  margin-right:20px; color:black;font-size: 16px; background-color: inherit; font-weight: bolder; font-family: inherit;">Connect
+                                Wallet</button>
+                            <div style="display:none;" id="drop-content" style="width:100%;">
+                                <a href="/tnchome.html">My Collection</a>
+                            </div>
                         </div>
-                    </div>
-                </ul>
+                    </ul>
+                </div>
             </div>
+
         </nav>
     </header>
 
