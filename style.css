@@ -87,143 +87,9 @@ section {
     height: .5rem;
 }
 
-.header-2 {
-    background: #ffffff00;
+
+.header-1 .wallet {
     display: flex;
-    align-items: center;
-    /*vertical align*/
-    justify-content: center;
-    box-shadow: 0 .5rem .5rem rgba(0, 0, 0, .1);
-    position: relative;
-    text-align: center;
-    height: 70px;
-    padding: 8px, 12px;
-}
-
-.header-2 .menu {
-    position: absolute;
-    right: 150px;
-    font-size: 27px;
-    color: black;
-    top: 20px;
-    display: none;
-}
-
-.navbar-toggler {
-    width: 47px;
-    height: 34px;
-    background-color: black;
-    
-}
-
-.navbar-toggler .line {
-    width: 100%;
-    float: left;
-    height: 2px;
-    background-color: white;
-    margin-bottom: 5px;
-    color:black;
-    
-}
-
-
-/* Navbar container */
-.header-2 .navbar {
-    display: flex;
-    white-space: nowrap;
-    justify-content: center;
-    width: 35%;
-    overflow: hidden;
-    list-style: none;
-    align-items: center;
-    top: 7px;
-    padding-left: 0;
-
-}
-
-.header-2 .navbar li {
-    padding: 14px, 16px;
-    font-size: 16px;
-    padding-left: 0;
-
-}
-
-/* Links inside the navbar */
-.header-2 .navbar a {
-    padding: 14px 16px;
-    font-size: 16px;
-    border-radius: .5rem;
-    color: var(--black);
-    text-transform: uppercase;
-    font-weight: bolder;
-    vertical-align: bottom;
-    font-family: inherit;
-}
-
-/* The dropdown container */
-.header-2 .dropdown {
-    float: left;
-    overflow: hidden;
-    list-style: none;
-}
-
-/* Dropdown button */
-.header-2 .dropdown .dropbtn {
-    font-size: 16px;
-    border: none;
-    font-weight: bolder;
-    outline: none;
-    color: black;
-    padding: 14px 16px;
-    background-color: inherit;
-    font-family: inherit;
-    /* Important for vertical align on mobile phones */
-    text-transform: uppercase;
-    margin: 0;
-    /* Important for vertical align on mobile phones */
-}
-
-/* Add a red background color to navbar links on hover */
-.header-2 .navbar a:hover,
-.dropdown:hover .dropbtn {
-    background-color: rgb(140, 199, 150);
-}
-
-/* Dropdown content (hidden by default) */
-.header-2 .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    list-style: none;
-}
-
-/* Links inside the dropdown */
-.header-2 .dropdown-content a {
-    float: none;
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-
-/* Add a grey background color to dropdown links on hover */
-.header-2 .dropdown-content a:hover {
-    background-color: #ddd;
-}
-
-/* Show the dropdown menu on hover */
-.header-2 .dropdown:hover .dropdown-content {
-    display: block;
-}
-
-
-
-.header-2 .wallet {
-    display: inline-block;
     justify-content: flex-end;
     align-content: right;
     align-items: right;   
@@ -240,10 +106,12 @@ section {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1;
     visibility: hidden;
-    position: absolute;
-    min-width: 100%;
+    position:relative;
+    min-width:fit-content;
+    
     opacity: 0;
     transition: .3s;
+    
 }
 
 .wallet:hover div {
@@ -265,6 +133,9 @@ section {
     ;
     color: #fff;
 }
+
+
+
 
 /* home */
 
