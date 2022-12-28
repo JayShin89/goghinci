@@ -56,7 +56,7 @@
                     });
                 }
                 else {
-
+                    document.getElementById('connect').innerHTML = "Connect Wallet";
                 }
             });
 
@@ -70,6 +70,20 @@
                 hover_button.style.display = "none";
             }
         }
+        window.ethereum.on('chainChanged', function (accounts) {
+            window.location.reload();
+        });
+
+        window.ethereum.on('accountsChanged', (accounts) => {
+            // If user has locked/logout from MetaMask, this resets the accounts array to empty
+            if (!accounts.length) {
+                document.getElementById('connect').innerHTML = "Connect Wallet";
+            }
+            else {
+                checkWallet();
+            }
+        });
+
         async function connect() {
             if (window.ethereum) {
                 await window.ethereum.send('eth_requestAccounts');
@@ -85,28 +99,30 @@
     </script>
 
 
-    
+
 </head>
+
 <body>
-<style>
-    .dropdown:hover>.dropdown-menu{
-        display: block;            
-    }
-    .dropdown-menu a:hover{
-        background-color: rgb(140, 199, 150);            
-    }
-    .navbar a:hover{
-        background-color: rgb(140, 199, 150); 
-    }
-    
-</style>
+    <style>
+        .dropdown:hover>.dropdown-menu {
+            display: block;
+        }
 
-<!--header section stars -->
+        .dropdown-menu a:hover {
+            background-color: rgb(140, 199, 150);
+        }
 
-<header>
-    <div class="header">
-        <div class="header-1"></div>
-        <!-- <nav class="header-2">
+        .navbar a:hover {
+            background-color: rgb(140, 199, 150);
+        }
+    </style>
+
+    <!--header section stars -->
+
+    <header>
+        <div class="header">
+            <div class="header-1"></div>
+            <!-- <nav class="header-2">
             <div class="logo"><img src="images/black_logo.png" onclick="window.location.href='index.html'" alt=""
                     width="30" height="30"></div>
 
@@ -142,136 +158,140 @@
             </div>
             
         </nav> -->
-    </div>
-
-    <nav class="navbar navbar-expand-md navbar-dark bg-light">
-        <a class="navbar-brand" href="/index.html" style="margin-left:30px;"><img src="images/black_logo.png" width="30" height="30"
-                ></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04"
-            aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon">
-                <i class="fas fa-bars" style="color:black; font-size:24px;"></i>
-            </span>
-        </button>
-
-        <div class="collapse navbar-collapse justify-content-end" id="navbarsExample04" style="text-align:center;">
-            <ul class="navbar-nav justify-content-end ">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/index.html"
-                        style="font-size:16px; font-weight: bolder; color:black; margin-right:20px; font-family: inherit; margin-top:5px;">Home <span
-                            class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item dropdown text-center">
-                    <a class="nav-link dropdown-toggle" href="" id="dropdown04" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false"
-                        style="font-size:16px; font-weight: bolder; color:black; align-content: center;  margin-right:20px;  margin-top:5px; font-family: inherit;">Collection</a>
-                    <div class="dropdown-menu" aria-labelledby="dropdown04">
-                        <a class="dropdown-item" href="/nftpage.html"
-                            style="font-size:14px; font-weight: bolder; color:black; text-align:center;">NORM</a>
-                        <a class="dropdown-item disabled" href="/nftpage.html"
-                            style="font-size:14px; font-weight: bolder; text-align:center;">TBD</a>
-                        <a class="dropdown-item disabled" href="/nftpage.html"
-                            style="font-size:14px; font-weight: bolder; text-align:center;">TBD</a>
-                    </div>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="https://www.instagram.com/marcovanici/" target="_blank"
-                        style="font-size:18px; color:black; margin-right:20px"><i class="fa fa-instagram"
-                            style="font-size:30px;color:red"></i></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://twitter.com/marcovanici" target="_blank"
-                        style="font-size:18px; color:black; margin-right:20px"><i class="fa fa-twitter"
-                            style="font-size:30px;color:blue;"></i></a>
-                </li>
-
-                <div class="wallet">
-                    <button id="connect" onclick="connect();"
-                        style="height:40px;  margin-right:20px;font-size: 16px; background-color: inherit; font-weight: bolder; font-family: inherit;">Connect
-                        Wallet</button>
-                    <div style="display:none;" id="drop-content" style="width:100%;">
-                        <a href="/tnchome.html">My Collection</a>
-                        <a href="/index.html">My Collection2</a>
-                    </div>
-                </div>
-            </ul>
         </div>
-    </nav>
-</header>
 
-<!--header section ends -->
+        <nav class="navbar navbar-expand-md navbar-dark bg-light fixed-top">
 
-<!--home section starts -->
+            <a class="navbar-brand" href="/index.html" style="margin-left:30px;"><img src="images/black_logo.png"
+                    width="30" height="30"></a>
+            <button class="navbar-toggler" type="button" style="margin-right:20px;" data-toggle="collapse"
+                data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon">
+                    <i class="fas fa-bars" style="color:black; font-size:24px; "></i>
+                </span>
+            </button>
 
-<section class="tnchome" id="thome">
-    <div id="tncTitle" style="color:white; font-weight: bolder; font-size:40px;">Terms & Conditions</div>
-    <br><br>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarsExample04" style="text-align:center;">
+                <div class="navbar-nav" id="navbar-content">
+                    <ul class="navbar-nav ms-auto ">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/index.html"
+                                style="font-size:16px; font-weight: bolder; color:black; margin-right:20px; font-family: inherit; margin-top:5px;">Home
+                                <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item dropdown text-center">
+                            <a class="nav-link dropdown-toggle" href="" id="dropdown04" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false"
+                                style="font-size:16px; font-weight: bolder; color:black; align-content: center;  margin-right:20px;  margin-top:5px; font-family: inherit;">Collection</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown04">
+                                <a class="dropdown-item" href="/nftpage.html"
+                                    style="font-size:14px; font-weight: bolder; color:black; text-align:center;">NORM</a>
+                                <a class="dropdown-item disabled" href="/nftpage.html"
+                                    style="font-size:14px; font-weight: bolder; text-align:center;">TBD</a>
+                                <a class="dropdown-item disabled" href="/nftpage.html"
+                                    style="font-size:14px; font-weight: bolder; text-align:center;">TBD</a>
+                            </div>
+                        </li>
 
-    <div id="tncBody" style="color:white; font-weight:normal; font-size:20px;"><br>Goghinci is a collection of
-        digital artworks packaged as non-fungible tokens (NFTs) running on the Ethereum network. The website
-        containing the collection is only an interface allowing participants to exchange digital collectables. Users
-        are entirely responsible for the safety and management of their own private Ethereum wallets, including
-        validating all transactions and contracts generated by this website before approval. Furthermore, as the
-        Goghinci smart contract runs on the Ethereum network, there is no ability to undo, reverse, or restore any
-        transactions.
-        <br><br>
-        This website and its connected services are provided “as is” and “as available” without warranty of any
-        kind. By using this website you are accepting sole responsibility for all transactions involving Goghinci
-        digital collectables.
-    </div>
-    <div id="tncTitle2" style="color:white; font-weight: bolder; font-size:30px;"><br><br>OWNERSHIP</div>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.instagram.com/marcovanici/" target="_blank"
+                                style="font-size:18px; color:black; margin-right:20px"><i class="fa fa-instagram"
+                                    style="font-size:30px;color:red"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://twitter.com/marcovanici" target="_blank"
+                                style="font-size:18px; color:black; margin-right:20px"><i class="fa fa-twitter"
+                                    style="font-size:30px;color:blue;"></i></a>
+                        </li>
 
-    <div id="tncBody2" style="color:white; font-weight: normal; font-size:20px;"><br>i. You Own the NFT.<br>
-        Each Goghinci NFT is an NFT on the Ethereum blockchain. When you purchase an NFT, you own the underlying
-        Goghinci, the Art, completely. Ownership of the NFT is mediated entirely by the Smart Contract and the
-        Ethereum Network. At no point may we seize, freeze, or otherwise modify the ownership of any NFT.
-        <br><br>
-        ii. Usage.<br>
-        Subject to your continued compliance with these Terms, Goghinci Inc, grants you a worldwide, royalty-free
-        license to use, copy, and display the purchased Art, along with any extensions that you choose to create or
-        use, solely for the following purposes: (i) for your own personal, non-commercial use; (ii) as part of a
-        marketplace that permits the purchase and sale of your NFT, provided that the marketplace cryptographically
-        verifies each NFT owner’s rights to dis-play the Art for their artwork to ensure that only the actual owner
-        can display the Art; or (iii) as part of a third-party website or application that permits the inclusion,
-        involvement, or participation of your NFT, provided that the website/application cryptographically verifies
-        each NFT owner’s rights to display the Art for their NFT to ensure that only the actual owner can display
-        the Art, and provided that the Art is no longer visible once the owner of the Goghinci leaves the
-        website/application.
-    </div>
-</section>
-
-<!--home section ends -->
-
-<!--footer section starts -->
-
-<div class="footer">
-
-    <div class="box-container">
-        <div class="box">
-            <div class="image">
-                <img src="images/white_full.png" alt="">
+                        <div class="wallet">
+                            <button id="connect" onclick="connect();"
+                                style="height:40px;  margin-right:20px; color:black;font-size: 16px; background-color: inherit; font-weight: bolder; font-family: inherit;">Connect
+                                Wallet</button>
+                            <div style="display:none;" id="drop-content" style="width:100%;">
+                                <a href="/tnchome.html">My Collection</a>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
             </div>
 
+        </nav>
+    </header>
+
+    <!--header section ends -->
+
+    <!--home section starts -->
+
+    <section class="tnchome" id="thome">
+        <div id="tncTitle" style="color:white; font-weight: bolder; font-size:40px;">Terms & Conditions</div>
+        <br><br>
+
+        <div id="tncBody" style="color:white; font-weight:normal; font-size:20px;"><br>Goghinci is a collection of
+            digital artworks packaged as non-fungible tokens (NFTs) running on the Ethereum network. The website
+            containing the collection is only an interface allowing participants to exchange digital collectables. Users
+            are entirely responsible for the safety and management of their own private Ethereum wallets, including
+            validating all transactions and contracts generated by this website before approval. Furthermore, as the
+            Goghinci smart contract runs on the Ethereum network, there is no ability to undo, reverse, or restore any
+            transactions.
+            <br><br>
+            This website and its connected services are provided “as is” and “as available” without warranty of any
+            kind. By using this website you are accepting sole responsibility for all transactions involving Goghinci
+            digital collectables.
+        </div>
+        <div id="tncTitle2" style="color:white; font-weight: bolder; font-size:30px;"><br><br>OWNERSHIP</div>
+
+        <div id="tncBody2" style="color:white; font-weight: normal; font-size:20px;"><br>i. You Own the NFT.<br>
+            Each Goghinci NFT is an NFT on the Ethereum blockchain. When you purchase an NFT, you own the underlying
+            Goghinci, the Art, completely. Ownership of the NFT is mediated entirely by the Smart Contract and the
+            Ethereum Network. At no point may we seize, freeze, or otherwise modify the ownership of any NFT.
+            <br><br>
+            ii. Usage.<br>
+            Subject to your continued compliance with these Terms, Goghinci Inc, grants you a worldwide, royalty-free
+            license to use, copy, and display the purchased Art, along with any extensions that you choose to create or
+            use, solely for the following purposes: (i) for your own personal, non-commercial use; (ii) as part of a
+            marketplace that permits the purchase and sale of your NFT, provided that the marketplace cryptographically
+            verifies each NFT owner’s rights to dis-play the Art for their artwork to ensure that only the actual owner
+            can display the Art; or (iii) as part of a third-party website or application that permits the inclusion,
+            involvement, or participation of your NFT, provided that the website/application cryptographically verifies
+            each NFT owner’s rights to display the Art for their NFT to ensure that only the actual owner can display
+            the Art, and provided that the Art is no longer visible once the owner of the Goghinci leaves the
+            website/application.
+        </div>
+    </section>
+
+    <!--home section ends -->
+
+    <!--footer section starts -->
+
+    <div class="footer">
+
+        <div class="box-container">
+            <div class="box">
+                <div class="image">
+                    <img src="images/white_full.png" alt="">
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="credit">
+            <div class="copyright">&copy; 2023 VANICI
+            </div>
+
+            <div class="tnc">
+                <div class="terms"><a href="tnchome.html">Terms & Conditions</a></div>
+            </div>
         </div>
     </div>
 
-
-    <div class="credit">
-        <div class="copyright">&copy; 2023 VANICI
-        </div>
-
-        <div class="tnc">
-            <div class="terms"><a href="tnchome.html">Terms & Conditions</a></div>
-        </div>
-    </div>
-</div>
-
-<!--footer section ends -->
+    <!--footer section ends -->
 
 
-<!--custom js file link -->
-<script src="script.js"></script>
+    <!--custom js file link -->
+    <script src="script.js"></script>
 
 
 </body>
