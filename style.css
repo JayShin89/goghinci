@@ -36,6 +36,7 @@ html {
     scroll-padding-top: 9rem;
     scroll-behavior: smooth;
     min-height: 100%;
+    
 }
 
 
@@ -126,6 +127,9 @@ section {
     color: #000;
     transition: .1s;
     white-space: nowrap;
+    font-size:14px;
+    font-weight: bolder;
+    font-family: 'Lato', Arial;
 }
 
 .wallet div a:hover {
@@ -278,7 +282,7 @@ background-color: blue;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center center;
-    height: 100vh;
+    height: auto;
 }
 
 
@@ -290,6 +294,7 @@ background-color: blue;
     text-align: center;
     width: 100%;
     clear: both;
+    
 
 }
 
