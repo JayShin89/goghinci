@@ -428,6 +428,13 @@ background-color: blue;
 @media(max-width:991px) {
 
 
+    .dropdown-menu a{
+        width:100%;
+        text-align:center;
+        margin-left:-20px;
+        border:none;
+    }
+
     .navbar a {
         text-align: center;
     }
