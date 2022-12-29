@@ -1,12 +1,6 @@
-const menuBtn = document.querySelector('.header-2 .menu');
-const navibar = document.querySelector('.header-2 .navbar');
-
 let header = document.querySelector('.header');
 
-menuBtn.addEventListener('click', () =>{
-  navibar.classList.toggle('active');
-    
-});
+
 
 window.onscroll = () =>{
     navbar.classList.remove('active');

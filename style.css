@@ -99,6 +99,9 @@ section {
     align-items: right;
     position: absolute;
 }
+.wallet {
+    margin-left:80px;
+}
 
 .wallet:hover button {
     background-color: rgb(140, 199, 150);
@@ -106,13 +109,13 @@ section {
 }
 
 .wallet div {
-    background-color: #fff;
+    background-color: transparent;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1;
     visibility: hidden;
     position: relative;
     min-width: fit-content;
-
+    
     opacity: 0;
     transition: .3s;
 
@@ -127,7 +130,7 @@ section {
     display: block;
     text-decoration: none;
     padding: 8px;
-    color: #000;
+    color: white;
     transition: .1s;
     white-space: nowrap;
     font-size: 14px;
@@ -137,7 +140,7 @@ section {
 
 .wallet div a:hover {
     background-color: rgb(140, 199, 150);
-
+    
     color: #fff;
 }
 
@@ -446,6 +449,7 @@ background-color: blue;
 
     .wallet {
         margin-right: 4%;
+        margin-left:1%;
     }
 
     .home .content {
