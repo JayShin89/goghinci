@@ -83,12 +83,12 @@ section {
     z-index: 10000;
 }
 
-.header-1{
-    position: -webkit-sticky;   
-    position:sticky; 
-    top:0;
-    background:var(--red);
-    height:.5rem;
+.header-1 {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background: var(--red);
+    height: .5rem;
 }
 
 
@@ -137,10 +137,9 @@ section {
 
 .wallet div a:hover {
     background-color: rgb(140, 199, 150);
-    ;
+
     color: #fff;
 }
-
 
 
 
@@ -170,6 +169,7 @@ section {
     max-width: 70vw;
     max-height: 70vh;
     height: auto;
+    margin-top: 150px;
 }
 
 .totalmenu {
@@ -179,9 +179,9 @@ section {
 
 /*NFT Home*/
 .nfthome {
-    background-color: white;
+    background-color: gray;
     background-size: 100%;
-    margin-top: 30px;
+
     padding-bottom: 100px;
     display: flex;
     align-items: center;
@@ -213,7 +213,7 @@ section {
     height: 40.4vh;
     margin: 0;
     background-repeat: no-repeat;
-    margin-top: 50px;
+    margin-top: 150px;
 }
 
 .totalmenu2 .accordion {
@@ -410,7 +410,7 @@ background-color: blue;
 
 
 /* media queries */
-@media(max-width:1500px) {}
+@media (max-width:1500px) {}
 
 .box-container .box .links a:hover {
     text-decoration: underline;
@@ -420,46 +420,7 @@ background-color: blue;
 @media(max-width:1200px) {
 
 
-    .header-2 {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 8px 24px;
-    }
-
-    .header-2 .navbar {
-        background-color: gray;
-        height: 300px;
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-
-    .header-2 .navbar li {
-        width: 100%;
-        text-align: center;
-    }
-
-    .header-2 .menu {
-        display: block;
-    }
-
-    .home .content {
-        text-align: center;
-    }
-
-    .home .content h3 {
-        font-size: 4rem;
-    }
-
-    .newsletter h3 {
-        font-size: 2.2rem;
-    }
-
-    .header-2 .navbar.active {
-        display: flex;
-
-    }
+    
 
 
 }
@@ -467,28 +428,16 @@ background-color: blue;
 @media(max-width:991px) {
 
 
-    .header-2 {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 8px 24px;
-    }
-
-    .header-2 .navbar {
-        background-color: gray;
-        height: 300px;
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-
-    .header-2 .navbar li {
-        width: 100%;
+    .navbar a {
         text-align: center;
     }
 
-    .header-2 .menu {
-        display: block;
+    .navbar-collapse {
+        margin-left: 10%;
+    }
+
+    .wallet {
+        margin-right: 4%;
     }
 
     .home .content {
@@ -508,6 +457,9 @@ background-color: blue;
 
     }
 
+    .dropdown-menu {
+        margin-left:20px;
+    }
 
 }
 
@@ -519,30 +471,7 @@ background-color: blue;
         width:100vw;
         background-color: rgba(0,0,0,0.5);   
      } */
-    .header-2 {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 8px 24px;
-    }
-
-    
-    .header-2 .navbar {
-        background-color: gray;
-        height: 300px;
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-
-    .header-2 .navbar li {
-        width: 100%;
-        text-align: center;
-    }
-
-    .header-2 .menu {
-        display: block;
-    }
+   
 
     .home .content {
         text-align: center;
