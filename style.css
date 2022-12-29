@@ -92,7 +92,7 @@ section {
 }
 
 
-.header-1 .wallet {
+.header-1  {
     display: flex;
     justify-content: flex-end;
     align-content: right;
@@ -434,9 +434,10 @@ background-color: blue;
         margin-left:-20px;
         border:none;
     }
-
+    
     .navbar a {
         text-align: center;
+        
     }
 
     .navbar-collapse {
