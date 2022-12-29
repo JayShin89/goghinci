@@ -144,7 +144,7 @@ section {
 /* home */
 
 .home {
-    background-image: url("images/webimg2.png");
+    background-color: black;
     background-size: 100%;
     padding: 11rem;
     padding-bottom: 150px;
@@ -522,6 +522,7 @@ background-color: blue;
         padding: 8px 24px;
     }
 
+    
     .header-2 .navbar {
         background-color: gray;
         height: 300px;
