@@ -34,7 +34,7 @@
     <script src="https://unpkg.com/@metamask/detect-provider/dist/detect-provider.min.js"></script>
 
     <script>
-        
+
         window.onload = function () {
             checkWallet();
         }
@@ -62,20 +62,20 @@
                 }
             });
         };
-       
+
         window.ethereum.on('chainChanged', function (accounts) {
-                window.location.reload(); //or your own code
-        });  
-       
+            window.location.reload(); //or your own code
+        });
+
         window.ethereum.on('accountsChanged', (accounts) => {
-                // If user has locked/logout from MetaMask, this resets the accounts array to empty
-                if (!accounts.length) {
-                    document.getElementById('connect').innerHTML = "Connect Wallet";
-                }
-                else {
-                    checkWallet();
-                }
-            });
+            // If user has locked/logout from MetaMask, this resets the accounts array to empty
+            if (!accounts.length) {
+                document.getElementById('connect').innerHTML = "Connect Wallet";
+            }
+            else {
+                checkWallet();
+            }
+        });
 
         function dp_menu() {
             let hover_button = document.getElementById("drop-content");
