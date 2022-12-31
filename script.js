@@ -2,15 +2,15 @@ let header = document.querySelector('.header');
 
 
 
-window.onscroll = () =>{
-    navbar.classList.remove('active');
+// window.onscroll = () =>{
+//     navbar.classList.remove('active');
 
-    if(window.scrollY > 0){
-        header.classList.add('active');
-    }else{
-        header.classList.remove('active');
-    }
-}
+//     if(window.scrollY > 0){
+//         header.classList.add('active');
+//     }else{
+//         header.classList.remove('active');
+//     }
+// }
 
 
 /*Accordion Menu*/

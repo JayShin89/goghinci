@@ -291,7 +291,24 @@ background-color: blue;
     background-position: center center;
     height: auto;
 }
+/* myPage */
+/* home */
 
+.mhome {
+    background-color: black;
+    background-size: 100%;
+    padding: 11rem;
+    padding-bottom: 150px;
+    padding-top: 150px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-attachment: fixed;
+    min-height: 100%;
+    height: 100vh;
+
+}
 
 /* footer */
 
