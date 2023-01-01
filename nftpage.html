@@ -60,7 +60,7 @@
         }
 
         .navbar a:hover {
-            background-color: rgb(140, 199, 150);
+            background-color: transparent;
             border-radius: .5rem;
         }
 
@@ -141,9 +141,9 @@
                                 aria-haspopup="true" aria-expanded="false"
                                 style="font-size:16px; font-weight: bolder; color:white; align-content: center;  margin-right:20px;  margin-top:5px; font-family: inherit;">Collection</a>
                             <div class="dropdown-menu" aria-labelledby="dropdown04" style="background-color:transparent;">
-                                <a class="dropdown-item" href="/nftpage.html"
-                                    style="font-size:14px; font-weight: bolder; color:white; text-align:center; ">NORM</a>
                                 
+                                <a class="dropdown-item" href="/nft_12cz.html"
+                                    style="font-size:14px; font-weight: bolder; color:white; text-align:center; ">12CZ</a>                                
                             </div>
                         </li>
 
@@ -163,9 +163,9 @@
                     <button id="connect" onclick="connect();"
                         style=" height:40px;  color:white;font-size: 16px; margin-top:2px;background-color: inherit; font-weight: bolder; font-family: inherit;">Connect
                         Wallet</button>
-                    <div style="display:none;" id="drop-content" style="width:100%;">
+                    <!--<div style="display:none;" id="drop-content" style="width:100%;">
                         <a href="/mypage.html">My Collection</a>
-                    </div>
+                    </div>-->
                 </div>
             </div>
 
@@ -379,9 +379,9 @@
             <div class="copyright">&copy; 2023 VANICI
             </div>
 
-            <div class="tnc">
+            <!--<div class="tnc">
                 <div class="terms"><a href="tnchome.html">Terms & Conditions</a></div>
-            </div>
+            </div>-->
         </div>
     </div>
 
@@ -395,49 +395,7 @@
         var contract = null;
         const ABI = [
 	{
-		"inputs": [
-			{
-				"internalType": "address[100]",
-				"name": "_users",
-				"type": "address[100]"
-			}
-		],
-		"name": "add100PresaleUsers",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_user",
-				"type": "address"
-			}
-		],
-		"name": "addPresaleUser",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "_name",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_symbol",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_initBaseURI",
-				"type": "string"
-			}
-		],
+		"inputs": [],
 		"stateMutability": "nonpayable",
 		"type": "constructor"
 	},
@@ -515,11 +473,6 @@
 				"internalType": "address",
 				"name": "_to",
 				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_mintAmount",
-				"type": "uint256"
 			}
 		],
 		"name": "mint",
@@ -545,45 +498,6 @@
 		],
 		"name": "OwnershipTransferred",
 		"type": "event"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "bool",
-				"name": "_state",
-				"type": "bool"
-			}
-		],
-		"name": "pause",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_user",
-				"type": "address"
-			}
-		],
-		"name": "removePresaleUser",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_user",
-				"type": "address"
-			}
-		],
-		"name": "removeWhitelistUser",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
 	},
 	{
 		"inputs": [],
@@ -634,7 +548,7 @@
 			},
 			{
 				"internalType": "bytes",
-				"name": "_data",
+				"name": "data",
 				"type": "bytes"
 			}
 		],
@@ -662,69 +576,17 @@
 		"type": "function"
 	},
 	{
+		"anonymous": false,
 		"inputs": [
 			{
-				"internalType": "string",
-				"name": "_newBaseExtension",
-				"type": "string"
-			}
-		],
-		"name": "setBaseExtension",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "_newBaseURI",
-				"type": "string"
-			}
-		],
-		"name": "setBaseURI",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
+				"indexed": true,
 				"internalType": "uint256",
-				"name": "_newCost",
+				"name": "supply",
 				"type": "uint256"
 			}
 		],
-		"name": "setCost",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_newmaxMintAmount",
-				"type": "uint256"
-			}
-		],
-		"name": "setmaxMintAmount",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_newCost",
-				"type": "uint256"
-			}
-		],
-		"name": "setPresaleCost",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
+		"name": "SupplyChanged",
+		"type": "event"
 	},
 	{
 		"anonymous": false,
@@ -788,23 +650,23 @@
 		"type": "function"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_user",
-				"type": "address"
-			}
-		],
-		"name": "whitelistUser",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
 		"inputs": [],
 		"name": "withdraw",
 		"outputs": [],
 		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "availableTokenCount",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -828,19 +690,6 @@
 	},
 	{
 		"inputs": [],
-		"name": "baseExtension",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
 		"name": "baseURI",
 		"outputs": [
 			{
@@ -854,7 +703,7 @@
 	},
 	{
 		"inputs": [],
-		"name": "cost",
+		"name": "currentSupply",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -910,32 +759,6 @@
 	},
 	{
 		"inputs": [],
-		"name": "maxMintAmount",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "maxSupply",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
 		"name": "name",
 		"outputs": [
 			{
@@ -980,51 +803,6 @@
 		"type": "function"
 	},
 	{
-		"inputs": [],
-		"name": "paused",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "presaleCost",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"name": "presaleWallets",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
 		"inputs": [
 			{
 				"internalType": "bytes4",
@@ -1057,38 +835,8 @@
 		"type": "function"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "index",
-				"type": "uint256"
-			}
-		],
-		"name": "tokenByIndex",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "owner",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "index",
-				"type": "uint256"
-			}
-		],
-		"name": "tokenOfOwnerByIndex",
+		"inputs": [],
+		"name": "tokenCount",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -1130,49 +878,11 @@
 		],
 		"stateMutability": "view",
 		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_owner",
-				"type": "address"
-			}
-		],
-		"name": "walletOfOwner",
-		"outputs": [
-			{
-				"internalType": "uint256[]",
-				"name": "",
-				"type": "uint256[]"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"name": "whitelisted",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
 	}
 ];
             
 
-        const ADDRESS = "0x0a2a880EEA0b9763fdf5AeDE199F656624E82153";
+        const ADDRESS = "0x63D67E48B5c06633597618E47d2377F1d4EE3C77";
         document.getElementById('mint').onclick = () => {
             checkWallet();
 
@@ -1189,9 +899,14 @@
                     //document.getElementById('wallet_address').textContent = account;
 
                     contract = new web3.eth.Contract(ABI, ADDRESS);
-
-                    contract.methods.mint(account,1).send({ from: account, value: "33300000000000000" });
-                    
+					
+                    const result = await contract.methods.mint(account).send({ from: account, value: "3330000000000000" });
+                    if(result != null) {
+						alert("Mint success");
+					}
+					else {
+						alert("Mint Failed");
+					}
                     
                     var totalsupply = await contract.methods.totalSupply().call();
                     //document.getElementById('ttt').textContent = totalsupply;
