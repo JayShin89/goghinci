@@ -206,7 +206,7 @@
         <!--<div class="box-container">
             <div class="box">
                 <div class="image">
-                    <img src="images/white_full.png" alt="">
+                    
                 </div>
 
             </div>
@@ -749,8 +749,7 @@ const Toast = Swal.mixin({
                     contract = new web3.eth.Contract(ABI, ADDRESS);
 					var totalcount = await contract.methods.tokenCount().call();                    
                     var balance = await contract.methods.balanceOf(account).call();
-                    var totalsupply = await contract.methods.totalSupply().call();
-                    document.getElementById('ts').textContent = totalsupply;
+                    
                     if(totalcount==24) {
                         Toast.fire({
                             icon: 'error',
