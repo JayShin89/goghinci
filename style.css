@@ -608,14 +608,14 @@ margin:0;
     }
 
     html {
-        font-size: 50%;
+        font-size: 40%;
     }
 }
 
 @media(max-width:450px) {
 
     html {
-        font-size: 20%;
+        font-size: 50%;
     }
 
     .heading {
@@ -623,7 +623,7 @@ margin:0;
     }
 
     .text button {
-        font-size:20%;
+       font-size:large;
     }
 
 }
