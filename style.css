@@ -360,20 +360,20 @@ background-color: blue;
 
 }
 /*Terms & Conditions Home*/
-.tnchome {
-    background-image: url("images/Artboard_1.png");
-
+.tnchome{
+    background-color: #950000;
+margin:0;
     padding: 11rem;
-    padding-bottom: 150px;
+    
     padding-top: 150px;
     display: flex;
     align-content: left;
     justify-content: left;
-    flex-wrap: wrap;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center center;
+    flex-wrap: wrap;    
+    background-repeat: repeat-y;
+    min-height:100vh;
     height: auto;
+    width:100%;
 }
 /* myPage */
 /* home */
