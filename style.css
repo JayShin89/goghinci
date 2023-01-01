@@ -102,7 +102,7 @@ section {
     position: absolute;
 }
 .wallet {
-    margin-left:80px;
+    
 }
 
 .wallet:hover button {
@@ -150,37 +150,35 @@ section {
 
 /* home */
 
-.home {
+.mhome {
     background-color: black;
     background-size: cover;
-    
-    padding-bottom: 150px;
-    padding-top: 150px;
+    width:100vw;
+    transition: background-color 0.8s;
     display: flex;
-    align-content: center;
+    align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    background-attachment: fixed;
-    width:100vw;
     height: 100vh;
+    background-repeat:repeat-y;
+    margin:0;
     overflow-y:hidden;
 
 }
 
-.home .image img {
-    /*width: 72rem;*/
+.mhome .image img {
+    
     padding: 0;
     display: block;
     margin-bottom:100px;
-    max-width: 100vw;
-    max-height: 100vh;
+    max-width:100vw;    
     height: 50vh;
     margin-top: 20vh;
 }
 
 .totalmenu {
     align-content: center;
-    width: 50%;
+    width: 100vw;
 }
 
 /*NFT Home*/
@@ -283,7 +281,7 @@ background-color: blue;
     background-color: black;
     background-size: cover;
     width:100vw;
-    
+    transition: background-color 0.8s;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -426,9 +424,9 @@ margin:0;
 
 .credit {
     padding: 2.5rem 1rem;
-    border-top: .1rem solid rgba(0, 0, 0, .1);
+    
     margin-top: 1rem;
-    width: 100%;
+    width: 100vw;
     font-size: 1.5rem;
     font-weight: lighter;
     color: #b3b3b3;

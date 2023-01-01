@@ -130,7 +130,7 @@
             <button class="navbar-toggler" type="button" style="margin-right:3%; margin-top:10px; font-size:22px;"
                 data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04"
                 aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fas fa-bars" style="color:white; font-size:22px; "></i>
+                <i class="fas fa-bars" id="hamburger" style="color:white; font-size:22px; "></i>
             </button>
 
             <div class="collapse navbar-collapse justify-content-end" id="navbarsExample04"
@@ -149,17 +149,17 @@
                             <div class="dropdown-menu" aria-labelledby="dropdown04" style="background-color:transparent;">
                                 
                                 <a class="dropdown-item" href="/nft_12cz.html"
-                                    style="font-size:14px; font-weight: bolder; color:white; text-align:center; ">12CZ</a>                                
+                                    id="sub-drop04" style="font-size:14px; font-weight: bolder; color:white; text-align:center; ">12CZ</a>                                
                             </div>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link" href="https://www.instagram.com/marcovanici/" target="_blank"
-                                style="font-size:16px; font-weight: bolder; color:white; align-content: center;  margin-right:20px;  margin-top:5px; font-family: inherit;">Instagram</a>
+                                id="nav-insta" style="font-size:16px; font-weight: bolder; color:white; align-content: center;  margin-right:20px;  margin-top:5px; font-family: inherit;">Instagram</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="https://twitter.com/marcovanici" target="_blank"
-                                style="font-size:16px; font-weight: bolder; color:white; align-content: center;  margin-right:20px;  margin-top:5px; font-family: inherit;">Twitter</a>
+                                id="nav-twit" style="font-size:16px; font-weight: bolder; color:white; align-content: center;  margin-right:20px;  margin-top:5px; font-family: inherit;">Twitter</a>
                         </li>
 
 
@@ -228,7 +228,7 @@
 
     <!--custom js file link -->
     <script type="text/javascript">
-const Toast = Swal.mixin({
+    const Toast = Swal.mixin({
     toast: true,
     position: 'bottom',
     showConfirmButton: false,
@@ -1367,6 +1367,80 @@ const Toast = Swal.mixin({
         //     startApp();
         // })
 
+        //background color change on wheel event
+        var colors = ['#19341a', '#f2c418', '#aa2123', '#442661', '#203163', '#ffffff', '#000000']
+        var nczHome = document.getElementById('nczHome');
+        var text = document.getElementById('value');
+        var color = document.getElementById('color');
+		var navdrop = document.getElementById('dropdown04');
+		var instaIcon = document.getElementById('nav-insta');
+		var twitIcon = document.getElementById('nav-twit');
+		var but = document.getElementById('connect');
+		var subdrop = document.getElementById('sub-drop04');
+		var hamb = document.getElementById('hamburger');
+
+        nczHome.onwheel =  changeBgColor;
+
+        var colorIndex=0;
+        var scrollValue=0;
+        var dateNow= Date.now();
+
+        function changeBgColor(e) {
+            scrollValue += e.deltaY * 0.01;
+            
+            
+            timePassed = Date.now() - dateNow;
+            if (scrollValue > 1 && timePassed > 100) {
+                dateNow = Date.now();
+                colorIndex += 1;
+                if (colorIndex > colors.length-1) colorIndex = 0;
+                
+                nczHome.style.backgroundColor = colors[colorIndex];
+				if(colorIndex==1 || colorIndex==5) {
+					navdrop.style.color = colors[6];
+					instaIcon.style.color = colors[6];
+					twitIcon.style.color = colors[6];
+					but.style.color = colors[6];
+					subdrop.style.color = colors[6];
+					hamb.style.color = colors[6];
+				}
+				else{					
+					navdrop.style.color = colors[5];
+					instaIcon.style.color = colors[5];
+					twitIcon.style.color = colors[5];
+					but.style.color = colors[5];
+					subdrop.style.color = colors[5];
+					hamb.style.color = colors[5];
+				}
+                scrollValue = 0;
+            }
+
+            if (scrollValue < -10 && timePassed > 500) {
+                dateNow = Date.now();
+                colorIndex -= 1;
+                if (colorIndex < 0) colorIndex = colors.length-1;
+                
+                nczHome.style.backgroundColor = colors[colorIndex];
+				if(colorIndex==1 || colorIndex==5) {
+					navdrop.style.color = colors[6];
+					instaIcon.style.color = colors[6];
+					twitIcon.style.color = colors[6];
+					but.style.color = colors[6];
+					subdrop.style.color = colors[6];
+					hamb.style.color = colors[6];
+				}
+				else{					
+					navdrop.style.color = colors[5];
+					instaIcon.style.color = colors[5];
+					twitIcon.style.color = colors[5];
+					but.style.color = colors[5];
+					subdrop.style.color = colors[5];
+					hamb.style.color = colors[5];
+				}
+                scrollValue = 0;
+            }
+            e.preventDefault(); // disable the actual scrolling
+        }
 
     </script>
 
