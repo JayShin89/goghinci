@@ -171,7 +171,7 @@ section {
     margin: 0 auto;
     max-width: 70vw;
     max-height: 70vh;
-    height: auto;
+    height: 78vh;
     margin-top: 150px;
 }
 
@@ -339,10 +339,10 @@ width:100%;
 
 .text button {
     display: inline-block;
-    background: transparent;
+    background: white;
     border-radius: 20px;
     border: none;
-    color: white;
+    color: black;
     padding: 10px;
     width: 20%;
     height: 60px;
@@ -606,11 +606,15 @@ width:100%;
 @media(max-width:450px) {
 
     html {
-        font-size: 50%;
+        font-size: 20%;
     }
 
     .heading {
         font-size: 3rem;
+    }
+
+    .text button {
+        font-size:20%;
     }
 
 }
