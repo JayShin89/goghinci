@@ -25,6 +25,7 @@
     <!-- custom css file link -->
     <link rel="stylesheet" href="style.css">
 
+    
     <script src="http://ajax.googleapis.com/ajax/libs/jqquery/1.11.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.0-rc.0/web3.min.js"
@@ -38,7 +39,9 @@
 
         window.onload = function () {
             checkWallet();
+           
         }
+        
 
         async function checkWallet() {
             window.ethereum.sendAsync({
@@ -112,6 +115,8 @@
 </head>
 
 <body>
+    <div id="preloader"></div>
+    
     <style>
         /* #tnc {
         background-color: rgb(0, 0, 0);
@@ -192,7 +197,7 @@
     </style>
 
     <!--header section stars -->
-    
+   
     <header>
         <div class="header">
             <div class="header-1"></div>
@@ -263,6 +268,16 @@
         <!--<div class="image">
             <img src="images/home2.gif">
         </div>-->
+<iframe width="560" height="315" src="https://www.youtube.com/embed/62f19GoAYgw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/62f19GoAYgw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/62f19GoAYgw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/62f19GoAYgw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/62f19GoAYgw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/62f19GoAYgw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/62f19GoAYgw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/62f19GoAYgw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/62f19GoAYgw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/62f19GoAYgw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
         <div class="tnc">
             <h3 class="rainbow terms" id="desc" style="margin-top:3vh;">Scroll</h3>
@@ -379,8 +394,14 @@
             e.preventDefault(); // disable the actual scrolling
         }
 
-        
+        var loader = document.getElementById('preloader');
+
+        window.addEventListener("load", function() {
+            loader.style.display="none";
+        })
     </script>
+    
+
     
 
 </body>
