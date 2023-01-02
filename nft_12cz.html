@@ -47,7 +47,7 @@
 </head>
 
 <body>
-
+<div id="preloader"></div>
     <!--header section stars -->
 
     <style>
@@ -1501,6 +1501,11 @@
             e.preventDefault(); // disable the actual scrolling
         }
 
+		var loader = document.getElementById('preloader');
+
+        window.addEventListener("load", function() {
+            loader.style.display="none";
+        })
     </script>
 
 </body>
