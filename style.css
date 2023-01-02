@@ -623,15 +623,30 @@ text-align: center;
 
     }
 
+    .body {
+        max-height:100vh;
+    }
+    
     html {
         font-size: 40%;
     }
+    .credit {
+        margin-left:-10%;
+    }
+    .credit .copyright {
+    margin-left:-20%;
+    
+    }
+
 }
 
-@media(max-width:450px) {
+@media screen and (max-width:450px) {
 
     html {
         font-size: 50%;
+    }
+    .body {
+        max-height:100vh;
     }
 
     .heading {
@@ -640,6 +655,14 @@ text-align: center;
 
     .text button {
        font-size:large;
+    }
+
+    .credit {
+        margin-left:-30%;
+    }
+    .credit .copyright {
+    margin-left:-20%;
+    
     }
 
 }

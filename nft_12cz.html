@@ -121,6 +121,11 @@
             font-size: 2rem !important;
             font-family: Georgia, serif;
         }
+		@media screen and (max-width:450px) {
+			body {
+				max-height:100vh;
+			}
+		}
         
     </style>
 
@@ -778,7 +783,7 @@
 ];
             
 
-        const ADDRESS = "0x54B1b43c986047402eD1701eDAe05bFF393E8118";
+        const ADDRESS = "0xf70472130cd9801F3f770bA815dEcCdae3E1a994";
         document.getElementById('mint').onclick = () => {
             checkWallet();
 
