@@ -7,7 +7,7 @@ import "@1001-digital/erc721-extensions/contracts/RandomlyAssigned.sol";
 
 
 // Mint costs 0.003 Ether
-// 50 Kept for artist, developer & giveaways
+// 12 Kept for artist, developer & giveaways
 
 contract vanici_cont is ERC721, Ownable, RandomlyAssigned {
   using Strings for uint256;
@@ -16,10 +16,10 @@ contract vanici_cont is ERC721, Ownable, RandomlyAssigned {
   string public baseURI = "ipfs://QmdLDHnPofVb1hq2ptwg4auaswiyTxtz9w7FCCNgCKTK4y/";
 
   constructor() 
-    ERC721("VANICI_Zodiac", "VNFTZ")
+    ERC721("12CZ", "12CZ")
     RandomlyAssigned(504,1) // Max. 504 NFTs available; Start counting from 1 (instead of 0)
     {
-       for (uint256 a = 0; a <= 0; a++) {
+       for (uint256 a = 1; a <= 12; a++) {
             mint(msg.sender);
         }
     }
@@ -41,12 +41,15 @@ contract vanici_cont is ERC721, Ownable, RandomlyAssigned {
         require( msg.value >= 0.003 ether);
         require( balanceOf(msg.sender) <= 1);
         require( balanceOf(_to) <= 1);
-      }
+      }      
       
       uint256 id = nextToken();
         _safeMint(_to, id);
         currentSupply++;
+     
   }
+
+  
 
   function tokenURI(uint256 tokenId) public view virtual override returns (string memory) {
     require(
@@ -64,5 +67,4 @@ contract vanici_cont is ERC721, Ownable, RandomlyAssigned {
     require(payable(msg.sender).send(address(this).balance));
   }
 }
-
 //0x63D67E48B5c06633597618E47d2377F1d4EE3C77
