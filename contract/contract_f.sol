@@ -16,8 +16,8 @@ contract vanici_cont is ERC721, Ownable, RandomlyAssigned {
   string public baseURI = "ipfs://QmdLDHnPofVb1hq2ptwg4auaswiyTxtz9w7FCCNgCKTK4y/";
 
   constructor() 
-    ERC721("VANICI_Zodcd", "VZODC")
-    RandomlyAssigned(40,1) // Max. 504 NFTs available; Start counting from 1 (instead of 0)
+    ERC721("VANICI_Zodiac", "VNFTZ")
+    RandomlyAssigned(504,1) // Max. 504 NFTs available; Start counting from 1 (instead of 0)
     {
        for (uint256 a = 0; a <= 0; a++) {
             mint(msg.sender);
@@ -64,3 +64,5 @@ contract vanici_cont is ERC721, Ownable, RandomlyAssigned {
     require(payable(msg.sender).send(address(this).balance));
   }
 }
+
+//0x63D67E48B5c06633597618E47d2377F1d4EE3C77
