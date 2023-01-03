@@ -210,7 +210,7 @@ section {
 /* home */
 
 .mhome {
-    background-color: red;
+    background-color: black;
     background-size: cover;
     width:100vw;
     transition: background-color 0.8s;
