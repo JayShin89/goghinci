@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 
 <head>
     <meta charset="UTF-8">
@@ -1506,6 +1506,11 @@
         window.addEventListener("load", function() {
             loader.style.display="none";
         })
+
+		$(function(){
+            $('html').removeClass('no-js');
+
+        });
     </script>
 
 </body>
