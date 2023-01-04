@@ -624,28 +624,33 @@ text-align: center;
 
 }
 
-@media(max-width:991px) {
+@media screen and (max-width:991px) {
 
-
-    .dropdown-menu a{
-        width:100%;
-        text-align:center;
-        margin-left:-20px;
-        border:none;
+    .totalmenu1-0 {
+        margin-top:5vh;
     }
     
-    .navbar a {
-        text-align: center;
+    .sub-drop04 {
+        text-align:right;
+        
         
     }
+    .navbar a {
+        text-align: right;
+    }
+
+    .navbar div {
+        text-align: right;
+        margin-right:20px;
+    }
+    
 
     .navbar-collapse {
         margin-left: 10%;
     }
 
     .wallet {
-        margin-right: 4%;
-        margin-left:1%;
+        margin-right:-5%;
     }
 
     .home .content {
@@ -662,7 +667,6 @@ text-align: center;
 
     .header-2 .navbar.active {
         display: flex;
-
     }
 
     .dropdown-menu {
