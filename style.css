@@ -518,21 +518,14 @@ margin:0;
     text-align: left;
     font-size: 1.5rem;
     width: 50%;
-    padding-left: 3.5%;
+    
     align-items: left;
     font-weight: bolder;
-    margin-top:11vh;
+    margin-top:50px;
     vertical-align: bottom;
 }
 
-.credit .copyright a {
 
-    color: #b3b3b3;
-    align-content: left;
-    font-size: 1.5rem;
-    margin-left: 4%;
-    font-weight: bolder;
-}
 
 .tnc {
 
@@ -544,6 +537,7 @@ text-align: center;
     font-weight: bolder;
     color:white;
     margin-top:10vh;
+    margin-bottom:10vh;
 }
 
 .footer .tnc .terms a {
@@ -627,51 +621,26 @@ text-align: center;
 @media screen and (max-width:991px) {
 
     .totalmenu1-0 {
-        margin-top:5vh;
+        margin-top:15vh;
     }
     
-    .sub-drop04 {
-        text-align:right;
-        
-        
-    }
-    .navbar a {
-        text-align: right;
-    }
-
+    
+    
     .navbar div {
         text-align: right;
         margin-right:20px;
     }
     
 
-    .navbar-collapse {
-        margin-left: 10%;
-    }
+    
 
     .wallet {
         margin-right:-5%;
     }
 
-    .home .content {
-        text-align: center;
-    }
+   
 
-    .home .content h3 {
-        font-size: 4rem;
-    }
-
-    .newsletter h3 {
-        font-size: 2.2rem;
-    }
-
-    .header-2 .navbar.active {
-        display: flex;
-    }
-
-    .dropdown-menu {
-        margin-left:20px;
-    }
+   
 
     .credit {
         display:none;

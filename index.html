@@ -74,7 +74,7 @@
 			text-align: left;
 			font-size: 1.5rem;
 			width: 50%;
-			padding-left: 3.5%;
+			margin-left:-65px;
 			align-items: left;
 			font-weight: bolder;
 			margin-top:-2vh;
@@ -87,6 +87,7 @@
             justify-content:center;
 			font-weight: bolder;
         }    
+
 
         .dropdown:hover>.dropdown-menu {
             display: block;
@@ -121,9 +122,9 @@
 		}
 
 		/* hamburger x toggle*/
-        .navbar-toggler:focus,
-        .navbar-toggler:active {
-            border:0;
+        .navbar-toggler:focus {
+            border:none;
+            outline:none;
         }
 
         /* hide close when burger shown */
@@ -138,8 +139,6 @@
             content: "\2715";
             color:white;
             margin-right:-20px;
-            
-            
         }
         
     </style>
