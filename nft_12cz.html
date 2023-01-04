@@ -44,8 +44,7 @@
 
     <!--alert designed-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-	<!--swipe event-->
-	<script src="src/pure-swipe.js"></script>
+	
 </head>
 
 <body>
@@ -128,6 +127,26 @@
 				max-height:100vh;
 			}
 		}
+
+		/* hamburger x toggle*/
+        .navbar-toggler:focus,
+        .navbar-toggler:active {
+            border:0;
+        }
+
+        /* hide close when burger shown */
+        .navbar-toggler.collapsed .close-icon {
+            display: none;
+        }
+
+        .navbar-toggler:not(.collapsed) .fas {
+            display: none;
+        }
+        span {
+            content: "\2715";
+            color:white;
+            
+        }
         
     </style>
 
@@ -178,10 +197,11 @@
 
             <a class="navbar-brand" href="/index.html" style="margin-left:3%; margin-top:5px; text-align:center;"><img
                     src="images/logo(1).svg" width="80" height="30"></a>
-            <button class="navbar-toggler" type="button" style="margin-right:3%; margin-top:10px; font-size:22px;"
+            <button class="navbar-toggler collapsed border-0" type="button" style="margin-right:3%; margin-top:10px; font-size:22px;"
                 data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04"
                 aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fas fa-bars" id="hamburger" style="color:white; font-size:22px; "></i>
+                <div class="close-icon py-1"><span>&#128473;</span></div>
             </button>
 
             <div class="collapse navbar-collapse justify-content-end" id="navbarsExample04"
@@ -1441,57 +1461,7 @@
         var scrollValue=0;
         var dateNow= Date.now();
 
-		nczHome.addEventListener('swiped-down', function(e) {
-			colorIndex += 1;
-			nczHome.style.backgroundColor = colors[colorIndex];
-			if(colorIndex==1 || colorIndex==5) {
-				navdrop.style.color = colors[6];
-				instaIcon.style.color = colors[6];
-				twitIcon.style.color = colors[6];
-				but.style.color = colors[6];
-				subdrop.style.color = colors[6];
-				hamb.style.color = colors[6];
-				describ.style.color = colors[6];
-			}
-			else{					
-				navdrop.style.color = colors[5];
-				instaIcon.style.color = colors[5];
-				twitIcon.style.color = colors[5];
-				but.style.color = colors[5];
-				subdrop.style.color = colors[5];
-				hamb.style.color = colors[5];
-				describ.style.color = colors[5];
-			}
-			 // the element that was swiped
-		});
-
-		nczHome.addEventListener('swiped-up', function(e) {
-			colorIndex -= 1;
-			if (colorIndex < 0) colorIndex = colors.length-1;
-			
-			nczHome.style.backgroundColor = colors[colorIndex];
-			if(colorIndex==1 || colorIndex==5) {
-				navdrop.style.color = colors[6];
-				instaIcon.style.color = colors[6];
-				twitIcon.style.color = colors[6];
-				but.style.color = colors[6];
-				subdrop.style.color = colors[6];
-				hamb.style.color = colors[6];
-				describ.style.color = colors[6];
-			}
-			else{					
-				navdrop.style.color = colors[5];
-				instaIcon.style.color = colors[5];
-				twitIcon.style.color = colors[5];
-				but.style.color = colors[5];
-				subdrop.style.color = colors[5];
-				hamb.style.color = colors[5];
-				describ.style.color = colors[5];
-			}
-			 // the element that was swiped
-		});
-
-        function changeBgColor(e) {
+		function changeBgColor(e) {
             scrollValue += e.deltaY * 0.01;
             
             
