@@ -177,7 +177,7 @@ section {
     z-index: 1;
     visibility: hidden;
     position: relative;
-    min-width: fit-content;
+    min-width: 15px;
     
     opacity: 0;
     transition: .3s;
@@ -419,7 +419,8 @@ background-color: blue;
 }
 
 .text button {
-    display: inline-block;
+    /*display: inline-block;*/
+    display:none;
     background: white;
     border-radius: 20px;
     border: none;
@@ -665,6 +666,11 @@ text-align: center;
         margin-left:20px;
     }
 
+    .credit {
+        display:none;
+        margin-left:-10%;
+    }
+
 }
 
 @media screen and (max-width:768px) {
@@ -702,6 +708,7 @@ text-align: center;
         font-size: 40%;
     }
     .credit {
+        display:none;
         margin-left:-10%;
     }
     .credit .copyright {
@@ -729,6 +736,7 @@ text-align: center;
     }
 
     .credit {
+        display:none;
         margin-left:-30%;
     }
     .credit .copyright {
