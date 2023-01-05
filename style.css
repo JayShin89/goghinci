@@ -43,6 +43,7 @@ html {
     margin:0;
     overflow-anchor: none;
 	overscroll-behavior: contain;
+	overflow-y:hidden;
 }
 bodY {
   margin: 0;
