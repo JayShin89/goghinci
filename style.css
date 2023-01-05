@@ -231,14 +231,15 @@ section {
 }
 .totalmenu1-0 {
     background-image: url("images/logo(1).svg");
-    background-size: contain;
+    background-size: 200px 200px;
     background-position-x: center;
     background-position-y: center;
     width: 100%;
-    
+    height:auto;
     margin: 0;
     background-repeat: no-repeat;
     margin-top: 380px;
+    
    
 }
 /* 
@@ -948,7 +949,9 @@ text-align: center;
     }
 
     .totalmenu1-0 {
-        margin-top: 30vh;
+        margin-top:5vh;
+        background-size:100px 100px;
+        
     }
     .credit {
         display:none;
