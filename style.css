@@ -175,7 +175,7 @@ section {
     background-color: transparent;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1;
-    visibility: hidden;
+    visibility:visible;
     position: relative;
     min-width: 15px;
     
@@ -420,7 +420,7 @@ background-color: blue;
 
 .text button {
     /*display: inline-block;*/
-    display:none;
+    display:inline-block;
     background: white;
     border-radius: 20px;
     border: none;
