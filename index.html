@@ -37,7 +37,7 @@
     
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/swiped-events/1.1.7/swiped-events.min.js" integrity="sha512-q2rGCiN6EL2X7aJwVzSD6E0GbpfcGSjipdpZ12lqArQfSMb/LTDXlSFZLrohrSanuRk2/oP96lb14NNgPCAZPw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
 </head>
@@ -424,9 +424,9 @@
         /*touch event*/
         var colors = ['#19341a', '#f2c418', '#aa2123', '#442661', '#203163', '#ffffff', '#000000'];
         var nHome = document.getElementById('mHome');
-        var startX,startY, endX,endY;
         var t=0;
-        $(".mHome").on("swipeleft",function(){
+
+        document.addEventListener('swiped-left', function(e) {
             nHome.style.backgroundColor = colors[t];
                 t-=1;
                 if(t==-1) {
@@ -434,56 +434,30 @@
                 }   
         });
 
-        $(".mHome").on('swiperight',function(){
+        document.addEventListener('swiped-right', function(e) {
             nHome.style.backgroundColor = colors[t];
                 t+=1;
                 if(t==7) {
                     t=0;
+                } 
+        });
+
+        document.addEventListener('swiped-up', function(e) {
+            nHome.style.backgroundColor = colors[t];
+                t-=1;
+                if(t==-1) {
+                    t=6;
                 }   
         });
 
-        $(".mHome").on('touchstart',function(event){
-            startX = event.originalEvent.changedTouches[0].screenX;
-            startY = event.originalEvent.changedTouches[0].screenY;
-        });
-        $(".mHome").on('touchend',function(event){
-            endX=event.originalEvent.changedTouches[0].screenX;
-            endY=event.originalEvent.changedTouches[0].screenY;
-            if(startY-endY>50){
-                nHome.style.backgroundColor = colors[t];
+        document.addEventListener('swiped-down', function(e) {
+            nHome.style.backgroundColor = colors[t];
                 t+=1;
                 if(t==7) {
                     t=0;
-                }     
-            }
-            else if(endY-startY>50){
-                nHome.style.backgroundColor = colors[t];
-                t-=1;
-                if(t==-1) {
-                    t=6;
-                }  
-            }else if(startY-endY<50 || endY-startY<50 )
-            {
-                //$(".box p.toBottom, .box p.toTop").fadeOut(300);
-            }
-            if(startX-endX>50){
-                nHome.style.backgroundColor = colors[t];
-                t+=1;
-                if(t==7) {
-                    t=0;
-                }      
-            }
-            else if(endX-startX>50){
-                nHome.style.backgroundColor = colors[t];
-                t-=1;
-                if(t==-1) {
-                    t=6;
-                }      
-            }
-            else if(startX-endX<50 || endX-startX<50 ){
-                //$(".box p.toRight, .box p.toLeft").fadeOut(300);
-            }
+                } 
         });
+        
     </script>
 
 </body>
