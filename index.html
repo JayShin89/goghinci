@@ -35,7 +35,8 @@
     <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
     <script src="https://unpkg.com/@metamask/detect-provider/dist/detect-provider.min.js"></script>
     
-
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
 
 
@@ -425,6 +426,22 @@
         var nHome = document.getElementById('mHome');
         var startX,startY, endX,endY;
         var t=0;
+        $(".mHome").on("swipeleft",function(){
+            nHome.style.backgroundColor = colors[t];
+                t-=1;
+                if(t==-1) {
+                    t=6;
+                }   
+        });
+
+        $(".mHome").on('swiperight',function(){
+            nHome.style.backgroundColor = colors[t];
+                t+=1;
+                if(t==7) {
+                    t=0;
+                }   
+        });
+
         $(".mHome").on('touchstart',function(event){
             startX = event.originalEvent.changedTouches[0].screenX;
             startY = event.originalEvent.changedTouches[0].screenY;
