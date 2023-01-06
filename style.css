@@ -981,7 +981,7 @@ text-align: center;
 
     .totalmenu1-0 {
         margin: 0 auto;
-        margin-top:5vh;
+        margin-top:-5vh;
         width:100vw;
         height:100vh;
         background-size:100%;
@@ -1006,7 +1006,7 @@ text-align: center;
     .tnc1 {
         margin-left:23vw;
         margin-top:-205px;
-        margin-bottom:350px;
+        margin-bottom:400px;
     }
     .tnc2 {
         margin-left:23vw;
@@ -1034,12 +1034,12 @@ text-align: center;
 
     .totalmenu1-0 {
         margin: 0 auto;
-        margin-top:5vh;
+        margin-top:-5vh;
         width:100vw;
         height:100vh;
         background-size:100%;
         background-position-x: center;
-        background-position-y: center;;
+        background-position-y: center;
         
     }
     .credit {
@@ -1059,7 +1059,7 @@ text-align: center;
     .tnc1 {
         margin-left:12vw;
         margin-top:-205px;
-        margin-bottom:350px;
+        margin-bottom:400px;
     }
     .tnc2 {
         margin-left:12vw;
