@@ -419,10 +419,77 @@
             $('html').removeClass('no-js');
 
         });
+
+        /*touch event*/
+        document.getElementById(mHome).addEventListener("touchstart", startTouch, false);
+        document.getElementById(mHome).addEventListener("touchmove", moveTouch, false);
+        
+        // Swipe Up / Down / Left / Right
+        var initialX = null;
+        var initialY = null;
+        
+        function startTouch(e) {
+            initialX = e.touches[0].clientX;
+            initialY = e.touches[0].clientY;
+        };
+        
+        function moveTouch(e) {
+        if (initialX === null) {
+            return;
+        }
+        
+        if (initialY === null) {
+            return;
+        }
+        
+        var currentX = e.touches[0].clientX;
+        var currentY = e.touches[0].clientY;
+        
+        var diffX = initialX - currentX;
+        var diffY = initialY - currentY;
+        var t = 0;
+        if (Math.abs(diffX) > Math.abs(diffY)) {
+            // sliding horizontally
+            if (diffX > 0) {
+            // swiped left
+                document.getElementById(mHome).style.backgroundColor = colors[t];
+                t+=1;
+                if(t==7) {
+                    t=0;
+                }
+            } else {
+            // swiped right
+                document.getElementById(mHome).style.backgroundColor = colors[t];
+                t-=1;
+                if(t==-1) {
+                    t=6;
+                }
+            }  
+        } else {
+            // sliding vertically
+            if (diffY > 0) {
+            // swiped up
+                document.getElementById(mHome).style.backgroundColor = colors[t];
+                t+=1;
+                if(t==7) {
+                    t=0;
+                }
+            } else {
+            // swiped down
+                document.getElementById(mHome).style.backgroundColor = colors[t];
+                t-=1;
+                if(t==-1) {
+                    t=6;
+                }
+            }  
+        }
+        
+        initialX = null;
+        initialY = null;
+        
+        e.preventDefault();
+        };
     </script>
-
-
-
 
 </body>
 
