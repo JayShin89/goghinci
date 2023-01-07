@@ -238,7 +238,7 @@ section {
     height:auto;
     margin: 0;
     background-repeat: no-repeat;
-    margin-top: 480px;
+    margin-top: 380px;
     
    
 }
@@ -962,12 +962,25 @@ text-align: center;
     
     
     .navbar div {
-        text-align: right;
-        margin-right:20px;
+        text-align: center;
+        margin-top: 0px;
+        
+    }
+
+    .navbar li{
+        text-align:center;
+        margin-right:-7%;
+    }
+
+    .dropdown-menu a {
+        margin-left:-10px;;
+        font-weight: bolder;
     }
     
-
-    
+    .navbar-nav {
+        top: 10px;
+        border-top: #af8d30 1px solid;
+    }
 
     .wallet {
         margin-right:-5%;
