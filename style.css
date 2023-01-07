@@ -964,6 +964,7 @@ text-align: center;
     .navbar div {
         text-align: center;
         margin-top: 0px;
+        margin-right: -12px;
         
     }
 
@@ -982,9 +983,7 @@ text-align: center;
         border-top: #af8d30 1px solid;
     }
 
-    .wallet {
-        margin-right:-5%;
-    }
+    
 
    
     .tnc {
@@ -1071,7 +1070,9 @@ text-align: center;
         width:100%;
         height:100%
     }
-    
+    .navbar div {
+        margin-right: -8px;
+    }
 
     .heading {
         font-size: 3rem;
@@ -1135,6 +1136,9 @@ text-align: center;
         height:100%
     }
     
+    .navbar div {
+        margin-right: -4px;
+    }
 
     .heading {
         font-size: 3rem;
