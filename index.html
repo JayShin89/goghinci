@@ -180,19 +180,14 @@
 
             <a class="navbar-brand" href="/index.html" style="margin-left:3%; margin-top:5px; text-align:center;"><img
                     src="images/logo(1).svg" width="80" height="30"></a>
-            <!-- <button class="navbar-toggler collapsed border-0" type="button"
+            <button class="navbar-toggler collapsed d-flex d-lg-none flex-column justify-content-around" type="button"
                 style="margin-right:3%; margin-top:10px; font-size:22px;" data-toggle="collapse"
                 data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false"
                 aria-label="Toggle navigation">
-                <i class="fas fa-bars" id="hamburger" style="color:#af8d30; font-size:22px; "></i>
-                <div class="close-icon py-1"><span>&#128473;</span></div>
-            </button> -->
-
-            <button class="navbar-toggler collapsed d-flex d-lg-none flex-column justify-content-around" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="toggler-icon top-bar"></span>
-                <span class="toggler-icon middle-bar"></span>
+                 <span class="toggler-icon middle-bar"></span> 
                 <span class="toggler-icon bottom-bar"></span>
-            </button>
+            </button> 
 
             <div class="collapse navbar-collapse justify-content-end" id="navbarsExample04"
                 style="text-align:right;  margin-top:5px; margin-right:3%">
@@ -301,12 +296,6 @@
             checkWallet();
 
         }
-
-        $(document).ready(function(){
-            $('#nav-icon1,#nav-icon2,#nav-icon3,#nav-icon4').click(function(){
-                $(this).toggleClass('open');
-        });
-});
 
         async function checkWallet() {
             window.ethereum.sendAsync({

@@ -537,7 +537,7 @@ margin:0;
     /* State when the navbar is collapsed */
 
     .navbar-toggler.collapsed .top-bar {
-        margin-top: -20px;
+        margin-top: -12px;
         transform: rotate(0deg);
     }
 
@@ -547,7 +547,7 @@ margin:0;
     }
 
     .navbar-toggler.collapsed .bottom-bar {
-        margin-top: 20px;
+        margin-top: 12px;
         transform: rotate(0deg);
     }
 
