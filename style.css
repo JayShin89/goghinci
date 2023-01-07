@@ -483,7 +483,7 @@ margin:0;
     height: 20px;
     position: relative;
     transition: .5s ease-in-out;
-    right:30px;
+    right:10px;
     }
 
     .navbar-toggler,
@@ -1025,6 +1025,14 @@ text-align: center;
     html {
         font-size: 40%;
     }
+
+    .navbar-toggler {
+        width: 20px;
+        height: 20px;
+        position: relative;
+        transition: .5s ease-in-out;
+        right:0px;
+        }
     .credit {
         display:none;
         margin-left:-10%;
@@ -1055,6 +1063,14 @@ text-align: center;
     .heading {
         font-size: 3rem;
     }
+
+    .navbar-toggler {
+        width: 20px;
+        height: 20px;
+        position: relative;
+        transition: .5s ease-in-out;
+        right:0px;
+        }
 
     .text button {
        font-size:large;
@@ -1108,6 +1124,13 @@ text-align: center;
     .heading {
         font-size: 3rem;
     }
+    .navbar-toggler {
+        width: 20px;
+        height: 20px;
+        position: relative;
+        transition: .5s ease-in-out;
+        right:0px;
+        }
 
     .text button {
        font-size:large;
