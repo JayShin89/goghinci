@@ -363,7 +363,8 @@
     </script>
     <script src="script.js"></script>
     <script>
-        var colors = ['#19341a', '#f2c418', '#aa2123', '#442661', '#203163', '#ffffff', '#000000'];
+        /*              Black       Red       Yellow     Blue       Green      Purple      Pink      Orange    Cyan    */
+        var colors = ['#040000', '#d5272d', '#fcb923', '#3552a4', '#154f3c', '#805fa9', '#f1929c', '#e16325','#3cbeb7'];
         var nHome = document.getElementById('mHome');
         var text = document.getElementById('value');
         var color = document.getElementById('color');
@@ -375,8 +376,9 @@
         var hamb = document.getElementById('hamburger');
         var describ = document.getElementById('desc');
         mHome.onwheel = changeBgColor;
+        
 
-        var colorIndex = 0;
+        var colorIndex = -1;
         var scrollValue = 0;
         var dateNow = Date.now();
 
@@ -391,6 +393,7 @@
                 if (colorIndex > colors.length - 1) colorIndex = 0;
 
                 mHome.style.backgroundColor = colors[colorIndex];
+                
                 /*if (colorIndex == 1 || colorIndex == 5) {
                     navdrop.style.color = colors[6];
                     instaIcon.style.color = colors[6];
@@ -412,12 +415,13 @@
                 scrollValue = 0;
             }
 
-            if (scrollValue < -10 && timePassed > 500) {
+            if (scrollValue < -1 && timePassed > 100) {
                 dateNow = Date.now();
                 colorIndex -= 1;
                 if (colorIndex < 0) colorIndex = colors.length - 1;
 
                 mHome.style.backgroundColor = colors[colorIndex];
+                
                 /*if (colorIndex == 1 || colorIndex == 5) {
                     navdrop.style.color = colors[6];
                     instaIcon.style.color = colors[6];
@@ -454,24 +458,26 @@
         });
 
         /*touch event*/
-        var colors = ['#19341a', '#f2c418', '#aa2123', '#442661', '#203163', '#ffffff', '#000000'];
+        var colors = ['#d5272d', '#fcb923', '#3552a4', '#154f3c', '#805fa9', '#f1929c', '#e16325','#3cbeb7', '#040000'];
         var nHome = document.getElementById('mHome');
-        var t=0;
+        var t=-1;
 
         document.addEventListener('swiped-left', function(e) {
+            t-=1;
             nHome.style.backgroundColor = colors[t];
-                t-=1;
-                if(t==-1) {
-                    t=6;
-                }   
+                
+            if(t==-1) {
+                t=6;
+            }   
         });
 
         document.addEventListener('swiped-right', function(e) {
+            t+=1;
             nHome.style.backgroundColor = colors[t];
-                t+=1;
-                if(t==7) {
-                    t=0;
-                } 
+                
+            if(t==7) {
+                t=0;
+            } 
         });
 
         document.addEventListener('swiped-up', function(e) {
