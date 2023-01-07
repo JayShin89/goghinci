@@ -60,6 +60,11 @@
     <div id="preloader"></div>
 
     <style>
+
+        .tnc3 {
+            visibility: hidden;
+        }
+        
         .credit {
            
            padding-top: 25px;
@@ -117,20 +122,68 @@
 
         @media screen and (max-width:450px) {
 
-            
+            .tnc3 {
+                font-family: inherit;
+                margin-top: 70vh;
+                margin-left: 22vw;
+                width: 100%;
+                visibility: visible;
+                text-align: flex;
+                color: #313131;
+                font-size: 15px;
+                font-weight: bold;
+                position: relative;
+                -webkit-animation: colorchange 20s infinite alternate;
+            }
+
+            @-webkit-keyframes colorchange {
+                0% {
+                    color: #040000;
+                }
+                12% {
+                    color: #d5272d;
+                }
+                24% {
+                    color: #fcb923;
+                }
+                36% {
+                    color: #3552a4;
+                }
+                48% {
+                    color: #154f3c;
+                }
+                60% {
+                    color: #805fa9;
+                }
+                72% {
+                    color: #f1929c;
+                }
+                84% {
+                    color: #e16325;
+                }
+                96% {
+                    color: #3cbeb7;
+                }
+                100% {
+                    color: #ffffff;
+                }
+                
+            }
 
             .tnc {
                 display: inline-block;
-                margin-left:5px;
-                margin-top:50vh;
+                width: 100%;
+                margin: 0 auto;
                 
             }
             .tnc1 {
+                display:none;
                 margin-left:18vw;
                 margin-top:-205px;
                 margin-bottom:400px;
             }
             .tnc2 {
+                display:none;
                 margin-left:18vw;
                 margin-top: 200px;
             }
@@ -139,20 +192,67 @@
 
         @media screen and (max-width:300px) {
 
-           
+            .tnc3 {
+                font-family: inherit;
+                margin-top: 70vh;
+                margin-left: 12vw;
+                width: 100%;
+                visibility: visible;
+                text-align: flex;
+                color: #313131;
+                font-size: 15px;
+                font-weight: bold;
+                position: relative;
+                -webkit-animation: colorchange 20s infinite alternate;
+            }
+
+            @-webkit-keyframes colorchange {
+                0% {
+                    color: #040000;
+                }
+                12% {
+                    color: #d5272d;
+                }
+                24% {
+                    color: #fcb923;
+                }
+                36% {
+                    color: #3552a4;
+                }
+                48% {
+                    color: #154f3c;
+                }
+                60% {
+                    color: #805fa9;
+                }
+                72% {
+                    color: #f1929c;
+                }
+                84% {
+                    color: #e16325;
+                }
+                96% {
+                    color: #3cbeb7;
+                }
+                100% {
+                    color: #ffffff;
+                }
+                
+            }
             .tnc {
                 display: inline-block;
-                
-                margin-top:50vh;
-                margin-left:0px;
+                width: 100%;
+                margin: 0 auto;
                 
             }
             .tnc1 {
+                display:none;
                 margin-left:8vw;
                 margin-top:-205px;
                 margin-bottom:400px;
             }
             .tnc2 {
+                display:none;
                 margin-left:8vw;
                 margin-top: 200px;
             }
@@ -252,6 +352,7 @@
                     <span class="m_scroll_arrows doi"></span> -->
                     <span class="m_scroll_arrows trei"></span>
                 </div>
+                <div class = "tnc3"> Scroll </div>
             </div>            
         </div>    
         <div class="credit">

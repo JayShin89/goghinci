@@ -1114,11 +1114,13 @@ text-align: center;
         
     }
     .tnc1 {
+        display:none;
         margin-left:23vw;
         margin-top:-205px;
         margin-bottom:400px;
     }
     .tnc2 {
+        display:none;
         margin-left:23vw;
         margin-top: 200px;
     }
@@ -1174,11 +1176,13 @@ text-align: center;
         
     }
     .tnc1 {
+        display:none;
         margin-left:12vw;
         margin-top:-205px;
         margin-bottom:400px;
     }
     .tnc2 {
+        display:none;
         margin-left:12vw;
         margin-top: 200px;
     }
