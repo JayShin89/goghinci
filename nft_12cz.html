@@ -1,99 +1,74 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Vanici</title>
-
-	<!-- Bootstrap css-->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-	<!--Bootstrap js-->
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-		crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-		crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-		crossorigin="anonymous"></script>
-	<!-- font awesome cdn link -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<!-- custom css file link -->
-	<link rel="stylesheet" href="style.css">
-
-	<script src="http://ajax.googleapis.com/ajax/libs/jqquery/1.11.1/jquery.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.0-rc.0/web3.min.js"
-		integrity="sha512-/PTXSvaFzmO4So7Ghyq+DEZOz0sNLU4v1DP4gMOfY3kFu9L/IKoqSHZ6lNl3ZoZ7wT20io3vu/U4IchGcGIhfw=="
-		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
-	<script src="https://unpkg.com/@metamask/detect-provider/dist/detect-provider.min.js"></script>
-	<script src="node_modules/web3.js-browser/build/web3.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/bignumber.js/8.0.2/bignumber.js"
-		integrity="sha512-XQDG6H87RgMf+aNFwDPCUcFwUf3t9liyqN/2BkJ8KGixupbjPwQHNhypNA972mLIkg4KPo4lkGmqAf3yfDz8hw=="
-		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-	<!--alert designed-->
-	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-	<script src="js/jquery.min.js" type="text/javascript"></script>
-
-	<!--touch swipe event API-->
-	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/swiped-events/1.1.7/swiped-events.min.js"
-		integrity="sha512-q2rGCiN6EL2X7aJwVzSD6E0GbpfcGSjipdpZ12lqArQfSMb/LTDXlSFZLrohrSanuRk2/oP96lb14NNgPCAZPw=="
-		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Vanici</title>
+	
+		<!-- Bootstrap css-->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+		<!--Bootstrap js-->
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+			integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+			crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+			integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+			crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+			integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+			crossorigin="anonymous"></script>
+		<!-- font awesome cdn link -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!-- custom css file link -->
+		<link rel="stylesheet" href="style.css">
+	
+		<script src="http://ajax.googleapis.com/ajax/libs/jqquery/1.11.1/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.0-rc.0/web3.min.js"
+			integrity="sha512-/PTXSvaFzmO4So7Ghyq+DEZOz0sNLU4v1DP4gMOfY3kFu9L/IKoqSHZ6lNl3ZoZ7wT20io3vu/U4IchGcGIhfw=="
+			crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+		<script src="https://unpkg.com/@metamask/detect-provider/dist/detect-provider.min.js"></script>
+		<script src="node_modules/web3.js-browser/build/web3.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bignumber.js/8.0.2/bignumber.js"
+			integrity="sha512-XQDG6H87RgMf+aNFwDPCUcFwUf3t9liyqN/2BkJ8KGixupbjPwQHNhypNA972mLIkg4KPo4lkGmqAf3yfDz8hw=="
+			crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	
+		<!--alert designed-->
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+		<script src="js/jquery.min.js" type="text/javascript"></script>
+	
+		<!--touch swipe event API-->
+		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/swiped-events/1.1.7/swiped-events.min.js"
+			integrity="sha512-q2rGCiN6EL2X7aJwVzSD6E0GbpfcGSjipdpZ12lqArQfSMb/LTDXlSFZLrohrSanuRk2/oP96lb14NNgPCAZPw=="
+			crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	
+	</head>
 
 <body>
 	<div id="preloader"></div>
 	<!--header section stars -->
 
 	<style>
-		/* #tnc {
-        background-color: rgb(0, 0, 0);
-        
-        background-color: rgba(0, 0, 0, 0.2);
-        
-        border: 3px solid;
-        }
-
-        .rainbow {
-            text-align: right;
-            text-decoration: underline;
-            font-size: 20px;
-            font-family: inherit;
-            
-        }
-        .terms {
-            background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            animation: rainbow_animation 6s ease-in-out infinite;
-            background-size: 400% 100%;
-            margin-right:5.5%;
-        } */
+		.tnc3 {
+			visibility: hidden;
+		}
 
 		.tnc {
-			display: inline-block;
-
-			width: 24px;
-			height: 50px;
-			margin-top: 30vh;
-			margin-left: 3.8vw;
+			margin-left: 55px;
 		}
+		
 
 		.credit {
 
@@ -105,12 +80,11 @@
 			text-align: left;
 			font-size: 1.5rem;
 			width: 50%;
-			
+			margin-left: 40px;
 			align-items: left;
 			font-weight: bolder;
-			margin-top:0;
+			margin-top: 50px;
 			vertical-align: bottom;
-			margin-left:80px;
 		}
 
 		.terms {
@@ -122,7 +96,6 @@
 		}
 
 
-
 		.dropdown:hover>.dropdown-menu {
 			display: block;
 			border: none;
@@ -131,6 +104,11 @@
 		.dropdown-menu a:hover {
 			background-color: rgb(140, 199, 150);
 			border-radius: .5rem;
+		}
+
+		.dropdown-menu a {
+			margin-left: -5px;
+			margin-top: -5px;
 		}
 
 		.navbar a:hover {
@@ -152,53 +130,182 @@
 			font-size: 2rem !important;
 			font-family: Georgia, serif;
 		}
-		
 
 		@media screen and (max-width:450px) {
-			.body {
-				max-height: 100vh;
+			.navbar-brand {
+				margin-bottom: 7px;
 			}
 
+			.navbar-nav ul {
+				margin-top: 14px;
+				border-top: 0;
+
+			}
+
+			.dropdown-menu a {
+				margin-left: -15px;
+			}
+
+			.navbar li {
+				margin-left: -10px;
+			}
+
+			.wallet {
+				margin-left: -10px;
+			}
+
+			.tnc3 {
+				font-family: "Avenir Next" !important;
+				font-style: italic;
+				margin-top: 70vh;
+				margin-left: 25vw;
+				width: 100%;
+				visibility: visible;
+				text-align: flex;
+				color: #af8d30;
+				font-size: 15px;
+				font-weight: bold;
+				position: relative;
+				-webkit-animation: colorchange 20s infinite alternate;
+			}
+
+			/* @-webkit-keyframes colorchange {
+		0% {
+			color: #040000;
+		}
+		10% {
+			color: #d5272d;
+		}
+		20% {
+			color: #fcb923;
+		}
+		30% {
+			color: #3552a4;
+		}
+		40% {
+			color: #154f3c;
+		}
+		50% {
+			color: #805fa9;
+		}
+		60% {
+			color: #f1929c;
+		}
+		70% {
+			color: #e16325;
+		}
+		80% {
+			color: #3cbeb7;
+		}
+		90% {
+			color: #ffffff;
+		}
+		100% {
+			color: #af8d30;
+		}
+		
+	} */
+
 			.tnc {
-                display: inline-block;
-                margin-left:5px;
-                margin-top:50vh;
-                
-            }
-            .tnc1 {
-				display:none;
-                margin-left:18vw;
-                margin-top:-205px;
-                margin-bottom:400px;
-            }
-            .tnc2 {
-				display:none;
-                margin-left:18vw;
-                margin-top: 200px;
-            }
+				display: inline-block;
+				width: 100%;
+				margin: 0 auto;
+
+			}
+
+			.tnc1 {
+				display: none;
+				margin-left: 18vw;
+				margin-top: -205px;
+				margin-bottom: 400px;
+			}
+
+			.tnc2 {
+				display: none;
+				margin-left: 18vw;
+				margin-top: 200px;
+			}
+
 		}
 
 		@media screen and (max-width:300px) {
+
+			.tnc3 {
+				font-family: "Avenir Next" !important;
+				font-style: medium italic;
+				margin-top: 70vh;
+				margin-left: 3vw;
+				width: 100%;
+				visibility: visible;
+				text-align: flex;
+				color: #af8d30;
+				font-size: 15px;
+				font-weight: bold;
+				position: relative;
+				-webkit-animation: colorchange 20s infinite alternate;
+			}
+
+			.wallet {
+				margin-left: -20px;
+			}
+
+			/* @-webkit-keyframes colorchange {
+		0% {
+			color: #040000;
+		}
+		10% {
+			color: #d5272d;
+		}
+		20% {
+			color: #fcb923;
+		}
+		30% {
+			color: #3552a4;
+		}
+		40% {
+			color: #154f3c;
+		}
+		50% {
+			color: #805fa9;
+		}
+		60% {
+			color: #f1929c;
+		}
+		70% {
+			color: #e16325;
+		}
+		80% {
+			color: #3cbeb7;
+		}
+		90% {
+			color: #ffffff;
+		}
+		100% {
+			color: #af8d30;
+		}
+		
+	} */
 			.tnc {
 				display: inline-block;
-				
-				margin-top:50vh;
-				margin-left:0px;
-				
+				width: 100%;
+				margin: 0 auto;
+
 			}
+
 			.tnc1 {
-				display:none;
-				margin-left:8vw;
-				margin-top:-205px;
-				margin-bottom:400px;
+				display: none;
+				margin-left: 8vw;
+				margin-top: -205px;
+				margin-bottom: 400px;
 			}
+
 			.tnc2 {
-				display:none;
-				margin-left:8vw;
+				display: none;
+				margin-left: 8vw;
 				margin-top: 200px;
 			}
-		}	
-		
+
+		}
 	</style>
 
 	<!--header section stars -->
@@ -248,14 +355,14 @@
 
 			<a class="navbar-brand" href="/index.html" style="margin-left:3%; margin-top:5px; text-align:center;"><img
 					src="images/logo(1).svg" width="80" height="30"></a>
-					<button class="navbar-toggler collapsed d-flex d-lg-none flex-column justify-content-around" type="button"
-					style="margin-right:3%; margin-top:10px; font-size:22px;" data-toggle="collapse"
-					data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false"
-					aria-label="Toggle navigation">
-					<span class="toggler-icon top-bar"></span>
-					 <span class="toggler-icon middle-bar"></span> 
-					<span class="toggler-icon bottom-bar"></span>
-				</button> 
+			<button class="navbar-toggler collapsed d-flex d-lg-none flex-column justify-content-around" type="button"
+				style="margin-right:3%; margin-top:10px; font-size:22px;" data-toggle="collapse"
+				data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="toggler-icon top-bar"></span>
+				<span class="toggler-icon middle-bar"></span>
+				<span class="toggler-icon bottom-bar"></span>
+			</button>
 
 			<div class="collapse navbar-collapse justify-content-end" id="navbarsExample04"
 				style="text-align:center;  margin-top:5px; margin-right:3%">
@@ -312,21 +419,22 @@
 
 		<div class="totalmenu3-0">
 			<div class="tnc">
-				<!-- <h3 class="rainbow terms" id="desc" style="margin-top:3vh;">Scroll</h3> -->
-				<div>
-					<span class="m_scroll_arrows unu1"></span>
-					<!-- <span class="m_scroll_arrows doi1"></span>
-					<span class="m_scroll_arrows trei1"></span> -->
-				</div>
-				<div class="mouse">
-					<div class="wheel"></div>
-				</div>
-				<div>
-					<!-- <span class="m_scroll_arrows unu"></span>
-					<span class="m_scroll_arrows doi"></span> -->
-					<span class="m_scroll_arrows trei"></span>
-				</div>
-			</div>
+                <!-- <h3 class="rainbow terms" id="desc" style="margin-top:3vh;">Scroll</h3> -->
+                <div class="tnc1">
+                    <span class="m_scroll_arrows unu1"></span>
+                    <!-- <span class="m_scroll_arrows doi1"></span>
+                    <span class="m_scroll_arrows trei1"></span> -->
+                </div>
+                <!-- <div class="mouse">
+                    <div class="wheel"></div>
+                </div> -->
+                <div class="tnc2">
+                    <!-- <span class="m_scroll_arrows unu"></span>
+                    <span class="m_scroll_arrows doi"></span> -->
+                    <span class="m_scroll_arrows trei"></span>
+                </div>
+                <div class="tnc3"> Scroll </div>
+            </div>
 		</div>
 		<!--<h1 class = "mintCount"><span id="tc"></span> / <span id="ts"></span></h1>-->
 		<div class="totalmenu3-1" style="align-content:center;width:100%;">
@@ -1000,84 +1108,91 @@
 		// })
 
 		//background color change on wheel event
-		var colors = ['#19341a', '#f2c418', '#aa2123', '#442661', '#203163', '#ffffff', '#000000']
-		var nczHome = document.getElementById('nczHome');
-		var text = document.getElementById('value');
-		var color = document.getElementById('color');
-		var navdrop = document.getElementById('dropdown04');
-		var instaIcon = document.getElementById('nav-insta');
-		var twitIcon = document.getElementById('nav-twit');
-		var but = document.getElementById('connect');
-		var subdrop = document.getElementById('sub-drop04');
-		var hamb = document.getElementById('hamburger');
-		var describ = document.getElementById('desc');
 
-		nczHome.onwheel = changeBgColor;
-
-		var colorIndex = 0;
-		var scrollValue = 0;
-		var dateNow = Date.now();
-
-		function changeBgColor(e) {
-			scrollValue += e.deltaY * 0.01;
+	</script>
+    
+    <script>
+		/*              Black       Red       Yellow     Blue       Green      Purple      Pink      Orange    Cyan    */
+        var colors = ['#040000', '#d5272d', '#fcb923', '#3552a4', '#154f3c', '#805fa9', '#f1929c', '#e16325', '#3cbeb7'];
+        var nHome = document.getElementById('nczHome');
+        var text = document.getElementById('value');
+        var color = document.getElementById('color');
+        var navdrop = document.getElementById('dropdown04');
+        var instaIcon = document.getElementById('nav-insta');
+        var twitIcon = document.getElementById('nav-twit');
+        var but = document.getElementById('connect');
+        var subdrop = document.getElementById('sub-dropdown04');
+        var hamb = document.getElementById('hamburger');
+        var describ = document.getElementById('desc');
+        nczHome.onwheel = changeBgColor;
 
 
-			timePassed = Date.now() - dateNow;
-			if (scrollValue > 1 && timePassed > 100) {
-				dateNow = Date.now();
-				colorIndex += 1;
-				if (colorIndex > colors.length - 1) colorIndex = 0;
+        var colorIndex = -1;
+        var scrollValue = 0;
+        var dateNow = Date.now();
 
-				nczHome.style.backgroundColor = colors[colorIndex];
-				/*if(colorIndex==1 || colorIndex==5) {
-					navdrop.style.color = colors[6];
-					instaIcon.style.color = colors[6];
-					twitIcon.style.color = colors[6];
-					but.style.color = colors[6];
-					subdrop.style.color = colors[6];
-					hamb.style.color = colors[6];
-					describ.style.color = colors[6];
-				}
-				else{					
-					navdrop.style.color = colors[5];
-					instaIcon.style.color = colors[5];
-					twitIcon.style.color = colors[5];
-					but.style.color = colors[5];
-					subdrop.style.color = colors[5];
-					hamb.style.color = colors[5];
-					describ.style.color = colors[5];
-				}*/
-				scrollValue = 0;
-			}
+        function changeBgColor(e) {
+            scrollValue += e.deltaY * 0.01;
 
-			if (scrollValue < -10 && timePassed > 500) {
-				dateNow = Date.now();
-				colorIndex -= 1;
-				if (colorIndex < 0) colorIndex = colors.length - 1;
 
-				nczHome.style.backgroundColor = colors[colorIndex];
-				/*if(colorIndex==1 || colorIndex==5) {
-					navdrop.style.color = colors[6];
-					instaIcon.style.color = colors[6];
-					twitIcon.style.color = colors[6];
-					but.style.color = colors[6];
-					subdrop.style.color = colors[6];
-					hamb.style.color = colors[6];
-					describ.style.color = colors[6];
-				}
-				else{					
-					navdrop.style.color = colors[5];
-					instaIcon.style.color = colors[5];
-					twitIcon.style.color = colors[5];
-					but.style.color = colors[5];
-					subdrop.style.color = colors[5];
-					hamb.style.color = colors[5];
-					describ.style.color = colors[5];
-				}*/
-				scrollValue = 0;
-			}
-			e.preventDefault(); // disable the actual scrolling
-		}
+            timePassed = Date.now() - dateNow;
+            if (scrollValue > 1 && timePassed > 100) {
+                dateNow = Date.now();
+                colorIndex += 1;
+                if (colorIndex > colors.length - 1) colorIndex = 0;
+
+                nczHome.style.backgroundColor = colors[colorIndex];
+
+                /*if (colorIndex == 1 || colorIndex == 5) {
+                    navdrop.style.color = colors[6];
+                    instaIcon.style.color = colors[6];
+                    twitIcon.style.color = colors[6];
+                    but.style.color = colors[6];
+                    subdrop.style.color = colors[6];
+                    hamb.style.color = colors[6];
+                    describ.style.color = colors[6];
+                }
+                else {
+                    navdrop.style.color = colors[5];
+                    instaIcon.style.color = colors[5];
+                    twitIcon.style.color = colors[5];
+                    but.style.color = colors[5];
+                    subdrop.style.color = colors[5];
+                    hamb.style.color = colors[5];
+                    describ.style.color = colors[5];
+                }*/
+                scrollValue = 0;
+            }
+
+            if (scrollValue < -1 && timePassed > 100) {
+                dateNow = Date.now();
+                colorIndex -= 1;
+                if (colorIndex < 0) colorIndex = colors.length - 1;
+
+                nczHome.style.backgroundColor = colors[colorIndex];
+
+                /*if (colorIndex == 1 || colorIndex == 5) {
+                    navdrop.style.color = colors[6];
+                    instaIcon.style.color = colors[6];
+                    twitIcon.style.color = colors[6];
+                    but.style.color = colors[6];
+                    subdrop.style.color = colors[6];
+                    hamb.style.color = colors[6];
+                    describ.style.color = colors[6];
+                }
+                else {
+                    navdrop.style.color = colors[5];
+                    instaIcon.style.color = colors[5];
+                    twitIcon.style.color = colors[5];
+                    but.style.color = colors[5];
+                    subdrop.style.color = colors[5];
+                    hamb.style.color = colors[5];
+                    describ.style.color = colors[5];
+                }*/
+                scrollValue = 0;
+            }
+            e.preventDefault(); // disable the actual scrolling
+        }
 
 		var loader = document.getElementById('preloader');
 
@@ -1092,41 +1207,45 @@
 		});
 
 		/*touch event*/
-		var colors = ['#19341a', '#f2c418', '#aa2123', '#442661', '#203163', '#ffffff', '#000000'];
-		var nHome = document.getElementById('mHome');
-		var t = 0;
+        var colors = ['#040000', '#d5272d', '#fcb923', '#3552a4', '#154f3c', '#805fa9', '#f1929c', '#e16325', '#3cbeb7'];
+        var nHome = document.getElementById('nczHome');
+        var t = -1;
 
-		document.addEventListener('swiped-left', function (e) {
-			nHome.style.backgroundColor = colors[t];
-			t -= 1;
-			if (t == -1) {
-				t = 6;
-			}
-		});
+        document.addEventListener('swiped-left', function (e) {
+            t -= 1;
+            nczHome.style.backgroundColor = colors[t];
 
-		document.addEventListener('swiped-right', function (e) {
-			nHome.style.backgroundColor = colors[t];
-			t += 1;
-			if (t == 7) {
-				t = 0;
-			}
-		});
+            if (t == -1) {
+                t = 6;
+            }
+        });
 
-		document.addEventListener('swiped-up', function (e) {
-			nHome.style.backgroundColor = colors[t];
-			t -= 1;
-			if (t == -1) {
-				t = 6;
-			}
-		});
+        document.addEventListener('swiped-right', function (e) {
+            t += 1;
+            nczHome.style.backgroundColor = colors[t];
 
-		document.addEventListener('swiped-down', function (e) {
-			nHome.style.backgroundColor = colors[t];
-			t += 1;
-			if (t == 7) {
-				t = 0;
-			}
-		});
+            if (t == 7) {
+                t = 0;
+            }
+        });
+
+        document.addEventListener('swiped-up', function (e) {
+            t -= 1;
+            nczHome.style.backgroundColor = colors[t];
+
+            if (t == -1) {
+                t = 6;
+            }
+        });
+
+        document.addEventListener('swiped-down', function (e) {
+            t += 1;
+            nczHome.style.backgroundColor = colors[t];
+
+            if (t == 7) {
+                t = 0;
+            }
+        });
 	</script>
 
 </body>
