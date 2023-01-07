@@ -610,16 +610,18 @@
         });
 
         document.addEventListener('swiped-up', function(e) {
+            t-=1;
             nHome.style.backgroundColor = colors[t];
-                t-=1;
+                
                 if(t==-1) {
                     t=6;
                 }   
         });
 
         document.addEventListener('swiped-down', function(e) {
+            t+=1;
             nHome.style.backgroundColor = colors[t];
-                t+=1;
+                
                 if(t==7) {
                     t=0;
                 } 
