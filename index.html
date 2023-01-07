@@ -99,6 +99,9 @@
             background-color: rgb(140, 199, 150);
             border-radius: .5rem;
         }
+        .dropdown-menu a {
+            margin-left: -5px;
+        }
 
         .navbar a:hover {
             background-color: transparent;
@@ -122,22 +125,37 @@
 
         @media screen and (max-width:450px) {
 
+
+            .navbar-collapse {
+                margin-top: 50px;
+            }
+            .dropdown-menu a {
+                margin-left: -10px;
+            }
+
+            .navbar li {
+                margin-left: -10px;
+            }
+           
+            .wallet {
+                margin-left: -10px;
+            }
             .tnc3 {
                 font-family: "Avenir Next" !important;
                 font-style: italic;
                 margin-top: 70vh;
-                margin-left: 23vw;
+                margin-left: 25vw;
                 width: 100%;
                 visibility: visible;
                 text-align: flex;
-                color: #313131;
+                color: #af8d30;
                 font-size: 15px;
                 font-weight: bold;
                 position: relative;
                 -webkit-animation: colorchange 20s infinite alternate;
             }
 
-            @-webkit-keyframes colorchange {
+            /* @-webkit-keyframes colorchange {
                 0% {
                     color: #040000;
                 }
@@ -172,7 +190,7 @@
                     color: #af8d30;
                 }
                 
-            }
+            } */
 
             .tnc {
                 display: inline-block;
@@ -292,7 +310,7 @@
             </button> 
 
             <div class="collapse navbar-collapse justify-content-end" id="navbarsExample04"
-                style="text-align:right;  margin-top:5px; margin-right:3%">
+                style="text-align:right;  margin-top:10px; margin-right:3%">
                 <div class="navbar-nav" id="navbar-content">
                     <ul class="navbar-nav  ">
                         <!-- <li class="nav-item active">
@@ -303,7 +321,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="" id="dropdown04" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false"
-                                style="font-size:16px; font-weight: bolder; color:#af8d30; align-content: center;  margin-right:20px;  margin-top:5px; font-family: inherit;">Collection</a>
+                                style="font-size:16px; font-weight: bolder; color:#af8d30; align-content: center;  margin-right:10px;  margin-top:5px; font-family: inherit;">Collection</a>
                             <div class="dropdown-menu" aria-labelledby="dropdown04"
                                 style="background-color:transparent;">
 
