@@ -42,7 +42,8 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/bignumber.js/8.0.2/bignumber.js"
 			integrity="sha512-XQDG6H87RgMf+aNFwDPCUcFwUf3t9liyqN/2BkJ8KGixupbjPwQHNhypNA972mLIkg4KPo4lkGmqAf3yfDz8hw=="
 			crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	
+		
+
 		<!--alert designed-->
 		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 		<script src="js/jquery.min.js" type="text/javascript"></script>
@@ -1110,13 +1111,68 @@
 			}
 		});
 
-		async function connect() {
-			if (window.ethereum) {
-				await window.ethereum.send('eth_requestAccounts');
-				window.web3 = new Web3(window.ethereum);
-				checkWallet();
+		// async function connect() {
+		// 	if (window.ethereum) {
+		// 			await window.ethereum.send('eth_requestAccounts');
+		// 			window.web3 = new Web3(window.ethereum);
+		// 			checkWallet();
+		// 	}
+		// }
 
+		const connect = async () => {
+			try {
+				await ethereum.enable();
+				checkWallet();
 			}
+			catch (e) {
+				let pcDevice = "win16|win32|win64|mac|macintel";
+				if (navigator.platform) {
+					// Mobile
+					if (pcDevice.indexOf(navigator.platform.toLowerCase()) < 0) {
+						exeDeepLink();
+						checkInstallApp();
+					} 
+					// PC
+					else {
+						window.open(`https://metamask.io/download/`, '_blank');
+					}
+				}
+			}
+    	}	
+
+		const checkInstallApp = () => {
+			function clearTimers() {
+				clearInterval(check);
+				clearTimeout(timer);
+        	}
+
+			function isHideWeb() {
+				if (document.webkitHidden || document.hidden) {
+					clearTimers();
+				}
+			}
+        	
+			const check = setInterval(isHideWeb, 200);
+
+			const timer = setTimeout(function () {
+				redirectStore();
+			}, 500);
+    	};
+
+		const redirectStore = () => {
+			const ua = navigator.userAgent.toLowerCase();
+
+			if (window.confirm("Do you want to go to the App Store?")) {
+				window.location.href =
+					ua.indexOf("android") > -1
+						? process.env.REACT_APP_INSTALL_META_ANDROID
+						: process.env.REACT_APP_INSTALL_META_IOS
+			}
+		};
+
+		const exeDeepLink = () => {
+			let url = "https://metamask.app.link/dapp/marcovanici.com";
+			window.location.href = url;
 		}
 
 		//wait till page loads up, and than call startApp function
