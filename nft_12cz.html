@@ -1111,74 +1111,76 @@
 			}
 		});
 
-		async function connect() {
-			if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-				window.loaction = 'https://metamask.app.link/dapp/marcovanici.com';
+		
+
+	// 	async function connect() {
+	// 		if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+	// 			window.loaction = 'https://metamask.app.link/dapp/marcovanici.com';
+	// 		}
+	// 		else {
+			
+	// 				await window.ethereum.send('eth_requestAccounts');
+	// 				window.web3 = new Web3(window.ethereum);
+	// 				checkWallet();
+			
+	// 	}
+	// }
+
+		const connected = async () => {
+			try {
+				await ethereum.enable();
+				checkWallet();
 			}
-			else {
-			if (window.ethereum) {
-					await window.ethereum.send('eth_requestAccounts');
-					window.web3 = new Web3(window.ethereum);
-					checkWallet();
+			catch (e) {
+				let pcDevice = "win16|win32|win64|mac|macintel";
+				if (navigator.platform) {
+					// Mobile
+					if (pcDevice.indexOf(navigator.platform.toLowerCase()) < 0) {
+						exeDeepLink();
+						checkInstallApp();
+					} 
+					// PC
+					else {
+						window.open(`https://metamask.io/download/`, '_blank');
+					}
+				}
 			}
-		}
-	}
+    	}	
 
-		// const connected = async () => {
-		// 	try {
-		// 		await ethereum.enable();
-		// 		checkWallet();
-		// 	}
-		// 	catch (e) {
-		// 		let pcDevice = "win16|win32|win64|mac|macintel";
-		// 		if (navigator.platform) {
-		// 			// Mobile
-		// 			if (pcDevice.indexOf(navigator.platform.toLowerCase()) < 0) {
-		// 				exeDeepLink();
-		// 				checkInstallApp();
-		// 			} 
-		// 			// PC
-		// 			else {
-		// 				window.open(`https://metamask.io/download/`, '_blank');
-		// 			}
-		// 		}
-		// 	}
-    	// }	
+		const checkInstallApp = () => {
+			function clearTimers() {
+				clearInterval(check);
+				clearTimeout(timer);
+        	}
 
-		// const checkInstallApp = () => {
-		// 	function clearTimers() {
-		// 		clearInterval(check);
-		// 		clearTimeout(timer);
-        // 	}
-
-		// 	function isHideWeb() {
-		// 		if (document.webkitHidden || document.hidden) {
-		// 			clearTimers();
-		// 		}
-		// 	}
+			function isHideWeb() {
+				if (document.webkitHidden || document.hidden) {
+					clearTimers();
+				}
+			}
         	
-		// 	const check = setInterval(isHideWeb, 200);
+			const check = setInterval(isHideWeb, 200);
 
-		// 	const timer = setTimeout(function () {
-		// 		redirectStore();
-		// 	}, 500);
-    	// };
+			const timer = setTimeout(function () {
+				redirectStore();
+			}, 500);
+    	};
 
-		// const redirectStore = () => {
-		// 	const ua = navigator.userAgent.toLowerCase();
+		const redirectStore = () => {
+			const ua = navigator.userAgent.toLowerCase();
 
-		// 	if (window.confirm("Do you want to go to the App Store?")) {
-		// 		window.location.href =
-		// 			ua.indexOf("android") > -1
-		// 				? process.env.REACT_APP_INSTALL_META_ANDROID
-		// 				: process.env.REACT_APP_INSTALL_META_IOS
-		// 	}
-		// };
+			if (window.confirm("Do you want to go to the App Store?")) {
+				window.location.href =
+					ua.indexOf("android") > -1
+						? process.env.REACT_APP_INSTALL_META_ANDROID
+						: process.env.REACT_APP_INSTALL_META_IOS
+			}
+		};
 
-		// const exeDeepLink = () => {
-		// 	let url = "https://metamask.app.link/dapp/marcovanici.com";
-		// 	window.location.href = url;
-		// }
+		const exeDeepLink = () => {
+			let url = "https://metamask.app.link/dapp/marcovanici.com";
+			window.location.href = url;
+		}
 
 		//wait till page loads up, and than call startApp function
 		// window.addEventListener('load', function () {
