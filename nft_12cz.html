@@ -1235,43 +1235,47 @@
 
 		/*touch event*/
         var colors = ['#040000', '#d5272d', '#fcb923', '#3552a4', '#154f3c', '#805fa9', '#f1929c', '#e16325', '#3cbeb7'];
-        var nHome = document.getElementById('nczHome');
-        var t = -1;
+        var nHome = document.getElementById('mHome');
+        var t = 0;
 
         document.addEventListener('swiped-left', function (e) {
             t -= 1;
-            nczHome.style.backgroundColor = colors[t];
-
             if (t == -1) {
-                t = 6;
+                t = 8;
             }
+            nHome.style.backgroundColor = colors[t];
+
+            
         });
 
         document.addEventListener('swiped-right', function (e) {
             t += 1;
-            nczHome.style.backgroundColor = colors[t];
-
-            if (t == 7) {
+            if (t == 9) {
                 t = 0;
             }
+            nHome.style.backgroundColor = colors[t];
+
+            
         });
 
         document.addEventListener('swiped-up', function (e) {
             t -= 1;
-            nczHome.style.backgroundColor = colors[t];
-
             if (t == -1) {
-                t = 6;
+                t = 8;
             }
+            nHome.style.backgroundColor = colors[t];
+
+            
         });
 
         document.addEventListener('swiped-down', function (e) {
             t += 1;
-            nczHome.style.backgroundColor = colors[t];
-
-            if (t == 7) {
+            if (t == 9) {
                 t = 0;
             }
+            nHome.style.backgroundColor = colors[t];
+
+            
         });
 	</script>
 
