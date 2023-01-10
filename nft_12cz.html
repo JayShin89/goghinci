@@ -1120,11 +1120,15 @@
 
 		const metamaskAppDeepLink = "https://metamask.app.link/dapp/marcovanici.com"
 
-		async function connect() {
-			if(isMobileDevice()){
+		
+		async function connected() {
+			var isMobile = window.orientation >-1;
+			if(isMobile){
+				alert("mobile");
 				window.open(metamaskAppDeepLink);
 			}
 			else {
+				alert("desktop");
 				await window.ethereum.send('eth_requestAccounts');
 				window.web3 = new Web3(window.ethereum);
 				checkWallet();
@@ -1133,9 +1137,7 @@
 
 			
 
-		function isMobileDevice() {
-			return "ontouchstart" in window || "onmsgesturechange" in window;
-		}
+		
 
 		//wait till page loads up, and than call startApp function
 		// window.addEventListener('load', function () {
