@@ -90,6 +90,10 @@
         }
 
 
+        .dropdown.show .dropdown-toggle::after {
+			transform: rotate(180deg);
+		}
+
         .dropdown-menu {
             border: none;
         }
@@ -335,7 +339,7 @@
                             <a class="nav-link dropdown-toggle" href="" id="dropdown04" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false"
                                 style="font-size:16px; font-weight: bolder; color:#af8d30; align-content: center;  margin-right:10px;  margin-top:5px; font-family: inherit;">Collection</a>
-                            <div class="dropdown-menu" aria-labelledby="dropdown04"
+                            <div class="dropdown-menu dropdown-menu-down rotate-180" aria-labelledby="dropdown04"
                                 style="background-color:transparent;">
 
                                 <a class="dropdown-item" href="/nft_12cz.html" id="sub-drop04"

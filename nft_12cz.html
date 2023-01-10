@@ -96,6 +96,11 @@
 			font-weight: bolder;
 		}
 
+		
+
+		.dropdown.show .dropdown-toggle::after {
+			transform: rotate(180deg);
+		}
 
 		.dropdown-menu {
 			
@@ -392,10 +397,12 @@
                                 <span class="sr-only">(current)</span></a>
                         </li> -->
 						<li class="nav-item dropdown text-center">
-							<a class="nav-link dropdown-toggle" href="" id="dropdown04" data-toggle="dropdown"
+							<a class="nav-link dropdown-toggle " href="" id="dropdown04" role="button" data-toggle="dropdown"
 								aria-haspopup="true" aria-expanded="false"
-								style="font-size:16px; font-weight: bolder; color:#af8d30; align-content: center;  margin-right:20px;  margin-top:5px; font-family: inherit;">Collection</a>
-							<div class="dropdown-menu" aria-labelledby="dropdown04"
+								style="font-size:16px; font-weight: bolder; color:#af8d30; align-content: center;  margin-right:20px;  margin-top:5px; font-family: inherit;">Collection
+								</a>
+								
+							<div class="dropdown-menu dropdown-menu-down rotate-180" aria-labelledby="dropdown04"
 								style="background-color:transparent;">
 								<a class="dropdown-item" href="/nft_12cz.html" id="sub-drop04"
 									style="font-size:14px; font-weight: bolder; color:#af8d30; text-align:center; ">12CZ</a>
