@@ -1118,14 +1118,14 @@
 			}
 		});
 
-		const metamaskAppDeepLink = "https://metamask.app.link/dapp/marcovanici.com"
+		
 
 		
 		async function connected() {
 			var isMobile = window.orientation >-1;
 			if(isMobile){
 				alert("mobile");
-				window.open(metamaskAppDeepLink);
+				window.location.href = "https://metamask.app.link/dapp/marcovanici.com";
 			}
 			else {
 				alert("desktop");
