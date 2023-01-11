@@ -79,7 +79,7 @@
 		}
 
 		.credit .copyright {
-			color: #af8d30;
+			color: #dd9429;
 			text-align: left;
 			font-size: 1.5rem;
 			width: 50%;
@@ -174,7 +174,7 @@
 				width: 100%;
 				visibility: visible;
 				text-align: flex;
-				color: #af8d30;
+				color: #dd9429;
 				font-size: 15px;
 				font-weight: bold;
 				position: relative;
@@ -217,7 +217,7 @@
                     color: #ffffff;
                 }
                 100% {
-                    color: #af8d30;
+                    color: #dd9429;
                 }
                 
             } */
@@ -254,7 +254,7 @@
 				width: 100%;
 				visibility: visible;
 				text-align: flex;
-				color: #af8d30;
+				color: #dd9429;
 				font-size: 15px;
 				font-weight: bold;
 				position: relative;
@@ -297,7 +297,7 @@
                     color: #ffffff;
                 }
                 100% {
-                    color: #af8d30;
+                    color: #dd9429;
                 }
                 
             } */
@@ -392,31 +392,31 @@
 						<li class="nav-item dropdown text-center">
 							<a class="nav-link dropdown-toggle " href="" id="dropdown04" role="button"
 								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-								style="font-size:16px; font-weight: bolder; color:#af8d30; align-content: center;  margin-right:20px;  margin-top:5px; font-family: inherit;">Collection
+								style="font-size:16px; font-weight: bolder; color:#dd9429; align-content: center;  margin-right:20px;  margin-top:5px; font-family: inherit;">Collection
 							</a>
 
 							<div class="dropdown-menu dropdown-menu-down rotate-180" aria-labelledby="dropdown04"
 								style="background-color:transparent;">
 								<a class="dropdown-item" href="/nft_12cz.html" id="sub-drop04"
-									style="font-size:14px; font-weight: bolder; color:#af8d30; text-align:center; ">12CZ</a>
+									style="font-size:14px; font-weight: bolder; color:#dd9429; text-align:center; ">12CZ</a>
 							</div>
 						</li>
 
 						<li class="nav-item">
 							<a class="nav-link" href="https://twitter.com/marcovanici" target="_blank" id="nav-twit"
-								style="font-size:16px; font-weight: bolder; color:#af8d30; align-content: center; margin-right:20px;  margin-top:5px; font-family: inherit;">Twitter</a>
+								style="font-size:16px; font-weight: bolder; color:#dd9429; align-content: center; margin-right:20px;  margin-top:5px; font-family: inherit;">Twitter</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="https://www.instagram.com/marcovanici/" target="_blank"
 								id="nav-insta"
-								style="font-size:16px; font-weight: bolder; color:#af8d30; align-content: center;  margin-right:20px;  margin-top:5px; font-family: inherit;">Instagram</a>
+								style="font-size:16px; font-weight: bolder; color:#dd9429; align-content: center;  margin-right:20px;  margin-top:5px; font-family: inherit;">Instagram</a>
 						</li>
 
 						<div class="wallet" style="margin-top:3px;">
 							<button id="connect" onclick="connected();"
-								style=" height:40px;  color:#af8d30;font-size: 16px; margin-top:0px;background-color: inherit; font-weight: bolder; font-family: inherit;">
+								style=" height:40px;  color:#dd9429;font-size: 16px; margin-top:0px;background-color: inherit; font-weight: bolder; font-family: inherit;">
 								Wallet</button>
-							<!--<div style="display:none;" id="drop-content" style="width:100%; color:#af8d30;">
+							<!--<div style="display:none;" id="drop-content" style="width:100%; color:#dd9429;">
 								<a href="/mypage.html">My Collection</a>-->
 						</div>
 				</div>
@@ -1142,8 +1142,8 @@
 	</script>
 
 	<script>
-		/*              Black       Red       Yellow     Blue       Green      Purple      Pink      Orange    Cyan    */
-		var colors = ['#040000', '#d5272d', '#fcb923', '#3552a4', '#154f3c', '#805fa9', '#f1929c', '#e16325', '#3cbeb7'];
+		 /*              Black       White      Red       Yellow     Blue       Green      Purple      Pink      Orange      Cyan    */
+		 var colors = ['#040000', '#ffffff', '#d5272d', '#f9c64f ', '#3552a4', '#154f3c', '#805fa9', '#f7aeb9', '#ec5924', '#5ab7aa'];
 		var nczHome = document.getElementById('nczHome');
 		var text = document.getElementById('value');
 		var color = document.getElementById('color');
@@ -1162,7 +1162,7 @@
 		var dateNow = Date.now();
 		var colorCode = '';
 
-		for(var a = 0 ; a <= 8 ; a++) {
+		for(var a = 0 ; a <= 9 ; a++) {
 			if(localStorage.getItem('colorCode')==colors[a]) {
 				colorIndex = a;
 				nczHome.style.backgroundColor = colors[colorIndex];
@@ -1248,11 +1248,12 @@
 		});
 
 		/*touch event*/
-		var colors = ['#040000', '#d5272d', '#fcb923', '#3552a4', '#154f3c', '#805fa9', '#f1929c', '#e16325', '#3cbeb7'];
+		 /*              Black       White      Red       Yellow     Blue       Green      Purple      Pink      Orange      Cyan    */
+		 var colors = ['#040000', '#ffffff', '#d5272d', '#f9c64f ', '#3552a4', '#154f3c', '#805fa9', '#f7aeb9', '#ec5924', '#5ab7aa'];
 		var nczHome = document.getElementById('nczHome');
 		var t = 0;
 
-		for(var a = 0 ; a <= 8 ; a++) {
+		for(var a = 0 ; a <= 9 ; a++) {
 			if(localStorage.getItem('colorCode')==colors[a]) {
 				t = a;
 				nczHome.style.backgroundColor = colors[t];
@@ -1262,7 +1263,7 @@
 		document.addEventListener('swiped-left', function (e) {
 			t -= 1;
 			if (t == -1) {
-				t = 8;
+				t = 9;
 			}
 			nczHome.style.backgroundColor = colors[t];
 			localStorage.setItem('colorCode', colors[t]);
@@ -1271,7 +1272,7 @@
 
 		document.addEventListener('swiped-right', function (e) {
 			t += 1;
-			if (t == 9) {
+			if (t == 10) {
 				t = 0;
 			}
 			nczHome.style.backgroundColor = colors[t];
@@ -1282,7 +1283,7 @@
 		document.addEventListener('swiped-up', function (e) {
 			t -= 1;
 			if (t == -1) {
-				t = 8;
+				t = 9;
 			}
 			nczHome.style.backgroundColor = colors[t];
 			localStorage.setItem('colorCode', colors[t]);
@@ -1291,7 +1292,7 @@
 
 		document.addEventListener('swiped-down', function (e) {
 			t += 1;
-			if (t == 9) {
+			if (t == 10) {
 				t = 0;
 			}
 			nczHome.style.backgroundColor = colors[t];

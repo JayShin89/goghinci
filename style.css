@@ -210,7 +210,7 @@ section {
     display: block;
     text-decoration: none;
     padding: 8px;
-    color: #af8d30;
+    color: #dd9429;
     transition: .1s;
     white-space: nowrap;
     font-size: 14px;
@@ -246,8 +246,8 @@ section {
 }
 
 .totalmenu1-0 {
-    background-image: url("images/logo(1).svg");
-    background-size: 400px 400px;
+    background-image: url("images/logo.svg");
+    background-size: 300px 300px;
     background-position-x: center;
     background-position-y: center;
     width: 100%;
@@ -524,7 +524,7 @@ background-color: blue;
     position: absolute;
     height: 3px;
     width: 100%;
-    background: #af8d30;
+    background: #dd9429;
     border-radius: 1px;
     opacity: 1;
     left: 0;
@@ -573,7 +573,7 @@ background-color: blue;
 /* Color of 3 lines */
 
 .navbar-toggler.collapsed .toggler-icon {
-    color: #af8d30;
+    color: #dd9429;
 }
 
 /* footer */
@@ -613,14 +613,14 @@ background-color: blue;
     width: 100vw;
     font-size: 1.5rem;
     font-weight: lighter;
-    color: #af8d30;
+    color: #dd9429;
     display: inline-flex;
     align-content: left;
 
 }
 
 .credit .copyright {
-    color: #af8d30;
+    color: #dd9429;
     text-align: left;
     font-size: 1.5rem;
     width: 50%;
@@ -685,9 +685,9 @@ text-align: center;
     /* Chrome, Safari, Opera */
     transform: rotate(45deg);
 
-    border-right: 4px solid #af8d30;
+    border-right: 4px solid #dd9429;
     ;
-    border-bottom: 4px solid #af8d30;
+    border-bottom: 4px solid #dd9429;
     ;
     margin: 0 0 3px 4px;
 
@@ -1005,7 +1005,7 @@ text-align: center;
 
     .navbar-nav {
         top: 10px;
-        border-top: #af8d30 3px solid;
+        border-top: #dd9429 3px solid;
     }
 
 
