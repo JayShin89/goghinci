@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Page-Enter" content="RevealTrans(Duration=4,Transition=23)">
-    <meta http-equiv="Page-Exit" content="RevealTrans(Duration=3,Transition=23)">
+    <meta http-equiv="Page-Enter" content="RevealTrans(Duration=0.4,Transition=23)">
+    <meta http-equiv="Page-Exit" content="RevealTrans(Duration=0.3,Transition=23)">
     <title>Vanici</title>
 
     <!-- Bootstrap css-->
@@ -317,7 +317,7 @@
 
         <nav class="navbar navbar-expand-lg navbar-dark transparent fixed-top">
 
-            <a class="navbar-brand" href="/index.html" style="margin-left:3%; margin-top:5px; text-align:center;"><img
+            <a class="navbar-brand" href="/index.html" style="margin-left:40px; margin-top:5px; text-align:center;"><img
                     src="images/logo(1).svg" width="80" height="30"></a>
             <button class="navbar-toggler collapsed d-flex d-lg-none flex-column justify-content-around" type="button"
                 style="margin-right:3%; margin-top:10px; font-size:22px;" data-toggle="collapse"
@@ -533,12 +533,12 @@
         var colorCode = '';
 
 
-        for(var a = 0 ; a <= 8 ; a++) {
-			if(localStorage.getItem('colorCode')==colors[a]) {
-				colorIndex = a;
-				mHome.style.backgroundColor = colors[colorIndex];
-			}
-		}
+        for (var a = 0; a <= 8; a++) {
+            if (localStorage.getItem('colorCode') == colors[a]) {
+                colorIndex = a;
+                mHome.style.backgroundColor = colors[colorIndex];
+            }
+        }
 
 
         function changeBgColor(e) {
@@ -584,7 +584,7 @@
                 if (colorIndex < 0) colorIndex = colors.length - 1;
 
                 mHome.style.backgroundColor = colors[colorIndex];
-                
+
 
                 /*if (colorIndex == 1 || colorIndex == 5) {
                     navdrop.style.color = colors[6];
@@ -627,12 +627,12 @@
         var nHome = document.getElementById('mHome');
         var t = 0;
 
-        for(var a = 0 ; a <= 8 ; a++) {
-			if(localStorage.getItem('colorCode')==colors[a]) {
-				t = a;
-				nHome.style.backgroundColor = colors[t];
-			}
-		}
+        for (var a = 0; a <= 8; a++) {
+            if (localStorage.getItem('colorCode') == colors[a]) {
+                t = a;
+                nHome.style.backgroundColor = colors[t];
+            }
+        }
 
         document.addEventListener('swiped-left', function (e) {
             t -= 1;
@@ -679,9 +679,30 @@
         });
 
 
+        $(function () {
+            $("body div").fadeIn(500, function () {
+                $(this).animate({
+                    "top": "150px"
+                }, 1000);
+            });
+
+            $("a").click(function () {
+                var url = $(this).attr("href");
+                $("body div").animate({
+                    "opacity": "0",
+                    "top": "10px"
+                }, 500, function () {
+                    document.location.href = url;
+                });
+
+                return false;
+            });
+        });
+
+
     </script>
-    
-    
+
+
 
 
 </body>
