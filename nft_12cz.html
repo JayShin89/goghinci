@@ -83,7 +83,7 @@
         }
 
 		.credit .copyright {
-			margin-top: -8vh;
+			margin-top: -5vh;
 		}
 		
 		.dropdown.show .dropdown-toggle::after {
@@ -451,7 +451,7 @@
 			</div>
 
 			<div class="g-recaptcha" data-sitekey="6LffvfUjAAAAAPg7Gwmjz2cYFe6hCAugdNZ2K-4G"></div>								
-				<button type="submit" id="captcha-submit" style="font-size:22px; background-color: transparent; color: #dd9429; font-weight: bolder; margin-left: 48vw; margin-top: 10px;" onclick='return check_recaptcha();'>Submit</button>
+				
 		</div>
 
 
@@ -994,6 +994,7 @@
 
 		const ADDRESS = "0xf70472130cd9801F3f770bA815dEcCdae3E1a994";
 		document.getElementById('mint').onclick = () => {
+			return check_recaptcha();
 			checkWallet();
 
 			(async () => {
