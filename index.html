@@ -63,24 +63,18 @@
 
     <style>
         .tnc3 {
-            visibility: hidden;
-        }
-
-        .credit {
-
-            padding-top: 25px;
-        }
-
-        .credit .copyright {
-            color: #dd9429;
-            text-align: left;
-            font-size: 1.5rem;
-            width: 50%;
-            margin-left: -60px;
-            align-items: left;
-            font-weight: bolder;
-
-            vertical-align: bottom;
+            font-family: "Avenir Next" !important;
+                font-style: italic;
+                margin-top: 50vh;
+                
+                margin-left: 48.5vw;
+                width: 100%;
+                visibility: visible;
+                
+                color: #dd9429;
+                font-size: 22px;
+                font-weight: bold;
+                
         }
 
         .terms {
@@ -131,12 +125,15 @@
         }
 
         @media screen and (max-width:450px) {
-            .navbar-brand {
-                margin-bottom: 7px;
+            .navbar img {
+                margin-top: -10px;
+                margin-bottom: 2px;
             }
 
+            
+
             .navbar-nav ul {
-                margin-top: 14px;
+                margin-top: 5px;
                 border-top: 0;
 
             }
@@ -157,7 +154,7 @@
                 font-family: "Avenir Next" !important;
                 font-style: italic;
                 margin-top: 85vh;
-                margin-left: 22vw;
+                margin-left: 45vw;
                 width: 100%;
                 visibility: visible;
                 text-align: flex;
@@ -205,7 +202,8 @@
                 
             } */
 
-            .tnc {
+            /* .tnc {
+                
                 display: inline-block;
                 width: 100%;
                 margin: 0 auto;
@@ -223,7 +221,7 @@
                 display: none;
                 margin-left: 18vw;
                 margin-top: 200px;
-            }
+            } */
 
         }
 
@@ -284,14 +282,9 @@
                 }
                 
             } */
-            .tnc {
-                display: inline-block;
-                width: 100%;
-                margin: 0 auto;
+            
 
-            }
-
-            .tnc1 {
+            /* .tnc1 {
                 display: none;
                 margin-left: 8vw;
                 margin-top: -205px;
@@ -302,7 +295,7 @@
                 display: none;
                 margin-left: 8vw;
                 margin-top: 200px;
-            }
+            } */
 
         }
     </style>
@@ -317,7 +310,7 @@
 
         <nav class="navbar navbar-expand-lg navbar-dark transparent fixed-top">
 
-            <a class="navbar-brand" href="/index.html" style="margin-left:40px; margin-top:25px; text-align:center;"><img
+            <a class="navbar-brand" href="/index.html" style="margin-left:3%; margin-top:20px; text-align:center;"><img
                     src="images/logo.svg" width="80" height="30"></a>
             <button class="navbar-toggler collapsed d-flex d-lg-none flex-column justify-content-around" type="button"
                 style="margin-right:3%; margin-top:10px; font-size:22px;" data-toggle="collapse"
@@ -384,23 +377,22 @@
     <div class="mhome" id="mHome">
 
         <div class="totalmenu1-0">
-            <div class="tnc">
+            <div class="tnc3">Scroll </div>
                 <!-- <h3 class="rainbow terms" id="desc" style="margin-top:3vh;">Scroll</h3> -->
-                <div class="tnc1">
+                <!-- <div class="tnc1">
                     <span class="m_scroll_arrows unu1"></span>
-                    <!-- <span class="m_scroll_arrows doi1"></span>
-                    <span class="m_scroll_arrows trei1"></span> -->
+                    <span class="m_scroll_arrows doi1"></span>
+                    <span class="m_scroll_arrows trei1"></span>
                 </div>
-                <!-- <div class="mouse">
+                <div class="mouse">
                     <div class="wheel"></div>
-                </div> -->
-                <div class="tnc2">
-                    <!-- <span class="m_scroll_arrows unu"></span>
-                    <span class="m_scroll_arrows doi"></span> -->
-                    <span class="m_scroll_arrows trei"></span>
                 </div>
-                <div class="tnc3"> Scroll </div>
-            </div>
+                <div class="tnc2">
+                    <span class="m_scroll_arrows unu"></span>
+                    <span class="m_scroll_arrows doi"></span>
+                    <span class="m_scroll_arrows trei"></span>
+                </div> -->
+                
         </div>
         <div class="credit">
             <div class="copyright">&copy; 2023 VANICI
@@ -513,7 +505,7 @@
     <script src="script.js"></script>
     <script>
         /*              Black       White      Red       Yellow     Blue       Green      Purple      Pink      Orange      Cyan    */
-        var colors = ['#040000', '#ffffff', '#d5272d', '#f9c64f ', '#3552a4', '#154f3c', '#805fa9', '#f7aeb9', '#ec5924', '#7db8b0'];
+        var colors = ['#040000', '#ffffff', '#d5272d', '#f9c64f ', '#3552a4', '#154f3c', '#805fa9', '#f7aeb9', '#ec5924', '#63beb0'];
         var nHome = document.getElementById('mHome');
         var text = document.getElementById('value');
         var color = document.getElementById('color');
@@ -624,7 +616,7 @@
 
         /*touch event*/
          /*              Black       White      Red       Yellow     Blue       Green      Purple      Pink      Orange      Cyan    */
-         var colors = ['#040000', '#ffffff', '#d5272d', '#f9c64f ', '#3552a4', '#154f3c', '#805fa9', '#f7aeb9', '#ec5924', '#7db8b0'];
+         var colors = ['#040000', '#ffffff', '#d5272d', '#f9c64f ', '#3552a4', '#154f3c', '#805fa9', '#f7aeb9', '#ec5924', '#63beb0'];
         var nHome = document.getElementById('mHome');
         var t = 0;
 
