@@ -409,15 +409,12 @@ background-color: blue;
 }
 
 .totalmenu3-0 {
-    background-image: url("images/12cz-1.png");
-    background-size: contain;
-    background-position-x: center;
-    background-position-y: center;
+    
     width: 100vw;
     height: 40.4vh;
     margin: 0;
     background-repeat: no-repeat;
-    margin-top: 200px;
+    
 
 }
 
@@ -439,6 +436,7 @@ background-color: blue;
 
 .text {
     text-align: center;
+    margin-top: -35vh;
 }
 
 .text button {
@@ -453,7 +451,7 @@ background-color: blue;
     height: 60px;
     font-weight: 600;
     text-transform: uppercase;
-    margin-top: 4vh;
+    
     vertical-align: center;
     font-size: 20pt;
 
