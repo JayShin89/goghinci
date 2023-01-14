@@ -71,7 +71,7 @@
 	<!--header section stars -->
 
 	<style>
-		.hi-slide {
+		/* .hi-slide {
 			position: relative;
 			width: 754px;
 			height: 292px;
@@ -105,9 +105,11 @@
 
 		.hi-slide .hi-prev {
 			left: -60px;
+			margin-top: -30px;
 		}
 		.hi-slide .hi-next {
-			right: -60px;
+			right: -100px;
+			margin-top: -30px;
 		}
 		.hi-slide .hi-prev::before {
 			content:  '<';
@@ -149,12 +151,12 @@
 			width: 100%;
 			height: 100%;
 			background-position: center;
-		}
+		}*/
 
 		.tnc3 {
 			font-family: "Avenir Next" !important;
 			font-style: italic;
-			margin-top: 26vh;
+			margin-top: 73vh;
 
 			margin-left: 48.5vw;
 			width: 100%;
@@ -164,10 +166,53 @@
 			font-size: 22px;
 			font-weight: bold;
 
+		} 
+
+		.slider {
+			position: relative;
+			width: 200px;
+			height: 200px;
+			transform-style: preserve-3d;
+			animation: rotate 30s linear infinite;
+			top: 40vh;
 		}
 
+		@keyframes rotate {
+			0% {
+				transform: perspective(1000px) rotateY(0deg);
+			}
+			100% {
+				transform: perspective(1000px) rotateY(360deg);
+			}
+		}
+
+		.slider span {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			transform-origin: center;
+			transform-style: preserve-3d;
+			transform: rotateY(calc(var(--i)*45deg)) translateZ(350px);
+		}
+
+		.slider span img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			border-radius: 10px;
+			object-fit: cover;
+			transition: 2s;
+		}
+
+		.slider span:hover img {
+			transform: translateY(-50px) scale(1.2);
+		}
 		.credit .copyright {
-			margin-top: -30vh;
+			margin-top: 5vh;
 		}
 
 		.dropdown.show .dropdown-toggle::after {
@@ -282,6 +327,9 @@
 
 
 		@media screen and (max-width:450px) {
+			
+			
+			
 			.navbar img {
 				margin-top: -15px;
 				margin-bottom: 2px;
@@ -583,7 +631,7 @@
 
 	<div class="nczhome" id="nczHome">
 <br><br>
-<div class = "slide hi-slide">
+<!-- <div class = "slide hi-slide">
 	<div class = "hi-prev"></div>
 	<div class = "hi-next"></div>
 	<ul>
@@ -601,6 +649,19 @@
 		<li><img src = "/images/12.png" alt = ""></li>
 
 	</ul>
+</div> -->
+
+<div class = "slider">
+	<span style = "--i:1;"><img src = "/images/1.png" alt = ""></span>
+	<span style = "--i:2;"><img src = "/images/2.png" alt = ""></span>
+	<span style = "--i:3;"><img src = "/images/3.png" alt = ""></span>
+	<span style = "--i:4;"><img src = "/images/4.png" alt = ""></span>
+	<span style = "--i:5;"><img src = "/images/5.png" alt = ""></span>
+	<span style = "--i:6;"><img src = "/images/6.png" alt = ""></span>
+	<span style = "--i:7;"><img src = "/images/7.png" alt = ""></span>
+	<span style = "--i:8;"><img src = "/images/8.png" alt = ""></span>
+	
+
 </div>
 
 		<div class="totalmenu3-0">
@@ -679,12 +740,12 @@
 
 	<!--footer section ends -->
 
-	<script src = "https://code.jquery.com/jquery-3.6.3.js"></script>
+	<!-- <script src = "https://code.jquery.com/jquery-3.6.3.js"></script>
 	<script src = "js/jquery.hislide.js"></script>
 
 	<script>
 		$('.slide').hiSlide();
-	</script>
+	</script> -->
 	<!--custom js file link -->
 	<script type="text/javascript">
 		const Toast = Swal.mixin({
