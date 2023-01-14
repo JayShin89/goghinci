@@ -71,7 +71,7 @@
 		.tnc3 {
 			font-family: "Avenir Next" !important;
 			font-style: italic;
-			margin-top: 73.5vh;
+			margin-top: 72.5vh;
 
 			margin-left: 48.5vw;
 			width: 100%;
@@ -84,7 +84,7 @@
 		}
 
 		.credit .copyright {
-			margin-top: -5vh;
+			margin-top: 9vh;
 		}
 
 		.dropdown.show .dropdown-toggle::after {
@@ -187,6 +187,13 @@
 			padding: 3%;
 		}
 
+		.content_close {
+			margin-left: 8vw;
+			font-size:22px;
+			background-color: transparent;
+			color:#dd9429;
+			font-weight: bolder;
+		}
 
 
 		@media screen and (max-width:450px) {
@@ -1379,7 +1386,11 @@
 		function check_recaptcha() {
 			var v = grecaptcha.getResponse();
 			if (v.length == 0) {
-				alert("Please check ReCaptcha");
+				Toast.fire({
+									icon: 'error',
+									title: 'Please check ReCaptcha'
+								})
+				
 				return false;
 			} else {
 				location.reload();
@@ -1390,13 +1401,7 @@
 
 	</script>
 
-
-
-
-	</script>
-
-
-
+	
 
 </body>
 
