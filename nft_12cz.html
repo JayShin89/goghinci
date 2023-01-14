@@ -10,8 +10,8 @@
 	<title>Vanici</title>
 
 	<!--Favicon-->
-    <link rel="icon" href="images/logov.ico" type="image/x-icon" sizes="16x16">
-	
+	<link rel="icon" href="images/logov.ico" type="image/x-icon" sizes="16x16">
+
 	<!-- Bootstrap css-->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -166,21 +166,22 @@
 			font-size: 22px;
 			font-weight: bold;
 
-		} 
+		}
 
 		.slider {
 			position: relative;
 			width: 200px;
 			height: 200px;
 			transform-style: preserve-3d;
-			animation: rotate 30s linear infinite;
-			top: 40vh;
+			animation: rotate 60s linear infinite;
+			top: 35vh;
 		}
 
 		@keyframes rotate {
 			0% {
 				transform: perspective(1000px) rotateY(0deg);
 			}
+
 			100% {
 				transform: perspective(1000px) rotateY(360deg);
 			}
@@ -194,7 +195,7 @@
 			height: 100%;
 			transform-origin: center;
 			transform-style: preserve-3d;
-			transform: rotateY(calc(var(--i)*45deg)) translateZ(350px);
+			transform: rotateY(calc(var(--i)*30deg)) translateZ(450px);
 		}
 
 		.slider span img {
@@ -211,6 +212,7 @@
 		.slider span:hover img {
 			transform: translateY(-50px) scale(1.2);
 		}
+
 		.credit .copyright {
 			margin-top: 5vh;
 		}
@@ -327,16 +329,41 @@
 
 
 		@media screen and (max-width:450px) {
-			
-			
-			
+
+			.slider {
+				width: 80px;
+				height: 80px;
+				margin-top: -15vh;
+			}
+
+			@keyframes rotate {
+				0% {
+					transform: perspective(2000px) rotateY(0deg);
+				}
+
+				100% {
+					transform: perspective(2000px) rotateY(360deg);
+				}
+			}
+
+			.slider span {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				transform-origin: center;
+				transform-style: preserve-3d;
+				transform: rotateY(calc(var(--i)*30deg)) translateZ(180px);
+			}
+
 			.navbar img {
 				margin-top: -15px;
 				margin-bottom: 2px;
 
 			}
 
-			
+
 
 			.navbar-nav ul {
 				margin-top: 5px;
@@ -455,7 +482,7 @@
 				-webkit-animation: colorchange 20s infinite alternate;
 			}
 
-			
+
 
 			.wallet {
 				margin-left: -20px;
@@ -630,8 +657,8 @@
 	<!--home section starts -->
 
 	<div class="nczhome" id="nczHome">
-<br><br>
-<!-- <div class = "slide hi-slide">
+		<br><br>
+		<!-- <div class = "slide hi-slide">
 	<div class = "hi-prev"></div>
 	<div class = "hi-next"></div>
 	<ul>
@@ -651,18 +678,21 @@
 	</ul>
 </div> -->
 
-<div class = "slider">
-	<span style = "--i:1;"><img src = "/images/1.png" alt = ""></span>
-	<span style = "--i:2;"><img src = "/images/2.png" alt = ""></span>
-	<span style = "--i:3;"><img src = "/images/3.png" alt = ""></span>
-	<span style = "--i:4;"><img src = "/images/4.png" alt = ""></span>
-	<span style = "--i:5;"><img src = "/images/5.png" alt = ""></span>
-	<span style = "--i:6;"><img src = "/images/6.png" alt = ""></span>
-	<span style = "--i:7;"><img src = "/images/7.png" alt = ""></span>
-	<span style = "--i:8;"><img src = "/images/8.png" alt = ""></span>
-	
+		<div class="slider">
+			<span style="--i:1;"><img src="/images/1.png" alt=""></span>
+			<span style="--i:2;"><img src="/images/2.png" alt=""></span>
+			<span style="--i:3;"><img src="/images/3.png" alt=""></span>
+			<span style="--i:4;"><img src="/images/4.png" alt=""></span>
+			<span style="--i:5;"><img src="/images/5.png" alt=""></span>
+			<span style="--i:6;"><img src="/images/6.png" alt=""></span>
+			<span style="--i:7;"><img src="/images/7.png" alt=""></span>
+			<span style="--i:8;"><img src="/images/8.png" alt=""></span>
+			<span style="--i:9;"><img src="/images/9.png" alt=""></span>
+			<span style="--i:10;"><img src="/images/10.png" alt=""></span>
+			<span style="--i:11;"><img src="/images/11.png" alt=""></span>
+			<span style="--i:12;"><img src="/images/12.png" alt=""></span>
 
-</div>
+		</div>
 
 		<div class="totalmenu3-0">
 			<div class="tnc3">Scroll </div>
@@ -711,7 +741,8 @@
 		<div class="modal">
 
 			<div class="content">
-				<div class="g-recaptcha" data-sitekey="6LffvfUjAAAAAPg7Gwmjz2cYFe6hCAugdNZ2K-4G" style="transform:scale(0.3);transform-origin:0 0"></div>
+				<div class="g-recaptcha" data-sitekey="6LffvfUjAAAAAPg7Gwmjz2cYFe6hCAugdNZ2K-4G"
+					style="transform:scale(0.3);transform-origin:0 0"></div>
 			</div>
 			<button class="content_close" onclick="this.parentNode.parentNode.style.display='none';">close</button>
 
