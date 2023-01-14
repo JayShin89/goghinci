@@ -871,8 +871,9 @@ background-color: blue;
 
 /*website loading animation*/
 #preloader {
-    background: transparent url(/images/loadingVV.gif) no-repeat center center;
+    background: #fff url(/images/loadingVV.gif) no-repeat center center;
     background-size: 10%;
+    opacity:0.6;
     height: 100vh;
     width: 100%;
     position: fixed;
