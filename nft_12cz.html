@@ -60,6 +60,7 @@
 		integrity="sha512-q2rGCiN6EL2X7aJwVzSD6E0GbpfcGSjipdpZ12lqArQfSMb/LTDXlSFZLrohrSanuRk2/oP96lb14NNgPCAZPw=="
 		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
 </head>
 
 <body>
@@ -68,24 +69,24 @@
 
 	<style>
 		.tnc3 {
-            font-family: "Avenir Next" !important;
-                font-style: italic;
-                margin-top: 73.5vh;
-                
-                margin-left: 48.5vw;
-                width: 100%;
-                visibility: visible;
-                
-                color: #dd9429;
-                font-size: 22px;
-                font-weight: bold;
-                
-        }
+			font-family: "Avenir Next" !important;
+			font-style: italic;
+			margin-top: 73.5vh;
+
+			margin-left: 48.5vw;
+			width: 100%;
+			visibility: visible;
+
+			color: #dd9429;
+			font-size: 22px;
+			font-weight: bold;
+
+		}
 
 		.credit .copyright {
 			margin-top: -5vh;
 		}
-		
+
 		.dropdown.show .dropdown-toggle::after {
 			transform: rotate(180deg);
 		}
@@ -125,12 +126,75 @@
 			font-family: Georgia, serif;
 		}
 
+		/* pop up */
+		.blur-it {
+			filter: blur(4px);
+		}
+
+		.modal-wrapper {
+			width: 100%;
+			height: 100%;
+			position: fixed;
+			top: 0;
+			left: 0;
+			background: #000;
+			visibility: hidden;
+			opacity: 0;
+			transition: all 0.25s ease-in-out;
+		}
+
+		.modal-wrapper.open {
+			opacity: 1;
+			visibility: visible;
+		}
+
+		.modal {
+			width: 350px;
+			height: 150px;
+			display: block;
+
+			position: relative;
+			top: 77%;
+			left: 40%;
+			background: transparent;
+			opacity: 0;
+			transition: all 0.5s ease-in-out;
+		}
+
+		.modal-wrapper.open .modal {
+			margin-top: -200px;
+			opacity: 1;
+		}
+
+		.head {
+			width: 300px;
+			height: 38px;
+			margin-left: 10px;
+			padding: 8px;
+			overflow: hidden;
+			background: #fff;
+
+		}
+
+		.btn-close {
+			font-size: 15px;
+			display: block;
+			float: right;
+			color: #dd9429;
+		}
+
+		.content {
+			padding: 3%;
+		}
+
+
+
 		@media screen and (max-width:450px) {
 			.navbar img {
-                margin-top: -15px;
-                margin-bottom: 2px;
-                
-            }
+				margin-top: -15px;
+				margin-bottom: 2px;
+
+			}
 
 			.navbar-nav ul {
 				margin-top: 5px;
@@ -425,8 +489,8 @@
 
 		<div class="totalmenu3-0">
 			<div class="tnc3">Scroll </div>
-				<!-- <h3 class="rainbow terms" id="desc" style="margin-top:3vh;">Scroll</h3> -->
-				<!-- <div class="tnc1">
+			<!-- <h3 class="rainbow terms" id="desc" style="margin-top:3vh;">Scroll</h3> -->
+			<!-- <div class="tnc1">
 					<span class="m_scroll_arrows unu1"></span>
 					<span class="m_scroll_arrows doi1"></span>
                     <span class="m_scroll_arrows trei1"></span>
@@ -439,7 +503,7 @@
                     <span class="m_scroll_arrows doi"></span>
 					<span class="m_scroll_arrows trei"></span>
 				</div> -->
-				<!-- <div class="tnc3"> 
+			<!-- <div class="tnc3"> 
 			</div> -->
 		</div>
 		<!--<h1 class = "mintCount"><span id="tc"></span> / <span id="ts"></span></h1>-->
@@ -450,8 +514,8 @@
 				</div>
 			</div>
 
-			<div class="g-recaptcha" data-sitekey="6LffvfUjAAAAAPg7Gwmjz2cYFe6hCAugdNZ2K-4G"></div>								
-				
+
+
 		</div>
 
 
@@ -463,6 +527,18 @@
 			<!--<div class="tnc">
                 <div class="terms"><a href="tnchome.html">Terms & Conditions</a></div>
             </div>-->
+		</div>
+	</div>
+
+	<div class="modal-wrapper">
+		<div class="modal">
+
+			<div class="content">
+				<div class="g-recaptcha" data-sitekey="6LffvfUjAAAAAPg7Gwmjz2cYFe6hCAugdNZ2K-4G"></div>
+			</div>
+			<button class="content_close" onclick="this.parentNode.parentNode.style.display='none';">close</button>
+
+
 		</div>
 	</div>
 
@@ -994,56 +1070,63 @@
 
 		const ADDRESS = "0xf70472130cd9801F3f770bA815dEcCdae3E1a994";
 		document.getElementById('mint').onclick = () => {
-			return check_recaptcha();
-			checkWallet();
+			$('.modal-wrapper').css("display", "block");
+			$('.modal-wrapper').toggleClass('open');
 
-			(async () => {
-				if (window.ethereum) {
-					await window.ethereum.send('eth_requestAccounts');
-					window.web3 = new Web3(window.ethereum);
+			return false;
 
-					//  var totalSupply = await web3.eth.totalSupply();
-					//	document.getElementById('kuch').textContent = totalSupply;
 
-					var accounts = await web3.eth.getAccounts();
-					account = accounts[0];
-					//document.getElementById('wallet_address').textContent = account;
+			if (check_recaptcha()) {
+				checkWallet();
 
-					contract = new web3.eth.Contract(ABI, ADDRESS);
-					var totalcount = await contract.methods.tokenCount().call();
-					var balance = await contract.methods.balanceOf(account).call();
+				(async () => {
+					if (window.ethereum) {
+						await window.ethereum.send('eth_requestAccounts');
+						window.web3 = new Web3(window.ethereum);
 
-					if (totalcount == 504) {
-						Toast.fire({
-							icon: 'error',
-							title: 'All NFTs are minted.'
-						})
-					}
-					else if (balance >= 1) {
-						Toast.fire({
-							icon: 'error',
-							title: 'You already mint this collection. Please wait for the next collection'
-						})
-					}
-					else {
-						const result = await contract.methods.mint(account).send({ from: account, value: "3330000000000000" });
-						if (result != null) {
+						//  var totalSupply = await web3.eth.totalSupply();
+						//	document.getElementById('kuch').textContent = totalSupply;
+
+						var accounts = await web3.eth.getAccounts();
+						account = accounts[0];
+						//document.getElementById('wallet_address').textContent = account;
+
+						contract = new web3.eth.Contract(ABI, ADDRESS);
+						var totalcount = await contract.methods.tokenCount().call();
+						var balance = await contract.methods.balanceOf(account).call();
+
+						if (totalcount == 504) {
 							Toast.fire({
-								icon: 'success',
-								title: 'Successfully Minted'
+								icon: 'error',
+								title: 'All NFTs are minted.'
+							})
+						}
+						else if (balance >= 1) {
+							Toast.fire({
+								icon: 'error',
+								title: 'You already mint this collection. Please wait for the next collection'
 							})
 						}
 						else {
-							Toast.fire({
-								icon: 'error',
-								title: 'Mint Failed'
-							})
+							const result = await contract.methods.mint(account).send({ from: account, value: "3330000000000000" });
+							if (result != null) {
+								Toast.fire({
+									icon: 'success',
+									title: 'Successfully Minted'
+								})
+							}
+							else {
+								Toast.fire({
+									icon: 'error',
+									title: 'Mint Failed'
+								})
+							}
+
 						}
-
 					}
-				}
 
-			})();
+				})();
+			}
 		}
 
 
@@ -1134,8 +1217,8 @@
 	</script>
 
 	<script>
-		 /*              Black       White      Red       Yellow     Blue       Green      Purple      Pink      Orange      Cyan    */
-		 var colors = ['#040000', '#ffffff', '#d5272d', '#f9c64f ', '#3552a4', '#154f3c', '#805fa9', '#f7aeb9', '#ec5924', '#63beb0'];
+		/*              Black       White      Red       Yellow     Blue       Green      Purple      Pink      Orange      Cyan    */
+		var colors = ['#040000', '#ffffff', '#d5272d', '#f9c64f ', '#3552a4', '#154f3c', '#805fa9', '#f7aeb9', '#ec5924', '#63beb0'];
 		var nczHome = document.getElementById('nczHome');
 		var text = document.getElementById('value');
 		var color = document.getElementById('color');
@@ -1154,8 +1237,8 @@
 		var dateNow = Date.now();
 		var colorCode = '';
 
-		for(var a = 0 ; a <= 9 ; a++) {
-			if(localStorage.getItem('colorCode')==colors[a]) {
+		for (var a = 0; a <= 9; a++) {
+			if (localStorage.getItem('colorCode') == colors[a]) {
 				colorIndex = a;
 				nczHome.style.backgroundColor = colors[colorIndex];
 			}
@@ -1240,13 +1323,13 @@
 		});
 
 		/*touch event*/
-		 /*              Black       White      Red       Yellow     Blue       Green      Purple      Pink      Orange      Cyan    */
-		 var colors = ['#040000', '#ffffff', '#d5272d', '#f9c64f ', '#3552a4', '#154f3c', '#805fa9', '#f7aeb9', '#ec5924', '#63beb0'];
+		/*              Black       White      Red       Yellow     Blue       Green      Purple      Pink      Orange      Cyan    */
+		var colors = ['#040000', '#ffffff', '#d5272d', '#f9c64f ', '#3552a4', '#154f3c', '#805fa9', '#f7aeb9', '#ec5924', '#63beb0'];
 		var nczHome = document.getElementById('nczHome');
 		var t = 0;
 
-		for(var a = 0 ; a <= 9 ; a++) {
-			if(localStorage.getItem('colorCode')==colors[a]) {
+		for (var a = 0; a <= 9; a++) {
+			if (localStorage.getItem('colorCode') == colors[a]) {
 				t = a;
 				nczHome.style.backgroundColor = colors[t];
 			}
@@ -1293,18 +1376,24 @@
 		});
 	</script>
 	<script>
-		function check_recaptcha(){
+		function check_recaptcha() {
 			var v = grecaptcha.getResponse();
-			if (v.length ==0) {
-				alert ("Please check ReCaptcha");
+			if (v.length == 0) {
+				alert("Please check ReCaptcha");
 				return false;
 			} else {
 				location.reload();
 				return true;
 			}
 		}
-		</script>
 
+
+	</script>
+
+
+
+
+	</script>
 
 
 
