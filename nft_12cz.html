@@ -189,11 +189,13 @@
 
 		.content_close {
 			margin-left: 8vw;
-			font-size:22px;
+			font-size: 22px;
 			background-color: transparent;
-			color:#dd9429;
+			color: #dd9429;
 			font-weight: bolder;
 		}
+
+
 
 
 		@media screen and (max-width:450px) {
@@ -202,6 +204,8 @@
 				margin-bottom: 2px;
 
 			}
+
+			
 
 			.navbar-nav ul {
 				margin-top: 5px;
@@ -319,6 +323,8 @@
 				position: relative;
 				-webkit-animation: colorchange 20s infinite alternate;
 			}
+
+			
 
 			.wallet {
 				margin-left: -20px;
@@ -541,7 +547,7 @@
 		<div class="modal">
 
 			<div class="content">
-				<div class="g-recaptcha" data-sitekey="6LffvfUjAAAAAPg7Gwmjz2cYFe6hCAugdNZ2K-4G"></div>
+				<div class="g-recaptcha" data-sitekey="6LffvfUjAAAAAPg7Gwmjz2cYFe6hCAugdNZ2K-4G" style="transform:scale(0.77);transform-origin:0 0"></div>
 			</div>
 			<button class="content_close" onclick="this.parentNode.parentNode.style.display='none';">close</button>
 
@@ -1387,10 +1393,10 @@
 			var v = grecaptcha.getResponse();
 			if (v.length == 0) {
 				Toast.fire({
-									icon: 'error',
-									title: 'Please check ReCaptcha'
-								})
-				
+					icon: 'error',
+					title: 'Please check ReCaptcha'
+				})
+
 				return false;
 			} else {
 				location.reload();
@@ -1401,7 +1407,7 @@
 
 	</script>
 
-	
+
 
 </body>
 
