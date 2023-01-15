@@ -1555,26 +1555,27 @@
 		}
 
 		document.addEventListener('swiped-left', function (e) {
-			document.getElementById('slider').style.animationDirection = reverse;
+			document.getElementById('rotate').style.rotate.animationDirection = reverse;
 			
 			
-			t -= 1;
-			if (t == -1) {
-				t = 9;
-			}
-			nczHome.style.backgroundColor = colors[t];
-			localStorage.setItem('colorCode', colors[t]);
+			// t -= 1;
+			// if (t == -1) {
+			// 	t = 9;
+			// }
+			// nczHome.style.backgroundColor = colors[t];
+			// localStorage.setItem('colorCode', colors[t]);
 
 		});
 
 		document.addEventListener('swiped-right', function (e) {
-			document.getElementById('slider').style.animationDirection = alternate;
-			t += 1;
-			if (t == 10) {
-				t = 0;
-			}
-			nczHome.style.backgroundColor = colors[t];
-			localStorage.setItem('colorCode', colors[t]);
+			document.getElementById('slider').style.rotate.animationDirection=alternate;
+			
+			// t += 1;
+			// if (t == 10) {
+			// 	t = 0;
+			// }
+			// nczHome.style.backgroundColor = colors[t];
+			// localStorage.setItem('colorCode', colors[t]);
 
 		});
 
