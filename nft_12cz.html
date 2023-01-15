@@ -182,11 +182,11 @@
 		@keyframes rotate {
 			
 			0% {
-				transform: perspective(1000px) rotateY(--deg1);
+				transform: perspective(1000px) rotateY(var(--deg1));
 			}
 
 			100% {
-				transform: perspective(1000px) rotateY(--deg2);
+				transform: perspective(1000px) rotateY(var(--deg2));
 			}
 		}
 
@@ -1558,6 +1558,7 @@
 		}
 
 		document.addEventListener('swiped-left', function (e) {
+			
 			document.getElementById('slider').style.setProperty('--deg1', '360deg');
 			document.getElementById('slider').style.setProperty('--deg2', '0deg');
 			
