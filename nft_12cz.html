@@ -331,18 +331,18 @@
 		@media screen and (max-width:450px) {
 
 			.slider {
-				width: 80px;
-				height: 80px;
+				width: 150px;
+				height: 150px;
 				margin-top: -15vh;
 			}
 
 			@keyframes rotate {
 				0% {
-					transform: perspective(2000px) rotateY(0deg);
+					transform: perspective(1000px) rotateY(0deg);
 				}
 
 				100% {
-					transform: perspective(2000px) rotateY(360deg);
+					transform: perspective(1000px) rotateY(360deg);
 				}
 			}
 
@@ -354,8 +354,13 @@
 				height: 100%;
 				transform-origin: center;
 				transform-style: preserve-3d;
-				transform: rotateY(calc(var(--i)*30deg)) translateZ(180px);
+				transform: rotateY(calc(var(--i)*45deg)) translateZ(200px);
 			}
+
+			.slider span:hover img {
+			transform: translateY(-50px) scale(1.2);
+		}
+
 
 			.navbar img {
 				margin-top: -15px;
