@@ -1288,13 +1288,13 @@
 
 		const ADDRESS = "0xf70472130cd9801F3f770bA815dEcCdae3E1a994";
 		document.getElementById('mint').onclick = () => {
-			$('.modal-wrapper').css("display", "block");
-			$('.modal-wrapper').toggleClass('open');
+			// $('.modal-wrapper').css("display", "block");
+			// $('.modal-wrapper').toggleClass('open');
 
-			return false;
+			// return false;
 
 
-			if (check_recaptcha()) {
+			// if (check_recaptcha()) {
 				checkWallet();
 
 				(async () => {
@@ -1344,7 +1344,7 @@
 					}
 
 				})();
-			}
+			// }
 		}
 
 
@@ -1430,11 +1430,12 @@
 		//     startApp();
 		// })
 
-		//background color change on wheel event
-
+		
 	</script>
 
+
 	<script>
+		//background color change on wheel event
 		/*              Black       White      Red       Yellow     Blue       Green      Purple      Pink      Orange      Cyan    */
 		var colors = ['#040000', '#ffffff', '#d5272d', '#f9c64f ', '#3552a4', '#154f3c', '#805fa9', '#f7aeb9', '#ec5924', '#63beb0'];
 		var nczHome = document.getElementById('nczHome');
@@ -1554,6 +1555,9 @@
 		}
 
 		document.addEventListener('swiped-left', function (e) {
+			document.getElementById('slider').style.animationDirection = reverse;
+			
+			
 			t -= 1;
 			if (t == -1) {
 				t = 9;
@@ -1564,6 +1568,7 @@
 		});
 
 		document.addEventListener('swiped-right', function (e) {
+			document.getElementById('slider').style.animationDirection = alternate;
 			t += 1;
 			if (t == 10) {
 				t = 0;
