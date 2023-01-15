@@ -175,15 +175,18 @@
 			transform-style: preserve-3d;
 			animation: rotate 60s linear infinite;
 			top: 35vh;
+			--deg1:0deg;
+			--deg2:360deg;
 		}
 
 		@keyframes rotate {
+			
 			0% {
-				transform: perspective(1000px) rotateY(0deg);
+				transform: perspective(1000px) rotateY(--deg1);
 			}
 
 			100% {
-				transform: perspective(1000px) rotateY(360deg);
+				transform: perspective(1000px) rotateY(--deg2);
 			}
 		}
 
@@ -683,7 +686,7 @@
 	</ul>
 </div> -->
 
-		<div class="slider">
+		<div class="slider" id = "slider">
 			<span style="--i:1;"><img src="/images/1.png" alt=""></span>
 			<span style="--i:2;"><img src="/images/2.png" alt=""></span>
 			<span style="--i:3;"><img src="/images/3.png" alt=""></span>
@@ -1555,7 +1558,8 @@
 		}
 
 		document.addEventListener('swiped-left', function (e) {
-			document.getElementById('rotate').style.rotate.animationDirection = reverse;
+			document.getElementById('slider').style.setProperty('--deg1', '360deg');
+			document.getElementById('slider').style.setProperty('--deg2', '0deg');
 			
 			
 			// t -= 1;
@@ -1568,7 +1572,8 @@
 		});
 
 		document.addEventListener('swiped-right', function (e) {
-			document.getElementById('slider').style.rotate.animationDirection=alternate;
+			document.getElementById('slider').style.setProperty('--deg1', '0deg');
+			document.getElementById('slider').style.setProperty('--deg2', '360deg');
 			
 			// t += 1;
 			// if (t == 10) {
