@@ -175,45 +175,43 @@
 			transform-style: preserve-3d;
 			-webkit-animation: rotate 60s linear infinite;
 			top: 35vh;
-			--deg1: -360deg;
-			--deg2: 0deg;
-
+			--deg1:-360deg;
+			--deg2:0deg;
+			
 		}
 
 		@-webkit-keyframes rotate {
-			0% {
+				0% {
 				-webkit-transform: perspective(1000px) rotateY(var(--deg1));
-
+				
 			}
 
 			50% {
 				-webkit-transform: perspective(1000px) rotateY(var(-180deg));
-
+				
 			}
-
 			100% {
 				-webkit-transform: perspective(1000px) rotateY(var(--deg2));
-
+				
 			}
-		}
+			}
 
-		@keyframes rotate {
-			0% {
-
+			@keyframes rotate {
+				0% {
+				
 				transform: perspective(1000px) rotateY(var(--deg1));
 			}
 
 			50% {
-
+				
 				transform: perspective(1000px) rotateY(var(-180deg));
 			}
 
 			100% {
-
+				
 				transform: perspective(1000px) rotateY(var(--deg2));
 			}
-		}
-		}
+			}
 
 		.slider span {
 			position: absolute;
@@ -223,7 +221,7 @@
 			height: 100%;
 			transform-origin: center;
 			transform-style: preserve-3d;
-			transform: rotateY(calc(var(--i)*30deg)) translate3D(0, 0, 450px);
+			transform: rotateY(calc(var(--i)*30deg)) translate3D(0,0,450px);
 		}
 
 		.slider span img {
@@ -366,105 +364,104 @@
 
 			@-webkit-keyframes rotate {
 				0% {
-					-webkit-transform: perspective(1000px) rotateY(var(--deg1));
+				-webkit-transform: perspective(1000px) rotateY(var(--deg1));
+				
+			}
 
-				}
-
-				50% {
-					-webkit-transform: perspective(1000px) rotateY(var(-180deg));
-
-				}
-
-				100% {
-					-webkit-transform: perspective(1000px) rotateY(var(--deg2));
-
-				}
+			50% {
+				-webkit-transform: perspective(1000px) rotateY(var(-180deg));
+				
+			}
+			100% {
+				-webkit-transform: perspective(1000px) rotateY(var(--deg2));
+				
+			}
 			}
 
 			@keyframes rotate {
 				0% {
-
-					transform: perspective(1000px) rotateY(var(--deg1));
-				}
-
-				50% {
-
-					transform: perspective(1000px) rotateY(var(-180deg));
-				}
-
-				100% {
-
-					transform: perspective(1000px) rotateY(var(--deg2));
-				}
+				
+				transform: perspective(1000px) rotateY(var(--deg1));
 			}
-		}
 
-		.slider span {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			transform-origin: center;
-			transform-style: preserve-3d;
-			transform: rotateY(calc(var(--i)*30deg)) translate3D(0, 0, 350px);
-		}
+			50% {
+				
+				transform: perspective(1000px) rotateY(var(-180deg));
+			}
 
-		.slider span:hover img {
-			transform: translateY(0px);
-		}
+			100% {
+				
+				transform: perspective(1000px) rotateY(var(--deg2));
+			}
+			}
+			
+
+			.slider span {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				transform-origin: center;
+				transform-style: preserve-3d;
+				transform: rotateY(calc(var(--i)*30deg)) translate3D(0,0,350px);
+			}
+
+			.slider span:hover img {
+				transform: translateY(0px);
+			}
 
 
-		.navbar img {
-			margin-top: -15px;
-			margin-bottom: 2px;
+			.navbar img {
+				margin-top: -15px;
+				margin-bottom: 2px;
 
-		}
+			}
 
 
 
-		.navbar-nav ul {
-			margin-top: 5px;
-			border-top: 0;
+			.navbar-nav ul {
+				margin-top: 5px;
+				border-top: 0;
 
-		}
+			}
 
-		.dropdown-menu a {
-			margin-left: -15px;
-		}
+			.dropdown-menu a {
+				margin-left: -15px;
+			}
 
-		.navbar li {
-			margin-left: -10px;
-		}
+			.navbar li {
+				margin-left: -10px;
+			}
 
-		.wallet {
-			margin-left: -10px;
-		}
+			.wallet {
+				margin-left: -10px;
+			}
 
-		.totalmenu3-0 {
-			margin-top: 0vh;
-		}
+			.totalmenu3-0 {
+				margin-top: 0vh;
+			}
 
-		.tnc3 {
-			font-family: "Avenir Next" !important;
-			font-style: italic;
-			margin-top: 55vh;
-			margin-left: 45vw;
-			width: 100%;
-			visibility: visible;
-			text-align: flex;
-			color: #dd9429;
-			font-size: 15px;
-			font-weight: bold;
-			position: relative;
-			-webkit-animation: colorchange 20s infinite alternate;
-		}
+			.tnc3 {
+				font-family: "Avenir Next" !important;
+				font-style: italic;
+				margin-top: 55vh;
+				margin-left: 45vw;
+				width: 100%;
+				visibility: visible;
+				text-align: flex;
+				color: #dd9429;
+				font-size: 15px;
+				font-weight: bold;
+				position: relative;
+				-webkit-animation: colorchange 20s infinite alternate;
+			}
 
-		.text {
-			margin-top: -30vh;
-		}
+			.text {
+				margin-top: -30vh;
+			}
 
-		/* @-webkit-keyframes colorchange {
+			/* @-webkit-keyframes colorchange {
                 0% {
                     color: #040000;
                 }
@@ -501,25 +498,25 @@
                 
             } */
 
-		.tnc {
-			display: inline-block;
-			width: 100%;
-			margin: 0 auto;
+			.tnc {
+				display: inline-block;
+				width: 100%;
+				margin: 0 auto;
 
-		}
+			}
 
-		.tnc1 {
-			display: none;
-			margin-left: 18vw;
-			margin-top: -205px;
-			margin-bottom: 400px;
-		}
+			.tnc1 {
+				display: none;
+				margin-left: 18vw;
+				margin-top: -205px;
+				margin-bottom: 400px;
+			}
 
-		.tnc2 {
-			display: none;
-			margin-left: 18vw;
-			margin-top: 200px;
-		}
+			.tnc2 {
+				display: none;
+				margin-left: 18vw;
+				margin-top: 200px;
+			}
 
 		}
 
@@ -548,60 +545,59 @@
 
 			@-webkit-keyframes rotate {
 				0% {
-					-webkit-transform: perspective(1000px) rotateY(var(--deg1));
+				-webkit-transform: perspective(1000px) rotateY(var(--deg1));
+				
+			}
 
-				}
-
-				50% {
-					-webkit-transform: perspective(1000px) rotateY(var(-180deg));
-
-				}
-
-				100% {
-					-webkit-transform: perspective(1000px) rotateY(var(--deg2));
-
-				}
+			50% {
+				-webkit-transform: perspective(1000px) rotateY(var(-180deg));
+				
+			}
+			100% {
+				-webkit-transform: perspective(1000px) rotateY(var(--deg2));
+				
+			}
 			}
 
 			@keyframes rotate {
 				0% {
-
-					transform: perspective(1000px) rotateY(var(--deg1));
-				}
-
-				50% {
-
-					transform: perspective(1000px) rotateY(var(-180deg));
-				}
-
-				100% {
-
-					transform: perspective(1000px) rotateY(var(--deg2));
-				}
+				
+				transform: perspective(1000px) rotateY(var(--deg1));
 			}
-		}
 
-		.slider span {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			transform-origin: center;
-			transform-style: preserve-3d;
-			transform: rotateY(calc(var(--i)*45deg)) translate3D(0, 0, 200px);
-		}
+			50% {
+				
+				transform: perspective(1000px) rotateY(var(-180deg));
+			}
 
-		.slider span:hover img {
-			transform: translateY(0px);
-		}
+			100% {
+				
+				transform: perspective(1000px) rotateY(var(--deg2));
+			}
+			}
+			
+
+			.slider span {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				transform-origin: center;
+				transform-style: preserve-3d;
+				transform: rotateY(calc(var(--i)*45deg)) translate3D(0,0,200px);
+			}
+
+			.slider span:hover img {
+				transform: translateY(0px) ;
+			}
 
 
-		.wallet {
-			margin-left: -20px;
-		}
+			.wallet {
+				margin-left: -20px;
+			}
 
-		/* @-webkit-keyframes colorchange {
+			/* @-webkit-keyframes colorchange {
                 0% {
                     color: #040000;
                 }
@@ -637,25 +633,25 @@
                 }
                 
             } */
-		.tnc {
-			display: inline-block;
-			width: 100%;
-			margin: 0 auto;
+			.tnc {
+				display: inline-block;
+				width: 100%;
+				margin: 0 auto;
 
-		}
+			}
 
-		.tnc1 {
-			display: none;
-			margin-left: 8vw;
-			margin-top: -205px;
-			margin-bottom: 400px;
-		}
+			.tnc1 {
+				display: none;
+				margin-left: 8vw;
+				margin-top: -205px;
+				margin-bottom: 400px;
+			}
 
-		.tnc2 {
-			display: none;
-			margin-left: 8vw;
-			margin-top: 200px;
-		}
+			.tnc2 {
+				display: none;
+				margin-left: 8vw;
+				margin-top: 200px;
+			}
 
 		}
 	</style>
@@ -791,7 +787,7 @@
 	</ul>
 </div> -->
 
-		<div class="slider" id="slider">
+		<div class="slider" id = "slider">
 			<span style="--i:1;"><img src="/images/1.png" alt=""></span>
 			<span style="--i:2;"><img src="/images/2.png" alt=""></span>
 			<span style="--i:3;"><img src="/images/3.png" alt=""></span>
@@ -1403,55 +1399,55 @@
 
 
 			// if (check_recaptcha()) {
-			checkWallet();
+				checkWallet();
 
-			(async () => {
-				if (window.ethereum) {
-					await window.ethereum.send('eth_requestAccounts');
-					window.web3 = new Web3(window.ethereum);
+				(async () => {
+					if (window.ethereum) {
+						await window.ethereum.send('eth_requestAccounts');
+						window.web3 = new Web3(window.ethereum);
 
-					//  var totalSupply = await web3.eth.totalSupply();
-					//	document.getElementById('kuch').textContent = totalSupply;
+						//  var totalSupply = await web3.eth.totalSupply();
+						//	document.getElementById('kuch').textContent = totalSupply;
 
-					var accounts = await web3.eth.getAccounts();
-					account = accounts[0];
-					//document.getElementById('wallet_address').textContent = account;
+						var accounts = await web3.eth.getAccounts();
+						account = accounts[0];
+						//document.getElementById('wallet_address').textContent = account;
 
-					contract = new web3.eth.Contract(ABI, ADDRESS);
-					var totalcount = await contract.methods.tokenCount().call();
-					var balance = await contract.methods.balanceOf(account).call();
+						contract = new web3.eth.Contract(ABI, ADDRESS);
+						var totalcount = await contract.methods.tokenCount().call();
+						var balance = await contract.methods.balanceOf(account).call();
 
-					if (totalcount == 504) {
-						Toast.fire({
-							icon: 'error',
-							title: 'All NFTs are minted.'
-						})
-					}
-					else if (balance >= 1) {
-						Toast.fire({
-							icon: 'error',
-							title: 'You already mint this collection. Please wait for the next collection'
-						})
-					}
-					else {
-						const result = await contract.methods.mint(account).send({ from: account, value: "3330000000000000" });
-						if (result != null) {
+						if (totalcount == 504) {
 							Toast.fire({
-								icon: 'success',
-								title: 'Successfully Minted'
+								icon: 'error',
+								title: 'All NFTs are minted.'
+							})
+						}
+						else if (balance >= 1) {
+							Toast.fire({
+								icon: 'error',
+								title: 'You already mint this collection. Please wait for the next collection'
 							})
 						}
 						else {
-							Toast.fire({
-								icon: 'error',
-								title: 'Mint Failed'
-							})
+							const result = await contract.methods.mint(account).send({ from: account, value: "3330000000000000" });
+							if (result != null) {
+								Toast.fire({
+									icon: 'success',
+									title: 'Successfully Minted'
+								})
+							}
+							else {
+								Toast.fire({
+									icon: 'error',
+									title: 'Mint Failed'
+								})
+							}
+
 						}
-
 					}
-				}
 
-			})();
+				})();
 			// }
 		}
 
@@ -1538,7 +1534,7 @@
 		//     startApp();
 		// })
 
-
+		
 	</script>
 
 
@@ -1663,11 +1659,11 @@
 		}
 
 		document.addEventListener('swiped-left', function (e) {
-
+			
 			document.getElementById('slider').style.setProperty('--deg1', '0deg');
 			document.getElementById('slider').style.setProperty('--deg2', '-360deg');
-
-
+			
+			
 			// t -= 1;
 			// if (t == -1) {
 			// 	t = 9;
@@ -1680,7 +1676,7 @@
 		document.addEventListener('swiped-right', function (e) {
 			document.getElementById('slider').style.setProperty('--deg1', '-360deg');
 			document.getElementById('slider').style.setProperty('--deg2', '0deg');
-
+			
 			// t += 1;
 			// if (t == 10) {
 			// 	t = 0;
