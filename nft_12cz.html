@@ -1662,7 +1662,7 @@
 			
 			document.getElementById('slider').style.setProperty('--deg1', '0deg');
 			document.getElementById('slider').style.setProperty('--deg2', '-360deg');
-			window.reload();
+			alert('event left');
 			
 			
 			// t -= 1;
@@ -1677,7 +1677,7 @@
 		document.addEventListener('swiped-right', function (e) {
 			document.getElementById('slider').style.setProperty('--deg1', '-360deg');
 			document.getElementById('slider').style.setProperty('--deg2', '0deg');
-			window.reload();
+			alert('event right');
 			
 			// t += 1;
 			// if (t == 10) {
