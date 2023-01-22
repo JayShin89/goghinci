@@ -1672,14 +1672,14 @@
 
 		document.addEventListener('swiped-left', function (e) {
 			
-			document.getElementById('slider').style.setProperty('--deg1', '0deg');
-			document.getElementById('slider').style.setProperty('--deg2', '-359deg');
+			// document.getElementById('slider').style.setProperty('--deg1', '0deg');
+			// document.getElementById('slider').style.setProperty('--deg2', '-359deg');
 			// document.getElementById('slider').style[--deg1] = '0deg';
 			// document.getElementById('slider').style[--deg2] = '-359deg';
-			alert('changed to ' + --deg2);
 			
-			// $('.slider').css('--deg1', '0deg');
-			// $('.slider').css('--deg2', '-359deg');
+			
+			$('.slider').css('--deg1', '0deg');
+			$('.slider').css('--deg2', '-359deg');
 			
 			
 			
@@ -1693,14 +1693,14 @@
 		});
 
 		document.addEventListener('swiped-right', function (e) {
-			document.getElementById('slider').style.setProperty('--deg1', '-359deg');
-			document.getElementById('slider').style.setProperty('--deg2', '0deg');
-			alert('changed to ' + --deg2);
+			// document.getElementById('slider').style.setProperty('--deg1', '-359deg');
+			// document.getElementById('slider').style.setProperty('--deg2', '0deg');
+			
 			// document.getElementById('slider').style[--deg1] = '-359deg';
 			// document.getElementById('slider').style[--deg2] = '0deg';
 
-			// $('.slider').css('--deg1', '-359deg');
-			// $('.slider').css('--deg2', '0deg');
+			$('.slider').css('--deg1', '-359deg');
+			$('.slider').css('--deg2', '0deg');
 			
 			
 			// t += 1;
