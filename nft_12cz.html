@@ -179,6 +179,9 @@
 			--deg1:-180deg;
 			--deg2:180deg;
 			animation: rotate 120s linear infinite;
+			animation-direction:normal;
+
+			
 			
 			
 			
@@ -1676,8 +1679,10 @@
 
 		document.addEventListener('swiped-left', function (e) {
 			
-			document.getElementById('slider').style.setProperty('--deg1', '180deg');
-			document.getElementById('slider').style.setProperty('--deg2', '-180deg');
+			// document.getElementById('slider').style.setProperty('--deg1', '180deg');
+			// document.getElementById('slider').style.setProperty('--deg2', '-180deg');
+			document.getElementById('slider').style.animationDirection = "reverse";
+			
 			// document.getElementById('slider').style[--deg1] = '0deg';
 			// document.getElementById('slider').style[--deg2] = '-359deg';
 			
@@ -1697,9 +1702,9 @@
 		});
 
 		document.addEventListener('swiped-right', function (e) {
-			document.getElementById('slider').style.setProperty('--deg1', '-180deg');
-			document.getElementById('slider').style.setProperty('--deg2', '180deg');
-			
+			// document.getElementById('slider').style.setProperty('--deg1', '-180deg');
+			// document.getElementById('slider').style.setProperty('--deg2', '180deg');
+			document.getElementById('slider').style.animationDirection = "normal";
 			// document.getElementById('slider').style[--deg1] = '-359deg';
 			// document.getElementById('slider').style[--deg2] = '0deg';
 
