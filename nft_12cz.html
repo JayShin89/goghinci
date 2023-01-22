@@ -185,15 +185,18 @@
 		@-webkit-keyframes rotate {
 				0% {
 				-webkit-transform: perspective(1000px) rotateY(var(--deg1));
+				-moz-transform: perspective(1000px) rotateY(var(--deg1));
 				
 			}
 
 			50% {
-				-webkit-transform: perspective(1000px) rotateY(var(-180deg));
+				-webkit-transform: perspective(1000px) rotateY(-180deg);
+				-moz-transform: perspective(1000px) rotateY(-180deg);
 				
 			}
 			100% {
 				-webkit-transform: perspective(1000px) rotateY(var(--deg2));
+				-moz-transform: perspective(1000px) rotateY(var(--deg2));
 				
 			}
 			}
@@ -206,7 +209,7 @@
 
 			50% {
 				
-				transform: perspective(1000px) rotateY(var(-180deg));
+				transform: perspective(1000px) rotateY(-180deg);
 			}
 
 			100% {
