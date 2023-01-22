@@ -1671,10 +1671,11 @@
 			
 			// document.getElementById('slider').style.setProperty('--deg1', '0deg');
 			// document.getElementById('slider').style.setProperty('--deg2', '-360deg');
-			alert('event left');
+			
 			
 			$('.slider').css('--deg1', '0deg');
 			$('.slider').css('--deg2', '-359deg');
+			alert(--deg2);
 			
 			
 			// t -= 1;
@@ -1689,10 +1690,11 @@
 		document.addEventListener('swiped-right', function (e) {
 			// document.getElementById('slider').style.setProperty('--deg1', '-360deg');
 			// document.getElementById('slider').style.setProperty('--deg2', '0deg');
-			alert('event right');
+			
 
 			$('.slider').css('--deg1', '-359deg');
 			$('.slider').css('--deg2', '0deg');
+			alert(--deg2);
 			
 			// t += 1;
 			// if (t == 10) {
