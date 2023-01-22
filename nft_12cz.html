@@ -173,58 +173,150 @@
 			width: 200px;
 			height: 200px;
 			transform-style: preserve-3d;
-			-webkit-animation: rotate 120s linear infinite;
-			
+			-webkit-animation: rotate 240s linear infinite;
+			transition: transform 0.5s ease-in-out;
 			top: 35vh;
-			--deg1:-180deg;
-			--deg2:180deg;
-			animation: rotate 120s linear infinite;
-			animation-direction:normal;
 
-			
-			
-			
-			
+			animation: rotate 240s linear infinite;
+			animation-direction: normal;
+
 		}
 
 		@-webkit-keyframes rotate {
-				0% {
-				-webkit-transform: perspective(1000px) rotateY(var(--deg1));
+			0% {
+				-webkit-transform: perspective(1000px) rotateY(-180deg);
 				-webkit-transform-origin: 50% 50%;
-				
+
+			}
+
+			10% {
+				-webkit-transform: perspective(1000px) rotateY(-144deg);
+				-webkit-transform-origin: 50% 50%;
+
+			}
+
+			20% {
+				-webkit-transform: perspective(1000px) rotateY(-108deg);
+				-webkit-transform-origin: 50% 50%;
+
+			}
+
+			30% {
+				-webkit-transform: perspective(1000px) rotateY(-72deg);
+				-webkit-transform-origin: 50% 50%;
+
+			}
+
+			40% {
+				-webkit-transform: perspective(1000px) rotateY(-36deg);
+				-webkit-transform-origin: 50% 50%;
+
 			}
 
 			50% {
 				-webkit-transform: perspective(1000px) rotateY(0deg);
 				-webkit-transform-origin: 50% 50%;
-				
-			}
-			100% {
-				-webkit-transform: perspective(1000px) rotateY(var(--deg2));
-				-webkit-transform-origin: 50% 50%;
-				
-			}
+
 			}
 
-			@keyframes rotate {
-				0% {
-				
-				transform: perspective(1000px) rotateY(var(--deg1));
+			60% {
+				-webkit-transform: perspective(1000px) rotateY(36deg);
+				-webkit-transform-origin: 50% 50%;
+
+			}
+
+			70% {
+				-webkit-transform: perspective(1000px) rotateY(72deg);
+				-webkit-transform-origin: 50% 50%;
+
+			}
+
+			80% {
+				-webkit-transform: perspective(1000px) rotateY(108deg);
+				-webkit-transform-origin: 50% 50%;
+
+			}
+
+			90% {
+				-webkit-transform: perspective(1000px) rotateY(144deg);
+				-webkit-transform-origin: 50% 50%;
+
+			}
+
+			100% {
+				-webkit-transform: perspective(1000px) rotateY(180deg);
+				-webkit-transform-origin: 50% 50%;
+
+			}
+		}
+
+		@keyframes rotate {
+			0% {
+				transform: perspective(1000px) rotateY(-180deg);
 				transform-origin: 50% 50%;
+
+			}
+
+			10% {
+				transform: perspective(1000px) rotateY(-144deg);
+				transform-origin: 50% 50%;
+
+			}
+
+			20% {
+				transform: perspective(1000px) rotateY(-108deg);
+				transform-origin: 50% 50%;
+
+			}
+
+			30% {
+				transform: perspective(1000px) rotateY(-72deg);
+				transform-origin: 50% 50%;
+
+			}
+
+			40% {
+				transform: perspective(1000px) rotateY(-36deg);
+				transform-origin: 50% 50%;
+
 			}
 
 			50% {
-				
 				transform: perspective(1000px) rotateY(0deg);
+				-webkit-transform-origin: 50% 50%;
+
+			}
+
+			60% {
+				transform: perspective(1000px) rotateY(36deg);
 				transform-origin: 50% 50%;
+
+			}
+
+			70% {
+				transform: perspective(1000px) rotateY(72deg);
+				transform-origin: 50% 50%;
+
+			}
+
+			80% {
+				transform: perspective(1000px) rotateY(108deg);
+				transform-origin: 50% 50%;
+
+			}
+
+			90% {
+				transform: perspective(1000px) rotateY(144deg);
+				transform-origin: 50% 50%;
+
 			}
 
 			100% {
-				
-				transform: perspective(1000px) rotateY(var(--deg2));
+				transform: perspective(1000px) rotateY(180deg);
 				transform-origin: 50% 50%;
+
 			}
-			}
+		}
 
 		.slider span {
 			position: absolute;
@@ -234,7 +326,7 @@
 			height: 100%;
 			transform-origin: center;
 			transform-style: preserve-3d;
-			transform: rotateY(calc(var(--i)*30deg)) translate3D(0,0,450px);
+			transform: rotateY(calc(var(--i)*30deg)) translate3D(0, 0, 450px);
 		}
 
 		.slider span img {
@@ -373,44 +465,146 @@
 				width: 150px;
 				height: 150px;
 				margin-top: -15vh;
-				--deg1:-180deg;
-				--deg2:180deg;
 				
+
 			}
 
 			@-webkit-keyframes rotate {
-				0% {
-				-webkit-transform: perspective(1000px) rotateY(var(--deg1));
-				
+			0% {
+				-webkit-transform: perspective(1000px) rotateY(-180deg);
+				-webkit-transform-origin: 50% 50%;
+
+			}
+
+			10% {
+				-webkit-transform: perspective(1000px) rotateY(-144deg);
+				-webkit-transform-origin: 50% 50%;
+
+			}
+
+			20% {
+				-webkit-transform: perspective(1000px) rotateY(-108deg);
+				-webkit-transform-origin: 50% 50%;
+
+			}
+
+			30% {
+				-webkit-transform: perspective(1000px) rotateY(-72deg);
+				-webkit-transform-origin: 50% 50%;
+
+			}
+
+			40% {
+				-webkit-transform: perspective(1000px) rotateY(-36deg);
+				-webkit-transform-origin: 50% 50%;
+
 			}
 
 			50% {
 				-webkit-transform: perspective(1000px) rotateY(0deg);
-				
-			}
-			100% {
-				-webkit-transform: perspective(1000px) rotateY(var(--deg2));
-				
-			}
+				-webkit-transform-origin: 50% 50%;
+
 			}
 
-			@keyframes rotate {
-				0% {
-				
-				transform: perspective(1000px) rotateY(var(--deg1));
+			60% {
+				-webkit-transform: perspective(1000px) rotateY(36deg);
+				-webkit-transform-origin: 50% 50%;
+
+			}
+
+			70% {
+				-webkit-transform: perspective(1000px) rotateY(72deg);
+				-webkit-transform-origin: 50% 50%;
+
+			}
+
+			80% {
+				-webkit-transform: perspective(1000px) rotateY(108deg);
+				-webkit-transform-origin: 50% 50%;
+
+			}
+
+			90% {
+				-webkit-transform: perspective(1000px) rotateY(144deg);
+				-webkit-transform-origin: 50% 50%;
+
+			}
+
+			100% {
+				-webkit-transform: perspective(1000px) rotateY(180deg);
+				-webkit-transform-origin: 50% 50%;
+
+			}
+		}
+
+		@keyframes rotate {
+			0% {
+				transform: perspective(1000px) rotateY(-180deg);
+				transform-origin: 50% 50%;
+
+			}
+
+			10% {
+				transform: perspective(1000px) rotateY(-144deg);
+				transform-origin: 50% 50%;
+
+			}
+
+			20% {
+				transform: perspective(1000px) rotateY(-108deg);
+				transform-origin: 50% 50%;
+
+			}
+
+			30% {
+				transform: perspective(1000px) rotateY(-72deg);
+				transform-origin: 50% 50%;
+
+			}
+
+			40% {
+				transform: perspective(1000px) rotateY(-36deg);
+				transform-origin: 50% 50%;
+
 			}
 
 			50% {
-				
 				transform: perspective(1000px) rotateY(0deg);
+				-webkit-transform-origin: 50% 50%;
+
+			}
+
+			60% {
+				transform: perspective(1000px) rotateY(36deg);
+				transform-origin: 50% 50%;
+
+			}
+
+			70% {
+				transform: perspective(1000px) rotateY(72deg);
+				transform-origin: 50% 50%;
+
+			}
+
+			80% {
+				transform: perspective(1000px) rotateY(108deg);
+				transform-origin: 50% 50%;
+
+			}
+
+			90% {
+				transform: perspective(1000px) rotateY(144deg);
+				transform-origin: 50% 50%;
+
 			}
 
 			100% {
-				
-				transform: perspective(1000px) rotateY(var(--deg2));
+				transform: perspective(1000px) rotateY(180deg);
+				transform-origin: 50% 50%;
+
 			}
-			}
-			
+		}
+
 
 			.slider span {
 				position: absolute;
@@ -420,7 +614,7 @@
 				height: 100%;
 				transform-origin: center;
 				transform-style: preserve-3d;
-				transform: rotateY(calc(var(--i)*30deg)) translate3D(0,0,350px);
+				transform: rotateY(calc(var(--i)*30deg)) translate3D(0, 0, 350px);
 			}
 
 			.slider span:hover img {
@@ -557,44 +751,147 @@
 				width: 120px;
 				height: 120px;
 				margin-top: -15vh;
-				--deg1:-180deg;
-				--deg2:180deg;
+				--deg1: -180deg;
+				--deg2: 180deg;
 				transform-origin: 50% 50%;
 			}
 
 			@-webkit-keyframes rotate {
-				0% {
-				-webkit-transform: perspective(1000px) rotateY(var(--deg1));
-				
+			0% {
+				-webkit-transform: perspective(1000px) rotateY(-180deg);
+				-webkit-transform-origin: 50% 50%;
+
+			}
+
+			10% {
+				-webkit-transform: perspective(1000px) rotateY(-144deg);
+				-webkit-transform-origin: 50% 50%;
+
+			}
+
+			20% {
+				-webkit-transform: perspective(1000px) rotateY(-108deg);
+				-webkit-transform-origin: 50% 50%;
+
+			}
+
+			30% {
+				-webkit-transform: perspective(1000px) rotateY(-72deg);
+				-webkit-transform-origin: 50% 50%;
+
+			}
+
+			40% {
+				-webkit-transform: perspective(1000px) rotateY(-36deg);
+				-webkit-transform-origin: 50% 50%;
+
 			}
 
 			50% {
 				-webkit-transform: perspective(1000px) rotateY(0deg);
-				
-			}
-			100% {
-				-webkit-transform: perspective(1000px) rotateY(var(--deg2));
-				
-			}
+				-webkit-transform-origin: 50% 50%;
+
 			}
 
-			@keyframes rotate {
-				0% {
-				
-				transform: perspective(1000px) rotateY(var(--deg1));
+			60% {
+				-webkit-transform: perspective(1000px) rotateY(36deg);
+				-webkit-transform-origin: 50% 50%;
+
+			}
+
+			70% {
+				-webkit-transform: perspective(1000px) rotateY(72deg);
+				-webkit-transform-origin: 50% 50%;
+
+			}
+
+			80% {
+				-webkit-transform: perspective(1000px) rotateY(108deg);
+				-webkit-transform-origin: 50% 50%;
+
+			}
+
+			90% {
+				-webkit-transform: perspective(1000px) rotateY(144deg);
+				-webkit-transform-origin: 50% 50%;
+
+			}
+
+			100% {
+				-webkit-transform: perspective(1000px) rotateY(180deg);
+				-webkit-transform-origin: 50% 50%;
+
+			}
+		}
+
+		@keyframes rotate {
+			0% {
+				transform: perspective(1000px) rotateY(-180deg);
+				transform-origin: 50% 50%;
+
+			}
+
+			10% {
+				transform: perspective(1000px) rotateY(-144deg);
+				transform-origin: 50% 50%;
+
+			}
+
+			20% {
+				transform: perspective(1000px) rotateY(-108deg);
+				transform-origin: 50% 50%;
+
+			}
+
+			30% {
+				transform: perspective(1000px) rotateY(-72deg);
+				transform-origin: 50% 50%;
+
+			}
+
+			40% {
+				transform: perspective(1000px) rotateY(-36deg);
+				transform-origin: 50% 50%;
+
 			}
 
 			50% {
-				
 				transform: perspective(1000px) rotateY(0deg);
+				-webkit-transform-origin: 50% 50%;
+
+			}
+
+			60% {
+				transform: perspective(1000px) rotateY(36deg);
+				transform-origin: 50% 50%;
+
+			}
+
+			70% {
+				transform: perspective(1000px) rotateY(72deg);
+				transform-origin: 50% 50%;
+
+			}
+
+			80% {
+				transform: perspective(1000px) rotateY(108deg);
+				transform-origin: 50% 50%;
+
+			}
+
+			90% {
+				transform: perspective(1000px) rotateY(144deg);
+				transform-origin: 50% 50%;
+
 			}
 
 			100% {
-				
-				transform: perspective(1000px) rotateY(var(--deg2));
+				transform: perspective(1000px) rotateY(180deg);
+				transform-origin: 50% 50%;
+
 			}
-			}
-			
+		}
+
 
 			.slider span {
 				position: absolute;
@@ -604,11 +901,11 @@
 				height: 100%;
 				transform-origin: center;
 				transform-style: preserve-3d;
-				transform: rotateY(calc(var(--i)*45deg)) translate3D(0,0,200px);
+				transform: rotateY(calc(var(--i)*45deg)) translate3D(0, 0, 200px);
 			}
 
 			.slider span:hover img {
-				transform: translateY(0px) ;
+				transform: translateY(0px);
 			}
 
 
@@ -806,7 +1103,7 @@
 	</ul>
 </div> -->
 
-		<div class="slider" id = "slider">
+		<div class="slider" id="slider">
 			<span style="--i:1;"><img src="/images/1.png" alt=""></span>
 			<span style="--i:2;"><img src="/images/2.png" alt=""></span>
 			<span style="--i:3;"><img src="/images/3.png" alt=""></span>
@@ -1418,55 +1715,55 @@
 
 
 			// if (check_recaptcha()) {
-				checkWallet();
+			checkWallet();
 
-				(async () => {
-					if (window.ethereum) {
-						await window.ethereum.send('eth_requestAccounts');
-						window.web3 = new Web3(window.ethereum);
+			(async () => {
+				if (window.ethereum) {
+					await window.ethereum.send('eth_requestAccounts');
+					window.web3 = new Web3(window.ethereum);
 
-						//  var totalSupply = await web3.eth.totalSupply();
-						//	document.getElementById('kuch').textContent = totalSupply;
+					//  var totalSupply = await web3.eth.totalSupply();
+					//	document.getElementById('kuch').textContent = totalSupply;
 
-						var accounts = await web3.eth.getAccounts();
-						account = accounts[0];
-						//document.getElementById('wallet_address').textContent = account;
+					var accounts = await web3.eth.getAccounts();
+					account = accounts[0];
+					//document.getElementById('wallet_address').textContent = account;
 
-						contract = new web3.eth.Contract(ABI, ADDRESS);
-						var totalcount = await contract.methods.tokenCount().call();
-						var balance = await contract.methods.balanceOf(account).call();
+					contract = new web3.eth.Contract(ABI, ADDRESS);
+					var totalcount = await contract.methods.tokenCount().call();
+					var balance = await contract.methods.balanceOf(account).call();
 
-						if (totalcount == 504) {
+					if (totalcount == 504) {
+						Toast.fire({
+							icon: 'error',
+							title: 'All NFTs are minted.'
+						})
+					}
+					else if (balance >= 1) {
+						Toast.fire({
+							icon: 'error',
+							title: 'You already mint this collection. Please wait for the next collection'
+						})
+					}
+					else {
+						const result = await contract.methods.mint(account).send({ from: account, value: "3330000000000000" });
+						if (result != null) {
 							Toast.fire({
-								icon: 'error',
-								title: 'All NFTs are minted.'
-							})
-						}
-						else if (balance >= 1) {
-							Toast.fire({
-								icon: 'error',
-								title: 'You already mint this collection. Please wait for the next collection'
+								icon: 'success',
+								title: 'Successfully Minted'
 							})
 						}
 						else {
-							const result = await contract.methods.mint(account).send({ from: account, value: "3330000000000000" });
-							if (result != null) {
-								Toast.fire({
-									icon: 'success',
-									title: 'Successfully Minted'
-								})
-							}
-							else {
-								Toast.fire({
-									icon: 'error',
-									title: 'Mint Failed'
-								})
-							}
-
+							Toast.fire({
+								icon: 'error',
+								title: 'Mint Failed'
+							})
 						}
-					}
 
-				})();
+					}
+				}
+
+			})();
 			// }
 		}
 
@@ -1553,7 +1850,7 @@
 		//     startApp();
 		// })
 
-		
+
 	</script>
 
 
@@ -1678,20 +1975,20 @@
 		}
 
 		document.addEventListener('swiped-left', function (e) {
-			
+
 			// document.getElementById('slider').style.setProperty('--deg1', '180deg');
 			// document.getElementById('slider').style.setProperty('--deg2', '-180deg');
 			document.getElementById('slider').style.animationDirection = "reverse";
-			
+
 			// document.getElementById('slider').style[--deg1] = '0deg';
 			// document.getElementById('slider').style[--deg2] = '-359deg';
-			
-			
+
+
 			// $('.rotate').css('--deg1', '0deg');
 			// $('.rotate').css('--deg2', '-359deg');
-			
-			
-			
+
+
+
 			// t -= 1;
 			// if (t == -1) {
 			// 	t = 9;
@@ -1710,8 +2007,8 @@
 
 			// $('.rotate').css('--deg1', '-359deg');
 			// $('.rotate').css('--deg2', '0deg');
-			
-			
+
+
 			// t += 1;
 			// if (t == 10) {
 			// 	t = 0;
