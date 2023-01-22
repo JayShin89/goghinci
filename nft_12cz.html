@@ -1669,8 +1669,8 @@
 
 		document.addEventListener('swiped-left', function (e) {
 			
-			document.getElementById('slider').style.setProperty('--deg1', '0deg', !important);
-			document.getElementById('slider').style.setProperty('--deg2', '-359deg', !important);
+			document.getElementById('slider').style.setProperty('--deg1', '0deg', important);
+			document.getElementById('slider').style.setProperty('--deg2', '-359deg', important);
 			// document.getElementById('slider').style[--deg1] = '0deg';
 			// document.getElementById('slider').style[--deg2] = '-359deg';
 			
@@ -1690,8 +1690,8 @@
 		});
 
 		document.addEventListener('swiped-right', function (e) {
-			document.getElementById('slider').style.setProperty('--deg1', '-359deg', !important);
-			document.getElementById('slider').style.setProperty('--deg2', '0deg', !important);
+			document.getElementById('slider').style.setProperty('--deg1', '-359deg', important);
+			document.getElementById('slider').style.setProperty('--deg2', '0deg', important);
 			// document.getElementById('slider').style[--deg1] = '-359deg';
 			// document.getElementById('slider').style[--deg2] = '0deg';
 
