@@ -173,12 +173,13 @@
 			width: 200px;
 			height: 200px;
 			transform-style: preserve-3d;
-			-webkit-animation: rotate 60s linear infinite;
+			-webkit-animation: rotate 120s linear infinite;
 			
 			top: 35vh;
-			--deg1:-359deg;
-			--deg2:0deg;
-			animation: rotate 60s linear infinite;
+			--deg1:-180deg;
+			--deg2:180deg;
+			animation: rotate 120s linear infinite;
+			
 			
 			
 		}
@@ -191,7 +192,7 @@
 			}
 
 			50% {
-				-webkit-transform: perspective(1000px) rotateY(-180deg);
+				-webkit-transform: perspective(1000px) rotateY(0deg);
 				-webkit-transform-origin: 50% 50%;
 				
 			}
@@ -211,7 +212,7 @@
 
 			50% {
 				
-				transform: perspective(1000px) rotateY(-180deg);
+				transform: perspective(1000px) rotateY(0deg);
 				transform-origin: 50% 50%;
 			}
 
@@ -381,7 +382,7 @@
 			}
 
 			50% {
-				-webkit-transform: perspective(1000px) rotateY(-180deg);
+				-webkit-transform: perspective(1000px) rotateY(0deg);
 				
 			}
 			100% {
@@ -398,7 +399,7 @@
 
 			50% {
 				
-				transform: perspective(1000px) rotateY(-180deg);
+				transform: perspective(1000px) rotateY(0deg);
 			}
 
 			100% {
@@ -565,7 +566,7 @@
 			}
 
 			50% {
-				-webkit-transform: perspective(1000px) rotateY(-180deg);
+				-webkit-transform: perspective(1000px) rotateY(0deg);
 				
 			}
 			100% {
@@ -582,7 +583,7 @@
 
 			50% {
 				
-				transform: perspective(1000px) rotateY(-180deg);
+				transform: perspective(1000px) rotateY(0deg);
 			}
 
 			100% {
@@ -1675,8 +1676,8 @@
 
 		document.addEventListener('swiped-left', function (e) {
 			
-			document.getElementById('slider').style.setProperty('--deg1', '0deg');
-			document.getElementById('slider').style.setProperty('--deg2', '-359deg');
+			document.getElementById('slider').style.setProperty('--deg1', '180deg');
+			document.getElementById('slider').style.setProperty('--deg2', '-180deg');
 			// document.getElementById('slider').style[--deg1] = '0deg';
 			// document.getElementById('slider').style[--deg2] = '-359deg';
 			
@@ -1696,8 +1697,8 @@
 		});
 
 		document.addEventListener('swiped-right', function (e) {
-			document.getElementById('slider').style.setProperty('--deg1', '-359deg');
-			document.getElementById('slider').style.setProperty('--deg2', '0deg');
+			document.getElementById('slider').style.setProperty('--deg1', '-180deg');
+			document.getElementById('slider').style.setProperty('--deg2', '180deg');
 			
 			// document.getElementById('slider').style[--deg1] = '-359deg';
 			// document.getElementById('slider').style[--deg2] = '0deg';
