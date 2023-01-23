@@ -173,79 +173,149 @@
 			width: 200px;
 			height: 200px;
 			transform-style: preserve-3d;
-			-webkit-animation: rotate 240s linear infinite;
+			-webkit-animation: rotate1 240s linear infinite;
 			transition: transform 0.5s ease-in-out;
 			top: 35vh;
 
-			animation: rotate 240s linear infinite;
+			animation: rotate1 240s linear infinite;
 			animation-direction: normal;
+			
+			
 
 		}
 
-		@-webkit-keyframes rotate {
+		@-webkit-keyframes rotate1 {
 			0% {
 				-webkit-transform: perspective(1000px) rotateY(-180deg);
-				-webkit-transform-origin: 50% 50%;
+				
 
 			}
 
 			10% {
 				-webkit-transform: perspective(1000px) rotateY(-144deg);
-				-webkit-transform-origin: 50% 50%;
+				
 
 			}
 
 			20% {
 				-webkit-transform: perspective(1000px) rotateY(-108deg);
-				-webkit-transform-origin: 50% 50%;
+				
 
 			}
 
 			30% {
 				-webkit-transform: perspective(1000px) rotateY(-72deg);
-				-webkit-transform-origin: 50% 50%;
+				
 
 			}
 
 			40% {
 				-webkit-transform: perspective(1000px) rotateY(-36deg);
-				-webkit-transform-origin: 50% 50%;
+				
 
 			}
 
 			50% {
 				-webkit-transform: perspective(1000px) rotateY(0deg);
-				-webkit-transform-origin: 50% 50%;
+				
 
 			}
 
 			60% {
 				-webkit-transform: perspective(1000px) rotateY(36deg);
-				-webkit-transform-origin: 50% 50%;
+				
 
 			}
 
 			70% {
 				-webkit-transform: perspective(1000px) rotateY(72deg);
-				-webkit-transform-origin: 50% 50%;
+				
 
 			}
 
 			80% {
 				-webkit-transform: perspective(1000px) rotateY(108deg);
-				-webkit-transform-origin: 50% 50%;
+				
 
 			}
 
 			90% {
 				-webkit-transform: perspective(1000px) rotateY(144deg);
-				-webkit-transform-origin: 50% 50%;
+				
 
 			}
 
 			100% {
 				-webkit-transform: perspective(1000px) rotateY(180deg);
-				-webkit-transform-origin: 50% 50%;
+				
+
+			}
+		}
+
+		@-webkit-keyframes rotate2 {
+			0% {
+				-webkit-transform: perspective(1000px) rotateY(180deg);
+				
+
+			}
+
+			10% {
+				-webkit-transform: perspective(1000px) rotateY(144deg);
+				
+
+			}
+
+			20% {
+				-webkit-transform: perspective(1000px) rotateY(108deg);
+				
+
+			}
+
+			30% {
+				-webkit-transform: perspective(1000px) rotateY(72deg);
+				
+
+			}
+
+			40% {
+				-webkit-transform: perspective(1000px) rotateY(36deg);
+				
+
+			}
+
+			50% {
+				-webkit-transform: perspective(1000px) rotateY(0deg);
+				
+
+			}
+
+			60% {
+				-webkit-transform: perspective(1000px) rotateY(-36deg);
+				
+
+			}
+
+			70% {
+				-webkit-transform: perspective(1000px) rotateY(-72deg);
+				
+
+			}
+
+			80% {
+				-webkit-transform: perspective(1000px) rotateY(-108deg);
+				
+
+			}
+
+			90% {
+				-webkit-transform: perspective(1000px) rotateY(-144deg);
+				
+
+			}
+
+			100% {
+				-webkit-transform: perspective(1000px) rotateY(-180deg);
+				
 
 			}
 		}
@@ -253,67 +323,67 @@
 		@keyframes rotate {
 			0% {
 				transform: perspective(1000px) rotateY(-180deg);
-				transform-origin: 50% 50%;
+				
 
 			}
 
 			10% {
 				transform: perspective(1000px) rotateY(-144deg);
-				transform-origin: 50% 50%;
+				
 
 			}
 
 			20% {
 				transform: perspective(1000px) rotateY(-108deg);
-				transform-origin: 50% 50%;
+				
 
 			}
 
 			30% {
 				transform: perspective(1000px) rotateY(-72deg);
-				transform-origin: 50% 50%;
+				
 
 			}
 
 			40% {
 				transform: perspective(1000px) rotateY(-36deg);
-				transform-origin: 50% 50%;
+				
 
 			}
 
 			50% {
 				transform: perspective(1000px) rotateY(0deg);
-				-webkit-transform-origin: 50% 50%;
+				
 
 			}
 
 			60% {
 				transform: perspective(1000px) rotateY(36deg);
-				transform-origin: 50% 50%;
+				
 
 			}
 
 			70% {
 				transform: perspective(1000px) rotateY(72deg);
-				transform-origin: 50% 50%;
+				
 
 			}
 
 			80% {
 				transform: perspective(1000px) rotateY(108deg);
-				transform-origin: 50% 50%;
+				
 
 			}
 
 			90% {
 				transform: perspective(1000px) rotateY(144deg);
-				transform-origin: 50% 50%;
+				
 
 			}
 
 			100% {
 				transform: perspective(1000px) rotateY(180deg);
-				transform-origin: 50% 50%;
+				
 
 			}
 		}
@@ -327,6 +397,7 @@
 			transform-origin: center;
 			transform-style: preserve-3d;
 			transform: rotateY(calc(var(--i)*30deg)) translate3D(0, 0, 450px);
+			
 		}
 
 		.slider span img {
@@ -468,143 +539,6 @@
 				
 
 			}
-
-			@-webkit-keyframes rotate {
-			0% {
-				-webkit-transform: perspective(1000px) rotateY(-180deg);
-				-webkit-transform-origin: 50% 50%;
-
-			}
-
-			10% {
-				-webkit-transform: perspective(1000px) rotateY(-144deg);
-				-webkit-transform-origin: 50% 50%;
-
-			}
-
-			20% {
-				-webkit-transform: perspective(1000px) rotateY(-108deg);
-				-webkit-transform-origin: 50% 50%;
-
-			}
-
-			30% {
-				-webkit-transform: perspective(1000px) rotateY(-72deg);
-				-webkit-transform-origin: 50% 50%;
-
-			}
-
-			40% {
-				-webkit-transform: perspective(1000px) rotateY(-36deg);
-				-webkit-transform-origin: 50% 50%;
-
-			}
-
-			50% {
-				-webkit-transform: perspective(1000px) rotateY(0deg);
-				-webkit-transform-origin: 50% 50%;
-
-			}
-
-			60% {
-				-webkit-transform: perspective(1000px) rotateY(36deg);
-				-webkit-transform-origin: 50% 50%;
-
-			}
-
-			70% {
-				-webkit-transform: perspective(1000px) rotateY(72deg);
-				-webkit-transform-origin: 50% 50%;
-
-			}
-
-			80% {
-				-webkit-transform: perspective(1000px) rotateY(108deg);
-				-webkit-transform-origin: 50% 50%;
-
-			}
-
-			90% {
-				-webkit-transform: perspective(1000px) rotateY(144deg);
-				-webkit-transform-origin: 50% 50%;
-
-			}
-
-			100% {
-				-webkit-transform: perspective(1000px) rotateY(180deg);
-				-webkit-transform-origin: 50% 50%;
-
-			}
-		}
-
-		@keyframes rotate {
-			0% {
-				transform: perspective(1000px) rotateY(-180deg);
-				transform-origin: 50% 50%;
-
-			}
-
-			10% {
-				transform: perspective(1000px) rotateY(-144deg);
-				transform-origin: 50% 50%;
-
-			}
-
-			20% {
-				transform: perspective(1000px) rotateY(-108deg);
-				transform-origin: 50% 50%;
-
-			}
-
-			30% {
-				transform: perspective(1000px) rotateY(-72deg);
-				transform-origin: 50% 50%;
-
-			}
-
-			40% {
-				transform: perspective(1000px) rotateY(-36deg);
-				transform-origin: 50% 50%;
-
-			}
-
-			50% {
-				transform: perspective(1000px) rotateY(0deg);
-				-webkit-transform-origin: 50% 50%;
-
-			}
-
-			60% {
-				transform: perspective(1000px) rotateY(36deg);
-				transform-origin: 50% 50%;
-
-			}
-
-			70% {
-				transform: perspective(1000px) rotateY(72deg);
-				transform-origin: 50% 50%;
-
-			}
-
-			80% {
-				transform: perspective(1000px) rotateY(108deg);
-				transform-origin: 50% 50%;
-
-			}
-
-			90% {
-				transform: perspective(1000px) rotateY(144deg);
-				transform-origin: 50% 50%;
-
-			}
-
-			100% {
-				transform: perspective(1000px) rotateY(180deg);
-				transform-origin: 50% 50%;
-
-			}
-		}
-
 
 			.slider span {
 				position: absolute;
@@ -755,143 +689,6 @@
 				--deg2: 180deg;
 				transform-origin: 50% 50%;
 			}
-
-			@-webkit-keyframes rotate {
-			0% {
-				-webkit-transform: perspective(1000px) rotateY(-180deg);
-				-webkit-transform-origin: 50% 50%;
-
-			}
-
-			10% {
-				-webkit-transform: perspective(1000px) rotateY(-144deg);
-				-webkit-transform-origin: 50% 50%;
-
-			}
-
-			20% {
-				-webkit-transform: perspective(1000px) rotateY(-108deg);
-				-webkit-transform-origin: 50% 50%;
-
-			}
-
-			30% {
-				-webkit-transform: perspective(1000px) rotateY(-72deg);
-				-webkit-transform-origin: 50% 50%;
-
-			}
-
-			40% {
-				-webkit-transform: perspective(1000px) rotateY(-36deg);
-				-webkit-transform-origin: 50% 50%;
-
-			}
-
-			50% {
-				-webkit-transform: perspective(1000px) rotateY(0deg);
-				-webkit-transform-origin: 50% 50%;
-
-			}
-
-			60% {
-				-webkit-transform: perspective(1000px) rotateY(36deg);
-				-webkit-transform-origin: 50% 50%;
-
-			}
-
-			70% {
-				-webkit-transform: perspective(1000px) rotateY(72deg);
-				-webkit-transform-origin: 50% 50%;
-
-			}
-
-			80% {
-				-webkit-transform: perspective(1000px) rotateY(108deg);
-				-webkit-transform-origin: 50% 50%;
-
-			}
-
-			90% {
-				-webkit-transform: perspective(1000px) rotateY(144deg);
-				-webkit-transform-origin: 50% 50%;
-
-			}
-
-			100% {
-				-webkit-transform: perspective(1000px) rotateY(180deg);
-				-webkit-transform-origin: 50% 50%;
-
-			}
-		}
-
-		@keyframes rotate {
-			0% {
-				transform: perspective(1000px) rotateY(-180deg);
-				transform-origin: 50% 50%;
-
-			}
-
-			10% {
-				transform: perspective(1000px) rotateY(-144deg);
-				transform-origin: 50% 50%;
-
-			}
-
-			20% {
-				transform: perspective(1000px) rotateY(-108deg);
-				transform-origin: 50% 50%;
-
-			}
-
-			30% {
-				transform: perspective(1000px) rotateY(-72deg);
-				transform-origin: 50% 50%;
-
-			}
-
-			40% {
-				transform: perspective(1000px) rotateY(-36deg);
-				transform-origin: 50% 50%;
-
-			}
-
-			50% {
-				transform: perspective(1000px) rotateY(0deg);
-				-webkit-transform-origin: 50% 50%;
-
-			}
-
-			60% {
-				transform: perspective(1000px) rotateY(36deg);
-				transform-origin: 50% 50%;
-
-			}
-
-			70% {
-				transform: perspective(1000px) rotateY(72deg);
-				transform-origin: 50% 50%;
-
-			}
-
-			80% {
-				transform: perspective(1000px) rotateY(108deg);
-				transform-origin: 50% 50%;
-
-			}
-
-			90% {
-				transform: perspective(1000px) rotateY(144deg);
-				transform-origin: 50% 50%;
-
-			}
-
-			100% {
-				transform: perspective(1000px) rotateY(180deg);
-				transform-origin: 50% 50%;
-
-			}
-		}
-
 
 			.slider span {
 				position: absolute;
@@ -1978,7 +1775,7 @@
 
 			// document.getElementById('slider').style.setProperty('--deg1', '180deg');
 			// document.getElementById('slider').style.setProperty('--deg2', '-180deg');
-			document.getElementById('slider').style.animationDirection = "reverse";
+			document.getElementById('slider').style.animation="rotate2 240s linear infinite";
 
 			// document.getElementById('slider').style[--deg1] = '0deg';
 			// document.getElementById('slider').style[--deg2] = '-359deg';
@@ -2001,7 +1798,7 @@
 		document.addEventListener('swiped-right', function (e) {
 			// document.getElementById('slider').style.setProperty('--deg1', '-180deg');
 			// document.getElementById('slider').style.setProperty('--deg2', '180deg');
-			document.getElementById('slider').style.animationDirection = "normal";
+			document.getElementById('slider').style.animation="rotate1 240s linear infinite";
 			// document.getElementById('slider').style[--deg1] = '-359deg';
 			// document.getElementById('slider').style[--deg2] = '0deg';
 
