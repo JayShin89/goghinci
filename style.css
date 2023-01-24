@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
-
 .no-js {
     display: none;
 }
@@ -52,7 +51,6 @@ bodY {
     padding: 0;
     box-sizing: border-box;
 }
-
 
 .center {
     height: 100vh;
@@ -111,11 +109,9 @@ bodY {
     0% {
         transform: scale(0);
     }
-
     50% {
         transform: scale(1);
     }
-
     100% {
         transform: scale(0);
     }
@@ -154,6 +150,7 @@ section {
     text-transform: uppercase;
 }
 
+
 /* header */
 
 .header.active {
@@ -172,7 +169,6 @@ section {
     height: .5rem;
 }
 
-
 .header-1 {
     display: flex;
     justify-content: flex-end;
@@ -185,7 +181,6 @@ section {
 
 .wallet:hover button {
     background-color: rgb(140, 199, 150);
-    
 }
 
 .wallet div {
@@ -195,10 +190,8 @@ section {
     visibility: visible;
     position: relative;
     min-width: 15px;
-
     opacity: 0;
     transition: .3s;
-
 }
 
 .wallet:hover div {
@@ -220,10 +213,8 @@ section {
 
 .wallet div a:hover {
     background-color: transparent;
-
     color: #fff;
 }
-
 
 
 /* home */
@@ -242,7 +233,6 @@ section {
     margin: 0 auto;
     overflow-y: hidden;
     overflow-x: hidden;
-
 }
 
 .totalmenu1-0 {
@@ -255,8 +245,6 @@ section {
     margin: 0;
     background-repeat: no-repeat;
     margin-top: 600px;
-
-
 }
 
 
@@ -271,18 +259,17 @@ section {
     margin-top: 15vh;
 } */
 
-
 .totalmenu {
     align-content: center;
     width: 100vw;
 }
 
+
 /*NFT Home*/
+
 .nfthome {
     background-color: gray;
     background-size: 100%;
-
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -327,14 +314,15 @@ section {
     font-weight: 600;
     transition: 0.4s;
     position: relative;
-
 }
+
 
 /*
 .active, .accordion:hover {
 background-color: blue;
 }
 */
+
 .panel {
     width: 100%;
     color: black;
@@ -369,10 +357,11 @@ background-color: blue;
     margin-top: 2vh;
     vertical-align: center;
     font-size: 20pt;
-
 }
 
+
 /* 12CZ Home*/
+
 .nczhome {
     background-color: black;
     background-size: cover;
@@ -386,9 +375,8 @@ background-color: blue;
     background-repeat: repeat-y;
     margin: 0 auto;
     overflow-y: hidden;
-    overflow-x:hidden;
+    overflow-x: hidden;
 }
-
 
 .totalmenu3 {
     padding-top: 100px;
@@ -409,13 +397,10 @@ background-color: blue;
 }
 
 .totalmenu3-0 {
-    
     width: 100vw;
     height: 40.4vh;
     margin: 0;
     background-repeat: no-repeat;
-    
-
 }
 
 .panel {
@@ -451,18 +436,17 @@ background-color: blue;
     height: 60px;
     font-weight: 600;
     text-transform: uppercase;
-    
     vertical-align: center;
     font-size: 20pt;
-
 }
 
+
 /*Terms & Conditions Home*/
+
 .tnchome {
     background-color: #950000;
     margin: 0;
     padding: 11rem;
-
     padding-top: 150px;
     display: flex;
     align-content: left;
@@ -474,24 +458,31 @@ background-color: blue;
     width: 100%;
 }
 
+
 /* myPage */
-/* home */
 
-.myhome {
+.myHome {
     background-color: black;
-    background-size: 100%;
-    padding: 11rem;
-    padding-bottom: 150px;
-    padding-top: 150px;
+    background-size: cover;
+    width: 100vw;
+    transition: background-color 0.8s;
     display: flex;
-    align-content: center;
-    justify-content: center;
     flex-wrap: wrap;
-    background-attachment: fixed;
-    min-height: 100%;
     height: 100vh;
-
+    background-repeat: repeat-y;
+    margin: 0 auto;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
+
+.totalmenu4-0 {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 /*hamburger*/
 
@@ -534,6 +525,7 @@ background-color: blue;
     margin-top: 0px;
 }
 
+
 /* when navigation is clicked */
 
 .navbar-toggler .top-bar {
@@ -550,6 +542,7 @@ background-color: blue;
     margin-top: 0px;
     transform: rotate(-135deg);
 }
+
 
 /* State when the navbar is collapsed */
 
@@ -568,23 +561,23 @@ background-color: blue;
     transform: rotate(0deg);
 }
 
+
 /* Color of 3 lines */
 
 .navbar-toggler.collapsed .toggler-icon {
     color: #dd9429;
 }
 
+
 /* footer */
 
 .footer {
-
     background: #000;
     text-align: center;
     width: 100%;
     clear: both;
     height: auto;
     overflow-y: hidden;
-
 }
 
 .footer img {
@@ -606,7 +599,6 @@ background-color: blue;
 
 .credit {
     padding: 2.5rem 1rem;
-
     margin-top: 20vh;
     width: 100%;
     font-size: 1.5rem;
@@ -614,7 +606,6 @@ background-color: blue;
     color: #dd9429;
     display: inline-flex;
     align-content: left;
-
 }
 
 .credit .copyright {
@@ -622,22 +613,17 @@ background-color: blue;
     text-align: left;
     font-size: 1.5rem;
     min-width: 100vw;
-
     align-items: left;
     font-weight: bolder;
-    
     vertical-align: bottom;
     margin-left: 3.5%;
     margin-top: 25vh;
 }
 
-
 .totalmenu3-1 .g-recaptcha {
     margin-left: 47.2vw;
     margin-top: 8vh;
     background-color: transparent;
-    
-    
 }
 
 .m_scroll_arrows {
@@ -649,13 +635,9 @@ background-color: blue;
     -webkit-transform: rotate(45deg);
     /* Chrome, Safari, Opera */
     transform: rotate(45deg);
-
     border-right: 4px solid #dd9429;
-    ;
     border-bottom: 4px solid #dd9429;
-    ;
     margin: 0 0 3px 4px;
-
     width: 26px;
     height: 26px;
 }
@@ -665,12 +647,10 @@ background-color: blue;
     rotate: -180deg;
     margin-bottom: 220px;
     display: none;
-
     /* -webkit-animation-delay: 1s;
   -moz-animation-delay: 1s;
   -webkit-animation-direction: alternate;  
   animation-delay: 1s; */
-
 }
 
 .trei {
@@ -679,11 +659,9 @@ background-color: blue;
   -webkit-animation-direction: alternate;  
   animation-delay: 1s;
   animation-direction: alternate; */
-
     display: none;
     margin-top: 80px;
 }
-
 
 
 /* .unu
@@ -861,18 +839,18 @@ background-color: blue;
 } */
 
 
-
 /*website loading animation*/
+
 #preloader {
     background: #fff url(/images/loadingVV.gif) no-repeat center center;
     background-size: 10%;
-    opacity:0.6;
+    opacity: 0.6;
     height: 100vh;
     width: 100%;
     position: fixed;
     z-index: 100;
-
 }
+
 
 /* Tag Blinking Func. */
 
@@ -886,7 +864,6 @@ background-color: blue;
     0% {
         opacity: 0;
     }
-
     100% {
         opacity: 1;
     }
@@ -896,7 +873,6 @@ background-color: blue;
     0% {
         opacity: 0;
     }
-
     100% {
         opacity: 1;
     }
@@ -906,7 +882,6 @@ background-color: blue;
     0% {
         opacity: 0;
     }
-
     100% {
         opacity: 1;
     }
@@ -914,10 +889,10 @@ background-color: blue;
 
 
 /* media queries */
+
 @media (max-width:1500px) {
     .tnc {
         display: inline-block;
-
         margin-top: 22vh;
         margin-left: -45px;
         margin-bottom: 15vh;
@@ -927,109 +902,75 @@ background-color: blue;
 .box-container .box .links a:hover {
     text-decoration: underline;
     color: var(--red);
-
 }
 
 @media screen and (max-width:1200px) {
-
     .tnc {
         display: inline-block;
-
         margin-top: 22vh;
         margin-left: -65px;
         margin-bottom: 15vh;
     }
-
-
-
 }
 
 @media screen and (max-width:991px) {
-
     .totalmenu1-0 {
         margin-top: 15vh;
     }
-
-
-
     .navbar div {
         text-align: center;
         margin-top: 0px;
         margin-right: -12px;
-
     }
-
     .navbar li {
         text-align: center;
         margin-right: -7%;
     }
-
     .dropdown-menu a {
         margin-left: -10px;
-        
         font-weight: bolder;
     }
-
     .navbar-nav {
         top: 10px;
         border-top: #dd9429 3px solid;
     }
-
-
-
-
     .tnc {
         display: inline-block;
-
         margin-top: 22vh;
         margin-left: -70px;
         margin-bottom: 15vh;
     }
-
-
     .credit {
         display: none;
         margin-left: -10%;
     }
-
-
 }
 
 @media screen and (max-width:768px) {
-
     /* 
     #navbar-content {
         height: 100vh;
         width:100vw;
         background-color: rgba(0,0,0,0.5);   
      } */
-
-
     .home .content {
         text-align: center;
     }
-
     .home .content h3 {
         font-size: 4rem;
     }
-
     .newsletter h3 {
         font-size: 2.2rem;
     }
-
     .header-2 .navbar.active {
         display: flex;
-
     }
-
     .body {
         max-height: 100vh;
     }
-
     html {
         font-size: 40%;
     }
-
     .navbar-toggler {
         width: 20px;
         height: 20px;
@@ -1037,43 +978,34 @@ background-color: blue;
         transition: .5s ease-in-out;
         right: 0px;
     }
-
     .credit {
         display: none;
         margin-left: -10%;
     }
-
     .credit .copyright {
         margin-left: -20%;
     }
-
     .tnc {
         display: inline-block;
-
         margin-top: 22vh;
         margin-left: -40px;
         margin-bottom: 15vh;
     }
-
 }
 
 @media screen and (max-width:450px) {
-
     html,
     body {
         font-size: 50%;
         width: 100%;
         height: 100%
     }
-
     .navbar div {
         margin-right: -8px;
     }
-
     .heading {
         font-size: 3rem;
     }
-
     .navbar-toggler {
         width: 20px;
         height: 20px;
@@ -1081,11 +1013,9 @@ background-color: blue;
         transition: .5s ease-in-out;
         right: 0px;
     }
-
     .text button {
         font-size: large;
     }
-
     .totalmenu1-0 {
         margin: 0 auto;
         margin-top: -10vh;
@@ -1095,57 +1025,44 @@ background-color: blue;
         background-position-x: center;
         background-position-y: center;
         ;
-
     }
-
     .credit {
         display: none;
         margin-left: -30%;
     }
-
     .credit .copyright {
         margin-left: -20%;
     }
-
     .tnc {
         display: inline-block;
-
         margin-top: -50px;
-
     }
-
     .tnc1 {
         display: none;
         margin-left: 23vw;
         margin-top: -205px;
         margin-bottom: 400px;
     }
-
     .tnc2 {
         display: none;
         margin-left: 23vw;
         margin-top: 200px;
     }
-
 }
 
 @media screen and (max-width:300px) {
-
     html,
     body {
         font-size: 50%;
         width: 100%;
         height: 100%
     }
-
     .navbar div {
         margin-right: -4px;
     }
-
     .heading {
         font-size: 3rem;
     }
-
     .navbar-toggler {
         width: 20px;
         height: 20px;
@@ -1153,11 +1070,9 @@ background-color: blue;
         transition: .5s ease-in-out;
         right: 0px;
     }
-
     .text button {
         font-size: large;
     }
-
     .totalmenu1-0 {
         margin: 0 auto;
         margin-top: -10vh;
@@ -1166,36 +1081,27 @@ background-color: blue;
         background-size: 100px 100px;
         background-position-x: center;
         background-position-y: center;
-
     }
-
     .credit {
         display: none;
         margin-left: -30%;
     }
-
     .credit .copyright {
         margin-left: -20%;
     }
-
     .tnc {
         display: inline-block;
-
         margin-top: -50px;
-
     }
-
     .tnc1 {
         display: none;
         margin-left: 12vw;
         margin-top: -205px;
         margin-bottom: 400px;
     }
-
     .tnc2 {
         display: none;
         margin-left: 12vw;
         margin-top: 200px;
     }
-
 }
