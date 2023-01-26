@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "flickity": "^3.0.0",
     "sweetalert2": "^11.6.16",
     "web3": "^1.7.3"
   }
