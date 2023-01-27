@@ -77,9 +77,9 @@
         }
 
         .container img {
-            margin-top: 20px;
+            
             width: 300px;
-            height: 500px;
+            height: 300px;
         }
 
         .container p {
@@ -864,8 +864,10 @@
                     newElement.className = "item-a lslide active";
                     newElement.style = "margin-right:10px";
                     newElement.innerHTML = `   
+                    
                     <a href='${permalink}' target="_blank">               
                         <div class="box">
+                            <img src = "/images/logo.svg" style="width: 80px; height: 50px; margin-top: 20px;">
                             <img src='${nft.image_url}' class='model' >
                             <div class='details'>
                                 <p>${nft.name}</p>
