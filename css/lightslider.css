@@ -10,7 +10,9 @@
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    user-select: none
+    user-select: none;
+    width: 1140px;
+    
 }
 .lightSlider:before, .lightSlider:after {
     content: " ";
@@ -85,7 +87,7 @@
 .lSSlideOuter .lSPager.lSpg > li a {
     background-color: #222222;
     border-radius: 30px;
-    display: inline-block;
+    display: none;
     height: 8px;
     overflow: hidden;
     text-indent: -999em;
