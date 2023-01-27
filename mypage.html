@@ -573,49 +573,7 @@
                 });            
         };
 
-        async function getOpenseaItems() {
-            //alert(window.userAddress);
-
-
-            if (!window.userAddress) { return }
-            const osContainer = document.getElementById('autoWidth')
-
-            const items = await fetch(`https://testnets-api.opensea.io/api/v1/assets?owner=${window.userAddress}&order_direction=desc&offset=0&limit=5`)
-                .then((res) => res.json())
-                .then((res) => {
-
-                    return res.assets
-
-                })
-                .catch((e) => {
-                    console.error(e)
-                    console.error('Could not talk to OpenSea')
-                    return null
-                })
-            //alert(items.length);
-
-            if (items.length === 0) { return }
-
-            items.forEach((nft) => {
-                const { name, image_url, description } = nft;
-                // alert(name);
-                // alert(nft.image_url);
-                // alert(description);
-                const newElement = document.createElement('li');
-                newElement.className = "item-a lslide active";
-                newElement.style = "margin-right:10px";
-                newElement.innerHTML = `                  
-                    <div class="box">
-                        <img src='${nft.image_url}' class='model' >
-                        <div class='details'>
-                            <p>${nft.name}</p>
-                            <p>${nft.description ?? ''}</p>
-                        </div>
-                    </div>
-                `;
-                osContainer.appendChild(newElement);
-            })
-        }
+        
 
         window
             .ethereum
@@ -875,6 +833,50 @@
         //         return false;
         //     });
         // });
+        async function getOpenseaItems() {
+            //alert(window.userAddress);
+
+
+            if (!window.userAddress) { return }
+            const osContainer = document.getElementById('autoWidth')
+            alert('loading1');
+
+            const items = await fetch(`https://testnets-api.opensea.io/api/v1/assets?owner=${window.userAddress}&order_direction=desc&offset=0&limit=8`)
+                .then((res) => res.json())
+                .then((res) => {
+                    alert('loading2');
+                    return res.assets
+
+                })
+                .catch((e) => {
+                    console.error(e)
+                    console.error('Could not talk to OpenSea')
+                    return null
+                })
+            //alert(items.length);
+
+            if (items.length === 0) { return }
+            alert('loading3');
+            items.forEach((nft) => {
+                const { name, image_url, description } = nft;                
+                const newElement = document.createElement('li');
+                newElement.className = "item-a lslide active";
+                newElement.style = "margin-right:10px";
+                newElement.innerHTML = `                  
+                    <div class="box">
+                        <img src='${nft.image_url}' class='model' >
+                        <div class='details'>
+                            <p>${nft.name}</p>
+                            <p>${nft.description ?? ''}</p>
+                        </div>
+                    </div>
+                `;
+                
+                osContainer.appendChild(newElement);
+                console.log(newElement);
+            })
+        }
+
 
         $(document).ready(function () {
             $('#autoWidth').lightSlider({
