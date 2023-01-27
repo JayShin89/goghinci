@@ -68,11 +68,7 @@
     <div id="preloader"></div>
 
     <style>
-        body {
-            margin: 0px;
-            padding: 0px;
-        }
-
+        
         ul {
             list-style: none;
         }
@@ -846,22 +842,22 @@
         }
 
         document.addEventListener('swiped-left', function (e) {
-            t -= 1;
-            if (t == -1) {
-                t = 9;
-            }
-            nHome.style.backgroundColor = colors[t];
-            localStorage.setItem('colorCode', colors[t]);
+            // t -= 1;
+            // if (t == -1) {
+            //     t = 9;
+            // }
+            // nHome.style.backgroundColor = colors[t];
+            // localStorage.setItem('colorCode', colors[t]);
 
         });
 
         document.addEventListener('swiped-right', function (e) {
-            t += 1;
-            if (t == 10) {
-                t = 0;
-            }
-            nHome.style.backgroundColor = colors[t];
-            localStorage.setItem('colorCode', colors[t]);
+            // t += 1;
+            // if (t == 10) {
+            //     t = 0;
+            // }
+            // nHome.style.backgroundColor = colors[t];
+            // localStorage.setItem('colorCode', colors[t]);
 
         });
 
@@ -885,25 +881,25 @@
 
         });
 
-        $(function () {
-            $("body div").fadeIn(500, function () {
-                $(this).animate({
-                    "top": "150px"
-                }, 1000);
-            });
+        // $(function () {
+        //     $("body div").fadeIn(500, function () {
+        //         $(this).animate({
+        //             "top": "150px"
+        //         }, 1000);
+        //     });
 
-            $("a").click(function () {
-                var url = $(this).attr("href");
-                $("body div").animate({
-                    "opacity": "0",
-                    "top": "10px"
-                }, 500, function () {
-                    document.location.href = url;
-                });
+        //     $("a").click(function () {
+        //         var url = $(this).attr("href");
+        //         $("body div").animate({
+        //             "opacity": "0",
+        //             "top": "10px"
+        //         }, 500, function () {
+        //             document.location.href = url;
+        //         });
 
-                return false;
-            });
-        });
+        //         return false;
+        //     });
+        // });
 
         $(document).ready(function () {
             $('#autoWidth').lightSlider({
