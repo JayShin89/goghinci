@@ -594,6 +594,8 @@
                         .innerHTML = " Wallet";
                 } else {
                     checkWallet();
+                    getOpenseaItems();
+                    window.location.reload();
                 }
             });
 
@@ -834,14 +836,14 @@
         //     });
         // });
         async function getOpenseaItems() {
-            //alert(window.userAddress);
-
+            //alert(selectedAccount);
+            //window.location.reload();
 
             if (!window.userAddress) { return }
             const osContainer = document.getElementById('autoWidth')
             //alert('loading1');
 
-            const items = await fetch(`https://testnets-api.opensea.io/api/v1/assets?owner=${window.userAddress}&order_direction=desc&offset=0&limit=8`)
+            const items = await fetch(`https://testnets-api.opensea.io/api/v1/assets?owner=${window.userAddress}&order_direction=desc&offset=0&limit=200`)
                 .then((res) => res.json())
                 .then((res) => {
                     //alert('loading2');
@@ -893,12 +895,6 @@
             });
         });
     </script>
-
-
-
-
-
-
 </body>
 
 </html>
