@@ -859,11 +859,12 @@
             //alert('loading3');
             items.forEach((nft) => {                
                 if(nft.asset_contract.name==='VANICI_Zodiac') {
-                    const { name, image_url, description } = nft;                
+                    const { name, image_url, description, permalink } = nft;                
                     const newElement = document.createElement('li');
                     newElement.className = "item-a lslide active";
                     newElement.style = "margin-right:10px";
-                    newElement.innerHTML = `                  
+                    newElement.innerHTML = `   
+                    <a href='${permalink}' target="_blank">               
                         <div class="box">
                             <img src='${nft.image_url}' class='model' >
                             <div class='details'>
