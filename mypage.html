@@ -839,12 +839,12 @@
 
             if (!window.userAddress) { return }
             const osContainer = document.getElementById('autoWidth')
-            alert('loading1');
+            //alert('loading1');
 
             const items = await fetch(`https://testnets-api.opensea.io/api/v1/assets?owner=${window.userAddress}&order_direction=desc&offset=0&limit=8`)
                 .then((res) => res.json())
                 .then((res) => {
-                    alert('loading2');
+                    //alert('loading2');
                     return res.assets
 
                 })
@@ -856,7 +856,7 @@
             //alert(items.length);
 
             if (items.length === 0) { return }
-            alert('loading3');
+            //alert('loading3');
             items.forEach((nft) => {
                 const { name, image_url, description } = nft;                
                 const newElement = document.createElement('li');
@@ -873,7 +873,7 @@
                 `;
                 
                 osContainer.appendChild(newElement);
-                console.log(newElement);
+                $(window).trigger('resize')
             })
         }
 
