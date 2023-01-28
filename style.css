@@ -132,9 +132,9 @@ section {
     cursor: pointer;
 }
 
-.btn:hover {
+/* .btn:hover {
     background: var(--red);
-}
+} */
 
 .heading {
     text-align: center;
@@ -179,9 +179,9 @@ section {
 
 .wallet {}
 
-.wallet:hover button {
+/* .wallet:hover button {
     background-color: rgb(140, 199, 150);
-}
+} */
 
 .wallet div {
     background-color: transparent;
