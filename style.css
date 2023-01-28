@@ -184,14 +184,15 @@ section {
 } */
 
 .wallet div {
-    background-color: transparent;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: transparent;    
     z-index: 1;
     visibility: visible;
     position: relative;
     min-width: 15px;
     opacity: 0;
     transition: .3s;
+    position:fixed;    
+    right: 3.5%;
 }
 
 .wallet:hover div {
@@ -202,18 +203,22 @@ section {
 .wallet div a {
     display: block;
     text-decoration: none;
-    padding: 8px;
+    
     color: #ef9044 ;
     transition: .1s;
     white-space: nowrap;
     font-size: 14px;
     font-weight: bolder;
     font-family: 'Lato', Arial;
+    left: 50%;
+    
+    
 }
 
 .wallet div a:hover {
     background-color: transparent;
     color: #fff;
+    
 }
 
 
@@ -917,6 +922,8 @@ background-color: blue;
     .totalmenu1-0 {
         margin-top: 15vh;
     }
+
+    
     .navbar div {
         text-align: center;
         margin-top: 0px;
@@ -932,7 +939,7 @@ background-color: blue;
     }
     .navbar-nav {
         top: 10px;
-        border-top: #ef9044  3px solid;
+        border-top: #ef9044 3px solid;
     }
     .tnc {
         display: inline-block;
@@ -944,6 +951,14 @@ background-color: blue;
         display: none;
         margin-left: -10%;
     }
+
+    .wallet {
+        margin-left: 4%;
+    }
+    .wallet div {
+        right: 45.5%;
+    }
+    
 }
 
 @media screen and (max-width:768px) {
@@ -990,6 +1005,13 @@ background-color: blue;
         margin-top: 22vh;
         margin-left: -40px;
         margin-bottom: 15vh;
+    }
+    .wallet {
+        margin-left: 1.5%;
+    }
+
+    .wallet div a{
+        margin-left: 8%;
     }
 }
 
@@ -1047,6 +1069,9 @@ background-color: blue;
         display: none;
         margin-left: 23vw;
         margin-top: 200px;
+    }
+    .wallet div a {
+        right: 5%;
     }
 }
 
