@@ -203,7 +203,7 @@ section {
     display: block;
     text-decoration: none;
     padding: 8px;
-    color: #dd9429;
+    color: #ef9044 ;
     transition: .1s;
     white-space: nowrap;
     font-size: 14px;
@@ -513,7 +513,7 @@ background-color: blue;
     position: absolute;
     height: 3px;
     width: 100%;
-    background: #dd9429;
+    background: #ef9044 ;
     border-radius: 1px;
     opacity: 1;
     left: 0;
@@ -565,7 +565,7 @@ background-color: blue;
 /* Color of 3 lines */
 
 .navbar-toggler.collapsed .toggler-icon {
-    color: #dd9429;
+    color: #ef9044 ;
 }
 
 
@@ -603,13 +603,13 @@ background-color: blue;
     width: 100%;
     font-size: 1.5rem;
     font-weight: lighter;
-    color: #dd9429;
+    color: #ef9044 ;
     display: inline-flex;
     align-content: left;
 }
 
 .credit .copyright {
-    color: #dd9429;
+    color: #ef9044 ;
     text-align: left;
     font-size: 1.5rem;
     min-width: 100vw;
@@ -635,8 +635,8 @@ background-color: blue;
     -webkit-transform: rotate(45deg);
     /* Chrome, Safari, Opera */
     transform: rotate(45deg);
-    border-right: 4px solid #dd9429;
-    border-bottom: 4px solid #dd9429;
+    border-right: 4px solid #ef9044 ;
+    border-bottom: 4px solid #ef9044 ;
     margin: 0 0 3px 4px;
     width: 26px;
     height: 26px;
@@ -932,7 +932,7 @@ background-color: blue;
     }
     .navbar-nav {
         top: 10px;
-        border-top: #dd9429 3px solid;
+        border-top: #ef9044  3px solid;
     }
     .tnc {
         display: inline-block;

@@ -950,9 +950,10 @@
                     return null
                 })
             //alert(items.length);
-                document.getElementById("total").append(items.length);
+            
+                
             if (items.length === 0) { return }
-            //alert('loading3');
+            var count = 0;
             items.forEach((nft) => {
                 if (nft.asset_contract.name === 'VANICI_Zodiac') {
                     const { name, image_url, description, permalink } = nft;
@@ -969,8 +970,10 @@
 
                     osContainer.appendChild(newElement);
                     $(window).trigger('resize')
+                    count+=1;
                 }
-            })
+            })            
+            document.getElementById("total").append(count);
         }
 
 
