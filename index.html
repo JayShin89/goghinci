@@ -335,7 +335,7 @@
         async function connected() {
             var isMobile = window.orientation > -1;
             if (isMobile) {
-                    if(document.getElementById("connect").innerHTML == "Wallet")
+                    if(document.getElementById("connect").innerHTML.includes('Wallet'))
                         window.location.href = "https://metamask.app.link/dapp/marcovanici.com";
                     
             } else {
