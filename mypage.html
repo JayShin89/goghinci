@@ -297,9 +297,9 @@
             }
 
             .box {
-                width: 92vw;
+                width: 90vw;
                 height: auto;
-                margin-left: 5vw;
+                margin-left: 8.3vw;
             }
 
             .wallet {
@@ -307,8 +307,9 @@
             }
 
             .container img {
-                width: 92vw;
+                width: 90vw;
                 height: auto;
+                
             }
 
             .model {
@@ -320,6 +321,14 @@
                 width: 250px;
             }
 
+            .total {
+                margin-top: -13vh;
+                margin-left: 43vw;
+            }
+            .tnc3 {
+                margin-top: 50vh;
+            }
+
 
         }
 
@@ -327,6 +336,18 @@
             .navbar img {
                 margin-top: -10px;
                 margin-bottom: 5px;
+            }
+
+            .box {
+                width: 98vw;
+                margin-left: -0.5%;
+            }
+
+            .total {
+                margin-left: 40vw;
+            }
+            .container img {
+                max-width: 98vw;
             }
 
             .navbar-nav ul {
@@ -366,42 +387,7 @@
                 -webkit-animation: colorchange 20s infinite alternate;
             }
 
-            /* @-webkit-keyframes colorchange {
-                0% {
-                    color: #040000;
-                }
-                10% {
-                    color: #d5272d;
-                }
-                20% {
-                    color: #fcb923;
-                }
-                30% {
-                    color: #3552a4;
-                }
-                40% {
-                    color: #154f3c;
-                }
-                50% {
-                    color: #805fa9;
-                }
-                60% {
-                    color: #f1929c;
-                }
-                70% {
-                    color: #e16325;
-                }
-                80% {
-                    color: #3cbeb7;
-                }
-                90% {
-                    color: #ffffff;
-                }
-                100% {
-                    color: #dd9429;
-                }
-                
-            } */
+            
             /* .tnc {
                 
                 display: inline-block;
@@ -438,6 +424,10 @@
                 font-weight: bold;
                 position: relative;
                 -webkit-animation: colorchange 20s infinite alternate;
+            }
+
+            .total {
+                margin-left: 35vw;
             }
 
             .wallet {
@@ -968,7 +958,7 @@
                     const { name, image_url, description, permalink } = nft;
                     const newElement = document.createElement('li');
                     newElement.className = "item-a lslide active";
-                    newElement.style = "margin-right:10px";
+                    
                     newElement.innerHTML = `   
                     
                     <a href='${permalink}' target="_blank">               

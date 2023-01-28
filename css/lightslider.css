@@ -13,6 +13,7 @@
     user-select: none;
     max-width: 1920px;
     
+    
 }
 .lightSlider:before, .lightSlider:after {
     content: " ";
