@@ -145,64 +145,7 @@
                 position: relative;
                 -webkit-animation: colorchange 20s infinite alternate;
             }
-            /* @-webkit-keyframes colorchange {
-                0% {
-                    color: #040000;
-                }
-                10% {
-                    color: #d5272d;
-                }
-                20% {
-                    color: #fcb923;
-                }
-                30% {
-                    color: #3552a4;
-                }
-                40% {
-                    color: #154f3c;
-                }
-                50% {
-                    color: #805fa9;
-                }
-                60% {
-                    color: #f1929c;
-                }
-                70% {
-                    color: #e16325;
-                }
-                80% {
-                    color: #3cbeb7;
-                }
-                90% {
-                    color: #ffffff;
-                }
-                100% {
-                    color: #dd9429;
-                }
-                
-            } */
-            /* .tnc {
-                
-                display: inline-block;
-                width: 100%;
-                margin: 0 auto;
-
-            }
-
-            .tnc1 {
-                display: none;
-                margin-left: 18vw;
-                margin-top: -205px;
-                margin-bottom: 400px;
-            }
-
-            .tnc2 {
-                display: none;
-                margin-left: 18vw;
-                margin-top: 200px;
-            } */
         }
-        
         @media screen and (max-width:300px) {
             .tnc3 {
                 font-family: "Avenir Next" !important;
@@ -220,55 +163,7 @@
             }
             .wallet {
                 margin-left: -20px;
-            }
-            /* @-webkit-keyframes colorchange {
-                0% {
-                    color: #040000;
-                }
-                10% {
-                    color: #d5272d;
-                }
-                20% {
-                    color: #fcb923;
-                }
-                30% {
-                    color: #3552a4;
-                }
-                40% {
-                    color: #154f3c;
-                }
-                50% {
-                    color: #805fa9;
-                }
-                60% {
-                    color: #f1929c;
-                }
-                70% {
-                    color: #e16325;
-                }
-                80% {
-                    color: #3cbeb7;
-                }
-                90% {
-                    color: #ffffff;
-                }
-                100% {
-                    color: #dd9429;
-                }
-                
-            } */
-            /* .tnc1 {
-                display: none;
-                margin-left: 8vw;
-                margin-top: -205px;
-                margin-bottom: 400px;
-            }
-
-            .tnc2 {
-                display: none;
-                margin-left: 8vw;
-                margin-top: 200px;
-            } */
+            }            
         }
     </style>
 
@@ -512,25 +407,7 @@
 
                 mHome.style.backgroundColor = colors[colorIndex];
                 localStorage.setItem('colorCode', colors[colorIndex]);
-
-                /*if (colorIndex == 1 || colorIndex == 5) {
-                    navdrop.style.color = colors[6];
-                    instaIcon.style.color = colors[6];
-                    twitIcon.style.color = colors[6];
-                    but.style.color = colors[6];
-                    subdrop.style.color = colors[6];
-                    hamb.style.color = colors[6];
-                    describ.style.color = colors[6];
-                }
-                else {
-                    navdrop.style.color = colors[5];
-                    instaIcon.style.color = colors[5];
-                    twitIcon.style.color = colors[5];
-                    but.style.color = colors[5];
-                    subdrop.style.color = colors[5];
-                    hamb.style.color = colors[5];
-                    describ.style.color = colors[5];
-                }*/
+                
                 scrollValue = 0;
 
             }
@@ -542,25 +419,7 @@
                     colorIndex = colors.length - 1;
 
                 mHome.style.backgroundColor = colors[colorIndex];
-
-                /*if (colorIndex == 1 || colorIndex == 5) {
-                    navdrop.style.color = colors[6];
-                    instaIcon.style.color = colors[6];
-                    twitIcon.style.color = colors[6];
-                    but.style.color = colors[6];
-                    subdrop.style.color = colors[6];
-                    hamb.style.color = colors[6];
-                    describ.style.color = colors[6];
-                }
-                else {
-                    navdrop.style.color = colors[5];
-                    instaIcon.style.color = colors[5];
-                    twitIcon.style.color = colors[5];
-                    but.style.color = colors[5];
-                    subdrop.style.color = colors[5];
-                    hamb.style.color = colors[5];
-                    describ.style.color = colors[5];
-                }*/
+                
                 scrollValue = 0;
                 localStorage.setItem('colorCode', colors[colorIndex]);
             }
