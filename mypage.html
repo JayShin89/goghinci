@@ -196,12 +196,7 @@
         .dropdown-menu {
             border: none;
         }
-
-        /* .dropdown-menu a:hover {
-            background-color: rgb(140, 199, 150);
-            border-radius: 0.5rem;
-        } */
-
+        
         .dropdown-menu a {
             margin-left: -5px;
             margin-top: -5px;
@@ -383,29 +378,7 @@
                 font-weight: bold;
                 position: relative;
                 -webkit-animation: colorchange 20s infinite alternate;
-            }
-
-            
-            /* .tnc {
-                
-                display: inline-block;
-                width: 100%;
-                margin: 0 auto;
-
-            }
-
-            .tnc1 {
-                display: none;
-                margin-left: 18vw;
-                margin-top: -205px;
-                margin-bottom: 400px;
-            }
-
-            .tnc2 {
-                display: none;
-                margin-left: 18vw;
-                margin-top: 200px;
-            } */
+            }    
         }
 
         @media screen and (max-width:300px) {
@@ -433,56 +406,7 @@
 
             .wallet {
                 margin-left: -20px;
-            }
-
-            /* @-webkit-keyframes colorchange {
-                0% {
-                    color: #040000;
-                }
-                10% {
-                    color: #d5272d;
-                }
-                20% {
-                    color: #fcb923;
-                }
-                30% {
-                    color: #3552a4;
-                }
-                40% {
-                    color: #154f3c;
-                }
-                50% {
-                    color: #805fa9;
-                }
-                60% {
-                    color: #f1929c;
-                }
-                70% {
-                    color: #e16325;
-                }
-                80% {
-                    color: #3cbeb7;
-                }
-                90% {
-                    color: #ffffff;
-                }
-                100% {
-                    color: #dd9429;
-                }
-                
-            } */
-            /* .tnc1 {
-                display: none;
-                margin-left: 8vw;
-                margin-top: -205px;
-                margin-bottom: 400px;
-            }
-
-            .tnc2 {
-                display: none;
-                margin-left: 8vw;
-                margin-top: 200px;
-            } */
+            }            
         }
     </style>
 
@@ -512,11 +436,7 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarsExample04"
                 style="text-align:center;  margin-top:25px; margin-right:3%">
                 <div class="navbar-nav" id="navbar-content">
-                    <ul class="navbar-nav  ">
-                        <!-- <li class="nav-item active"> <a class="nav-link" href="/index.html"
-                            style="font-size:16px; font-weight: bolder; color:white; margin-right:20px;
-                            font-family: inherit; margin-top:5px;">Home <span
-                            class="sr-only">(current)</span></a> </li> -->
+                    <ul class="navbar-nav  ">                        
                         <li class="nav-item dropdown text-center">
                             <a class="nav-link dropdown-toggle " href="" id="dropdown04" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
@@ -567,28 +487,10 @@
             <!-- <button onclick="getOpenseaItems()" class="">Get OpenSea Assets</button> -->
             <div class="container">
                 <!--slider------------------->
-                <ul id="autoWidth" class="cs-hidden">
-                    <!--1------------------------------>
-                    <!-- <li class="item-a" id="item-a"> -->
-                    <!--slider-box-->
-                    <!-- <div class="box"> -->
-                    <!--openseaItem goes here-->
-
-                    <!-- </div> -->
-                    <!-- </li> -->
-                    <!--put-->
+                <ul id="autoWidth" class="cs-hidden">                    
+                    <!--openseaItem goes here-->                    
                 </ul>
-            </div>
-
-
-
-            <!-- <h3 class="rainbow terms" id="desc" style="margin-top:3vh;">Scroll</h3> -->
-            <!-- <div class="tnc1"> <span class="m_scroll_arrows unu1"></span> <span
-                class="m_scroll_arrows doi1"></span> <span class="m_scroll_arrows trei1"></span>
-                </div> <div class="mouse"> <div class="wheel"></div> </div> <div class="tnc2">
-                <span class="m_scroll_arrows unu"></span> <span class="m_scroll_arrows
-                doi"></span> <span class="m_scroll_arrows trei"></span> </div> -->
-
+            </div>          
         </div>
 
         <div class = "total" id = "total">Total : </div>
@@ -643,14 +545,12 @@
                     id: new Date().getTime()
                 }, function (error, result) {
                     console.log(result);
-                    // let hover_button = document.getElementById("drop-content");
+                    
                     if (result["result"] != "") { //addresses found. result["result"] contains wallet address
                         addr = String(result["result"]);
                         window.userAddress = addr;
                         window.localStorage.setItem("userAddress", addr);
-                        var length = addr.length;
-                        // (result["result"]).slice(result["result"].length-6,
-                        // result["result"].length-1);
+                        var length = addr.length;                        
                         document
                             .getElementById('connect')
                             .innerHTML = "0x.." + addr.slice(addr.length - 3, addr.length);
@@ -722,10 +622,7 @@
         // scrolling
     </script>
     <script src="script.js"></script>
-    <script>
-        /*               Black       White      Red       Yellow     Blue       Green
-         *    Purple      Pink      Orange      Cyan
-         */
+    <script>        
         var colors = [
             '#040000',
             '#ffffff',
@@ -775,25 +672,7 @@
 
                 nHome.style.backgroundColor = colors[colorIndex];
                 localStorage.setItem('colorCode', colors[colorIndex]);
-
-                /*if (colorIndex == 1 || colorIndex == 5) {
-                    navdrop.style.color = colors[6];
-                    instaIcon.style.color = colors[6];
-                    twitIcon.style.color = colors[6];
-                    but.style.color = colors[6];
-                    subdrop.style.color = colors[6];
-                    hamb.style.color = colors[6];
-                    describ.style.color = colors[6];
-                }
-                else {
-                    navdrop.style.color = colors[5];
-                    instaIcon.style.color = colors[5];
-                    twitIcon.style.color = colors[5];
-                    but.style.color = colors[5];
-                    subdrop.style.color = colors[5];
-                    hamb.style.color = colors[5];
-                    describ.style.color = colors[5];
-                }*/
+                
                 scrollValue = 0;
 
             }
@@ -805,25 +684,7 @@
                     colorIndex = colors.length - 1;
 
                 nHome.style.backgroundColor = colors[colorIndex];
-
-                /*if (colorIndex == 1 || colorIndex == 5) {
-                    navdrop.style.color = colors[6];
-                    instaIcon.style.color = colors[6];
-                    twitIcon.style.color = colors[6];
-                    but.style.color = colors[6];
-                    subdrop.style.color = colors[6];
-                    hamb.style.color = colors[6];
-                    describ.style.color = colors[6];
-                }
-                else {
-                    navdrop.style.color = colors[5];
-                    instaIcon.style.color = colors[5];
-                    twitIcon.style.color = colors[5];
-                    but.style.color = colors[5];
-                    subdrop.style.color = colors[5];
-                    hamb.style.color = colors[5];
-                    describ.style.color = colors[5];
-                }*/
+                
                 scrollValue = 0;
                 localStorage.setItem('colorCode', colors[colorIndex]);
             }
@@ -844,10 +705,7 @@
 
         });
 
-        /*touch event*/
-        /*               Black       White      Red       Yellow     Blue       Green
-         *    Purple      Pink      Orange      Cyan
-         */
+        /*touch event*/        
         var colors = [
         '#040000',
             '#ffffff',
@@ -909,49 +767,22 @@
             localStorage.setItem('colorCode', colors[t]);
 
         });
-
-        // $(function () {
-        //     $("body div").fadeIn(500, function () {
-        //         $(this).animate({
-        //             "top": "150px"
-        //         }, 1000);
-        //     });
-
-        //     $("a").click(function () {
-        //         var url = $(this).attr("href");
-        //         $("body div").animate({
-        //             "opacity": "0",
-        //             "top": "10px"
-        //         }, 500, function () {
-        //             document.location.href = url;
-        //         });
-
-        //         return false;
-        //     });
-        // });
-        async function getOpenseaItems() {
-            //alert(selectedAccount);
-            //window.location.reload();
-
+        
+        async function getOpenseaItems() {            
             if (!window.userAddress) { return }
             const osContainer = document.getElementById('autoWidth')
-            //alert('loading1');
-
+            
             const items = await fetch(`https://testnets-api.opensea.io/api/v1/assets?owner=${window.userAddress}&order_direction=desc&offset=0&limit=200`)
                 .then((res) => res.json())
-                .then((res) => {
-                    //alert('loading2');
+                .then((res) => {                    
                     return res.assets
-
                 })
                 .catch((e) => {
                     console.error(e)
                     console.error('Could not talk to OpenSea')
                     return null
                 })
-            //alert(items.length);
-            
-                
+                                        
             if (items.length === 0) { return }
             var count = 0;
             items.forEach((nft) => {
