@@ -1227,7 +1227,7 @@
             scrollValue += e.deltaY * 0.01;
 
             timePassed = Date.now() - dateNow;
-            if (scrollValue > 1 && timePassed > 100) {
+            if (scrollValue > 10 && timePassed > 300) {
                 dateNow = Date.now();
                 colorIndex += 1;
                 if (colorIndex > colors.length - 1)
@@ -1257,7 +1257,7 @@
                 localStorage.setItem('colorCode', colors[colorIndex]);
             }
 
-            if (scrollValue < -1 && timePassed > 100) {
+            if (scrollValue < -10 && timePassed > 300) {
                 dateNow = Date.now();
                 colorIndex -= 1;
                 if (colorIndex < 0)
