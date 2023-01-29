@@ -726,10 +726,14 @@ section {
     }
 
     .wallet {
-        margin-left: 4%;
+        margin-left: 3%;
     }
     .wallet div {
         right: 45.5%;
+    }
+
+    .dropdown-menu {
+        margin-left: -2.4%;
     }
     
 }
@@ -774,12 +778,24 @@ section {
         margin-bottom: 15vh;
     }
     .wallet {
-        margin-left: 1.5%;
+        margin-left: 2.5%;
     }
 
     .wallet div a{
         margin-left: 8%;
     }
+
+    .dropdown-menu {
+        width: 100%;
+        margin-left: -1%;
+        
+    }
+    .sub-drop04 {
+        width: 90%;
+        
+    }
+
+    
 }
 
 @media screen and (max-width:450px) {
