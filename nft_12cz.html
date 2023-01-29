@@ -314,7 +314,10 @@
                 -webkit-animation: colorchange 20s infinite alternate;
             }
             .text {
-                margin-top: -30vh;
+                margin-top: -30vh;                
+            }
+
+            .mint {
                 color: #ef9044;
             }
             
@@ -478,7 +481,7 @@
         <div class="totalmenu3-1" style="align-content:center;width:100%;">
             <div class="conatiner">
                 <div class="text">
-                    <button id="mint">Mint</button>
+                    <button id="mint" style = "color: #ef9044;">Mint</button>
                 </div>
             </div>
 
@@ -1238,13 +1241,13 @@
 
                 nczHome.style.backgroundColor = colors[colorIndex];
 
-                if (colorIndex == 1) {
-					text.style.color = colors[0];
+                // if (colorIndex == 1) {
+				// 	text.style.backgroundColor = '#000';
 					
-				}
-				else {
-					text.style.color = colors[1];
-				}
+				// }
+				// else {
+				// 	text.style.backgroundColor = colors[1];
+				// }
                 scrollValue = 0;
                 localStorage.setItem('colorCode', colors[colorIndex]);
             }
@@ -1257,13 +1260,13 @@
 
                 nczHome.style.backgroundColor = colors[colorIndex];
 
-                if (colorIndex == 1) {
-					text.style.color = colors[0];
+                // if (colorIndex == 1) {
+				// 	text.style.backgroundColor = '#000';
 					
-				}
-				else {
-					text.style.color = colors[1];
-				}
+				// }
+				// else {
+				// 	text.style.backgroundColor = colors[1];
+				// }
                 scrollValue = 0;
                 localStorage.setItem('colorCode', colors[colorIndex]);
             }
@@ -1301,6 +1304,7 @@
             '#33bfc5'
         ];
         var nczHome = document.getElementById('nczHome');
+        var mintbtn = document.getElementById('mint');
         var t = 0;
 
         for (var a = 0; a <= 9; a++) {
@@ -1347,6 +1351,14 @@
             if (t == -1) {
                 t = 9;
             }
+            
+            // if (t == 1) {
+			// 		text.style.backgroundColor = colors[0];					
+			// 	}
+			// 	else {
+			// 		text.style.backgroundColor = colors[1];
+			// 	}
+            
             nczHome.style.backgroundColor = colors[t];
             localStorage.setItem('colorCode', colors[t]);
 
@@ -1357,6 +1369,14 @@
             if (t == 10) {
                 t = 0;
             }
+
+            // if (colorIndex == 1) {
+			// 		text.style.backgroundColor = colors[0];					
+			// 	}
+			// 	else {
+			// 		text.style.backgroundColor = colors[1];
+			// 	}
+
             nczHome.style.backgroundColor = colors[t];
             localStorage.setItem('colorCode', colors[t]);
 
