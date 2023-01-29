@@ -481,7 +481,7 @@
         <div class="totalmenu3-1" style="align-content:center;width:100%;">
             <div class="conatiner" >
                 <div class="text">
-                    <button id="mint" style = "background-color:#f3984f;">Mint</button>
+                    <button id="mint" style = "background-color:transparent; border: #f3984f 3px solid; color: #f3984f">Mint</button>
                 </div>
             </div>
 
@@ -1225,7 +1225,7 @@
             if (localStorage.getItem('colorCode') == colors[a]) {
                 colorIndex = a;
                 nczHome.style.backgroundColor = colors[colorIndex];
-                mintbtn.style.color = colors[colorIndex];
+                //mintbtn.style.color = colors[colorIndex];
             }
         }
 
@@ -1240,7 +1240,7 @@
                     colorIndex = 0;
 
                 nczHome.style.backgroundColor = colors[colorIndex];
-                mintbtn.style.color = colors[colorIndex];
+                //mintbtn.style.color = colors[colorIndex];
 
                 // if (colorIndex == 1) {
 				// 	text.style.backgroundColor = '#000';
@@ -1260,7 +1260,7 @@
                     colorIndex = colors.length - 1;
 
                 nczHome.style.backgroundColor = colors[colorIndex];
-                mintbtn.style.color = colors[colorIndex];
+                //mintbtn.style.color = colors[colorIndex];
 
                 // if (colorIndex == 1) {
 				// 	text.style.backgroundColor = '#000';
@@ -1312,7 +1312,7 @@
             if (localStorage.getItem('colorCode') == colors[a]) {
                 t = a;
                 nczHome.style.backgroundColor = colors[t];
-                mintbtn.style.color = colors[t];
+                //mintbtn.style.color = colors[t];
             }
         }
 
@@ -1362,7 +1362,7 @@
 			// 	}
             
             nczHome.style.backgroundColor = colors[t];
-            mintbtn.style.color = colors[t];
+            //mintbtn.style.color = colors[t];
             localStorage.setItem('colorCode', colors[t]);
 
         });
@@ -1381,7 +1381,7 @@
 			// 	}
 
             nczHome.style.backgroundColor = colors[t];
-            mintbtn.style.color = colors[t];
+            //mintbtn.style.color = colors[t];
             localStorage.setItem('colorCode', colors[t]);
 
         });
