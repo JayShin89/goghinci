@@ -66,5 +66,13 @@ contract vanici_cont is ERC721, Ownable, RandomlyAssigned {
   function withdraw() public payable onlyOwner {
     require(payable(msg.sender).send(address(this).balance));
   }
+
+  function burn(uint256 tokenId) public {
+    address addr_owner = ownerOf(tokenId);
+    require( addr_owner == msg.sender, "msg.sender is not the owner of the token");
+    super._burn(tokenId);
+    }
 }
-//0x63D67E48B5c06633597618E47d2377F1d4EE3C77
+
+
+//0xC940A5aAADc44703e6E79eba020565c4cd00FE80
