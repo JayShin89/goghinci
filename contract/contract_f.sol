@@ -1,7 +1,9 @@
-pragma solidity ^0.8.0;
 //SPDX-License-Identifier: MIT
 
+pragma solidity ^0.8.0;
+
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@1001-digital/erc721-extensions/contracts/RandomlyAssigned.sol";
 
@@ -12,6 +14,9 @@ import "@1001-digital/erc721-extensions/contracts/RandomlyAssigned.sol";
 contract vanici_cont is ERC721, Ownable, RandomlyAssigned {
   using Strings for uint256;
   uint256 public currentSupply = 0;
+  uint96 royaltyFeesInBips;
+  string public contractURI;
+  address royaltyReceiver;
   
   string public baseURI = "ipfs://QmdLDHnPofVb1hq2ptwg4auaswiyTxtz9w7FCCNgCKTK4y/";
 
@@ -72,7 +77,34 @@ contract vanici_cont is ERC721, Ownable, RandomlyAssigned {
     require( addr_owner == msg.sender, "msg.sender is not the owner of the token");
     super._burn(tokenId);
     }
+
+  // function _beforeTokenTransfer(address from, address to, uint256 tokenId) internal override (ERC721, ERC721Enumerable) {
+  //   super._beforeTokenTransfer(from, to, tokenId);
+  // }
+  
+    // function supportsInterface(bytes4 interfaceId) public view override(ERC721, ERC721Enumerable) returns (bool)
+    // {
+    //   return interfaceId == 0x2a55205a || super.supportsInterface(interfaceId);
+    // }
+
+    // function royaltyInfo(uint256 _tokenId, uint256 _salePrice) external view returns (address receiver, uint256 royaltyAmount) 
+    // {
+    //   return (royaltyReceiver, calculateRoyalty(_salePrice));
+    // }
+
+    // function calculateRoyalty(uint256 _salePrice) view public returns (uint256) 
+    // {
+    //   return (_salePrice / 10000) * royaltyFeesInBips;
+    // }
+
+    // function setRoyaltyInfo(address _receiver, uint96 _royaltyFeesInBips) public onlyOwner {
+    //   royaltyReceiver = _receiver;
+    //   royaltyFeesInBips = _royaltyFeesInBips;
+    // }
+
+    // function setContractURI(string calldata _contractURI) public onlyOwner {
+    //   contractURI = _contractURI;
+    // }
 }
 
-
-//0xC940A5aAADc44703e6E79eba020565c4cd00FE80
+//0xc3B0ac211F17Cc450BAeD1D780638C2230371730
