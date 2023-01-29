@@ -315,6 +315,7 @@
             }
             .text {
                 margin-top: -30vh;
+                color: #ef9044;
             }
             
             .tnc {
@@ -1209,6 +1210,8 @@
         var subdrop = document.getElementById('sub-dropdown04');
         var hamb = document.getElementById('hamburger');
         var describ = document.getElementById('desc');
+        var mintbtn = document.getElementById('mint');
+        var text = document.getElementById('text');
         nczHome.onwheel = changeBgColor;
 
         var colorIndex = -1;
@@ -1235,24 +1238,13 @@
 
                 nczHome.style.backgroundColor = colors[colorIndex];
 
-                /*if (colorIndex == 1 || colorIndex == 5) {
-					navdrop.style.color = colors[6];
-					instaIcon.style.color = colors[6];
-					twitIcon.style.color = colors[6];
-					but.style.color = colors[6];
-					subdrop.style.color = colors[6];
-					hamb.style.color = colors[6];
-					describ.style.color = colors[6];
+                if (colorIndex == 1) {
+					text.style.color = colors[0];
+					
 				}
 				else {
-					navdrop.style.color = colors[5];
-					instaIcon.style.color = colors[5];
-					twitIcon.style.color = colors[5];
-					but.style.color = colors[5];
-					subdrop.style.color = colors[5];
-					hamb.style.color = colors[5];
-					describ.style.color = colors[5];
-				}*/
+					text.style.color = colors[1];
+				}
                 scrollValue = 0;
                 localStorage.setItem('colorCode', colors[colorIndex]);
             }
@@ -1265,24 +1257,13 @@
 
                 nczHome.style.backgroundColor = colors[colorIndex];
 
-                /*if (colorIndex == 1 || colorIndex == 5) {
-					navdrop.style.color = colors[6];
-					instaIcon.style.color = colors[6];
-					twitIcon.style.color = colors[6];
-					but.style.color = colors[6];
-					subdrop.style.color = colors[6];
-					hamb.style.color = colors[6];
-					describ.style.color = colors[6];
+                if (colorIndex == 1) {
+					text.style.color = colors[0];
+					
 				}
 				else {
-					navdrop.style.color = colors[5];
-					instaIcon.style.color = colors[5];
-					twitIcon.style.color = colors[5];
-					but.style.color = colors[5];
-					subdrop.style.color = colors[5];
-					hamb.style.color = colors[5];
-					describ.style.color = colors[5];
-				}*/
+					text.style.color = colors[1];
+				}
                 scrollValue = 0;
                 localStorage.setItem('colorCode', colors[colorIndex]);
             }
