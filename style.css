@@ -195,7 +195,7 @@ section {
     display: block;
     text-decoration: none;
     
-    color: #f3984f  ;
+    color: #eea852  ;
     transition: .1s;
     white-space: nowrap;
     font-size: 14px;
@@ -208,7 +208,7 @@ section {
 
 .wallet div a:hover {
     background-color: transparent;
-    color: #f3984f ;    
+    color: #eea852 ;    
 }
 
 
@@ -488,7 +488,7 @@ section {
     position: absolute;
     height: 3px;
     width: 100%;
-    background: #f3984f  ;
+    background: #eea852  ;
     border-radius: 1px;
     opacity: 1;
     left: 0;
@@ -540,7 +540,7 @@ section {
 /* Color of 3 lines */
 
 .navbar-toggler.collapsed .toggler-icon {
-    color: #f3984f  ;
+    color: #eea852  ;
 }
 
 
@@ -578,13 +578,13 @@ section {
     width: 100%;
     font-size: 1.5rem;
     font-weight: lighter;
-    color: #f3984f  ;
+    color: #eea852  ;
     display: inline-flex;
     align-content: left;
 }
 
 .credit .copyright {
-    color: #f3984f  ;
+    color: #eea852  ;
     text-align: left;
     font-size: 1.5rem;
     min-width: 100vw;
@@ -610,8 +610,8 @@ section {
     -webkit-transform: rotate(45deg);
     /* Chrome, Safari, Opera */
     transform: rotate(45deg);
-    border-right: 4px solid #f3984f  ;
-    border-bottom: 4px solid #f3984f  ;
+    border-right: 4px solid #eea852  ;
+    border-bottom: 4px solid #eea852  ;
     margin: 0 0 3px 4px;
     width: 26px;
     height: 26px;
@@ -712,7 +712,7 @@ section {
     }
     .navbar-nav {
         top: 10px;
-        border-top: #f3984f  3px solid;
+        border-top: #eea852  3px solid;
     }
     .tnc {
         display: inline-block;
