@@ -443,7 +443,7 @@ section {
     transition: background-color 0.8s;
     display: flex;
     flex-wrap: wrap;
-    height: 100vh;
+    min-height: 100vh;
     background-repeat: repeat-y;
     margin: 0 auto;
     overflow-y: hidden;

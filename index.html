@@ -383,7 +383,7 @@
             scrollValue += e.deltaY * 0.01;
 
             timePassed = Date.now() - dateNow;
-            if (scrollValue > 50 && timePassed > 100) {
+            if (scrollValue > 30 && timePassed > 100) {
                 dateNow = Date.now();
                 colorIndex += 1;
                 if (colorIndex > colors.length - 1)
@@ -395,7 +395,7 @@
                 scrollValue = 0;
             }
 
-            if (scrollValue < -50 && timePassed > 100) {
+            if (scrollValue < -30 && timePassed > 100) {
                 dateNow = Date.now();
                 colorIndex -= 1;
                 if (colorIndex < 0)

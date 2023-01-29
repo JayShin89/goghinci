@@ -57,6 +57,9 @@
     <div id="preloader"></div>
 
     <style>
+        .myhome {
+            min-height: 100vh;
+        }
         .tnc3 {
             font-family: "Avenir Next" !important;
             font-style: italic;
@@ -92,9 +95,9 @@
 
         .container img {
             max-width: 610px;
-            max-height: auto;
+            max-height: 610px;
             width: 31.5vw;
-            height: auto;
+            height:auto;
         }
 
         .container p {
@@ -786,7 +789,7 @@
             if (items.length === 0) { return }
             var count = 0;
             items.forEach((nft) => {
-                if (nft.asset_contract.name === '12CZ') {
+                if (nft.asset_contract.name === 'VANICI_Zodcd') {
                     const { name, image_url, description, permalink } = nft;
                     const newElement = document.createElement('li');
                     newElement.className = "item-a lslide active";
