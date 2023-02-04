@@ -50,6 +50,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/swiped-events/1.1.7/swiped-events.min.js" integrity="sha512-q2rGCiN6EL2X7aJwVzSD6E0GbpfcGSjipdpZ12lqArQfSMb/LTDXlSFZLrohrSanuRk2/oP96lb14NNgPCAZPw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -479,6 +481,7 @@
             
         </div>        
         <div class="totalmenu3-1" style="align-content:center;width:100%;">
+            <div class = "mint_count" id="mint_count" style="font-size: 22px; aligh-items:center;">Minted: </div>
             <div class="conatiner" >
                 <div class="text">
                     <button id="mint" style = "background-color:transparent; border: #f3984f 3px solid; color: #f3984f">Mint</button>
@@ -521,6 +524,29 @@
     <!--footer section ends -->
 
     <!--custom js file link -->
+    
+    <script>        
+    $( document ).ready(function() {
+        $.ajax({
+            url: 'load_mint_cnt.php',
+            mothod: 'post',
+            dataType: 'json',
+            success:function(data){
+                let string = '';
+                $.each(data, function(key, value){
+                    string += `${value['mint_count']}`;
+                });
+                $('#mint_count').append(string);
+                alert(string);
+            },
+            error:function(xhr, status, error) {
+                var err = eval("(" + xhr.responseText + ")");
+                alert(err.Message);
+            }
+        });
+    });    
+    </script>
+
     <script type="text/javascript">
         const Toast = Swal.mixin({
             toast: true,
@@ -1072,12 +1098,24 @@
                                 icon: 'error',
                                 title: 'All NFTs are minted.'
                             })
-                        } else if (balance >= 1) {
+                        } else if (balance >= 504) {
                             Toast.fire({
                                 icon: 'error',
                                 title: 'You already mint this collection. Please wait for the next collection'
                             })
                         } else {
+                            // $.ajax({
+                            //     url: '/mint_update.php',
+                            //     dataType: 'text',
+                            //     type: 'post',
+                            //     data: {
+                            //         wallet_addr: account
+                            //     },
+                            //     success: function() {
+                            //         console.log('successfully store data in DB');
+                            //     }
+                                
+                            // })
                             const result = await contract
                                 .methods
                                 .mint(account)
@@ -1135,9 +1173,26 @@
                         document
                             .getElementById('connect')
                             .innerHTML = " Wallet";
-                    }
+                    }                   
                 });
+                // fetch("/load_mint_cnt.php")
+                //     .then((response) => {
+                //         if(!response.ok) {
+                //             throw new Error("cannot load mint count");
+                //         }
+                //         else {
+                //             alert('response okay');                            
+                //         }
 
+                //         return response.json();
+                //     })
+                //     .then((data) => {
+                //         alert(data);
+                //         document.getElementById('mint_count').append(data);
+                //     })
+                //     .catch((error)=> {
+                //         alert(error);                        
+                //     });
         }
 
         function dp_menu() {
@@ -1386,7 +1441,7 @@
 
         });
     </script>
-    <script>
+    <!-- <script>
         function check_recaptcha() {
             var v = grecaptcha.getResponse();
             if (v.length == 0) {
@@ -1426,7 +1481,7 @@
             });
 
         });
-    </script>
+    </script> -->
 
 </body>
 
