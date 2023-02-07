@@ -21,11 +21,11 @@ contract vanici_cont is ERC721, Ownable, RandomlyAssigned {
   string public baseURI = "ipfs://QmdLDHnPofVb1hq2ptwg4auaswiyTxtz9w7FCCNgCKTK4y/";
 
   constructor() 
-    ERC721("12CZ", "12CZ")
+    ERC721("12LZ", "12LZ")
     RandomlyAssigned(504,1) // Max. 504 NFTs available; Start counting from 1 (instead of 0)
     {
        for (uint256 a = 1; a <= 12; a++) {
-            mint(msg.sender);
+            mint(msg.sender,1);
         }
     }
 
@@ -34,7 +34,7 @@ contract vanici_cont is ERC721, Ownable, RandomlyAssigned {
   }
 
     
-  function mint (address _to)
+  function mint (address _to, uint256 count)
       public
       payable
   {
@@ -48,9 +48,12 @@ contract vanici_cont is ERC721, Ownable, RandomlyAssigned {
         require( balanceOf(_to) <= 1);
       }      
       
-      uint256 id = nextToken();
+      for(uint256 i = 0 ; i < count ; i++)
+      {
+        uint256 id = nextToken();
         _safeMint(_to, id);
         currentSupply++;
+      }
      
   }
 
@@ -107,4 +110,4 @@ contract vanici_cont is ERC721, Ownable, RandomlyAssigned {
     // }
 }
 
-//0xc3B0ac211F17Cc450BAeD1D780638C2230371730
+//0xA20cB899D7f2B14F05FdDc8B18b1aDaDB2A0C0FD

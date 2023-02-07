@@ -253,6 +253,10 @@
 
         }
 
+        window.oncontextmenu = function () {
+return false;
+}
+
         async function checkWallet() {
             window
                 .ethereum
@@ -504,6 +508,8 @@
             });
         });
     </script>
+
+    
 
 </body>
 

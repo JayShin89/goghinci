@@ -1,35 +1,26 @@
 <?php
-    $wallet_addr = $POST['wallet_addr'];
+$DBhostname = "mysql.marcovanici.com";  
+$DBusername = "vanici_admin";
+$DBpassword = "Stonecrest311"; 
+$DBname = "vanici_mintinfo";
 
-    if(!empty($wallet_addr)) {
-        $host = "mysql.marcovanici.com";
-        $dbusername = "vanici_admin";
-        $dbpassword = "Stonecrest31"
-        $dbname = "vanici_mintinfo";
+$wallet_addr = $_POST['wallet_addr'];
+$mint_count = $_POST['mint_count'];
+$link = mysqli_connect($DBhostname, $DBusername, $DBpassword, $DBname);
 
-        //create connection
-        $conn = new mysqli ($host, $dbusername, $dbpassword, $dbname);
+if (mysqli_connect_errno()) {
+   die("Connect failed: %s\n" + mysqli_connect_error());
+   exit();
+}
 
-        if(mysqli_connect_error()) {
-            die('Connect Error ('.mysqli_connect_errno().') '
-            .mysql_connect_error());
-        }
+$sql = "INSERT INTO mint_Info_12LZ (wallet_addr, collection, mint_count) VALUES ('$wallet_addr', '12LZ','$mint_count') ON DUPLICATE KEY UPDATE mint_count=mint_count+$mint_count";
+$result = mysqli_query($link,$sql) or die("Unable to select: ".mysql_error());
+if($conn->query($sql)) {
+    echo "New record inserted";
+}
+else {
+    echo "Error: " .$sql ."<br>".$conn->error;
+}
 
-        else {
-            $sql = "INSERT INTO mint_Info_12LZ (wallet_addr, collection, mint_count) VALUES ($wallet_addr, 12LZ,1) ON DUPLICATE KEY UPDATE mint_count=mint_count+1";
-            if($conn->query($sql)) {
-                echo "New record inserted";
-            }
-            else {
-                echo "Error: " .$sql ."<br>".$conn->error;
-            }
-            $conn->close();
-        }
-    }
-    else {
-        echo "Please connect metamask";
-    }
-
-
-
+mysqli_close($link);
 ?>
