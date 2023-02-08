@@ -85,90 +85,17 @@
     <!--header section stars -->
 
     <style>
-        .mint_cnt_box {
+        .free_mint_cnt_box {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
             margin-top: 9.2vh;
             background-color: transparent;
-            color: transparent;
+            color: #f3984f;
             width: 20vw;
             margin-left: 40vw;
-        }
-
-        .mint_cnt {
-            display: inline-block;
-            justify-content: flex-start;
-            border: 3px solid #f3984f;
-            font-size: 35px;
-            font-weight: bolder;
-            width: fit-content;
-            height: fit-content;
-            padding: 0px 15px;
-            color: transparent;
-            border-radius: 15px;
-            background-color: transparent;
-            color: #f3984f;
-        }
-
-        .clicked {
-            display: inline-block;
-            justify-content: flex-start;
-            border: 3px solid #f3984f;
-            font-size: 35px;
-            font-weight: bolder;
-            width: fit-content;
-            height: fit-content;
-            padding: 0px 15px;
-            color: colorCode;
-            border-radius: 15px;
-            background-color: #f3984f;
-
-        }
-
-        .mint_cnt1 {
-            display: inline-block;
-            justify-content: flex-start;
-            border: 3px solid #f3984f;
-            font-size: 35px;
-            font-weight: bolder;
-            width: fit-content;
-            height: fit-content;
-            padding: 0px 15px;
-            color: transparent;
-            border-radius: 15px;
-            background-color: transparent;
-            color: #f3984f;
-        }
-
-        .mint_cnt2 {
-            display: inline-block;
-            border: 3px solid #f3984f;
-            font-size: 35px;
-            font-weight: bolder;
-            width: fit-content;
-            height: fit-content;
-            padding: 0px 15px;
-            color: transparent;
-            border-radius: 15px;
-            background-color: transparent;
-            color: #f3984f;
-        }
-
-        .mint_cnt3 {
-            display: inline-block;
-            justify-content: flex-end;
-            border: 3px solid #f3984f;
-            font-size: 35px;
-            font-weight: 20;
-            width: fit-content;
-            height: fit-content;
-            padding: 0px 15px;
-            color: transparent;
-            border-radius: 15px;
-            background-color: transparent;
-            color: #f3984f;
-        }
+            font-size: 25px;
+        }         
 
         .tnc3 {
             font-family: "Avenir Next" !important;
@@ -648,15 +575,13 @@
 
         </div>
         <div class="totalmenu3-1" style="align-content:center;width:100%;">
-            <div class="mint_cnt_box" id="mint_cnt_box">
-                <button class="mint_cnt" id="mint_cnt1">1</button>
-                <button class="mint_cnt" id="mint_cnt2">2</button>
-                <button class="mint_cnt" id="mint_cnt3">3</button>
+            <div class="free_mint_cnt_box" id="mint_cnt_box"> Free Minted: 3333 / 33333
+                
             </div>
             <div class="conatiner">
                 <div class="text">
                     <button id="mint"
-                        style="background-color:transparent; border: #f3984f 3px solid; color: #f3984f">Mint</button>
+                        style="background-color:transparent; border: #f3984f 3px solid; color: #f3984f">Free Mint</button>
                 </div>
             </div>
 
@@ -764,7 +689,7 @@
             addr = window.userAddress;
             var xhr = new XMLHttpRequest();
             $.ajax({
-                url: 'https://marcovanici.com/load_mint_cnt.php',
+                url: 'https://marcovanici.com/load_free_mint_cnt.php',
                 method: 'post',
                 data: { wallet_addr: addr },
                 dataType: 'json',
@@ -774,38 +699,15 @@
                         string += `${value['mint_count']}`;
                     });
 
-                    if (string === '1') {
-                        document.getElementById('mint_cnt3').style.color = 'gray';
-                        document.getElementById('mint_cnt3').style.borderColor = 'gray';
-                        document.getElementById('mint_cnt3').disabled = true;
-                        document.getElementById('mint_cnt1').style.color = '#f3984f';
-                        document.getElementById('mint_cnt2').style.color = '#f3984f';
-
-                    }
-                    else if (string === '2') {
-                        document.getElementById('mint_cnt3').style.color = 'gray';
-                        document.getElementById('mint_cnt3').style.borderColor = 'gray';
-                        document.getElementById('mint_cnt3').disabled = true;
-                        document.getElementById('mint_cnt2').style.color = 'gray';
-                        document.getElementById('mint_cnt2').style.borderColor = 'gray';
-                        document.getElementById('mint_cnt2').disabled = true;
-                        document.getElementById('mint_cnt1').style.color = '#f3984f';
-                    }
-                    else if (string === '3') {
-                        document.getElementById('mint_cnt3').style.color = 'gray';
-                        document.getElementById('mint_cnt3').style.borderColor = 'gray';
-                        document.getElementById('mint_cnt3').disabled = true;
-                        document.getElementById('mint_cnt2').style.color = 'gray';
-                        document.getElementById('mint_cnt2').style.borderColor = 'gray';
-                        document.getElementById('mint_cnt2').disabled = true;
-                        document.getElementById('mint_cnt1').style.color = 'gray';
-                        document.getElementById('mint_cnt1').style.borderColor = 'gray';
-                        document.getElementById('mint_cnt1').disabled = true;
-                    }
+                    if (string === '3') {
+                        document.getElementById('mint').style.color = 'gray';
+                        document.getElementById('mint').style.borderColor = 'gray';  
+                        document.getElementById('mint').disabled = true;                      
+                    }                    
                     else {
-                        document.getElementById('mint_cnt1').style.color = '#f3984f';
-                        document.getElementById('mint_cnt2').style.color = '#f3984f';
-                        document.getElementById('mint_cnt3').style.color = '#f3984f';
+                        document.getElementById('mint').style.color = '#f3984f';
+                        document.getElementById('mint').style.borderColor = '#f3984f';  
+                        document.getElementById('mint').disabled = false; 
                     }
 
                 },
@@ -1381,35 +1283,28 @@
                             .balanceOf(account)
                             .call();
 
-                        if (totalcount == 504) {
+                        if (totalcount == 33333) {
                             Toast.fire({
                                 icon: 'error',
-                                title: 'All NFTs are minted.'
+                                title: 'All Free NFTs are minted. Please redirect to the regular mint page'
                             })
                         } else if (balance >= 504) {
                             Toast.fire({
                                 icon: 'error',
                                 title: 'You already mint this collection. Please wait for the next collection'
                             })
-                        } else {
-                            if (mintCount === 0) {
-                                Toast.fire({
-                                    icon: 'error',
-                                    title: 'Mint Failed'
-                                })
-                            }
-                            else {
-                                var final_count = mintCount;
+                        } else {    
+                                var final_count = 3;
                                 const result = await contract
                                     .methods
                                     .mint(account, final_count)
                                     .send({
                                         from: account,
-                                        value: 3330000000000000 * final_count
+                                        value: 0
                                     });
                                 if (result != null) {
                                     $.ajax({
-                                        url: 'https://marcovanici.com/mint_update.php',
+                                        url: 'https://marcovanici.com/mint_update_12LZFree.php',
                                         method: 'post',
                                         data: { wallet_addr: account, mint_count: final_count },
                                         dataType: 'json',
@@ -1434,7 +1329,7 @@
                                     })
                                 }
 
-                            }
+                            
                         }
                     }
 
