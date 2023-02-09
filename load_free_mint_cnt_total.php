@@ -4,7 +4,6 @@ $DBusername = "vanici_admin";
 $DBpassword = "Stonecrest311"; 
 $DBname = "vanici_mintinfo";
 
-$wallet_addr = $_POST['wallet_addr'];
 $link = mysqli_connect($DBhostname, $DBusername, $DBpassword, $DBname);
 
 if (mysqli_connect_errno()) {
@@ -12,7 +11,7 @@ if (mysqli_connect_errno()) {
    exit();
 }
 
-$sql = "SELECT mint_count from mint_info_12LZ_Free where wallet_addr = '$wallet_addr'";
+$sql = "SELECT sum(mint_count) from mint_info_12LZ_Free";
 $result = mysqli_query($link,$sql) or die("Unable to select: ".mysql_error());
 
 $result_array = array();

@@ -516,6 +516,7 @@
                                 style="background-color:transparent;">
                                 <a class="dropdown-item" href="/nft_12cz.html" id="sub-drop04"
                                     style="font-size:14px; font-weight: bolder; color:#f3984f; text-align:center; ">12CZ</a>
+                                <a class="dropdown-item" href="/nft_12cz_free.html" id="sub-drop04" style="font-size:14px; font-weight: bolder; color:#f3984f; text-align:center; ">12LZ FREE</a>
                             </div>
                         </li>
 
@@ -575,7 +576,7 @@
 
         </div>
         <div class="totalmenu3-1" style="align-content:center;width:100%;">
-            <div class="free_mint_cnt_box" id="mint_cnt_box"> Free Minted: 3333 / 33333
+            <div class="free_mint_cnt_box" id="mint_cnt_box"> 
                 
             </div>
             <div class="conatiner">
@@ -671,6 +672,27 @@
         }
 
         init();
+        
+        $(document).ready(function () {
+            $.ajax({
+                url: 'https://marcovanici.com/load_free_mint_cnt_total.php',
+                method: 'post',                
+                dataType: 'json',
+                success: function (data) {
+                    let string2 = '';
+                    $.each(data, function (key, value) {
+                        
+                        string2 += `${value['sum(mint_count)']}`;
+                    });
+                    
+                    document.getElementById('mint_cnt_box').innerText = 'Free Minted: '+string2+' / 33333';
+
+                },
+                error: function (xhr, status, exception) {
+                    //alert('Exception:', xhr);
+                }
+            });
+        });
 
         $(document).ready(function () {
             window.userAddress = window.localStorage.getItem("userAddress");
@@ -698,7 +720,7 @@
                     $.each(data, function (key, value) {
                         string += `${value['mint_count']}`;
                     });
-
+                    
                     if (string === '3') {
                         document.getElementById('mint').style.color = 'gray';
                         document.getElementById('mint').style.borderColor = 'gray';  
@@ -715,6 +737,8 @@
                     //alert('Exception:', xhr);
                 }
             });
+
+            
         });    
     </script>
 
@@ -733,525 +757,525 @@
         var account = null;
         var contract = null;
         const ABI = [
-            {
-                "inputs": [],
-                "stateMutability": "nonpayable",
-                "type": "constructor"
-            },
-            {
-                "anonymous": false,
-                "inputs": [
-                    {
-                        "indexed": true,
-                        "internalType": "address",
-                        "name": "owner",
-                        "type": "address"
-                    },
-                    {
-                        "indexed": true,
-                        "internalType": "address",
-                        "name": "approved",
-                        "type": "address"
-                    },
-                    {
-                        "indexed": true,
-                        "internalType": "uint256",
-                        "name": "tokenId",
-                        "type": "uint256"
-                    }
-                ],
-                "name": "Approval",
-                "type": "event"
-            },
-            {
-                "anonymous": false,
-                "inputs": [
-                    {
-                        "indexed": true,
-                        "internalType": "address",
-                        "name": "owner",
-                        "type": "address"
-                    },
-                    {
-                        "indexed": true,
-                        "internalType": "address",
-                        "name": "operator",
-                        "type": "address"
-                    },
-                    {
-                        "indexed": false,
-                        "internalType": "bool",
-                        "name": "approved",
-                        "type": "bool"
-                    }
-                ],
-                "name": "ApprovalForAll",
-                "type": "event"
-            },
-            {
-                "inputs": [
-                    {
-                        "internalType": "address",
-                        "name": "to",
-                        "type": "address"
-                    },
-                    {
-                        "internalType": "uint256",
-                        "name": "tokenId",
-                        "type": "uint256"
-                    }
-                ],
-                "name": "approve",
-                "outputs": [],
-                "stateMutability": "nonpayable",
-                "type": "function"
-            },
-            {
-                "inputs": [
-                    {
-                        "internalType": "uint256",
-                        "name": "tokenId",
-                        "type": "uint256"
-                    }
-                ],
-                "name": "burn",
-                "outputs": [],
-                "stateMutability": "nonpayable",
-                "type": "function"
-            },
-            {
-                "inputs": [
-                    {
-                        "internalType": "address",
-                        "name": "_to",
-                        "type": "address"
-                    },
-                    {
-                        "internalType": "uint256",
-                        "name": "count",
-                        "type": "uint256"
-                    }
-                ],
-                "name": "mint",
-                "outputs": [],
-                "stateMutability": "payable",
-                "type": "function"
-            },
-            {
-                "anonymous": false,
-                "inputs": [
-                    {
-                        "indexed": true,
-                        "internalType": "address",
-                        "name": "previousOwner",
-                        "type": "address"
-                    },
-                    {
-                        "indexed": true,
-                        "internalType": "address",
-                        "name": "newOwner",
-                        "type": "address"
-                    }
-                ],
-                "name": "OwnershipTransferred",
-                "type": "event"
-            },
-            {
-                "inputs": [],
-                "name": "renounceOwnership",
-                "outputs": [],
-                "stateMutability": "nonpayable",
-                "type": "function"
-            },
-            {
-                "inputs": [
-                    {
-                        "internalType": "address",
-                        "name": "from",
-                        "type": "address"
-                    },
-                    {
-                        "internalType": "address",
-                        "name": "to",
-                        "type": "address"
-                    },
-                    {
-                        "internalType": "uint256",
-                        "name": "tokenId",
-                        "type": "uint256"
-                    }
-                ],
-                "name": "safeTransferFrom",
-                "outputs": [],
-                "stateMutability": "nonpayable",
-                "type": "function"
-            },
-            {
-                "inputs": [
-                    {
-                        "internalType": "address",
-                        "name": "from",
-                        "type": "address"
-                    },
-                    {
-                        "internalType": "address",
-                        "name": "to",
-                        "type": "address"
-                    },
-                    {
-                        "internalType": "uint256",
-                        "name": "tokenId",
-                        "type": "uint256"
-                    },
-                    {
-                        "internalType": "bytes",
-                        "name": "data",
-                        "type": "bytes"
-                    }
-                ],
-                "name": "safeTransferFrom",
-                "outputs": [],
-                "stateMutability": "nonpayable",
-                "type": "function"
-            },
-            {
-                "inputs": [
-                    {
-                        "internalType": "address",
-                        "name": "operator",
-                        "type": "address"
-                    },
-                    {
-                        "internalType": "bool",
-                        "name": "approved",
-                        "type": "bool"
-                    }
-                ],
-                "name": "setApprovalForAll",
-                "outputs": [],
-                "stateMutability": "nonpayable",
-                "type": "function"
-            },
-            {
-                "anonymous": false,
-                "inputs": [
-                    {
-                        "indexed": true,
-                        "internalType": "uint256",
-                        "name": "supply",
-                        "type": "uint256"
-                    }
-                ],
-                "name": "SupplyChanged",
-                "type": "event"
-            },
-            {
-                "anonymous": false,
-                "inputs": [
-                    {
-                        "indexed": true,
-                        "internalType": "address",
-                        "name": "from",
-                        "type": "address"
-                    },
-                    {
-                        "indexed": true,
-                        "internalType": "address",
-                        "name": "to",
-                        "type": "address"
-                    },
-                    {
-                        "indexed": true,
-                        "internalType": "uint256",
-                        "name": "tokenId",
-                        "type": "uint256"
-                    }
-                ],
-                "name": "Transfer",
-                "type": "event"
-            },
-            {
-                "inputs": [
-                    {
-                        "internalType": "address",
-                        "name": "from",
-                        "type": "address"
-                    },
-                    {
-                        "internalType": "address",
-                        "name": "to",
-                        "type": "address"
-                    },
-                    {
-                        "internalType": "uint256",
-                        "name": "tokenId",
-                        "type": "uint256"
-                    }
-                ],
-                "name": "transferFrom",
-                "outputs": [],
-                "stateMutability": "nonpayable",
-                "type": "function"
-            },
-            {
-                "inputs": [
-                    {
-                        "internalType": "address",
-                        "name": "newOwner",
-                        "type": "address"
-                    }
-                ],
-                "name": "transferOwnership",
-                "outputs": [],
-                "stateMutability": "nonpayable",
-                "type": "function"
-            },
-            {
-                "inputs": [],
-                "name": "withdraw",
-                "outputs": [],
-                "stateMutability": "payable",
-                "type": "function"
-            },
-            {
-                "inputs": [],
-                "name": "availableTokenCount",
-                "outputs": [
-                    {
-                        "internalType": "uint256",
-                        "name": "",
-                        "type": "uint256"
-                    }
-                ],
-                "stateMutability": "view",
-                "type": "function"
-            },
-            {
-                "inputs": [
-                    {
-                        "internalType": "address",
-                        "name": "owner",
-                        "type": "address"
-                    }
-                ],
-                "name": "balanceOf",
-                "outputs": [
-                    {
-                        "internalType": "uint256",
-                        "name": "",
-                        "type": "uint256"
-                    }
-                ],
-                "stateMutability": "view",
-                "type": "function"
-            },
-            {
-                "inputs": [],
-                "name": "baseURI",
-                "outputs": [
-                    {
-                        "internalType": "string",
-                        "name": "",
-                        "type": "string"
-                    }
-                ],
-                "stateMutability": "view",
-                "type": "function"
-            },
-            {
-                "inputs": [],
-                "name": "contractURI",
-                "outputs": [
-                    {
-                        "internalType": "string",
-                        "name": "",
-                        "type": "string"
-                    }
-                ],
-                "stateMutability": "view",
-                "type": "function"
-            },
-            {
-                "inputs": [],
-                "name": "currentSupply",
-                "outputs": [
-                    {
-                        "internalType": "uint256",
-                        "name": "",
-                        "type": "uint256"
-                    }
-                ],
-                "stateMutability": "view",
-                "type": "function"
-            },
-            {
-                "inputs": [
-                    {
-                        "internalType": "uint256",
-                        "name": "tokenId",
-                        "type": "uint256"
-                    }
-                ],
-                "name": "getApproved",
-                "outputs": [
-                    {
-                        "internalType": "address",
-                        "name": "",
-                        "type": "address"
-                    }
-                ],
-                "stateMutability": "view",
-                "type": "function"
-            },
-            {
-                "inputs": [
-                    {
-                        "internalType": "address",
-                        "name": "owner",
-                        "type": "address"
-                    },
-                    {
-                        "internalType": "address",
-                        "name": "operator",
-                        "type": "address"
-                    }
-                ],
-                "name": "isApprovedForAll",
-                "outputs": [
-                    {
-                        "internalType": "bool",
-                        "name": "",
-                        "type": "bool"
-                    }
-                ],
-                "stateMutability": "view",
-                "type": "function"
-            },
-            {
-                "inputs": [],
-                "name": "name",
-                "outputs": [
-                    {
-                        "internalType": "string",
-                        "name": "",
-                        "type": "string"
-                    }
-                ],
-                "stateMutability": "view",
-                "type": "function"
-            },
-            {
-                "inputs": [],
-                "name": "owner",
-                "outputs": [
-                    {
-                        "internalType": "address",
-                        "name": "",
-                        "type": "address"
-                    }
-                ],
-                "stateMutability": "view",
-                "type": "function"
-            },
-            {
-                "inputs": [
-                    {
-                        "internalType": "uint256",
-                        "name": "tokenId",
-                        "type": "uint256"
-                    }
-                ],
-                "name": "ownerOf",
-                "outputs": [
-                    {
-                        "internalType": "address",
-                        "name": "",
-                        "type": "address"
-                    }
-                ],
-                "stateMutability": "view",
-                "type": "function"
-            },
-            {
-                "inputs": [
-                    {
-                        "internalType": "bytes4",
-                        "name": "interfaceId",
-                        "type": "bytes4"
-                    }
-                ],
-                "name": "supportsInterface",
-                "outputs": [
-                    {
-                        "internalType": "bool",
-                        "name": "",
-                        "type": "bool"
-                    }
-                ],
-                "stateMutability": "view",
-                "type": "function"
-            },
-            {
-                "inputs": [],
-                "name": "symbol",
-                "outputs": [
-                    {
-                        "internalType": "string",
-                        "name": "",
-                        "type": "string"
-                    }
-                ],
-                "stateMutability": "view",
-                "type": "function"
-            },
-            {
-                "inputs": [],
-                "name": "tokenCount",
-                "outputs": [
-                    {
-                        "internalType": "uint256",
-                        "name": "",
-                        "type": "uint256"
-                    }
-                ],
-                "stateMutability": "view",
-                "type": "function"
-            },
-            {
-                "inputs": [
-                    {
-                        "internalType": "uint256",
-                        "name": "tokenId",
-                        "type": "uint256"
-                    }
-                ],
-                "name": "tokenURI",
-                "outputs": [
-                    {
-                        "internalType": "string",
-                        "name": "",
-                        "type": "string"
-                    }
-                ],
-                "stateMutability": "view",
-                "type": "function"
-            },
-            {
-                "inputs": [],
-                "name": "totalSupply",
-                "outputs": [
-                    {
-                        "internalType": "uint256",
-                        "name": "",
-                        "type": "uint256"
-                    }
-                ],
-                "stateMutability": "view",
-                "type": "function"
-            }
-        ];
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "approved",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "Approval",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "operator",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "bool",
+				"name": "approved",
+				"type": "bool"
+			}
+		],
+		"name": "ApprovalForAll",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "approve",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "burn",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_to",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "count",
+				"type": "uint256"
+			}
+		],
+		"name": "mint",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "previousOwner",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "OwnershipTransferred",
+		"type": "event"
+	},
+	{
+		"inputs": [],
+		"name": "renounceOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "safeTransferFrom",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bytes",
+				"name": "data",
+				"type": "bytes"
+			}
+		],
+		"name": "safeTransferFrom",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "operator",
+				"type": "address"
+			},
+			{
+				"internalType": "bool",
+				"name": "approved",
+				"type": "bool"
+			}
+		],
+		"name": "setApprovalForAll",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "supply",
+				"type": "uint256"
+			}
+		],
+		"name": "SupplyChanged",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "Transfer",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "transferFrom",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "transferOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "withdraw",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "availableTokenCount",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			}
+		],
+		"name": "balanceOf",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "baseURI",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "contractURI",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "currentSupply",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "getApproved",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "operator",
+				"type": "address"
+			}
+		],
+		"name": "isApprovedForAll",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "name",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "ownerOf",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes4",
+				"name": "interfaceId",
+				"type": "bytes4"
+			}
+		],
+		"name": "supportsInterface",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "symbol",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "tokenCount",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "tokenURI",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "totalSupply",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+];
 
-        const ADDRESS = "0xA20cB899D7f2B14F05FdDc8B18b1aDaDB2A0C0FD";
+        const ADDRESS = "0xca2E92B2240a6414e8bA2e4df1d7C02B2577A3eF";
         document
             .getElementById('mint')
             .onclick = () => {
@@ -1499,34 +1523,7 @@
                 if (colorIndex > colors.length - 1)
                     colorIndex = 0;
 
-                nczHome.style.backgroundColor = colors[colorIndex];
-                if (document.getElementById('mint_cnt1').disabled == true)
-                        document.getElementById('mint_cnt1').style.color = 'Gray';
-                    else
-                        document.getElementById('mint_cnt1').style.color = '#f3984f';
-                    if (document.getElementById('mint_cnt2').disabled == true)
-                        document.getElementById('mint_cnt2').style.color = 'Gray';
-                    else
-                        document.getElementById('mint_cnt2').style.color = '#f3984f';
-                    if (document.getElementById('mint_cnt3').disabled == true)
-                        document.getElementById('mint_cnt3').style.color = 'Gray';
-                    else
-                        document.getElementById('mint_cnt3').style.color = '#f3984f';
-                if (document.getElementById('mint_cnt1').classList[1] === 'clicked')
-                    document.getElementById('mint_cnt1').style.color = colors[colorIndex];
-                else if (document.getElementById('mint_cnt2').classList[1] === 'clicked')
-                    document.getElementById('mint_cnt2').style.color = colors[colorIndex];
-                else if (document.getElementById('mint_cnt3').classList[1] === 'clicked')
-                    document.getElementById('mint_cnt3').style.color = colors[colorIndex];
-
-
-                // if (colorIndex == 1) {
-                // 	text.style.backgroundColor = '#000';
-
-                // }
-                // else {
-                // 	text.style.backgroundColor = colors[1];
-                // }
+                nczHome.style.backgroundColor = colors[colorIndex];    
                 scrollValue = 0;
                 localStorage.setItem('colorCode', colors[colorIndex]);
             }
@@ -1538,33 +1535,6 @@
                     colorIndex = colors.length - 1;
 
                 nczHome.style.backgroundColor = colors[colorIndex];
-if (document.getElementById('mint_cnt1').disabled == true)
-                        document.getElementById('mint_cnt1').style.color = 'Gray';
-                    else
-                        document.getElementById('mint_cnt1').style.color = '#f3984f';
-                    if (document.getElementById('mint_cnt2').disabled == true)
-                        document.getElementById('mint_cnt2').style.color = 'Gray';
-                    else
-                        document.getElementById('mint_cnt2').style.color = '#f3984f';
-                    if (document.getElementById('mint_cnt3').disabled == true)
-                        document.getElementById('mint_cnt3').style.color = 'Gray';
-                    else
-                        document.getElementById('mint_cnt3').style.color = '#f3984f';
-
-                if (document.getElementById('mint_cnt1').classList[1] === 'clicked')
-                    document.getElementById('mint_cnt1').style.color = colors[colorIndex];
-                else if (document.getElementById('mint_cnt2').classList[1] === 'clicked')
-                    document.getElementById('mint_cnt2').style.color = colors[colorIndex];
-                else if (document.getElementById('mint_cnt3').classList[1] === 'clicked')
-                    document.getElementById('mint_cnt3').style.color = colors[colorIndex];
-
-                // if (colorIndex == 1) {
-                // 	text.style.backgroundColor = '#000';
-
-                // }
-                // else {
-                // 	text.style.backgroundColor = colors[1];
-                // }
                 scrollValue = 0;
                 localStorage.setItem('colorCode', colors[colorIndex]);
             }
@@ -1661,25 +1631,6 @@ if (document.getElementById('mint_cnt1').disabled == true)
             // 	}
 
             nczHome.style.backgroundColor = colors[t];
-            if (document.getElementById('mint_cnt1').disabled == true)
-                        document.getElementById('mint_cnt1').style.color = 'Gray';
-                    else
-                        document.getElementById('mint_cnt1').style.color = '#f3984f';
-                    if (document.getElementById('mint_cnt2').disabled == true)
-                        document.getElementById('mint_cnt2').style.color = 'Gray';
-                    else
-                        document.getElementById('mint_cnt2').style.color = '#f3984f';
-                    if (document.getElementById('mint_cnt3').disabled == true)
-                        document.getElementById('mint_cnt3').style.color = 'Gray';
-                    else
-                        document.getElementById('mint_cnt3').style.color = '#f3984f';
-            if (document.getElementById('mint_cnt1').classList[1] === 'clicked')
-                document.getElementById('mint_cnt1').style.color = colors[t];
-            else if (document.getElementById('mint_cnt2').classList[1] === 'clicked')
-                document.getElementById('mint_cnt2').style.color = colors[t];
-            else if (document.getElementById('mint_cnt3').classList[1] === 'clicked')
-                document.getElementById('mint_cnt3').style.color = colors[t];
-
             localStorage.setItem('colorCode', colors[t]);
 
         });
@@ -1697,26 +1648,7 @@ if (document.getElementById('mint_cnt1').disabled == true)
             // 		text.style.backgroundColor = colors[1];
             // 	}
 
-            nczHome.style.backgroundColor = colors[t];
-            if (document.getElementById('mint_cnt1').disabled == true)
-                        document.getElementById('mint_cnt1').style.color = 'Gray';
-                    else
-                        document.getElementById('mint_cnt1').style.color = '#f3984f';
-                    if (document.getElementById('mint_cnt2').disabled == true)
-                        document.getElementById('mint_cnt2').style.color = 'Gray';
-                    else
-                        document.getElementById('mint_cnt2').style.color = '#f3984f';
-                    if (document.getElementById('mint_cnt3').disabled == true)
-                        document.getElementById('mint_cnt3').style.color = 'Gray';
-                    else
-                        document.getElementById('mint_cnt3').style.color = '#f3984f';
-            if (document.getElementById('mint_cnt1').classList[1] === 'clicked')
-                document.getElementById('mint_cnt1').style.color = colors[t];
-            else if (document.getElementById('mint_cnt2').classList[1] === 'clicked')
-                document.getElementById('mint_cnt2').style.color = colors[t];
-            else if (document.getElementById('mint_cnt3').classList[1] === 'clicked')
-                document.getElementById('mint_cnt3').style.color = colors[t];
-
+            nczHome.style.backgroundColor = colors[t];    
             localStorage.setItem('colorCode', colors[t]);
 
         });

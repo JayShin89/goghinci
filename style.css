@@ -418,19 +418,38 @@ section {
 
 /*Terms & Conditions Home*/
 
-.tnchome {
-    background-color: #950000;
+.tncHome {    
     margin: 0;
     padding: 11rem;
     padding-top: 150px;
     display: flex;
-    align-content: left;
-    justify-content: left;
+    align-content: center;
+    justify-content: center;
     flex-wrap: wrap;
     background-repeat: repeat-y;
-    min-height: 100vh;
-    height: auto;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
+    color: black;
+    
+    position: relative;    
+}
+
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+.tncBody {
+    width: 90vw;
+    height: 80vh;
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px 20px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    text-align:left;
+    margin-top: 50vh;
+    
 }
 
 
