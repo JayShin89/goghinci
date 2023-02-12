@@ -94,22 +94,30 @@
             color: #f3984f;
             width: 20vw;
             margin-left: 40vw;
-            font-size: 25px;
+            font-size: 35px;
+            font-weight: 700;
         }         
 
-        .tnc3 {
+        .tnc32 {
             font-family: "Avenir Next" !important;
             font-style: italic;
             margin-top: 73vh;
-            margin-left: 48.5vw;
+           display: flex;
             width: 100%;
             visibility: visible;
             color: #f3984f;
             font-size: 22px;
             font-weight: bold;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
         }
 
-        .slider {
+        .text {
+            margin-top: 5.5vh;
+        }
+
+        .slider2 {
             position: relative;
             width: 200px;
             height: 200px;
@@ -177,7 +185,7 @@
             }
         }
 
-        .slider span {
+        .slider2 span {
             position: absolute;
             top: 0;
             left: 0;
@@ -188,7 +196,7 @@
             transform: rotateY(calc(var(--i)*30deg)) translate3D(0, 0, 450px);
         }
 
-        .slider span img {
+        .slider2 span img {
             position: absolute;
             top: 0;
             left: 0;
@@ -199,12 +207,12 @@
             transition: 2s;
         }
 
-        .slider span:hover img {}
+        .slider2 span:hover img {}
 
-        .slider:hover {}
+        .slider2:hover {}
 
         .credit .copyright {
-            margin-top: -8vh;
+            margin-top: -0.5vh;
         }
 
         .dropdown.show .dropdown-toggle::after {
@@ -313,27 +321,37 @@
         }
 
         @media screen and (max-width:450px) {
-            .slider {
+            .slider2 {
                 width: 150px;
                 height: 150px;
                 margin-top: -15vh;
-            }
-
-            .mint_cnt_box {
+            }                 
+            .free_mint_cnt_box {
                 margin-top: -30vh;
                 align-items: center;
                 justify-content: center;
-                font-size: 60%;
-                
-                
-            }
-            .mint_cnt {
+                text-align: center;
+                display: flex;
                 font-size: 20px;
-                padding: 0px 10px;
-                margin: 0px 10px;
+                width: 25vw;
+                margin-right: 45vw;
+               
             }
-
-            .slider span {
+            .totalmenu32-1 {
+                justify-content: center;
+                align-items: center;
+                width: 100vw;
+            }
+            .text {
+                margin-top: 5vh;
+            }
+            .text button{
+                font-size: 20px;
+                width: 40vw;
+                margin-top: 3vh;
+                
+            }
+            .slider2 span {
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -344,7 +362,7 @@
                 transform: rotateY(calc(var(--i)*30deg)) translate3D(0, 0, 350px);
             }
 
-            .slider span:hover img {
+            .slider2 span:hover img {
                 transform: translateY(0px);
             }
 
@@ -370,18 +388,20 @@
                 margin-left: -10px;
             }
 
-            .totalmenu3-0 {
+            .totalmenu32-0 {
                 margin-top: 0;
             }
 
-            .tnc3 {
+            .tnc32 {
                 font-family: "Avenir Next" !important;
                 font-style: italic;
                 margin-top: 55vh;
-                margin-left: 45vw;
+                
                 width: 100%;
                 visibility: visible;
-                text-align: flex;
+                text-align: center;
+                justify-content: center;
+                display: flex;
                 color: #f3984f;
                 font-size: 15px;
                 font-weight: bold;
@@ -418,7 +438,7 @@
         }
 
         @media screen and (max-width:300px) {
-            .tnc3 {
+            .tnc32 {
                 font-family: "Avenir Next" !important;
                 font-style: medium italic;
                 margin-top: 70vh;
@@ -433,7 +453,7 @@
                 -webkit-animation: colorchange 20s infinite alternate;
             }
 
-            .slider {
+            .slider2 {
                 width: 120px;
                 height: 120px;
                 margin-top: -15vh;
@@ -442,7 +462,7 @@
                 transform-origin: 50% 50%;
             }
 
-            .slider span {
+            .slider2 span {
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -453,7 +473,7 @@
                 transform: rotateY(calc(var(--i)*45deg)) translate3D(0, 0, 200px);
             }
 
-            .slider span:hover img {
+            .slider2 span:hover img {
                 transform: translateY(0px);
             }
 
@@ -516,7 +536,7 @@
                                 style="background-color:transparent;">
                                 <a class="dropdown-item" href="/nft_12cz.html" id="sub-drop04"
                                     style="font-size:14px; font-weight: bolder; color:#f3984f; text-align:center; ">12CZ</a>
-                                <a class="dropdown-item" href="/nft_12cz_free.html" id="sub-drop04" style="font-size:14px; font-weight: bolder; color:#f3984f; text-align:center; ">12LZ FREE</a>
+                                <a class="dropdown-item" href="/nft_12cz_free.html" id="sub-drop04" style="font-size:14px; font-weight: bolder; color:#f3984f; text-align:center; margin-top: 5px; ">12LZ FREE</a>
                             </div>
                         </li>
 
@@ -551,38 +571,37 @@
 
     <!--home section starts -->
 
-    <div class="nczhome" id="nczHome">
+    <div class="nczhome2" id="nczHome2">
         <br><br>
 
-        <div class="slider" id="slider">
-            <span style="--i:1;"><img src="/images/1.mouse.png" alt=""></span>
-            <span style="--i:2;"><img src="/images/2.ox.png" alt=""></span>
-            <span style="--i:3;"><img src="/images/3.tiger.png" alt=""></span>
-            <span style="--i:4;"><img src="/images/4.rabbit.png" alt=""></span>
-            <span style="--i:5;"><img src="/images/5.dragon.png" alt=""></span>
-            <span style="--i:6;"><img src="/images/6.snake.png" alt=""></span>
-            <span style="--i:7;"><img src="/images/7.horse.png" alt=""></span>
-            <span style="--i:8;"><img src="/images/8.goat.png" alt=""></span>
-            <span style="--i:9;"><img src="/images/9.monkey.png" alt=""></span>
-            <span style="--i:10;"><img src="/images/10.rooster.png" alt=""></span>
-            <span style="--i:11;"><img src="/images/11.dog.png" alt=""></span>
-            <span style="--i:12;"><img src="/images/12.pig.png" alt=""></span>
+        <div class="slider2" id="slider2">
+            <span style="--i:6;"><img src="/images/1.mouse.png" alt=""></span>
+            <span style="--i:5;"><img src="/images/2.ox.png" alt=""></span>
+            <span style="--i:4;"><img src="/images/3.tiger.png" alt=""></span>
+            <span style="--i:3;"><img src="/images/4.rabbit.png" alt=""></span>
+            <span style="--i:2;"><img src="/images/5.dragon.png" alt=""></span>
+            <span style="--i:1;"><img src="/images/6.snake.png" alt=""></span>
+            <span style="--i:12;"><img src="/images/7.horse.png" alt=""></span>
+            <span style="--i:11;"><img src="/images/8.goat.png" alt=""></span>
+            <span style="--i:10;"><img src="/images/9.monkey.png" alt=""></span>
+            <span style="--i:9;"><img src="/images/10.rooster.png" alt=""></span>
+            <span style="--i:8;"><img src="/images/11.dog.png" alt=""></span>
+            <span style="--i:7;"><img src="/images/12.pig.png" alt=""></span>
 
         </div>
 
-        <div class="totalmenu3-0">
-            <div class="tnc3">Scroll
+        <div class="totalmenu32-0">
+            <div class="tnc32">Scroll
             </div>
 
         </div>
-        <div class="totalmenu3-1" style="align-content:center;width:100%;">
-            <div class="free_mint_cnt_box" id="mint_cnt_box"> 
+        <div class="totalmenu32-1" style="align-content:center;width:100%;">
+            <div class="free_mint_cnt_box" id="free_mint_cnt_box"> 
                 
             </div>
             <div class="conatiner">
                 <div class="text">
-                    <button id="mint"
-                        style="background-color:transparent; border: #f3984f 3px solid; color: #f3984f">Free Mint</button>
+                    <button id="mint" style="background-color:transparent; border: #f3984f 3px solid; color: #f3984f; vertical-align:center; font-weight: bolder;">Free Mint</button>
                 </div>
             </div>
 
@@ -659,7 +678,7 @@
                 }
 
                 event.target.classList.add("clicked");
-                event.target.style.color = window.getComputedStyle(document.getElementById('nczHome')).backgroundColor;
+                event.target.style.color = window.getComputedStyle(document.getElementById('nczHome2')).backgroundColor;
                 mintCount = parseInt(event.target.innerHTML);
                 //alert(mintCount);
             }
@@ -685,7 +704,7 @@
                         string2 += `${value['sum(mint_count)']}`;
                     });
                     
-                    document.getElementById('mint_cnt_box').innerText = 'Free Minted: '+string2+' / 33333';
+                    document.getElementById('free_mint_cnt_box').innerText = string2+' / 33333';
 
                 },
                 error: function (xhr, status, exception) {
@@ -1483,7 +1502,7 @@
             '#683986',
             '#e1739f'
         ];
-        var nczHome = document.getElementById('nczHome');
+        var nczHome2 = document.getElementById('nczHome2');
         var text = document.getElementById('value');
         var color = document.getElementById('color');
         var navdrop = document.getElementById('dropdown04');
@@ -1498,7 +1517,7 @@
         var mint_cnt1 = document.getElementById('mint_cnt1');
         var mint_cnt2 = document.getElementById('mint_cnt2');
         var mint_cnt3 = document.getElementById('mint_cnt3');
-        nczHome.onwheel = changeBgColor;
+        nczHome2.onwheel = changeBgColor;
 
         var colorIndex = -1;
         var scrollValue = 0;
@@ -1508,7 +1527,7 @@
         for (var a = 0; a <= 8; a++) {
             if (localStorage.getItem('colorCode') == colors[a]) {
                 colorIndex = a;
-                nczHome.style.backgroundColor = colors[colorIndex];
+                nczHome2.style.backgroundColor = colors[colorIndex];
                 //mintbtn.style.color = colors[colorIndex];
             }
         }
@@ -1523,7 +1542,7 @@
                 if (colorIndex > colors.length - 1)
                     colorIndex = 0;
 
-                nczHome.style.backgroundColor = colors[colorIndex];    
+                nczHome2.style.backgroundColor = colors[colorIndex];    
                 scrollValue = 0;
                 localStorage.setItem('colorCode', colors[colorIndex]);
             }
@@ -1534,7 +1553,7 @@
                 if (colorIndex < 0)
                     colorIndex = colors.length - 1;
 
-                nczHome.style.backgroundColor = colors[colorIndex];
+                nczHome2.style.backgroundColor = colors[colorIndex];
                 scrollValue = 0;
                 localStorage.setItem('colorCode', colors[colorIndex]);
             }
@@ -1570,7 +1589,7 @@
             '#683986',
             '#e1739f'
         ];
-        var nczHome = document.getElementById('nczHome');
+        var nczHome2 = document.getElementById('nczHome2');
         var mintbtn = document.getElementById('mint');
         var mint_cnt1 = document.getElementById('mint_cnt1');
         var mint_cnt2 = document.getElementById('mint_cnt2');
@@ -1580,39 +1599,39 @@
         for (var a = 0; a <= 8; a++) {
             if (localStorage.getItem('colorCode') == colors[a]) {
                 t = a;
-                nczHome.style.backgroundColor = colors[t];
+                nczHome2.style.backgroundColor = colors[t];
                 //mintbtn.style.color = colors[t];
             }
         }
 
         document.addEventListener('swiped-left', function (e) {
 
-            // document.getElementById('slider').style.setProperty('--deg1', '180deg');
-            // document.getElementById('slider').style.setProperty('--deg2', '-180deg');
+            // document.getElementById('slider2').style.setProperty('--deg1', '180deg');
+            // document.getElementById('slider2').style.setProperty('--deg2', '-180deg');
             document
-                .getElementById('slider')
+                .getElementById('slider2')
                 .style
                 .animationDirection = "reverse";
 
-            // document.getElementById('slider').style[--deg1] = '0deg';
-            // document.getElementById('slider').style[--deg2] = '-359deg';
+            // document.getElementById('slider2').style[--deg1] = '0deg';
+            // document.getElementById('slider2').style[--deg2] = '-359deg';
             // $('.rotate').css('--deg1', '0deg'); $('.rotate').css('--deg2', '-359deg'); t
-            // -= 1; if (t == -1) { 	t = 9; } nczHome.style.backgroundColor = colors[t];
+            // -= 1; if (t == -1) { 	t = 9; } nczHome2.style.backgroundColor = colors[t];
             // localStorage.setItem('colorCode', colors[t]);
 
         });
 
         document.addEventListener('swiped-right', function (e) {
-            // document.getElementById('slider').style.setProperty('--deg1', '-180deg');
-            // document.getElementById('slider').style.setProperty('--deg2', '180deg');
+            // document.getElementById('slider2').style.setProperty('--deg1', '-180deg');
+            // document.getElementById('slider2').style.setProperty('--deg2', '180deg');
             document
-                .getElementById('slider')
+                .getElementById('slider2')
                 .style
                 .animationDirection = "normal";
-            // document.getElementById('slider').style[--deg1] = '-359deg';
-            // document.getElementById('slider').style[--deg2] = '0deg';
+            // document.getElementById('slider2').style[--deg1] = '-359deg';
+            // document.getElementById('slider2').style[--deg2] = '0deg';
             // $('.rotate').css('--deg1', '-359deg'); $('.rotate').css('--deg2', '0deg'); t
-            // += 1; if (t == 10) { 	t = 0; } nczHome.style.backgroundColor = colors[t];
+            // += 1; if (t == 10) { 	t = 0; } nczHome2.style.backgroundColor = colors[t];
             // localStorage.setItem('colorCode', colors[t]);
 
         });
@@ -1630,7 +1649,7 @@
             // 		text.style.backgroundColor = colors[1];
             // 	}
 
-            nczHome.style.backgroundColor = colors[t];
+            nczHome2.style.backgroundColor = colors[t];
             localStorage.setItem('colorCode', colors[t]);
 
         });
@@ -1648,7 +1667,7 @@
             // 		text.style.backgroundColor = colors[1];
             // 	}
 
-            nczHome.style.backgroundColor = colors[t];    
+            nczHome2.style.backgroundColor = colors[t];    
             localStorage.setItem('colorCode', colors[t]);
 
         });
