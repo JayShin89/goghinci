@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+@font-face { font-family: 'Avenir Next'; src: url('avenir-next-bold-italic.TTF'); } 
+
 .no-js {
     display: none;
 }
@@ -10,7 +12,7 @@
 }
 
 * {
-    font-family: "Avenir Next" !important;
+    font-family: 'Avenir Next', sans-serif !important;
     font-style: italic;
     margin: 0;
     padding: 0;
@@ -37,9 +39,9 @@ html {
     overflow-x: hidden;
     scroll-padding-top: 9rem;
     scroll-behavior: smooth;
-    min-height: 100%;
-    height: 100%;
-    width: 100%;
+    
+    height: 100vh;
+    width: 100vw;
     margin: 0;
     overflow-anchor: none;
     overscroll-behavior: contain;
@@ -53,7 +55,7 @@ bodY {
 }
 
 .center {
-    height: 100vh;
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -182,8 +184,8 @@ section {
     min-width: 15px;
     opacity: 0;
     transition: .3s;
-    position:fixed;    
-    right: 3.5%;
+       
+    
 }
 
 .wallet:hover div {
@@ -200,8 +202,8 @@ section {
     white-space: nowrap;
     font-size: 14px;
     font-weight: bolder;
-    font-family: 'Lato', Arial;
-    left: 50%;
+    
+    
     
     
 }
@@ -217,14 +219,15 @@ section {
 .mhome {
     background-color: black;
     background-size: cover;
-    width: 100vw;
+    width: 100%;
     transition: background-color 0.8s;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     height: 100%;
-    background-repeat: repeat-y;
+    
+    
     margin: 0 auto;
     overflow-y: hidden;
     overflow-x: hidden;
@@ -239,7 +242,7 @@ section {
     height: 10vh;
     margin: 0;
     background-repeat: no-repeat;
-    margin-top: 600px;
+    margin-top: 45vh;
 }
 
 .totalmenu {
@@ -332,7 +335,7 @@ section {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    height: 100vh;
+    height: 100%;
     background-repeat: repeat-y;
     margin: 0 auto;
     overflow-y: hidden;
@@ -341,9 +344,9 @@ section {
 
 .totalmenu32-0 {
     width: 100vw;
-    height: 40.4vh;
+    height: auto;
     margin: 0;
-    background-repeat: no-repeat;
+    
 }
 
 .panel {
@@ -440,7 +443,7 @@ section {
     border: none;
     color: black;
     
-    width: 10vw;
+    width: 210px;
     height: 60px;
     font-weight: 600;
     text-transform: uppercase;
@@ -452,16 +455,17 @@ section {
 /*Terms & Conditions Home*/
 
 .tncHome {    
-    margin: 0;
-    padding: 11rem;
+    margin: 0 auto;
+    height: 100%;
     padding-top: 150px;
     display: flex;
     align-content: center;
     justify-content: center;
     flex-wrap: wrap;
-    background-repeat: repeat-y;
-    height: auto;
-    max-width: 100vw;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-color: black;
+    width: 100vw;
     color: black;
     
     position: relative;    
@@ -478,14 +482,14 @@ section {
 /* myPage */
 
 .myHome {
-    background-color: black;
-    background-size: cover;
+    background-color: black !important;
+    color: black;
     width: 100vw;
-    transition: background-color 0.8s;
+    height: 100%;
     display: flex;
     flex-wrap: wrap;
-    min-height: 100vh;
-    background-repeat: repeat-y;
+    
+    
     margin: 0 auto;
     overflow-y: hidden;
     overflow-x: hidden;
@@ -613,27 +617,17 @@ section {
     color: var(--red);
 }
 
-.credit {
-    padding: 2.5rem 1rem;
-    margin-top: 20vh;
-    width: 100%;
-    font-size: 1.5rem;
-    font-weight: lighter;
-    color: #f3984f;
-    display: inline-flex;
-    align-content: left;
-}
+
 
 .credit .copyright {
     color: #f3984f;
     text-align: left;
     font-size: 1.5rem;
-    min-width: 100vw;
+    
     align-items: left;
     font-weight: bolder;
     vertical-align: bottom;
-    margin-left: 3.5%;
-    margin-top: 25vh;
+    margin-left: 3.5%;    
 }
 
 .totalmenu3-1 .g-recaptcha {
@@ -662,7 +656,7 @@ section {
 
 #preloader {
     background: #fff url(/images/loadingVV.gif) no-repeat center center;
-    background-size: 10%;
+    background-size: 20%;
     opacity: 0.6;
     height: 100vh;
     width: 100%;
@@ -710,11 +704,23 @@ section {
 /* media queries */
 
 @media (max-width:1500px) {
+    html,
+    body {
+        font-size: 50%;
+        width: 100%;
+        height: 100%
+    }
+    
     .tnc {
         display: inline-block;
         margin-top: 22vh;
         margin-left: -45px;
         margin-bottom: 15vh;
+    }
+
+    .slider2 {
+        width: 80%;
+        height: 80%;
     }
 }
 
@@ -738,11 +744,7 @@ section {
     }
 
     
-    .navbar div {
-        text-align: center;
-        margin-top: 0px;
-        margin-right: -12px;
-    }
+    
     .navbar li {
         text-align: center;
         margin-right: -7%;
@@ -766,12 +768,7 @@ section {
         margin-left: -10%;
     }
 
-    .wallet {
-        margin-left: 3%;
-    }
-    .wallet div {
-        right: 45.5%;
-    }
+    
 
     .dropdown-menu {
         margin-left: -2.4%;
@@ -797,44 +794,14 @@ section {
     }
     html {
         font-size: 40%;
-    }
-    .navbar-toggler {
-        width: 20px;
-        height: 20px;
-        position: relative;
-        transition: .5s ease-in-out;
-        right: 0px;
-    }
+    }    
     .credit {
         display: none;
         margin-left: -10%;
     }
-    .credit .copyright {
-        margin-left: -20%;
-    }
-    .tnc {
-        display: inline-block;
-        margin-top: 22vh;
-        margin-left: -40px;
-        margin-bottom: 15vh;
-    }
-    .wallet {
-        margin-left: 2.5%;
-    }
-
-    .wallet div a{
-        margin-left: 8%;
-    }
-
-    .dropdown-menu {
-        width: 100%;
-        margin-left: -1%;
-        
-    }
-    .sub-drop04 {
-        width: 90%;
-        
-    }
+    
+    
+    
 }
 
 @media screen and (max-width:450px) {
@@ -844,9 +811,7 @@ section {
         width: 100%;
         height: 100%
     }
-    .navbar div {
-        margin-right: -8px;
-    }
+    
     .heading {
         font-size: 3rem;
     }
@@ -865,33 +830,7 @@ section {
         height: 100vh;
         background-size: 130px 130px;
         background-position-x: center;
-        background-position-y: center;
-        ;
-    }
-    .credit {
-        display: none;
-        margin-left: -30%;
-    }
-    .credit .copyright {
-        margin-left: -20%;
-    }
-    .tnc {
-        display: inline-block;
-        margin-top: -50px;
-    }
-    .tnc1 {
-        display: none;
-        margin-left: 23vw;
-        margin-top: -205px;
-        margin-bottom: 400px;
-    }
-    .tnc2 {
-        display: none;
-        margin-left: 23vw;
-        margin-top: 200px;
-    }
-    .wallet div {
-        right: 43%;
+        background-position-y: center;        
     }
 }
 
@@ -902,9 +841,7 @@ section {
         width: 100%;
         height: 100%
     }
-    .navbar div {
-        margin-right: -4px;
-    }
+    
     .heading {
         font-size: 3rem;
     }
@@ -927,24 +864,8 @@ section {
     }
     .credit {
         display: none;
-        margin-left: -30%;
+        
     }
-    .credit .copyright {
-        margin-left: -20%;
-    }
-    .tnc {
-        display: inline-block;
-        margin-top: -50px;
-    }
-    .tnc1 {
-        display: none;
-        margin-left: 12vw;
-        margin-top: -205px;
-        margin-bottom: 400px;
-    }
-    .tnc2 {
-        display: none;
-        margin-left: 12vw;
-        margin-top: 200px;
-    }
+    
+    
 }

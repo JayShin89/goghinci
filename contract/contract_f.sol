@@ -6,27 +6,27 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@1001-digital/erc721-extensions/contracts/RandomlyAssigned.sol";
-
+import "operator-filter-registry/src/DefaultOperatorFilterer.sol";
 
 // Mint costs 0.003 Ether
 // 12 Kept for artist, developer & giveaways
 
-contract vanici_cont is ERC721, Ownable, RandomlyAssigned {
+contract vanici_cont is DefaultOperatorFilterer,ERC721, Ownable, RandomlyAssigned {
   using Strings for uint256;
   uint256 public currentSupply = 0;
   uint96 royaltyFeesInBips;
   string public contractURI;
   address royaltyReceiver;
   
-  string public baseURI = "ipfs://QmdLDHnPofVb1hq2ptwg4auaswiyTxtz9w7FCCNgCKTK4y/";
+  string public baseURI = "ipfs://QmfYX6rtemcJBPGPqvuWZGesc4oxX33MEUgA1XqRJiXVkE/";
 
   constructor() 
     ERC721("12LZ", "12LZ")
-    RandomlyAssigned(504,1) // Max. 504 NFTs available; Start counting from 1 (instead of 0)
+    RandomlyAssigned(3333333,33334) // Max. 504 NFTs available; Start counting from 1 (instead of 0)
     {
-       for (uint256 a = 1; a <= 12; a++) {
-            mint(msg.sender,1);
-        }
+    //    for (uint256 a = 1; a <= 333; a++) {
+    //         mint(msg.sender,1);
+    //     }
     }
 
   function _baseURI() internal view virtual override returns (string memory) {
@@ -43,9 +43,11 @@ contract vanici_cont is ERC721, Ownable, RandomlyAssigned {
       require( tx.origin == msg.sender, "CANNOT MINT THROUGH A CUSTOM CONTRACT");
 
       if (msg.sender != owner()) {  
-        require( msg.value >= 0.003 ether);
-        require( balanceOf(msg.sender) <= 1);
-        require( balanceOf(_to) <= 1);
+        if(totalSupply()>66666) {
+          require( msg.value >= 0.003 ether);
+          // require( balanceOf(msg.sender) <= 6);
+          // require( balanceOf(_to) <= 6);
+        }
       }      
       
       for(uint256 i = 0 ; i < count ; i++)
@@ -81,6 +83,29 @@ contract vanici_cont is ERC721, Ownable, RandomlyAssigned {
     super._burn(tokenId);
     }
 
+  function setApprovalForAll(address operator, bool approved) public override onlyAllowedOperatorApproval(operator) {
+        super.setApprovalForAll(operator, approved);
+    }
+
+    function approve(address operator, uint256 tokenId) public override onlyAllowedOperatorApproval(operator) {
+        super.approve(operator, tokenId);
+    }
+
+    function transferFrom(address from, address to, uint256 tokenId) public override onlyAllowedOperator(from) {
+        super.transferFrom(from, to, tokenId);
+    }
+
+    function safeTransferFrom(address from, address to, uint256 tokenId) public override onlyAllowedOperator(from) {
+        super.safeTransferFrom(from, to, tokenId);
+    }
+
+    function safeTransferFrom(address from, address to, uint256 tokenId, bytes memory data)
+        public
+        override
+        onlyAllowedOperator(from)
+    {
+        super.safeTransferFrom(from, to, tokenId, data);
+    }
   // function _beforeTokenTransfer(address from, address to, uint256 tokenId) internal override (ERC721, ERC721Enumerable) {
   //   super._beforeTokenTransfer(from, to, tokenId);
   // }
@@ -109,5 +134,3 @@ contract vanici_cont is ERC721, Ownable, RandomlyAssigned {
     //   contractURI = _contractURI;
     // }
 }
-
-//0xA20cB899D7f2B14F05FdDc8B18b1aDaDB2A0C0FD

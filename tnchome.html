@@ -51,6 +51,7 @@
     <div id="preloader"></div>
 
     <style>
+        @font-face { font-family: 'Avenir Next'; src: url('avenir-next-bold-italic.TTF'); }
         .tncHome ul {
             font-size: 22px;
             background-color: white;            
@@ -60,7 +61,7 @@
             overflow-x: hidden;
             overflow-y: scroll;
             border-radius: 15px;
-            padding: 3vh 3vw;
+            padding: 3vh 2vw;
             font-family: "Avenir Next";
             list-style: none;
             border: 5px solid #f3984f;
@@ -69,6 +70,7 @@
         .tncHome li {
             font-family: "Avenir Next" !important;
             text-transform: none;
+            font-size: 18px;
         }
 
         
@@ -85,21 +87,27 @@
             font-size: 22px;
             font-weight: bold;
             display: flex;
-            margin-top: 1.1vh;
+            margin-top: 0.7vh;
         }
         
         .credit {
-            margin-top: -10vh;
-            height: fit-content;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 6.7vh;
+            width: 100%;
             
         }
-
-        .terms {
-            color: white;
-            width: 100%;
-            align-items: center;
-            justify-content: center;
-            font-weight: bolder;
+        .credit .terms {
+            align-content: flex-end;
+            margin-right: 3.5%;
+            font-weight:600;
+            width: fit-content;
+            color: #f3984f;
+            font-size: 1.5rem;
+            
+        }
+        .credit .copyright {
+            margin-left: 3.5%;
         }
         
         .dropdown.show .dropdown-toggle::after {
@@ -115,8 +123,7 @@
             border-radius: 0.5rem;
         }
         
-        .dropdown-menu a {
-            margin-left: -5px;
+        .dropdown-menu a {            
             margin-top: -5px;
         }
         
@@ -140,33 +147,43 @@
             font-family: Georgia, serif;
         }
         
-        .credit .copyright {
-            
-        }
+        
         
         @media screen and (max-width:450px) {
             .navbar img {
                 margin-top: -10px;
                 margin-bottom: 2px;
             }
-            .navbar-nav ul {
-                margin-top: 5px;
-                border-top: 0;
+            .tncHome ul {
+                min-width: 85vw;
+                height:80vh;
+                margin-top: -5vh; 
             }
+
+            .tncHome li {
+                font-size: 60%;
+            }
+            
             .dropdown-menu a {
-                margin-left: -15px;
+                margin: 0 auto;
             }
-            .navbar li {
-                margin-left: -10px;
+            .navbar-nav {
+                display: flex;
+                text-align: center;
             }
-            .wallet {
-                margin-left: -10px;
+
+            .navbar-nav li {
+                margin: 0 auto;
+                align-items: center;
+                justify-content: center;
+                text-align: center
             }
+            
             .tnc3 {
                 font-family: "Avenir Next" !important;
                 font-style: italic;
                 margin-top: 85vh;
-                margin-left: 45vw;
+                
                 width: 100%;
                 visibility: visible;
                 text-align: flex;
@@ -196,6 +213,22 @@
                 margin-left: -20px;
             }            
         }
+
+        @media screen and (max-height:1000px), screen and (max-width:1000px ) {
+            
+            .tncHome ul {
+                margin-top: -4vh;
+                height: 70vh;
+            }
+            .tnc3 {
+                margin-top: 3.5vh;
+            }
+            .credit {
+                margin-top: 4.5vh;
+                width: 100vw;
+            }
+            
+        }
     </style>
 
     <!--header section stars -->
@@ -220,7 +253,7 @@
                 <div class="navbar-nav" id="navbar-content">
                     <ul class="navbar-nav  ">                        
                         <li class="nav-item dropdown text-center">
-                            <a class="nav-link dropdown-toggle " href="" id="dropdown04" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:16px; font-weight: bolder; color:#f3984f   ; align-content: center;  margin-right:20px;  margin-top:5px; font-family: inherit;">Collection
+                            <a class="nav-link" href="" id="dropdown04" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:16px; font-weight: bolder; color:#f3984f   ; align-content: center;  margin-right:10px; margin-left: 10px; margin-top:5px; font-family: inherit; text-shadow: none;">Collection
                                 </a>
 
                             <div class="dropdown-menu dropdown-menu-down rotate-180" aria-labelledby="dropdown04" style="background-color:transparent;">
@@ -231,14 +264,14 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="https://twitter.com/marcovanici" target="_blank" id="nav-twit" style="font-size:16px; font-weight: bolder; color:#f3984f; align-content: center; margin-right:20px;  margin-top:5px; font-family: inherit;">Twitter</a>
+                            <a class="nav-link" href="https://twitter.com/marcovanici" target="_blank" id="nav-twit" style="font-size:16px; font-weight: bolder; color:#f3984f; align-content: center; margin-right:10px; margin-left: 10px;  margin-top:5px; font-family: inherit; text-shadow: none;">Twitter</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://www.instagram.com/marcovanici/" target="_blank" id="nav-insta" style="font-size:16px; font-weight: bolder; color:#f3984f; align-content: center;  margin-right:20px;  margin-top:5px; font-family: inherit;">Instagram</a>
+                            <a class="nav-link" href="https://www.instagram.com/marcovanici/" target="_blank" id="nav-insta" style="font-size:16px; font-weight: bolder; color:#f3984f; align-content: center;  margin-right:10px; margin-left: 10px; margin-top:5px; font-family: inherit; text-shadow: none;">Instagram</a>
                         </li>
 
                         <div class="wallet" style="margin-top:3px;">
-                            <button id="connect" onclick="connected();" style=" height:40px;  color:#f3984f;font-size: 16px; margin-top:0px;background-color: inherit; font-weight: bolder; font-family: inherit;">
+                            <button id="connect" onclick="connected();" style=" height:40px;  color:#f3984f;font-size: 16px; margin-top:0px; margin-right:10px; margin-left: 10px; background-color: inherit; font-weight: bolder; font-family: inherit;">
                                     Wallet</button>
                             <div style="display:none;" id="drop-content" style="width:100%;
                                 color:#f3984f;"> <a href="/mypage.html">My Collection</a>
@@ -260,33 +293,33 @@
     <div class="tncHome" id="tncHome">
         <ul id="tncList">
             <li style="font-size: 25px; font-weight: bolder; font-family: inherit">Terms & Conditions</li>
-            <li class='1' style="padding-left: 1vw; padding-right:1vw; font-weight:lighter; font-size:18px; font-family: inherit">Vanici Inc. (the “Company” or “we” or “us”) website and other software, media channels or applications connected thereto are made available to you in accordance with the following terms and conditions (the “Terms”). It is important that you read the Terms carefully, as your use of the website will automatically constitute your agreement to be legally bound by the terms and conditions set out herein. In addition to any applicable license agreements on our website, these Terms also govern your use or ordering of the digital and physical products provided through or in connection with the website.
+            <li class='1' style="padding-left: 1vw; padding-right:1vw; font-weight:lighter; font-family: inherit">Vanici Inc. (the “Company” or “we” or “us”) website and other software, media channels or applications connected thereto are made available to you in accordance with the following terms and conditions (the “Terms”). It is important that you read the Terms carefully, as your use of the website will automatically constitute your agreement to be legally bound by the terms and conditions set out herein. In addition to any applicable license agreements on our website, these Terms also govern your use or ordering of the digital and physical products provided through or in connection with the website.
                 <br><br>
                 Vanici digital collectable is a collection of digital artworks packaged as non-fungible tokens (NFTs) running on the Ethereum network. Users are entirely responsible for the safety and management of their own private Ethereum wallets, including validating all transactions and contracts generated by this website before approval. Furthermore, as the Vanici smart contract runs on the Ethereum network, there is no ability to undo, reverse, or restore any transactions<br><br>
             </li>
             <li style="font-size: 25px; font-weight: bolder; font-family: inherit">General Terms and Conditions</li>            
-            <li class='2' style="padding-left: 1vw; padding-right:1vw; font-weight:lighter; font-size:18px; font-family: inherit">From time to time we may offer for sale non-fungible tokens (“Company NFTs”), other digital assets (“Digital Assets”) and/or physical products (collectively, "Company Products") through our website. Our website is intended for users who are at least 18 years old. Persons under the age of 18 are not permitted to use our website. In order to participate in the purchase or other receipt of such Company Products, you agree that you will comply with the specific terms and conditions, if any, associated with the respective Company Products in addition to these Terms. Any payments that you make for Company Products that are processed through third-party partners will be subject to the separate terms and conditions, if any, associated with such third-party partners. You acknowledge and agree that we have no control over these payments or transactions, and that we do not have the ability to reverse any payments or transactions once made. We have no liability to you or to any third party for any claims or damages that may arise as a result of any payments or transactions that you engage in via the website through use of any third-party services.
+            <li class='2' style="padding-left: 1vw; padding-right:1vw; font-weight:lighter; font-family: inherit">From time to time we may offer for sale non-fungible tokens (“Company NFTs”), other digital assets (“Digital Assets”) and/or physical products (collectively, "Company Products") through our website. Our website is intended for users who are at least 18 years old. Persons under the age of 18 are not permitted to use our website. In order to participate in the purchase or other receipt of such Company Products, you agree that you will comply with the specific terms and conditions, if any, associated with the respective Company Products in addition to these Terms. Any payments that you make for Company Products that are processed through third-party partners will be subject to the separate terms and conditions, if any, associated with such third-party partners. You acknowledge and agree that we have no control over these payments or transactions, and that we do not have the ability to reverse any payments or transactions once made. We have no liability to you or to any third party for any claims or damages that may arise as a result of any payments or transactions that you engage in via the website through use of any third-party services.
                 <br><br>Our website is our proprietary property and all source code, databases, functionality, software, website designs, audio, video, text, and graphics on the website (collectively, the “Content”) and the trademarks, service marks, and logos contained therein (the “Marks”) are owned or controlled by us or licensed to us, and are protected by copyright and trademark laws and various other intellectual property rights. The Content and the Marks are provided on the Site “AS IS” for your information and personal use only. Except as expressly provided in these Terms or under an applicable license on our website, no part of the website and no Content or Marks may be copied, reproduced, aggregated, republished, uploaded, posted, publicly displayed, encoded, translated, transmitted, distributed, sold, licensed, or otherwise exploited for any commercial purpose, without our express prior written permission. Provided that you are eligible, you are granted a limited license to access and use the website solely for your personal, non-commercial use. We reserve all rights in and to the website, the Content, and the Marks.<br>
             </li>
             <li style="font-size: 25px; font-weight: bolder; font-family: inherit"><br>Digital Assets</li>            
-            <li class='3' style="padding-left: 1vw; padding-right:1vw; font-weight:lighter; font-size:18px; font-family: inherit">Digital Assets purchased from our website may be purchased, sold, and/or traded on third-party marketplaces or exchange sites (such transactions, “Secondary Transactions”). Secondary Transactions will be subject to the terms and conditions of such sites. We are not a party to any Secondary Transaction. We make no guarantee about the availability or functionality of any such sites and your use of such sites are at your own risk. We have no liability to you or to any third party for any claims or damages that may arise as a result of your Secondary Transactions or use of such external sites.
+            <li class='3' style="padding-left: 1vw; padding-right:1vw; font-weight:lighter; font-family: inherit">Digital Assets purchased from our website may be purchased, sold, and/or traded on third-party marketplaces or exchange sites (such transactions, “Secondary Transactions”). Secondary Transactions will be subject to the terms and conditions of such sites. We are not a party to any Secondary Transaction. We make no guarantee about the availability or functionality of any such sites and your use of such sites are at your own risk. We have no liability to you or to any third party for any claims or damages that may arise as a result of your Secondary Transactions or use of such external sites.
                 <br><br>Unless otherwise stated by us, you will be solely responsible to pay any and all income, capital gains, sales, use, value-added and other taxes, duties, and assessments now or hereafter claimed or imposed by any governmental authority (collectively, “Taxes”) associated with Digital Assets purchased or otherwise received by you (including, without limitation, any taxes that may become payable as the result of your ownership, transfer, purchase, receipt or sale of a Company NFT).
             </li>
-            <li style="font-size: 25px; font-weight: bolder;"><br>PHYSICAL PRODUCTS</li>            
-            <li class='4' style="padding-left: 1vw; padding-right:1vw; font-weight:lighter; font-size:18px">From time to time we may offer Physical Products for sale or for no consideration. You understand that the terms and conditions of such releases will at all times be at the discretion of the Company, and by participating in such releases, you agree to any applicable terms and conditions thereto. The Company makes no representations or warranties whatsoever with respect to the Physical Products. Notwithstanding the foregoing, in the event of defects or issues with Physical Products, the Company will, at its sole discretion, reasonably determine on a case-by-case basis whether it will offer any remedial measures. Unless otherwise expressly stated by us, you will not be permitted to return for a refund or exchange any Physical Products that you purchase, provided, the Company will use its commercially reasonable efforts to repair any defects on a reasonable case-by-case basis.
+            <li style="font-size: 25px; font-weight: bolder;"><br>Physical Products</li>            
+            <li class='4' style="padding-left: 1vw; padding-right:1vw; font-weight:lighter; ">From time to time we may offer Physical Products for sale or for no consideration. You understand that the terms and conditions of such releases will at all times be at the discretion of the Company, and by participating in such releases, you agree to any applicable terms and conditions thereto. The Company makes no representations or warranties whatsoever with respect to the Physical Products. Notwithstanding the foregoing, in the event of defects or issues with Physical Products, the Company will, at its sole discretion, reasonably determine on a case-by-case basis whether it will offer any remedial measures. Unless otherwise expressly stated by us, you will not be permitted to return for a refund or exchange any Physical Products that you purchase, provided, the Company will use its commercially reasonable efforts to repair any defects on a reasonable case-by-case basis.
                 <br><br>Company shall have no liability to you for any failure to deliver or for any delay in doing so for any damage or defect to the goods which is caused by any act or circumstance beyond our reasonable control including, without limitation, strikes and other industrial disputes, breakdown of systems or network access, flood, fire, explosion or accident.
             </li>
-            <li style="font-size: 25px; font-weight: bolder;"><br>REPRESENTATIONS AND WARRANTIES</li>            
-            <li class='5' style="padding-left: 1vw; padding-right:1vw; font-weight:lighter; font-size:18px">By using the website, you represent and warrant that: (1) you have the legal capacity and you agree to comply with these Terms; (2) you are not a minor in the jurisdiction in which you reside; (3) you will not access the website through automated or non-human means, whether through a bot, script, or otherwise; (4) you will not use the Site for any illegal or unauthorized purpose; (5) you are not a national or resident of any country subject to U.S. sanctions or similar restrictions (currently, Cuba, Iran, Syria, North Korea, and the following regions of Ukraine: Crimea, Donetsk and Luhansk) and you are not on the U.S. Treasury Department’s list of Specially Designated Nationals or other sanctions lists; and (6) your use of the website will not violate any applicable law or regulation.
-                <br><br>
+            <li style="font-size: 25px; font-weight: bolder;"><br>Representations And Warranties</li>            
+            <li class='5' style="padding-left: 1vw; padding-right:1vw; font-weight:lighter; ">By using the website, you represent and warrant that: (1) you have the legal capacity and you agree to comply with these Terms; (2) you are not a minor in the jurisdiction in which you reside; (3) you will not access the website through automated or non-human means, whether through a bot, script, or otherwise; (4) you will not use the Site for any illegal or unauthorized purpose; (5) you are not a national or resident of any country subject to U.S. sanctions or similar restrictions (currently, Cuba, Iran, Syria, North Korea, and the following regions of Ukraine: Crimea, Donetsk and Luhansk) and you are not on the U.S. Treasury Department’s list of Specially Designated Nationals or other sanctions lists; and (6) your use of the website will not violate any applicable law or regulation.
+                
             </li>
-            <li style="font-size: 25px; font-weight: bolder;"><br>COVENANTS AND RESTRICTIONS</li>            
-            <li class='6' style="padding-left: 1vw; padding-right:1vw; font-weight:lighter; font-size:18px">In order to use the website, you agree not to, and you will not permit any third party to, do or attempt to do any of the following without our prior written consent: (1) circumvent, interfere with, disable or disrupt the website or servers or networks connected to the website or any security-related features of the website in any manner, including but not limited to uploading or transmitting (or attempting to upload or to transmit) viruses, Trojan horses, or other similar harmful material; (2) violate any applicable local, state, national or international law, or any regulations having the force of law, including but not limited to those of the U.S. Department of Treasury's Office of Foreign Assets Control (“OFAC”), or which would involve proceeds of any unlawful activity; (3) attempt to bypass any measures of the website designed to prevent or restrict access to the website, or any portion of the website; (4) use the Company Products to advertise or offer to sell or buy any goods or services for any purpose that is not specifically authorized herein or under the applicable license agreement; (5) decipher, decompile, disassemble, or reverse engineer any of the software comprising or in any way making up a part of the website; (6) use any Company Products to further or promote any criminal activity or enterprise or provide instructional information about illegal activities, including for the purpose of concealing economic activity, laundering money, or financing terrorism; (7) copy or adapt the website’s software or code; and (8) use any Company Products to carry out financial activities subject to registration or licensing, including but not limited to creating, listing, or buying securities, commodities, options, real estate, or debt instruments.
+            <li style="font-size: 25px; font-weight: bolder;"><br>Covenants And Restrictions</li>            
+            <li class='6' style="padding-left: 1vw; padding-right:1vw; font-weight:lighter;">In order to use the website, you agree not to, and you will not permit any third party to, do or attempt to do any of the following without our prior written consent: (1) circumvent, interfere with, disable or disrupt the website or servers or networks connected to the website or any security-related features of the website in any manner, including but not limited to uploading or transmitting (or attempting to upload or to transmit) viruses, Trojan horses, or other similar harmful material; (2) violate any applicable local, state, national or international law, or any regulations having the force of law, including but not limited to those of the U.S. Department of Treasury's Office of Foreign Assets Control (“OFAC”), or which would involve proceeds of any unlawful activity; (3) attempt to bypass any measures of the website designed to prevent or restrict access to the website, or any portion of the website; (4) use the Company Products to advertise or offer to sell or buy any goods or services for any purpose that is not specifically authorized herein or under the applicable license agreement; (5) decipher, decompile, disassemble, or reverse engineer any of the software comprising or in any way making up a part of the website; (6) use any Company Products to further or promote any criminal activity or enterprise or provide instructional information about illegal activities, including for the purpose of concealing economic activity, laundering money, or financing terrorism; (7) copy or adapt the website’s software or code; and (8) use any Company Products to carry out financial activities subject to registration or licensing, including but not limited to creating, listing, or buying securities, commodities, options, real estate, or debt instruments.
                 <br><br>We are not permitted to engage in any transactions with any person, entity, or country prohibited by any applicable export control and sanctions laws and regulations of the United States and any other applicable governmental authority, including without limitation, the U.S. Export Administration Regulations and U.S. sanctions regulations (“Export Control and Sanctions Laws”), including, without limitation, the prohibition against transactions with: (i) a national or resident of any country subject to U.S. sanctions or similar restrictions (currently, Cuba, Iran, Syria, North Korea, and the following regions of Ukraine: Crimea, Donetsk and Luhansk) or (ii) anyone on the U.S. Treasury Department’s list of Specially Designated Nationals or other sanctions lists. You are not permitted to purchase any Company Products or engage in any other transactions with us through the website or otherwise if any of the foregoing restrictions apply. In the event that you breach this provision, we reserve the right to the fullest extent possible to cancel any transaction or pursue other measures to comply with Export Control and Sanctions Laws.
             </li>
 
-            <li style="font-size: 25px; font-weight: bolder;"><br>OWNERSHIP</li>            
-            <li class='7' style="padding-left: 1vw; padding-right:1vw; font-weight:lighter; font-size:18px">Subject to these Terms, you are entitled to use the NFT for personal, non-commercial purposes only. Personal use may include display of the NFT on personal digital platforms, such as social media, and sharing with friends and family for non-commercial purposes.
+            <li style="font-size: 25px; font-weight: bolder;"><br>Ownership</li>            
+            <li class='7' style="padding-left: 1vw; padding-right:1vw; font-weight:lighter;">Subject to these Terms, you are entitled to use the NFT for personal, non-commercial purposes only. Personal use may include display of the NFT on personal digital platforms, such as social media, and sharing with friends and family for non-commercial purposes.
                 <br><br>Our Services, including the text, graphics, images, photographs, videos, illustrations and other content contained therein, are owned by company or our licensors and are protected under both United States and foreign laws. Except as explicitly stated in these Terms, all rights in and to our Services are reserved by us or our licensors. Subject to your compliance with these Terms, you are hereby granted a limited, nonexclusive, nontransferable, non-sublicensable, revocable license to access and use our Services for your own personal, noncommercial use. Any use of our Services other than as specifically authorized herein, without our prior written permission, is strictly prohibited, will terminate the license granted herein and violate our intellectual property rights.
                 <br><br>We recognize that you might want to create modifications and derivative works of your Vanici digital collectible, and we allow you to do so under the scope of the licenses granted above. However, you acknowledge and agree that company may also modify, create derivative works of, and update any Vanici digital collectible and may create works of authorship similar or identical to your own adaptations, derivative works, and modifications of any Vanici digital collectible. Accordingly, on behalf of yourself and your heirs, successors and assigns, you irrevocably covenant and agree not to assert or bring any suit, claim, demand or challenge against company or its affiliates or licensees in connection with their use of any Vanici digital collectible or any adaptations, derivative works, and modifications thereto, even if such artwork or content is similar to or the same as any adaptations, derivative works, or modifications in any Vanici digital collectible that have been created by you.
                 <br><br>No Rights to Trademarks. Nothing in this License will be interpreted to grant you any rights to any Vanici Trademarks belonging to company. Without our written permission, you may not use any Vanici Trademarks for any Commercial Use, including to register any domain names or social media accounts using any Vanici Trademarks. This includes any Vanici Trademarks that may be displayed or contained in any Vanici digital collectible for your Vanici NFT. You may not remove, delete or obscure any trademark notice, copyright notice or other intellectual property notice in any Vanici NFT or Vanici digital collectible.
@@ -294,13 +327,13 @@
 
             </li>
 
-            <li style="font-size: 25px; font-weight: bolder;"><br>PRIVACY</li>            
-            <li class='8' style="padding-left: 1vw; padding-right:1vw; font-weight:lighter; font-size:18px">You understand that from time to time the Company may be required to collect personal data from you, including but not limited to, identification information such as name, email address, and shipping address and cryptocurrency wallet information. You acknowledge and agree that we may share personal information with third-party service providers who aid us in meeting our operational needs, including but not limited to, third-party payment processing services, hosting services, cloud services, and other information technology services. We may also share personal information as required to comply with applicable laws and regulations, including but not limited to OFAC rules and regulations. Company recognizes that any data provided by you to us is extremely important and we shall, therefore, be particularly sensitive in handling such data. Company shall not sell any personal information to any third parties. Company shall use commercially reasonable efforts to employ technical, organizational and physical safeguards designed to protect the personal information we collect and safeguard your data. Nevertheless, no security measures are failsafe and we cannot guarantee the security of your personal information. You are advised that there are inherent security risks in transmitting data, such as emails, addresses or other personal information, via the website, because it is impossible to safeguard completely against unauthorized access by third-parties. Company shall not be held liable for any damages incurred as a consequence of such security risks or for any related acts of omission on our part.
+            <li style="font-size: 25px; font-weight: bolder;"><br>Privacy</li>            
+            <li class='8' style="padding-left: 1vw; padding-right:1vw; font-weight:lighter;">You understand that from time to time the Company may be required to collect personal data from you, including but not limited to, identification information such as name, email address, and shipping address and cryptocurrency wallet information. You acknowledge and agree that we may share personal information with third-party service providers who aid us in meeting our operational needs, including but not limited to, third-party payment processing services, hosting services, cloud services, and other information technology services. We may also share personal information as required to comply with applicable laws and regulations, including but not limited to OFAC rules and regulations. Company recognizes that any data provided by you to us is extremely important and we shall, therefore, be particularly sensitive in handling such data. Company shall not sell any personal information to any third parties. Company shall use commercially reasonable efforts to employ technical, organizational and physical safeguards designed to protect the personal information we collect and safeguard your data. Nevertheless, no security measures are failsafe and we cannot guarantee the security of your personal information. You are advised that there are inherent security risks in transmitting data, such as emails, addresses or other personal information, via the website, because it is impossible to safeguard completely against unauthorized access by third-parties. Company shall not be held liable for any damages incurred as a consequence of such security risks or for any related acts of omission on our part.
                 
             </li>
 
-            <li style="font-size: 25px; font-weight: bolder;"><br>ASSUMPTION OF RISK, DISCLAIMERS AND LIMITATION OF LIABILITY</li>            
-            <li class='9' style="padding-left: 1vw; padding-right:1vw; font-weight:lighter; font-size:18px">The website is provided on an AS IS and AS AVAILABLE basis without any representation or endorsement made and without warranty of any kind whether express or implied, including but not limited to the implied warranties of satisfactory quality, fitness for a particular purpose, non-infringement, compatibility, security and accuracy. Company makes no warranty that the functionality of the website will be uninterrupted or error free, that defects will be corrected or that the Website or the server that makes it available are free of viruses or anything else which may be harmful or destructive. You expressly agree that your use of the website is at your sole risk.
+            <li style="font-size: 25px; font-weight: bolder;"><br>Assumption Of Rist, Disclaimers And Limitation Of Liability</li>            
+            <li class='9' style="padding-left: 1vw; padding-right:1vw; font-weight:lighter;">The website is provided on an AS IS and AS AVAILABLE basis without any representation or endorsement made and without warranty of any kind whether express or implied, including but not limited to the implied warranties of satisfactory quality, fitness for a particular purpose, non-infringement, compatibility, security and accuracy. Company makes no warranty that the functionality of the website will be uninterrupted or error free, that defects will be corrected or that the Website or the server that makes it available are free of viruses or anything else which may be harmful or destructive. You expressly agree that your use of the website is at your sole risk.
                 <br><br>Company makes no representations or warranties of any kind, express or implied, as to the Company Products included on the website or as to the Physical Products being offered to you. To the fullest extent permissible by applicable law, Company disclaims all warranties, express or implied, including but not limited to implied warranties of quality, merchantability, fitness for a particular purpose and noninfringement, and there are no warranties, express or implied, which extend beyond the description of the merchandise. Company will not be liable for damages of any kind arising from the products, including but not limited to direct, indirect, incidental, punitive and consequential damages, loss of profit, revenue, opportunity, or data. This disclaimer of liability applies, without limitation, to any damages or injury caused by any failure of performance, error, omission, interruption, deletion, defect, delay in operation or transmission, computer virus, communication line failure, theft or destruction or unauthorized access to, alteration of, or use of record, whether for breach of contract, tortious behavior, negligence, or under any other cause of action (including extra-contractual liability). If you are dissatisfied with the website, your sole remedy is to discontinue use of the website.
                 <br><br>In addition to the foregoing general disclaimer, Company specifically disclaims liability, and you hereby waive and release any and all claims, arising out of or in connection with: any blockchain or related technology; any digital wallet, (including but not limited to MetaMask) or similar technology or related service; the transfer or loss of any NFT or the inability to demonstrate ownership or control of any NFT, and any marketplace or other platform for buying, selling or transferring any NFT.
                 <br><br>You acknowledge and assume the following risks (for which the Company shall in no event be responsible for): (i) there are risks associated with blockchain-based assets including, but not limited to, the volatility of price and the absence of liquidity (the ability to resell), the risk of loss of your blockchain assets as a result of faulty hardware, software, and Internet connections and/or failures; the risk of the introduction malicious software; the risk that third parties may obtain unauthorized access to information stored within the wallet holding your blockchain assets; and the risk of loss of your blockchain assets due to loss of private key(s), custodial error, or purchaser error, and we will not be responsible for any of these, however caused; (ii) we do not make any representations, warranties, promises or guarantees, express or implied, about the availability of any blockchain assets on the internet; (iii) upgrades to the website (iv) we do not make any representations, warranties, promises or guarantees, express or implied, related to any third parties you interact with or their applications and/or services, including but not limited to the continued availability of either and/or the protection and/or storage of any data you provide to those parties; (v) there also exists: (a) the risk of hacking, security weaknesses, fraud, counterfeiting, cyberattacks, and other technological difficulties; (b) the risk of changes to the regulatory regime governing blockchain technologies, cryptocurrencies, and tokens and new regulations, or unfavorable regulatory intervention in one or more jurisdictions or policies any of which may materially adversely affect the use and value of any blockchain assets; and (c) the risks related to taxation. In addition to assuming all of the above risks, you acknowledge that we cannot and do not represent or warrant that any blockchain asset, or its supporting systems or technology, is reliable, current, or error-free, meets your requirements, or that defects in any blockchain asset, or its supporting systems or technology, will be corrected. We cannot and do not represent or warrant that any blockchain asset or the delivery mechanism thereto are free of viruses or other harmful components. You understand that transactions in blockchain assets are irreversible, and, accordingly, losses due to fraudulent or accidental transactions may not be recoverable. You accept and acknowledge that we will not be responsible for any communication failures, disruptions, errors, distortions, or delays you may experience related to any blockchain asset. If the metadata associated with an NFT is no longer maintained at the storage location indicated in the URI contained in the NFT, the market value of such NFT may be reduced or eliminated entirely.
@@ -308,18 +341,18 @@
                 <br><br>Notwithstanding the foregoing, in the event that Company is found liable in respect of any loss, damage or cause of action (whether contractual, extra-contractual or otherwise) arising out of or in connection with (i) these Terms or any of the features or functionalities of the website or its content, or your use or inability of use thereof, Company’s liability shall not exceed the amount paid for use thereof or access thereto; or (ii) any product sold through the site, Company’s liability shall be strictly limited to the sale price of that product.
             </li>
 
-            <li style="font-size: 25px; font-weight: bolder;"><br>INDEMNIFICATION</li>            
-            <li class='10' style="padding-left: 1vw; padding-right:1vw; font-weight:lighter; font-size:18px">To the fullest extent permitted by applicable law, you agree to indemnify, defend and hold harmless the Company and its affiliates and its and their Representatives (collectively, the “Indemnitees”), from and against all actual or alleged third party claims, damages, awards, judgments, losses, liabilities, obligations, penalties, interest, fees, expenses (including, without limitation, attorneys' fees and expenses) and costs (including, without limitation, court costs, costs of settlement and costs of pursuing indemnification and insurance), of every kind and nature whatsoever, whether known or unknown, foreseen or unforeseen, matured or unmatured, or suspected or unsuspected, in law or equity, whether in tort, contract or otherwise (collectively, “Claims”), including, but not limited to, damages to property or personal injury, that are caused by, arise out of or are related to (i) your use or misuse of the website, the Content, or the Company Products, (ii) your violation of these Terms, or (c) your violation of the rights of a third party, including another user of the website. You agree to promptly notify the Company of any third party Claims and cooperate with the applicable Indemnitee in defending such Claims. You further agree that the Indemnitees shall have the right to control of the defense or settlement of any third-party Claims.
+            <li style="font-size: 25px; font-weight: bolder;"><br>Indemnification</li>            
+            <li class='10' style="padding-left: 1vw; padding-right:1vw; font-weight:lighter;">To the fullest extent permitted by applicable law, you agree to indemnify, defend and hold harmless the Company and its affiliates and its and their Representatives (collectively, the “Indemnitees”), from and against all actual or alleged third party claims, damages, awards, judgments, losses, liabilities, obligations, penalties, interest, fees, expenses (including, without limitation, attorneys' fees and expenses) and costs (including, without limitation, court costs, costs of settlement and costs of pursuing indemnification and insurance), of every kind and nature whatsoever, whether known or unknown, foreseen or unforeseen, matured or unmatured, or suspected or unsuspected, in law or equity, whether in tort, contract or otherwise (collectively, “Claims”), including, but not limited to, damages to property or personal injury, that are caused by, arise out of or are related to (i) your use or misuse of the website, the Content, or the Company Products, (ii) your violation of these Terms, or (c) your violation of the rights of a third party, including another user of the website. You agree to promptly notify the Company of any third party Claims and cooperate with the applicable Indemnitee in defending such Claims. You further agree that the Indemnitees shall have the right to control of the defense or settlement of any third-party Claims.
                 
             </li>
 
-            <li style="font-size: 25px; font-weight: bolder;"><br>GOVERNING LAW AND DISPUTE RESOLUTION</li>            
-            <li class='11' style="padding-left: 1vw; padding-right:1vw; font-weight:lighter; font-size:18px">These Terms will be governed by Texas law, regardless of the conflict of law provisions thereof and regardless of where you live or from where you access or use the website or order products therefrom.
+            <li style="font-size: 25px; font-weight: bolder;"><br>Governing Law And Dispute Resolution</li>            
+            <li class='11' style="padding-left: 1vw; padding-right:1vw; font-weight:lighter;">These Terms will be governed by Texas law, regardless of the conflict of law provisions thereof and regardless of where you live or from where you access or use the website or order products therefrom.
                 <br><br>As a condition of using the website, you and we agree that any and all disputes, claims and causes of action (collectively, "Claims") arising out of or connected with the website (except for small claims court Claims, if applicable) shall be resolved exclusively by binding arbitration under the rules of the American Arbitration Association ("AAA"), including the Supplementary Procedures for Consumer-Related Disputes, for full and final settlement of such Claim applying the Federal Arbitration Act and other federal arbitration laws. YOU UNDERSTAND AND AGREE THAT YOU ARE WAIVING YOUR RIGHT TO SUE OR GO TO COURT TO ASSERT OR DEFEND YOUR RIGHTS UNDER THESE TERMS. YOU AND WE ALSO AGREE THAT (A) ANY CLAIMS WILL BE RESOLVED INDIVIDUALLY NOT AS A PLAINTIFF OR CLASS REPRESENTATIVE, MEMBER OF OTHERWISE ON BEHALF OF OTHERS IN ANY PURPOSED CLASS, COLLECTIVE, OR REPRESENTATIVE PROCEEDING AND NOT THROUGH ANY CLASS ACTION, (B) IF A CLAIM PROCEEDS IN COURT ANYWAY, WE BOTH WAIVE ANY RIGHT TO A JURY TRIAL; AND (C) EITHER YOU OR WE MAY SEEK A COURT INJUNCTION REGARDING INTELLECTUAL PROPERTY INFRINGEMENT. ARBITRATION DOES NOT INVOLVE A JUDGE OR JURY. Although court review of an arbitration award may be limited, an arbitrator is empowered to award the same damages and relief as a court, including injunctive relief or statutory damages. Notwithstanding the foregoing, either party may seek temporary or emergency equitable relief to enforce its rights in any court of competent jurisdiction.
             </li>
 
-            <li style="font-size: 25px; font-weight: bolder;"><br>MISCELLANEOUS</li>            
-            <li class='12' style="padding-left: 1vw; padding-right:1vw; font-weight:lighter; font-size:18px">These Terms (along with other policies found on Company’s website) contain the entire agreement between the parties and replaces all prior oral and written agreements. No oral modifications, express or implied, may change the terms of this agreement. The parties have not relied on any representations or promises relating to the subject matter of this agreement except those contained within the four corners of this agreement.
+            <li style="font-size: 25px; font-weight: bolder;"><br>Miscellaneous</li>            
+            <li class='12' style="padding-left: 1vw; padding-right:1vw; font-weight:lighter;">These Terms (along with other policies found on Company’s website) contain the entire agreement between the parties and replaces all prior oral and written agreements. No oral modifications, express or implied, may change the terms of this agreement. The parties have not relied on any representations or promises relating to the subject matter of this agreement except those contained within the four corners of this agreement.
                 <br><br>These Terms and other agreements relating to the website do not constitute a joint venture, partnership, agency, employment or fiduciary relationship between the parties, except when one is expressly stated. Neither party nor its agents have any authority to bind the other party, and the relationship of the parties is that of buyer and seller, or independent contractors in certain circumstances.
                 <br><br>These Terms insure to the benefit of and bind the successors, assigns, heirs, executors and administrators of the parties. However, you may not assign or delegate any right or duty hereunder without written consent from the Company. Any attempt to do so is null and void.
                 <br><br>If any provision of these Terms is held invalid or unenforceable, the remainder of the Terms will remain in full force and effect. If any provision is held invalid or unenforceable with respect to particular circumstances, it will remain in full force and effect in all other circumstances.
@@ -328,12 +361,11 @@
         
         <div class="tnc3">Scroll</div> 
         <div class="credit">
-            <div class="copyright">&copy; 2023 VANICI
+            <div class="copyright">&copy; 2023 Vanici
             </div>
 
-            <div class="tnc">
-                <div class="terms"><a href="tnchome.html">Terms & Conditions</a></div>
-            </div>
+            <a class="terms" href="tnchome.html" style="text-decoration: none;">Terms & Conditions
+            </a> 
         </div>
     
     </div>

@@ -85,22 +85,37 @@
     <!--header section stars -->
 
     <style>
+        @font-face { font-family: 'Avenir Next'; src: url('avenir-next-bold-italic.TTF'); }
+        .credit {
+            display: flex;
+            justify-content: space-between;
+            margin-top: -60vh;
+            width: 100%;
+            
+        }
+        .credit .terms {
+            align-content: flex-end;
+            margin-right: 3.5%;
+            font-weight:600;
+            width: fit-content;
+            color: #f3984f;
+            font-size: 1.5rem;
+            
+        }
+        .credit .copyright {
+            margin-right: auto;
+        }
         .mint_cnt_box {
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: 9.2vh;
+            justify-content: center;            
+            margin-top: 51.5vh;
             background-color: transparent;
             color: transparent;
-            width: 10vw;
-            margin-left: 45vw;
-            
-            
+            width: 100%; 
         }
 
         .mint_cnt {
-            display: inline-block;
-            justify-content: flex-start;
+                       
             border: 3px solid #f3984f;
             font-size: 35px;
             font-weight: bolder;
@@ -111,6 +126,8 @@
             border-radius: 15px;
             background-color: transparent;
             color: #f3984f;
+            margin: 5px 9px;
+            
         }
 
         .clicked {
@@ -129,8 +146,8 @@
         }
 
         .mint_cnt1 {
-            display: inline-block;
-            justify-content: flex-start;
+            
+            
             border: 3px solid #f3984f;
             font-size: 35px;
             font-weight: bolder;
@@ -144,7 +161,7 @@
         }
 
         .mint_cnt2 {
-            display: inline-block;
+           
             border: 3px solid #f3984f;
             font-size: 35px;
             font-weight: bolder;
@@ -158,8 +175,8 @@
         }
 
         .mint_cnt3 {
-            display: inline-block;
-            justify-content: flex-end;
+            
+            
             border: 3px solid #f3984f;
             font-size: 35px;
             font-weight: 20;
@@ -173,9 +190,9 @@
         }
 
         .tnc3 {
-            font-family: "Avenir Next" !important;
+            font-family: inherit;
             font-style: italic;
-            margin-top: 73vh;
+            margin-top: 6vh;
             
             width: 100%;
             visibility: visible;
@@ -282,9 +299,7 @@
 
         .slider:hover {}
 
-        .credit .copyright {
-            margin-top: -7.8vh;
-        }
+        
 
         .dropdown.show .dropdown-toggle::after {
             transform: rotate(180deg);
@@ -300,7 +315,7 @@
         }
 
         .dropdown-menu a {
-            margin-left: -5px;
+            
             margin-top: -5px;
         }
 
@@ -391,15 +406,21 @@
             font-weight: bolder;
         }
 
-        @media screen and (max-width:450px) {
+        @media screen and (max-height:700px), screen and (max-width: 450px) {
             .slider {
-                width: 150px;
-                height: 150px;
-                margin-top: -15vh;
+                width: 100px;
+                height: 100px;
+                margin-top: -8vh !important;
             }
 
+            .credit {
+                dispay: none;
+            }
+            .credit .terms {
+                display: none;
+            }
             .mint_cnt_box {
-                margin-top: -30vh;
+                margin-top: 49vh !important;
                 align-items: center;
                 justify-content: center;
                 font-size: 60%;
@@ -407,11 +428,11 @@
 
             .text button{
                 font-size: 20px;
-                width: 40vw;
-                margin-top: 2.5vh;
+                width: 38vw;
+                margin-top: 0.5vh;
             }
 
-
+            
             .mint_cnt {
                 font-size: 20px;
                 padding: 0px 10px;
@@ -426,7 +447,7 @@
                 height: 100%;
                 transform-origin: center;
                 transform-style: preserve-3d;
-                transform: rotateY(calc(var(--i)*30deg)) translate3D(0, 0, 350px);
+                transform: rotateY(calc(var(--i)*30deg)) translate3D(0, 0, 250px);
             }
 
             .slider span:hover img {
@@ -437,36 +458,40 @@
                 margin-top: -15px;
                 margin-bottom: 2px;
             }
-
-            .navbar-nav ul {
-                margin-top: 5px;
-                border-top: 0;
-            }
+            
 
             .dropdown-menu a {
-                margin-left: -15px;
+               margin: 0 auto;
             }
 
-            .navbar li {
-                margin-left: -10px;
+            .navbar-nav {
+                display: flex;
+                text-align: center;
+                
             }
-
-            .wallet {
-                margin-left: -10px;
+            .navbar-nav ul {
+                border-top: 0;
             }
-
+            .navbar-nav li {
+                margin: 0 auto;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+            }
+           
             .totalmenu3-0 {
                 margin-top: 0;
             }
 
             .tnc3 {
-                font-family: "Avenir Next" !important;
+                font-family: inherit;
                 font-style: italic;
-                margin-top: 55vh;
+                margin-top: 7.5vh;
                 align-items: center;
                 justify-content: center;
                 text-align: center;
-                display: flex;
+                //display: flex;
+                display: none;
                 width: 100%;
                 visibility: visible;
                 text-align: flex;
@@ -481,29 +506,19 @@
                 color: #f3984f;
             }
 
-            .tnc {
-                display: inline-block;
-                width: 100%;
-                margin: 0 auto;
+            .credit {
+                display: none;
             }
 
-            .tnc1 {
+            .credit .copyright {
                 display: none;
-                margin-left: 18vw;
-                margin-top: -205px;
-                margin-bottom: 400px;
             }
-
-            .tnc2 {
-                display: none;
-                margin-left: 18vw;
-                margin-top: 200px;
-            }
+            
         }
 
         @media screen and (max-width:300px) {
             .tnc3 {
-                font-family: "Avenir Next" !important;
+                font-family: inherit;
                 font-style: medium italic;
                 margin-top: 70vh;
                 margin-left: 3vw;
@@ -544,25 +559,31 @@
             .wallet {
                 margin-left: -20px;
             }
+            
+        }
 
-            .tnc {
-                display: inline-block;
-                width: 100%;
-                margin: 0 auto;
-            }
+        @media screen and (max-height:1000px), screen and (max-width:1000px ) {
+            .slider {
+                width: 160px;
+                height: 160px;   
+                margin-top: -5vh;             
+            }            
 
-            .tnc1 {
-                display: none;
-                margin-left: 8vw;
-                margin-top: -205px;
-                margin-bottom: 400px;
+            .mint_cnt_box {
+                margin-top: 47.5vh;
             }
-
-            .tnc2 {
-                display: none;
-                margin-left: 8vw;
-                margin-top: 200px;
-            }
+            .slider span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform-origin: center;
+            transform-style: preserve-3d;
+            transform: rotateY(calc(var(--i)*30deg)) translate3D(0, 0, 400px);
+        }
+            
+            
         }
     </style>
 
@@ -591,9 +612,9 @@
                 <div class="navbar-nav" id="navbar-content">
                     <ul class="navbar-nav  ">
                         <li class="nav-item dropdown text-center">
-                            <a class="nav-link dropdown-toggle " href="" id="dropdown04" role="button"
+                            <a class="nav-link" href="" id="dropdown04" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                style="font-size:16px; font-weight: bolder; color:#f3984f; align-content: center;  margin-right:20px;  margin-top:5px; font-family: inherit;">Collection
+                                style="font-size:16px; font-weight: bolder; color:#f3984f; align-content: center;  margin-right:10px; margin-left: 10px; margin-top:5px; font-family: inherit; text-shadow: none;">Collection
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-down rotate-180" aria-labelledby="dropdown04"
@@ -606,17 +627,17 @@
 
                         <li class="nav-item">
                             <a class="nav-link" href="https://twitter.com/marcovanici" target="_blank" id="nav-twit"
-                                style="font-size:16px; font-weight: bolder; color:#f3984f; align-content: center; margin-right:20px;  margin-top:5px; font-family: inherit;">Twitter</a>
+                                style="font-size:16px; font-weight: bolder; color:#f3984f; align-content: center; margin-right:10px; margin-left: 10px; margin-top:5px; font-family: inherit; text-shadow: none;">Twitter</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="https://www.instagram.com/marcovanici/" target="_blank"
                                 id="nav-insta"
-                                style="font-size:16px; font-weight: bolder; color:#f3984f; align-content: center;  margin-right:20px;  margin-top:5px; font-family: inherit;">Instagram</a>
+                                style="font-size:16px; font-weight: bolder; color:#f3984f; align-content: center; margin-right:10px; margin-left: 10px;  margin-top:5px; font-family: inherit; text-shadow: none;">Instagram</a>
                         </li>
 
                         <div class="wallet" style="margin-top:3px;">
                             <button id="connect" onclick="connected();"
-                                style=" height:40px;  color:#f3984f;font-size: 16px; margin-top:0px;background-color: inherit; font-weight: bolder; font-family: inherit;">
+                                style=" height:40px;  color:#f3984f;font-size: 16px; margin-top:0px; margin-right:10px; margin-left: 10px;background-color: inherit; font-weight: bolder; font-family: inherit;">
                                 Wallet</button>
                             <div style="display:none;" id="drop-content" style="width:100%;
                                 color:#f3984f;"> <a href="/mypage.html">My Collection</a>
@@ -654,11 +675,7 @@
 
         </div>
 
-        <div class="totalmenu3-0">
-            <div class="tnc3">Scroll
-            </div>
-
-        </div>
+        
         <div class="totalmenu3-1" style="align-content:center;width:100%;">
             <div class="mint_cnt_box" id="mint_cnt_box">
                 <button class="mint_cnt" id="mint_cnt1">1</button>
@@ -672,51 +689,75 @@
                 </div>
             </div>
 
+            <div class="totalmenu3-0">
+            <div class="tnc3">Scroll
+            </div>
+
+        </div>
+
         </div>
 
         <div class="credit">
-            <div class="copyright">&copy; 2023 VANICI
+            <div class="copyright">&copy; 2023 Vanici
             </div>
 
-            <!--<div class="tnc"> <div class="terms"><a href="tnchome.html">Terms &
-            Conditions</a></div> </div>-->
+            <a class="terms" href="tnchome.html" style="text-decoration: none;">Terms & Conditions
+            </a> 
+            
         </div>
     </div>
-
-    <!-- <div class="modal-wrapper">
-        <div class="modal">
-
-            <div class="content">
-                <div class="g-recaptcha" data-sitekey="6LffvfUjAAAAAPg7Gwmjz2cYFe6hCAugdNZ2K-4G" style="transform:scale(0.3);transform-origin:0 0"></div>
-            </div>
-            <button class="content_close" onclick="this.parentNode.parentNode.style.display='none';">close</button>
-
-        </div>
-    </div> -->
 
     <!--home section ends -->
 
     <!--footer section starts -->
 
-    <div class="footer">
-
-        <!--<div class="box-container"> <div class="box"> <div class="image"> </div>
-        </div> </div> -->
-
-    </div>
+    <div class="footer"></div>
 
     <!--footer section ends -->
 
     <!--custom js file link -->
 
     <script>
-
         window.oncontextmenu = function () {
             return false;
         }
         var addr = '';
         var mintCount = 0;
         var mint_cnt = document.getElementsByClassName("mint_cnt");
+        var string3 = '';
+        var string4 = '';
+
+        $(document).ready(function () {
+            $.ajax({
+                url: 'https://marcovanici.com/load_mint_cnt_total.php',
+                method: 'post',                
+                dataType: 'json',
+                success: function (data) {                    
+                    $.each(data, function (key, value) {                        
+                        string3 += `${value['sum(mint_count)']}`;
+                    });  
+                },
+                error: function (xhr, status, exception) {
+                    
+                }
+            });
+        });
+
+        $(document).ready(function () {
+            $.ajax({
+                url: 'https://marcovanici.com/load_free_mint_cnt_total.php',
+                method: 'post',                
+                dataType: 'json',
+                success: function (data) {                    
+                    $.each(data, function (key, value) {                        
+                        string4 += `${value['sum(mint_count)']}`;
+                    });
+                },
+                error: function (xhr, status, exception) {
+                    
+                }
+            });
+        });
 
         function handleClick(event) {
             console.log(event.target);
@@ -746,8 +787,7 @@
 
                 event.target.classList.add("clicked");
                 event.target.style.color = window.getComputedStyle(document.getElementById('nczHome')).backgroundColor;
-                mintCount = parseInt(event.target.innerHTML);
-                //alert(mintCount);
+                mintCount = parseInt(event.target.innerHTML);                
             }
         }
 
@@ -761,18 +801,7 @@
 
         $(document).ready(function () {
             window.userAddress = window.localStorage.getItem("userAddress");
-            // 
-
-            // var url = '/load_mint_cnt.php';
-            // xhr.open("GET", url, true);
-
-            // xhr.onreadystatechange = function() {
-            //     if(this.readyState == 4 && this.status == 200) {
-            //         alert(this.responseText);
-            //     }
-            // }
-            // xhr.send();
-
+            
             addr = window.userAddress;
             var xhr = new XMLHttpRequest();
             $.ajax({
@@ -786,7 +815,38 @@
                         string += `${value['mint_count']}`;
                     });
 
-                    if (string === '1') {
+                    if(parseInt(string3)+ parseInt(string4)==3300000)
+                    {
+                        document.getElementById('mint_cnt3').style.color = 'gray';
+                        document.getElementById('mint_cnt3').style.borderColor = 'gray';
+                        document.getElementById('mint_cnt3').disabled = true;
+                        document.getElementById('mint_cnt2').style.color = 'gray';
+                        document.getElementById('mint_cnt2').style.borderColor = 'gray';
+                        document.getElementById('mint_cnt2').disabled = true;
+                        document.getElementById('mint_cnt1').style.color = 'gray';
+                        document.getElementById('mint_cnt1').style.borderColor = 'gray';
+                        document.getElementById('mint_cnt1').disabled = true;
+                    }
+
+                    else if(parseInt(string3)+ parseInt(string4)==3299999) {
+                        document.getElementById('mint_cnt3').style.color = 'gray';
+                        document.getElementById('mint_cnt3').style.borderColor = 'gray';
+                        document.getElementById('mint_cnt3').disabled = true;
+                        document.getElementById('mint_cnt2').style.color = 'gray';
+                        document.getElementById('mint_cnt2').style.borderColor = 'gray';
+                        document.getElementById('mint_cnt2').disabled = true;
+                        document.getElementById('mint_cnt1').style.color = '#f3984f';
+                    }
+
+                    else if(parseInt(string3)+ parseInt(string4)==3299998) {
+                        document.getElementById('mint_cnt3').style.color = 'gray';
+                        document.getElementById('mint_cnt3').style.borderColor = 'gray';
+                        document.getElementById('mint_cnt3').disabled = true;
+                        document.getElementById('mint_cnt1').style.color = '#f3984f';
+                        document.getElementById('mint_cnt2').style.color = '#f3984f';
+                    }
+
+                    else if (string === '1') {
                         document.getElementById('mint_cnt3').style.color = 'gray';
                         document.getElementById('mint_cnt3').style.borderColor = 'gray';
                         document.getElementById('mint_cnt3').disabled = true;
@@ -822,7 +882,7 @@
 
                 },
                 error: function (xhr, status, exception) {
-                    //alert('Exception:', xhr);
+                    
                 }
             });
         });    
@@ -847,6 +907,17 @@
 		"inputs": [],
 		"stateMutability": "nonpayable",
 		"type": "constructor"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "operator",
+				"type": "address"
+			}
+		],
+		"name": "OperatorNotAllowed",
+		"type": "error"
 	},
 	{
 		"anonymous": false,
@@ -902,7 +973,7 @@
 		"inputs": [
 			{
 				"internalType": "address",
-				"name": "to",
+				"name": "operator",
 				"type": "address"
 			},
 			{
@@ -1252,6 +1323,19 @@
 	},
 	{
 		"inputs": [],
+		"name": "OPERATOR_FILTER_REGISTRY",
+		"outputs": [
+			{
+				"internalType": "contract IOperatorFilterRegistry",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
 		"name": "owner",
 		"outputs": [
 			{
@@ -1361,7 +1445,7 @@
 	}
 ];
 
-        const ADDRESS = "0xca2E92B2240a6414e8bA2e4df1d7C02B2577A3eF";
+        const ADDRESS = "0x659CE0909c6E89D68C1359B9Eaeebf528c0D32d0";
         document
             .getElementById('mint')
             .onclick = () => {
@@ -1429,7 +1513,7 @@
                                             alert(data);
                                         },
                                         error: function (xhr, status, exception) {
-                                            //alert('Exception:', xhr);
+                                            
                                         }
                                     });
                                     Toast.fire({
@@ -1601,8 +1685,7 @@
         for (var a = 0; a <= 8; a++) {
             if (localStorage.getItem('colorCode') == colors[a]) {
                 colorIndex = a;
-                nczHome.style.backgroundColor = colors[colorIndex];
-                //mintbtn.style.color = colors[colorIndex];
+                nczHome.style.backgroundColor = colors[colorIndex];                
             }
         }
 
@@ -1636,14 +1719,6 @@
                 else if (document.getElementById('mint_cnt3').classList[1] === 'clicked')
                     document.getElementById('mint_cnt3').style.color = colors[colorIndex];
 
-
-                // if (colorIndex == 1) {
-                // 	text.style.backgroundColor = '#000';
-
-                // }
-                // else {
-                // 	text.style.backgroundColor = colors[1];
-                // }
                 scrollValue = 0;
                 localStorage.setItem('colorCode', colors[colorIndex]);
             }
@@ -1674,14 +1749,7 @@ if (document.getElementById('mint_cnt1').disabled == true)
                     document.getElementById('mint_cnt2').style.color = colors[colorIndex];
                 else if (document.getElementById('mint_cnt3').classList[1] === 'clicked')
                     document.getElementById('mint_cnt3').style.color = colors[colorIndex];
-
-                // if (colorIndex == 1) {
-                // 	text.style.backgroundColor = '#000';
-
-                // }
-                // else {
-                // 	text.style.backgroundColor = colors[1];
-                // }
+                
                 scrollValue = 0;
                 localStorage.setItem('colorCode', colors[colorIndex]);
             }
@@ -1727,69 +1795,44 @@ if (document.getElementById('mint_cnt1').disabled == true)
         for (var a = 0; a <= 8; a++) {
             if (localStorage.getItem('colorCode') == colors[a]) {
                 t = a;
-                nczHome.style.backgroundColor = colors[t];
-                //mintbtn.style.color = colors[t];
+                nczHome.style.backgroundColor = colors[t];               
             }
         }
 
         document.addEventListener('swiped-left', function (e) {
-
-            // document.getElementById('slider').style.setProperty('--deg1', '180deg');
-            // document.getElementById('slider').style.setProperty('--deg2', '-180deg');
             document
                 .getElementById('slider')
                 .style
                 .animationDirection = "reverse";
-
-            // document.getElementById('slider').style[--deg1] = '0deg';
-            // document.getElementById('slider').style[--deg2] = '-359deg';
-            // $('.rotate').css('--deg1', '0deg'); $('.rotate').css('--deg2', '-359deg'); t
-            // -= 1; if (t == -1) { 	t = 9; } nczHome.style.backgroundColor = colors[t];
-            // localStorage.setItem('colorCode', colors[t]);
-
         });
 
         document.addEventListener('swiped-right', function (e) {
-            // document.getElementById('slider').style.setProperty('--deg1', '-180deg');
-            // document.getElementById('slider').style.setProperty('--deg2', '180deg');
             document
                 .getElementById('slider')
                 .style
                 .animationDirection = "normal";
-            // document.getElementById('slider').style[--deg1] = '-359deg';
-            // document.getElementById('slider').style[--deg2] = '0deg';
-            // $('.rotate').css('--deg1', '-359deg'); $('.rotate').css('--deg2', '0deg'); t
-            // += 1; if (t == 10) { 	t = 0; } nczHome.style.backgroundColor = colors[t];
-            // localStorage.setItem('colorCode', colors[t]);
 
         });
 
         document.addEventListener('swiped-up', function (e) {
-            t -= 1;
-            if (t == -1) {
-                t = 8;
+            t += 1;
+            if (t == 9) {
+                t = 0;
             }
-
-            // if (t == 1) {
-            // 		text.style.backgroundColor = colors[0];					
-            // 	}
-            // 	else {
-            // 		text.style.backgroundColor = colors[1];
-            // 	}
 
             nczHome.style.backgroundColor = colors[t];
             if (document.getElementById('mint_cnt1').disabled == true)
-                        document.getElementById('mint_cnt1').style.color = 'Gray';
-                    else
-                        document.getElementById('mint_cnt1').style.color = '#f3984f';
-                    if (document.getElementById('mint_cnt2').disabled == true)
-                        document.getElementById('mint_cnt2').style.color = 'Gray';
-                    else
-                        document.getElementById('mint_cnt2').style.color = '#f3984f';
-                    if (document.getElementById('mint_cnt3').disabled == true)
-                        document.getElementById('mint_cnt3').style.color = 'Gray';
-                    else
-                        document.getElementById('mint_cnt3').style.color = '#f3984f';
+                document.getElementById('mint_cnt1').style.color = 'Gray';
+            else
+                document.getElementById('mint_cnt1').style.color = '#f3984f';
+            if (document.getElementById('mint_cnt2').disabled == true)
+                document.getElementById('mint_cnt2').style.color = 'Gray';
+            else
+                document.getElementById('mint_cnt2').style.color = '#f3984f';
+            if (document.getElementById('mint_cnt3').disabled == true)
+                document.getElementById('mint_cnt3').style.color = 'Gray';
+            else
+                document.getElementById('mint_cnt3').style.color = '#f3984f';
             if (document.getElementById('mint_cnt1').classList[1] === 'clicked')
                 document.getElementById('mint_cnt1').style.color = colors[t];
             else if (document.getElementById('mint_cnt2').classList[1] === 'clicked')
@@ -1802,31 +1845,25 @@ if (document.getElementById('mint_cnt1').disabled == true)
         });
 
         document.addEventListener('swiped-down', function (e) {
-            t += 1;
-            if (t == 9) {
-                t = 0;
-            }
 
-            // if (colorIndex == 1) {
-            // 		text.style.backgroundColor = colors[0];					
-            // 	}
-            // 	else {
-            // 		text.style.backgroundColor = colors[1];
-            // 	}
+            t -= 1;
+            if (t == -1) {
+                t = 8;
+            }
 
             nczHome.style.backgroundColor = colors[t];
             if (document.getElementById('mint_cnt1').disabled == true)
-                        document.getElementById('mint_cnt1').style.color = 'Gray';
-                    else
-                        document.getElementById('mint_cnt1').style.color = '#f3984f';
-                    if (document.getElementById('mint_cnt2').disabled == true)
-                        document.getElementById('mint_cnt2').style.color = 'Gray';
-                    else
-                        document.getElementById('mint_cnt2').style.color = '#f3984f';
-                    if (document.getElementById('mint_cnt3').disabled == true)
-                        document.getElementById('mint_cnt3').style.color = 'Gray';
-                    else
-                        document.getElementById('mint_cnt3').style.color = '#f3984f';
+                document.getElementById('mint_cnt1').style.color = 'Gray';
+            else
+                document.getElementById('mint_cnt1').style.color = '#f3984f';
+            if (document.getElementById('mint_cnt2').disabled == true)
+                document.getElementById('mint_cnt2').style.color = 'Gray';
+            else
+                document.getElementById('mint_cnt2').style.color = '#f3984f';
+            if (document.getElementById('mint_cnt3').disabled == true)
+                document.getElementById('mint_cnt3').style.color = 'Gray';
+            else
+                document.getElementById('mint_cnt3').style.color = '#f3984f';
             if (document.getElementById('mint_cnt1').classList[1] === 'clicked')
                 document.getElementById('mint_cnt1').style.color = colors[t];
             else if (document.getElementById('mint_cnt2').classList[1] === 'clicked')
@@ -1835,6 +1872,7 @@ if (document.getElementById('mint_cnt1').disabled == true)
                 document.getElementById('mint_cnt3').style.color = colors[t];
 
             localStorage.setItem('colorCode', colors[t]);
+            
 
         });
     </script>
