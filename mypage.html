@@ -65,9 +65,9 @@
         }
         .tnc3 {
             font-family: font-family: 'Avenir Next', sans-serif; !important;
-            font-style: italic;
-            margin-top: 6.8vh;
-            
+            font-style: italic;            ;
+            position: fixed;
+            bottom: 8vh;
             width: 100%;
             visibility: visible;
             color: #f3984f;
@@ -80,10 +80,14 @@
         }
 
         .total {
-            font-family: "Avenir Next" !important;
+            font-family:'Avenir Next' !important;
             font-style: italic;
-            margin-top: -21.5vh;
-            margin-left: 47.5vw;
+            position: fixed;
+            bottom: 16vh;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            text-align: center;
             width: 100%;
             visibility: visible;
             color: #f3984f;
@@ -147,34 +151,7 @@
             max-width: 100%;
             max-height: 100%;
         }
-
-        .details {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 300px;
-        }
-
-        .details p {
-            font-family: inherit;
-            font-weight: bold;
-            color: #6a6a74;
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .marvel {
-            color: #32323e;
-            font-weight: bold;
-            letter-spacing: 2px;
-            font-family: bebas kai;
-            font-size: 25px;
-        }
-
-        .logo {
-            height: 60px;
-        }
-
+             
         .sub-drop04 {
             margin-top: -130px;
         }
@@ -184,11 +161,6 @@
             transform-style: preserve-3d;
             transform: scale(1.02);
             transition: all ease 0.3s;
-        }
-
-        .box:hover .marvel {
-            color: #c0292b;
-            transition: all ease 0.5s;
         }
 
         .terms {
@@ -233,9 +205,9 @@
         .credit {
             display: flex;
             justify-content: space-between;
-            margin-top: 6.7vh;
+            position: fixed;
+            bottom: 2vh;
             width: 100%;
-            
         }
         .credit .terms {
             align-content: flex-end;
@@ -249,19 +221,7 @@
         .credit .copyright {
             margin-right: auto;
         }
-
-        @media screen and (max-height:1000px), screen and (max-width:1000px ) {
-            
-            
-            .tnc3 {
-                margin-top: 5.6vh;
-            }
-            .credit {
-                margin-top: 5vh;
-                width: 100vw;
-            }
-            
-        }
+        
 
         @media screen and (max-width: 1300px) {
             .container img {
@@ -273,99 +233,42 @@
                 width: 45vw;
                 height: auto;
                 margin-left: 2.5vw;
-
-            }
-
-            .dropdown-menu a {
-                margin-top: -50px;
-
-                align-items: center;
-                justify-content: center;
-            }
+            }            
         }
-
-        @media screen and (max-width:992px) {
-            .dropdown-menu a {
-                align-items: center;
-                margin-left: -17px;
-                margin-top: -5px;
-                margin-bottom: -10px;
-            }
-
-            .navbar-brand img {
-                margin-top: 0px;
-            }
-
-            .total {
-                margin-left: 45vw;
-            }
-
-            .wallet {
-
-                margin-left: 27px;
-                align-items: center;
-            }
-
-            .nav-twit {
-                margin-left: -10px;
-            }
-            .container img {
-                margin-left: -4%;
-                
-            }
-        }
-
-        @media screen and (max-width:720px) {
-            .dropdown-menu a {
-                margin-left: -15px;
-                margin-top: 0px;
-                margin-bottom: -10px;
-            }
-
-            .navbar-brand img {
-                margin-top: 0px;
-            }
-
-            .box {
-                width: 90vw;
-                height: auto;
-                margin-left: 8.3vw;
-            }
-
-            .wallet {
-                margin-left: 5px;
-            }
-
+             
+        @media screen and (max-width:720px) {                     
             .container img {
                 width: 90vw;
-                height: auto;
-                
+                height: auto;                
             }
-
-            .model {
-                height: 250px;
-            }
-
-            .details p {
-                font-size: 16px;
-                width: 250px;
-            }
-
-            .total {
-                margin-top: -13vh;
-                margin-left: 43vw;
-            }
-            .tnc3 {
-                margin-top: 50vh;
-            }
-
-
         }
 
-        @media screen and (max-width:450px) {
+        @media screen and (max-width:991px) {
+            .navbar-nav {
+                top: 10px;
+                border-top: 3px solid #f3984f;
+            }
             .navbar img {
-                margin-top: -10px;
-                margin-bottom: -5px;
+                position: fixed;
+                top: 20px;
+                left: 3.5%
+            }
+            .navbar-nav {                
+                margin-top: 8px;
+            }
+            .navbar-nav ul {
+                margin-top: 5px;
+                border-top: 0;
+            }
+            .navbar-collapse {
+                margin-left: 3%;
+            }  
+            .credit {
+                display: none;
+            }
+            .navbar-toggler {
+                position: fixed;
+                top:6px;
             }
 
             .box {
@@ -374,68 +277,50 @@
             }
 
             .total {
-                margin-left: 36vw;
+                font-size: 16px;
             }
             .container img {
                 max-width: 98vw;
                 margin-left: 0.5%;
             }
 
-            .navbar-nav ul {
-                margin-top: 5px;
-                border-top: 0;
-            }
-
             .dropdown-menu a {                
                 margin: 0 auto;
             }
-            
-            .navbar-nav {
-                display: flex;
+            .navbar-nav div {
+                margin: 0 auto;
                 text-align: center;
+                
+                align-items: center;
             }
-
             .navbar-nav li {
                 margin: 0 auto;
                 text-align: center;
                 justify-content: center;
                 align-items: center;
             }
-            .connect {
-                margin-left: -10px;
+            .wallet {
+                margin: 0 auto;                                       
+                text-align: center;                
+            }
+            .wallet div {                
+                text-align: center;                
+                justify-content: center; 
+            }
+            .drop-content a{
+                width: fit-content;                                
+                align-items: center;
+                justify-content: center;
+                text-align: center;
             }
 
             .tnc3 {
-                font-family: "Avenir Next" !important;
-                font-style: italic;
-                margin-top: 85vh;
-                margin-left: 45vw;
-                width: 100%;
-                visibility: visible;
-                text-align: flex;
-                color: #f3984f;
-                font-size: 15px;
-                font-weight: bold;
-                position: relative;
-                -webkit-animation: colorchange 20s infinite alternate;
+                font-size: 16px;
             }    
         }
 
         @media screen and (max-width:300px) {
-            .tnc3 {
-                font-family: "Avenir Next" !important;
-                font-style: medium italic;
-                margin-top: 70vh;
-                margin-left: 3vw;
-                width: 100%;
-                visibility: visible;
-                text-align: flex;
-                color: #f3984f;
-                font-size: 15px;
-                font-weight: bold;
-                position: relative;
-                -webkit-animation: colorchange 20s infinite alternate;
-            }
+            
             .box {
                 margin-left: 2px;
             }
@@ -443,10 +328,7 @@
             .total {
                 margin-left: 35vw;
             }
-
-            .wallet {
-                margin-left: -20px;
-            }            
+                     
         }
     </style>
 
@@ -465,7 +347,7 @@
             <a class="navbar-brand" href="/index.html" style="margin-left:3%; margin-top:20px; text-align:center;"><img
                     src="images/logo.svg" width="80" height="30"></a>
             <button class="navbar-toggler collapsed d-flex d-lg-none flex-column justify-content-around" type="button"
-                style="margin-right:3%; margin-top:10px; font-size:22px;" data-toggle="collapse"
+                style="margin-right:4.5%; margin-top:20px; font-size:32px;" data-toggle="collapse"
                 data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="toggler-icon top-bar"></span>
@@ -487,7 +369,7 @@
                                 style="background-color:transparent;">
                                 <a class="dropdown-item" href="/nft_12cz.html" id="sub-drop04"
                                     style="font-size:14px; font-weight: bolder; color:#f3984f; text-align:center;text-shadow: none; ">12CZ</a>
-                                <a class="dropdown-item" href="/nft_12cz_free.html" id="sub-drop04" style="font-size:14px; font-weight: bolder; color:#f3984f; text-align:center; margin-top: 5px; text-shadow: none;">12LZ FREE</a>
+                                <a class="dropdown-item" href="/nft_12cz_free.html" id="sub-drop04" style="font-size:14px; font-weight: bolder; color:#f3984f; text-align:center; margin-top: 5px; text-shadow: none;">12LZ Free</a>
                             </div>
                         </li>
 
@@ -800,7 +682,7 @@
             if (!window.userAddress) { return }
             const osContainer = document.getElementById('autoWidth')
             
-            const items = await fetch(`https://api.opensea.io/api/v1/assets?owner=${window.userAddress}&order_direction=desc&offset=0&limit=200`)
+            const items = await fetch(`https://testnets-api.opensea.io/api/v1/assets?owner=${window.userAddress}&order_direction=desc&offset=0&limit=200`)
                 .then((res) => res.json())
                 .then((res) => {                    
                     return res.assets
@@ -814,7 +696,7 @@
             if (items.length === 0) { return }
             var count = 0;
             items.forEach((nft) => {
-                if (nft.asset_contract.name === '12 Lunar Zodiac') {
+                if (nft.asset_contract.name === '12LZ') {
                     const { name, image_url, description, permalink } = nft;
                     const newElement = document.createElement('li');
                     newElement.className = "item-a lslide active";

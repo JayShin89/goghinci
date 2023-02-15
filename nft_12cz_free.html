@@ -90,11 +90,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-top: 50vh;
+            position: fixed;
+            bottom: 30vh;
             background-color: transparent;
             color: #f3984f;
-            width: 30vw;
-            margin-left: 35vw;
+            width: 100%;
+
             font-size: 35px;
             font-weight: 700;
         }         
@@ -102,8 +103,9 @@
         .tnc32 {
             font-family: inherit;
             font-style: italic;
-            margin-top: 4.5vh;
-           display: flex;
+            position: fixed;
+            bottom: 8vh;
+            display: flex;
             width: 100%;
             visibility: visible;
             color: #f3984f;
@@ -115,17 +117,25 @@
         }
 
         .text {
-            margin-top: 5vh;
+            position: fixed;
+            bottom: 21vh;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            right: 50vw;
         }
 
+        .text button {
+            position: fixed;                        
+        }
         .slider2 {
-            position: relative;
+            position: fixed;
             width: 200px;
             height: 200px;
             transform-style: preserve-3d;
             -webkit-animation: rotate 120s linear infinite;
             transition: transform 0.5s ease-in-out;
-            top: 30vh;
+            top: 32vh;
             animation: rotate 120s linear 0s infinite;
             animation-play-state: running;
         }
@@ -215,7 +225,8 @@
         .credit {
             display: flex;
             justify-content: space-between;
-            margin-top: 5vh;
+            position: fixed;
+            bottom: 2vh;
             width: 100%;
             
         }
@@ -334,36 +345,38 @@
             background-color: transparent;
             color: #f3984f;
             font-weight: bolder;
-        }
-
-        @media screen and (max-height:700px), screen and (max-width: 450px) {
+        }       
+        
+        @media screen and (max-width: 991px) {
             .slider2 {
-                width: 150px;
-                height: 150px;
-                margin-top: -5.5vh;
-            }                 
-            .free_mint_cnt_box {
-                margin-top: 34.5vh !important;
-                align-items: center;
-                justify-content: center;
-                text-align: center;
+                width: 100px;
+                height: 100px; 
+                top: 22vh;               
+            }       
+            .navbar-collapse {
+                margin-left: 3%;
+            }  
+            .navbar-nav {
+                top: 10px;
+                border-top: 3px solid #f3984f;
+            }    
+            .credit {
                 display: none;
-                font-size: 20px;
-                width: 30vw;
-                margin-right: 50vw;               
+            }      
+            .free_mint_cnt_box {
+                position: fixed;
+                width: 40vw;
+                left: 30vw;  
+                font-size: 16px;           
             }
-            .totalmenu32-1 {
-                justify-content: center;
-                align-items: center;
-                width: 100vw;
-                text-align: center;
+            .tnc32 {
+                font-size: 16px;
             }
             
-            .text button{
-                font-size: 20px;
-                width: 38vw;  
-                margin-top: 44vh;  
-            }
+            .text button {
+                width: 40vw;
+                font-size: 16px;
+            }  
             .slider2 span {
                 position: absolute;
                 top: 0;
@@ -372,28 +385,34 @@
                 height: 100%;
                 transform-origin: center;
                 transform-style: preserve-3d;
-                transform: rotateY(calc(var(--i)*30deg)) translate3D(0, 0, 350px);
+                transform: rotateY(calc(var(--i)*30deg)) translate3D(0, 0, 250px);
             }
 
             .slider2 span:hover img {
                 transform: translateY(0px);
             }
-
+            .navbar-toggler {
+                position: fixed;
+                top:6px;
+            }
             .navbar img {
-                margin-top: -15px;
-                margin-bottom: 2px;
+                position: fixed;
+                top: 20px;
+                left: 3.5%
+            }
+            .navbar-nav {                
+                margin-top: 8px;
             }
 
             .dropdown-menu a {
                 margin: 0 auto;
             }
-
-            .navbar-nav {
+            .navbar-nav div {
                 margin: 0 auto;
-                text-align: center;
+                text-align: center;                
+                align-items: center;
             }
-            .navbar-nav ul {
-                margin-top: 5px;
+            .navbar-nav ul {                
                 border-top: 0;
             }
             .navbar-nav li {
@@ -401,62 +420,34 @@
                 text-align: center;
                 justify-content: center;
                 align-items: center;
+            }   
+            .wallet {
+                margin: 0 auto;                                       
+                text-align: center;                
             }
-
-            .totalmenu32-0 {
-                margin-top: 2vh;
+            .wallet div {                
+                text-align: center;                
+                justify-content: center; 
             }
-
-            .tnc32 {
-                font-family: inherit;
-                font-style: italic;
-                margin-top: -2vh;
-                
-                width: 100%;
-                visibility: visible;
-                text-align: center;
+            .drop-content a{
+                width: fit-content;                                
+                align-items: center;
                 justify-content: center;
-                display: none;
-                //display: flex;
-                color: #f3984f;
-                font-size: 15px;
-                font-weight: bold;
-                position: relative;
-                -webkit-animation: colorchange 20s infinite alternate;
-            }            
+                text-align: center;
+            }
+        }
 
-            .mint {
-                color: #f3984f;
+        @media screen and (max-width:450px) {
+            .text button{
+                width: 150px;
+
             }
-            .credit {
-                display: none;
-            }
-            .credit .terms {
-                display: none;
-            }
-            
         }
 
         @media screen and (max-width:300px) {
-            .tnc32 {
-                font-family: inherit;
-                font-style: medium italic;
-                margin-top: 70vh;
-                margin-left: 3vw;
-                width: 100%;
-                visibility: visible;
-                text-align: flex;
-                color: #f3984f;
-                font-size: 15px;
-                font-weight: bold;
-                position: relative;
-                -webkit-animation: colorchange 20s infinite alternate;
-            }
-
             .slider2 {
-                width: 120px;
-                height: 120px;
-                margin-top: -15vh;
+                width: 100px;
+                height: 100px;                
                 --deg1: -180deg;
                 --deg2: 180deg;
                 transform-origin: 50% 50%;
@@ -472,34 +463,9 @@
                 transform-style: preserve-3d;
                 transform: rotateY(calc(var(--i)*45deg)) translate3D(0, 0, 200px);
             }
-
-            .slider2 span:hover img {
-                transform: translateY(0px);
-            }
-
-            
-
-            .tnc {
-                display: inline-block;
-                width: 100%;
-                margin: 0 auto;
-            }
-
-            .tnc1 {
-                display: none;
-                margin-left: 8vw;
-                margin-top: -205px;
-                margin-bottom: 400px;
-            }
-
-            .tnc2 {
-                display: none;
-                margin-left: 8vw;
-                margin-top: 200px;
-            }
         }
 
-        @media screen and (max-height:1000px), screen and (max-width:1000px ) {
+        @media screen and (max-height:1000px), screen and (max-width:1500px ) {
             .slider2 {
                 width: 160px;
                 height: 160px;                
@@ -514,11 +480,7 @@
             transform-origin: center;
             transform-style: preserve-3d;
             transform: rotateY(calc(var(--i)*30deg)) translate3D(0, 0, 400px);
-        }
-            .free_mint_cnt_box {
-                margin-top: 44vh;
-            }
-            
+            }            
         }
 
         
@@ -536,7 +498,7 @@
             <a class="navbar-brand" href="/index.html" style="margin-left:3%; margin-top:20px; text-align:center;"><img
                     src="images/logo.svg" width="80" height="30"></a>
             <button class="navbar-toggler collapsed d-flex d-lg-none flex-column justify-content-around" type="button"
-                style="margin-right:5%; margin-top:10px; font-size:32px;" data-toggle="collapse"
+                style="margin-right:4.5%; margin-top:20px; font-size:32px;" data-toggle="collapse"
                 data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="toggler-icon top-bar"></span>
@@ -558,7 +520,7 @@
                                 style="background-color:transparent;">
                                 <a class="dropdown-item" href="/nft_12cz.html" id="sub-drop04"
                                     style="font-size:14px; font-weight: bolder; color:#f3984f; text-align:center; ">12CZ</a>
-                                <a class="dropdown-item" href="/nft_12cz_free.html" id="sub-drop04" style="font-size:14px; font-weight: bolder; color:#f3984f; text-align:center; margin-top: 5px; ">12LZ FREE</a>
+                                <a class="dropdown-item" href="/nft_12cz_free.html" id="sub-drop04" style="font-size:14px; font-weight: bolder; color:#f3984f; text-align:center; margin-top: 5px; ">12LZ Free</a>
                             </div>
                         </li>
 
@@ -805,6 +767,17 @@
 		"type": "constructor"
 	},
 	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "operator",
+				"type": "address"
+			}
+		],
+		"name": "OperatorNotAllowed",
+		"type": "error"
+	},
+	{
 		"anonymous": false,
 		"inputs": [
 			{
@@ -858,7 +831,7 @@
 		"inputs": [
 			{
 				"internalType": "address",
-				"name": "to",
+				"name": "operator",
 				"type": "address"
 			},
 			{
@@ -1208,6 +1181,19 @@
 	},
 	{
 		"inputs": [],
+		"name": "OPERATOR_FILTER_REGISTRY",
+		"outputs": [
+			{
+				"internalType": "contract IOperatorFilterRegistry",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
 		"name": "owner",
 		"outputs": [
 			{
@@ -1317,7 +1303,7 @@
 	}
 ];
 
-        const ADDRESS = "0xca2E92B2240a6414e8bA2e4df1d7C02B2577A3eF";
+        const ADDRESS = "0x9e52DbbDe12cA817e0B59a25E3bfe9D742bb2735";
         document
             .getElementById('mint')
             .onclick = () => {
@@ -1674,6 +1660,7 @@
              t -= 1;
             if (t == -1) {
                 t = 8;
+            }
             nczHome2.style.backgroundColor = colors[t];
             localStorage.setItem('colorCode', colors[t]);
 

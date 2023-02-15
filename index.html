@@ -56,8 +56,8 @@
         .tnc3 {
             font-family: 'Avenir Next', sans-serif !important;
             font-style: italic;
-            margin-top: 42.7vh;
-            
+            position: fixed;
+            bottom: 8vh;            
             width: 100%;
             visibility: visible;
             color: #f3984f;
@@ -80,9 +80,10 @@
         
         .credit {
             display: flex;
-            justify-content: space-between;
-            margin-top: 40.5vh;
+            justify-content: space-between;            
             width: 100%;
+            position: fixed;
+            bottom: 2vh;
             
         }
         .credit .terms {
@@ -141,39 +142,7 @@
             display: block;
             
         }
-        
-        
-        @media screen and (max-width:450px) {
-            .navbar img {
-                margin-top: -10px;
-                margin-bottom: -2px;
-            }
-            .navbar-nav ul {
-                margin-top: 5px;
-                border-top: 0;
-            }
-            
-            .navbar-toggler {
-                margin-top: 10px;
-            }
-                        
-            .tnc3 {
-                font-family: 'Avenir Next', sans-serif !important;
-                font-style: italic;
-                margin-top: 90.5vh;
-                align-items: center;
-                justify-content: center;
-                display: flex;
-                width: 100%;
-                visibility: visible;
-                text-align: flex;
-                color: #f3984f;
-                font-size: 15px;
-                font-weight: bold;
-                position: relative;
-                -webkit-animation: colorchange 20s infinite alternate;
-            }
-        }
+       
         @media screen and (max-width:300px) {
             .tnc3 {
                 font-family: 'Avenir Next', sans-serif !important;
@@ -191,37 +160,45 @@
             }
                        
         }
-
-        @media screen and (max-height:1000px), screen and (max-width:1000px ) {
-            .credit .copyright {
-                margin-right: auto;
-            }
-            .tnc3 {
-                margin-top: 43.2vh;
-            }
-        }
-
-        @media screen and (max-height:700px), screen and (max-width: 450px) {
-            .totalmenu1-0 {
-                margin-top: -7vh;
-            }
-            .navbar-collapse {
-                width: 100vw;            
-            }
-            .navbar img {
-                margin-top: -15px;
-                margin-bottom: 2px;
-            }
-            .dropdown-menu a {
-                margin: 0 auto;
-            }
+      
+        @media screen and (max-width: 991px) {   
             .navbar-nav {
-                display: flex;
-                text-align: center;
+                top: 10px;
+                border-top: 3px solid #f3984f;
+            }         
+            .navbar img {
+                position: fixed;
+                top: 20px;
+                left: 3.5%
+            }
+
+            .totalmenu1-0 {
+                background-size: 70% 70%;
+                bottom: 43vh;
+            }
+            .navbar-nav {                
+                margin-top: 8px;
             }
             .navbar-nav ul {
+                margin-top: 5px;
                 border-top: 0;
             }
+            
+            .navbar-toggler {
+                position: fixed;
+                top:6px;
+            }
+            .tnc3 {
+                font-size: 16px;
+            }
+            .credit {
+                display:none;
+            }            
+           
+            .dropdown-menu a {
+                margin: 0 auto;
+            }            
+            
             .navbar-nav li {
                 margin: 0 auto;
                 text-align: center;
@@ -234,9 +211,7 @@
                 
                 align-items: center;
             }
-            .tnc3 {
-                margin-top: 87vh;
-            }
+            
             .navbar-collapse {
                 margin-left: 3%;
             }
@@ -270,7 +245,7 @@
             <a class="navbar-brand" href="/index.html" style="margin-left:3%; margin-top:20px; text-align:center;"><img
                     src="images/logo.svg" width="80" height="30"></a>
             <button class="navbar-toggler collapsed d-flex d-lg-none flex-column justify-content-around" type="button"
-                style="margin-right:5%; margin-top:10px; font-size:32px;" data-toggle="collapse"
+                style="margin-right:4.5%; margin-top:20px; font-size:32px;" data-toggle="collapse"
                 data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="toggler-icon top-bar"></span>
@@ -292,7 +267,7 @@
                                 style="background-color:transparent;">
                                 <a class="dropdown-item" href="/nft_12cz.html" id="sub-drop04"
                                     style="font-size:14px; font-weight: bolder; color:#f3984f; text-align:center; ">12CZ</a>
-                                <a class="dropdown-item" href="/nft_12cz_free.html" id="sub-drop04" style="font-size:14px; font-weight: bolder; color:#f3984f; text-align:center; margin-top: 5px; ">12LZ FREE</a>
+                                <a class="dropdown-item" href="/nft_12cz_free.html" id="sub-drop04" style="font-size:14px; font-weight: bolder; color:#f3984f; text-align:center; margin-top: 5px; ">12LZ Free</a>
                             </div>
                         </li>
 

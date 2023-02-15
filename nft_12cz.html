@@ -88,9 +88,10 @@
         @font-face { font-family: 'Avenir Next'; src: url('avenir-next-bold-italic.TTF'); }
         .credit {
             display: flex;
-            justify-content: space-between;
-            margin-top: -60vh;
+            justify-content: space-between;            
             width: 100%;
+            position: fixed;
+            bottom: 2vh;
             
         }
         .credit .terms {
@@ -108,10 +109,25 @@
         .mint_cnt_box {
             display: flex;
             justify-content: center;            
-            margin-top: 51.5vh;
+            position: fixed;
+            bottom: 30vh;
             background-color: transparent;
             color: transparent;
             width: 100%; 
+        }
+
+        .text {
+            position: fixed;
+            bottom: 21vh;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            right: 50vw;
+        }
+
+        .text button {
+            position: fixed;
+                        
         }
 
         .mint_cnt {
@@ -191,9 +207,9 @@
 
         .tnc3 {
             font-family: inherit;
-            font-style: italic;
-            margin-top: 6vh;
-            
+            font-style: italic;            
+            position: fixed;
+            bottom: 8vh;
             width: 100%;
             visibility: visible;
             color: #f3984f;
@@ -206,13 +222,13 @@
         }
 
         .slider {
-            position: relative;
+            position: fixed;
             width: 200px;
             height: 200px;
             transform-style: preserve-3d;
             -webkit-animation: rotate 120s linear infinite;
             transition: transform 0.5s ease-in-out;
-            top: 35vh;
+            top: 32vh;
             animation: rotate 120s linear 0s infinite;
             animation-play-state: running;
         }
@@ -405,38 +421,61 @@
             color: #f3984f;
             font-weight: bolder;
         }
-
-        @media screen and (max-height:700px), screen and (max-width: 450px) {
+        @media screen and (max-width:991px) {
+            .navbar-nav {
+                top: 10px;
+                border-top: 3px solid #f3984f;
+            }
+                       
+        }
+        
+        @media screen and (max-width: 991px) {
+            .navbar-toggler {
+                position: fixed;
+                top:6px;
+            }
+            .navbar-collapse {
+                margin-left: 3%;
+            }  
+            .navbar img {
+                position: fixed;
+                top: 20px;
+                left: 3.5%
+            }
+            .navbar-nav {                
+                margin-top: 8px;
+            }
+            .navbar-nav ul {
+                border: 0;
+            }
             .slider {
+                top: 22vh;
                 width: 100px;
-                height: 100px;
-                margin-top: -8vh !important;
+                height: 100px;                
             }
 
             .credit {
-                dispay: none;
-            }
-            .credit .terms {
                 display: none;
             }
-            .mint_cnt_box {
-                margin-top: 49vh !important;
-                align-items: center;
-                justify-content: center;
-                font-size: 60%;
-            }
 
-            .text button{
-                font-size: 20px;
-                width: 38vw;
-                margin-top: 0.5vh;
+            .mint_cnt_box {                
+                width: 20vw;               
+                left: 40vw;
+                position: fixed;
             }
-
-            
             .mint_cnt {
                 font-size: 20px;
                 padding: 0px 10px;
                 margin: 0px 10px;
+            }
+
+            .tnc3 {
+                font-size: 16px;
+            }
+            
+            .text button {
+                width: 20vw;
+                font-size: 16px;
             }
 
             .slider span {
@@ -454,92 +493,54 @@
                 transform: translateY(0px);
             }
 
-            .navbar img {
-                margin-top: -15px;
-                margin-bottom: 2px;
-            }
-            
-
             .dropdown-menu a {
                margin: 0 auto;
-            }
-
-            .navbar-nav {
-                display: flex;
-                text-align: center;
-                
-            }
-            .navbar-nav ul {
-                border-top: 0;
-            }
+            }            
+            
             .navbar-nav li {
                 margin: 0 auto;
                 text-align: center;
                 justify-content: center;
                 align-items: center;
             }
-           
-            .totalmenu3-0 {
-                margin-top: 0;
+            .navbar-nav div {
+                margin: 0 auto;
+                text-align: center;                
+                align-items: center;
             }
-
-            .tnc3 {
-                font-family: inherit;
-                font-style: italic;
-                margin-top: 7.5vh;
+            .wallet {
+                margin: 0 auto;                                       
+                text-align: center;                
+            }
+            .wallet div {                
+                text-align: center;                
+                justify-content: center; 
+            }
+            .drop-content a{
+                width: fit-content;                                
                 align-items: center;
                 justify-content: center;
                 text-align: center;
-                //display: flex;
-                display: none;
-                width: 100%;
-                visibility: visible;
-                text-align: flex;
-                color: #f3984f;
-                font-size: 15px;
-                font-weight: bold;
-                position: relative;
-                -webkit-animation: colorchange 20s infinite alternate;
-            }           
-
-            .mint {
-                color: #f3984f;
             }
+        }
+        @media screen and (max-width:450px) {
+            .text button{
+                width: 150px;
 
-            .credit {
-                display: none;
             }
-
-            .credit .copyright {
-                display: none;
-            }
-            
         }
 
         @media screen and (max-width:300px) {
-            .tnc3 {
-                font-family: inherit;
-                font-style: medium italic;
-                margin-top: 70vh;
-                margin-left: 3vw;
-                width: 100%;
-                visibility: visible;
-                text-align: flex;
-                color: #f3984f;
-                font-size: 15px;
-                font-weight: bold;
-                position: relative;
-                -webkit-animation: colorchange 20s infinite alternate;
-            }
+            
 
             .slider {
-                width: 120px;
-                height: 120px;
-                margin-top: -15vh;
+                width: 100px;
+                height: 100px;                
                 --deg1: -180deg;
                 --deg2: 180deg;
                 transform-origin: 50% 50%;
             }
+            
 
             .slider span {
                 position: absolute;
@@ -552,26 +553,14 @@
                 transform: rotateY(calc(var(--i)*45deg)) translate3D(0, 0, 200px);
             }
 
-            .slider span:hover img {
-                transform: translateY(0px);
-            }
-
-            .wallet {
-                margin-left: -20px;
-            }
-            
         }
 
-        @media screen and (max-height:1000px), screen and (max-width:1000px ) {
+         @media screen and (max-height:1000px), screen and (max-width:1500px ) {
             .slider {
                 width: 160px;
-                height: 160px;   
-                margin-top: -5vh;             
-            }            
-
-            .mint_cnt_box {
-                margin-top: 47.5vh;
-            }
+                height: 160px;                                
+            }  
+            
             .slider span {
             position: absolute;
             top: 0;
@@ -581,9 +570,8 @@
             transform-origin: center;
             transform-style: preserve-3d;
             transform: rotateY(calc(var(--i)*30deg)) translate3D(0, 0, 400px);
-        }
-            
-            
+        }    
+    }
         }
     </style>
 
@@ -599,7 +587,7 @@
             <a class="navbar-brand" href="/index.html" style="margin-left:3%; margin-top:20px; text-align:center;"><img
                     src="images/logo.svg" width="80" height="30"></a>
             <button class="navbar-toggler collapsed d-flex d-lg-none flex-column justify-content-around" type="button"
-                style="margin-right:5%; margin-top:10px; font-size:32px;" data-toggle="collapse"
+                style="margin-right:4.5%; margin-top:20px; font-size:32px;" data-toggle="collapse"
                 data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="toggler-icon top-bar"></span>
@@ -621,7 +609,7 @@
                                 style="background-color:transparent;">
                                 <a class="dropdown-item" href="/nft_12cz.html" id="sub-drop04"
                                     style="font-size:14px; font-weight: bolder; color:#f3984f; text-align:center; ">12CZ</a>
-                                <a class="dropdown-item" href="/nft_12cz_free.html" id="sub-drop04" style="font-size:14px; font-weight: bolder; color:#f3984f; text-align:center; margin-top: 5px; ">12LZ FREE</a>
+                                <a class="dropdown-item" href="/nft_12cz_free.html" id="sub-drop04" style="font-size:14px; font-weight: bolder; color:#f3984f; text-align:center; margin-top: 5px; ">12LZ Free</a>
                             </div>
                         </li>
 
@@ -1445,7 +1433,7 @@
 	}
 ];
 
-        const ADDRESS = "0x659CE0909c6E89D68C1359B9Eaeebf528c0D32d0";
+        const ADDRESS = "0x9e52DbbDe12cA817e0B59a25E3bfe9D742bb2735";
         document
             .getElementById('mint')
             .onclick = () => {
