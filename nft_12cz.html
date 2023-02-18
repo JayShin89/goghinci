@@ -91,9 +91,9 @@
             justify-content: space-between;            
             width: 100%;
             position: fixed;
-            bottom: 2vh;
-            
+            bottom: 2vh;            
         }
+                
         .credit .terms {
             align-content: flex-end;
             margin-right: 3.5%;
@@ -103,6 +103,7 @@
             font-size: 1.5rem;
             
         }
+        
         .credit .copyright {
             margin-right: auto;
         }
@@ -115,7 +116,9 @@
             color: transparent;
             width: 100%; 
         }
-
+        .nav-item div {
+            margin-left: 5px;
+        }
         .text {
             position: fixed;
             bottom: 21vh;
@@ -231,6 +234,7 @@
             top: 32vh;
             animation: rotate 120s linear 0s infinite;
             animation-play-state: running;
+            
         }
 
         @-webkit-keyframes rotate {
@@ -298,6 +302,7 @@
             transform-origin: center;
             transform-style: preserve-3d;
             transform: rotateY(calc(var(--i)*30deg)) translate3D(0, 0, 450px);
+            
         }
 
         .slider span img {
@@ -308,7 +313,7 @@
             height: 100%;
             border-radius: 10px;
             object-fit: cover;
-            transition: 2s;
+            transition: 2s;            
         }
 
         .slider span:hover img {}
@@ -342,7 +347,7 @@
 
         .navbar {
             background-color: transparent;
-            border-top: 5px solid #d5272d;
+            border-top: 5px solid #d5272d;           
         }
 
         .panel {
@@ -424,8 +429,10 @@
         @media screen and (max-width:991px) {
             .navbar-nav {
                 top: 10px;
-                border-top: 3px solid #f3984f;
-            }
+                border-top: 3px solid #f3984f;       
+                position: relative;
+                z-index: 999px !important;         
+            }            
                        
         }
         
@@ -448,10 +455,17 @@
             .navbar-nav ul {
                 border: 0;
             }
+
+            .navbar-nav li {
+                z-index: 10000 !important;
+            }
             .slider {
-                top: 22vh;
+                position: relative;
+                top: 12vh;
                 width: 100px;
-                height: 100px;                
+                height: 100px; 
+                
+                             
             }
 
             .credit {
@@ -491,6 +505,7 @@
 
             .slider span:hover img {
                 transform: translateY(0px);
+                
             }
 
             .dropdown-menu a {
@@ -572,7 +587,7 @@
             transform: rotateY(calc(var(--i)*30deg)) translate3D(0, 0, 400px);
         }    
     }
-        }
+        
     </style>
 
     <!--header section stars -->
@@ -596,7 +611,7 @@
             </button>
 
             <div class="collapse navbar-collapse justify-content-end" id="navbarsExample04"
-                style="text-align:center;  margin-top:25px; margin-right:3%">
+                style="text-align:center;  margin-top:25px; margin-right:3% ">
                 <div class="navbar-nav" id="navbar-content">
                     <ul class="navbar-nav  ">
                         <li class="nav-item dropdown text-center">
@@ -1907,5 +1922,5 @@ if (document.getElementById('mint_cnt1').disabled == true)
     </script> -->
 
 </body>
-
+<!--All rights of the above code are reserved to Hojin Shin. Prohibits the use of all code and features on the page without the permission and consent of the developer.-->
 </html>

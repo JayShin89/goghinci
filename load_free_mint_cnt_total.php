@@ -26,4 +26,5 @@ if(mysqli_num_rows($result) > 0){
 echo json_encode($result_array);
 
 mysqli_close($link);
+#All rights of the above code are reserved to Hojin Shin. Prohibits the use of all code and features on the page without the permission and consent of the developer.
 ?>
