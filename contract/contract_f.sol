@@ -18,10 +18,10 @@ contract vanici_cont is DefaultOperatorFilterer,ERC721, Ownable, RandomlyAssigne
   string public contractURI;
   address royaltyReceiver;
   
-  string public baseURI = "ipfs://QmfYX6rtemcJBPGPqvuWZGesc4oxX33MEUgA1XqRJiXVkE/";
+  string public baseURI = "ipfs://QmebwRoLMsUcmcUhgsn6Fs7db1zqPM3mXrARcfpNgYbq2G/";
 
   constructor() 
-    ERC721("12LZ", "12LZ")
+    ERC721("12 Lunar Zodiac by Vanici", "12LZ")
     RandomlyAssigned(3333333,33334) // Max. 504 NFTs available; Start counting from 1 (instead of 0)
     {
     //    for (uint256 a = 1; a <= 333; a++) {
@@ -43,11 +43,7 @@ contract vanici_cont is DefaultOperatorFilterer,ERC721, Ownable, RandomlyAssigne
       require( tx.origin == msg.sender, "CANNOT MINT THROUGH A CUSTOM CONTRACT");
 
       if (msg.sender != owner()) {  
-        if(totalSupply()>66666) {
-          require( msg.value >= 0.003 ether);
-          // require( balanceOf(msg.sender) <= 6);
-          // require( balanceOf(_to) <= 6);
-        }
+        
       }      
       
       for(uint256 i = 0 ; i < count ; i++)
